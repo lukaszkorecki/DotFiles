@@ -76,3 +76,14 @@ autocmd FileType php let php_noShortTags=1
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
 
+" Maximize your (g|mac)vim window
+" Put this in your .(g)vimrc
+" :w | so %
+" :WinMax (can be whatever you like) - just change the alias in the last line (own functions need to start with capital letter)
+function! s:MAX()
+	set lines=999
+	set columns=999
+endfunction
+
+command! -bar -narg=0 WinMax call s:MAX()
+
