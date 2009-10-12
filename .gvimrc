@@ -1,3 +1,8 @@
+" window settings
+set lines=70
+set columns=200
+set fileencoding=utf8
+
 set incsearch
 set ignorecase
 set hlsearch
@@ -18,6 +23,7 @@ set guifont=Monaco:h11.00
 
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
+set transparency=9
 
 
 ""set foldenable
@@ -47,12 +53,12 @@ set backupdir=~/.vim/bak
 set directory=~/.vim/tmp
 " colorz
 syntax on
-colorscheme herald " molokai, zenburn, darkburn, vibrantink
+colorscheme kellys " molokai, zenburn, darkburn, vibrantink
 
 " PLUGINZ
  " allml settings
 let g:allml_global_maps = 1
-let g:HiMtchBrkt=1
+let g:HiMtchBrktOn=1
 let g:SCMDiffCommand="/opt/subversion/bin/svn"
 
 inoremap <C-B> <ESC>:call PhpDocSingle()<CR>

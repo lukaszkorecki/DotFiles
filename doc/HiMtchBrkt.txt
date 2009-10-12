@@ -1,0 +1,290 @@
+*himtchbrkt.txt*	The HiMtchBrkt Tool		Feb 21, 2006
+
+Author:  Charles E. Campbell, Jr.  <NdrOchip@ScampbellPfamily.AbizM>
+	  (remove NOSPAM from Campbell's email first)
+Copyright: (c) 2004-2006 by Charles E. Campbell, Jr.	*himtchbrkt-copyright*
+           The VIM LICENSE applies to HiMtchBrkt.vim and HiMtchBrkt.txt
+           (see |copyright|) except use "HiMtchBrkt" instead of "Vim"
+	   No warranty, express or implied.  Use At-Your-Own-Risk.
+
+==============================================================================
+1. Contents						*himtchbrkt-contents*
+
+	1. Contents......................: |himtchbrkt-contents|
+	2. Installing HiMtchBrkt.........: |himtchbrkt-install|
+	3. HiMtchBrkt Manual.............: |himtchbrkt|
+	4. HiMtchBrkt Usage..............: |himtchbrkt-usage|
+	     Starting....................: |himtchbrkt-start|
+	     Options.....................: |himtchbrkt-options|
+	     Stopping....................: |himtchbrkt-stopping|
+	     User Map Protection.........: |himtchbrkt-protect|
+	     HiMtchBrkt Options..........: |himtchbrkt-option|
+	5. History.......................: |himtchbrkt-history|
+
+
+==============================================================================
+2. Installing HiMtchBrkt				*himtchbrkt-install*
+
+    1. Move/copy HiMtchBrkt.tar.gz to
+         unix/linux: ~/.vim
+	 Windows   : ...\vimfiles
+    2. gunzip HiMtchBrkt.tar.gz
+    3. tar -oxvf HiMtchBrkt.tar
+    4. vim
+       :helptags doc
+       :q
+    5. This step is only for those who wish to have HiMtchBrkt start up
+       automatically:
+
+       a) if you want HiMtchBrkt to start up for all files:
+          Put the following line in your <.vimrc> (or vimfiles, for Windows): >
+
+	  let g:HiMtchBrktOn= 1
+<
+       b) if you want HiMtchBrkt to start up automatically but only for
+          specific filetypes.  For example, assume such a filetype is
+	  for the C language: >
+
+          mkdir ftplugin  (if ftplugin/ doesn't already exist)
+	  cd ftplugin
+	  mkdir c         (if ftplugin/c doesn't already exist)
+	  cd c
+	  echo "HMBstart" >> c.vim
+<
+
+==============================================================================
+3. HiMtchBrkt Manual					*himtchbrkt*
+							*himtchbrkt-manual*
+	To Enable:
+
+ /================+============================================================\
+ || Starting &    |                                                           ||
+ || Stopping      | Explanation                                               ||
+ ++---------------+-----------------------------------------------------------++
+ || <Leader>[i    | start HiMtchBrkt   (via a map)                            ||
+ || <Leader>[s    | stop  HiMtchBrkt   (via a map)                            ||
+ ++---------------+-----------------------------------------------------------++
+ || :HMBstart     | start HiMtchBrkt   (via a command)                        ||
+ || :HMBstop      | stop  HiMtchBrkt   (via a command)                        ||
+ || :HMBsurround  | enable HiMtchBrkt surrounding bracket mode                ||
+ || :HMBsurround! | enable HiMtchBrkt matching-bracket mode                   ||
+ ++===============+===========================================================++
+
+ You may also choose from the DrChip.HiMtchBrkt menu items if you're running
+ gvim.  Check on vim's help for mapleader |mapleader| to learn how to set
+ <Leader>; by default its the backslash - ie. by default \[i will start and
+ \[s will stop HiMtchBrkt.
+
+==============================================================================
+4. HiMtchBrkt Usage					*himtchbrkt-usage*
+
+    See |himtchbrkt-start| and |himtchbrkt-stop| for how to start and
+    stop HiMtchBrkt.
+
+    The HiMtchBrkt plugin highlights the matching bracket or the surrounding
+    brackets
+
+   	e.g. (){}[]  (actually the |'matchpairs'| option is used)
+
+    when the cursor is moved on top of the bracket.
+
+    For version 7.0 of vim (you'll need snapshot#195 or later), HiMtchBrkt
+    uses the CursorMoved and CursorMovedI events to trigger the highlightinhg
+    of matching/surrounding brackets.
+
+    For version 6.0 of vim it does so by making a fair number of maps that
+    intercept the requested motion, perform the requested motion, then also
+    call the HiMatchBracket() function which does the work to highlight any
+    matching bracket.  Basically it does a "%" to find the matching bracket
+    (if any) and then constructs and executes an appropriate ":match" command.
+
+    As of version 10 of HiMtchBrkt, such overloaded motions include:
+
+    	,  E   F)  k      <down>         
+    	;  f(  F[  l      <end>          
+    	$  f)  F]  w      <home>         
+    	%  f[  F{  <c-b>  <left>         
+    	0  f]  F}  <c-d>  <leftmouse>    
+    	b  f{  h   <c-f>  <right>        
+    	B  f}  j   <c-u>  <up>           
+    	e  F(              
+
+    Version 12 of HiMtchBrkt supports overloading of 0, too (if you have
+    vim6.2 and patch 405 or later).
+
+    (for vim version 6.0) Because vim is rich with commands that can move the
+    cursor, the script also uses the CursorHold event (see |cursorhold| and
+    |'updatetime'|) to highlight matching brackets after the cursor is left
+    still for awhile.
+
+STARTING					*himtchbrkt-start* *HMBstart*
+    <Leader>[i
+    :HMBstart
+    :HMBsurround
+    let g:HiMtchBrktOn= 1   (in your .vimrc or vimfiles)
+
+    Typically one puts <himtchbrkt.vim> into the .vim/plugin directory
+    (vimfiles\plugin for MS) where it becomes always available.  It uses a
+    either of the following two commands to start:
+
+	<Leader>[i: initialize highlighting of matching brackets
+	            (by default its \[i)
+    or
+	:HMBstart
+
+    A message, "[HiMtchBrkt]", will appear on the message line.
+
+    If you want to have HiMtchBrkt on by default, you may find
+    tip #411 (http://vim.sourceforge.net/tips/tip.php?tip_id=411) on
+    "How To Initialize a Plugin" helpful.
+
+OPTIONS							*himtchbrkt-options*
+
+    g:HiMtchBrktOn					*himtchbrkt-on*
+
+	If this option exists and is not zero (ie. set it in your
+	.vimrc file), then HiMtchBrkt will both load and start on.
+	
+    g:HiMtchBrkt_nocursorhold			*himtchbrkt-nocursorhold*
+
+    	If g:himtchbrkt_nocursorhold exists, then the CursorHold event will
+	not be used to check on matching brackets:
+
+    	Although a large number of ways to move the cursor have been
+	overloaded with a call to HiMatchBracket() (plus the move), it is
+	quite possible that some have been overlooked or are performed by some
+	other function that HiMtchBrkt.vim doesn't know about.  These
+	situations are normally handled by CursorHold events -- after a period
+	of time of inactivity, a CursorHold event occurs and a HiMtchBrkt
+	check is made.
+
+    	Unfortunately, when a CursorHold event occurs, any command-line
+	messages disappear.
+
+    g:HiMtchBrkt_surround		*himtchbrkt-surround* *HMBsurround*
+	When this variable exists and is true (ie. non-zero), then
+	HiMtchBrkt will highlight both brackets surrounding the cursor
+	position.  This variable is turned on and off by :HMBsurround
+	and :HMBsurround!, respectively.
+
+    g:HiMtchBrkt_ut					*himtchbrkt-ut*
+
+	This optional variable controls how long the period of activity
+	will be, in milliseconds (see |'ut'|).  By default HiMtchBrkt
+	will set it to 20ms.  Thus HiMtchBrkt responds rapidly to both
+	known motion commands and to "new" ones.  Again, the disadvantage
+	is that messages disappear when the CursorEvent takes effect.
+
+
+STOPPING					*himtchbrkt-stopping* *HMBstop*
+    <Leader>[s
+
+    When you are done with HiMtchBrkt, use
+
+	    <Leader>[s: stop highlighting of matching brackets
+	            	(by default its \[s)
+    or
+	    :HMBstop
+
+    to terminate HiMtchBrkt mode.  Either of these will restore your usual
+    options and remove the maps HiMtchBrkt set up.
+
+    A message, "[HiMtchBrkt off]", will appear on the message line.
+
+USER MAP PROTECTION					*himtchbrkt-protect*
+
+    Starting HiMtchBrkt causes it to set up a number of maps which enables
+    the highlighting of matching brackets in normal mode.  A few keypad
+    entries in insert mode are also supported (up, down, right, left, home,
+    and end).
+
+HIGHLIGHTING MATCHING BRACKET OPTIONS			*himtchbrkt-option*
+
+    g:DrChipTopLvlMenu
+
+	By default its "DrChip"; however, you may set this to whatever you
+	like in your <.vimrc>.  This variable controls where HiMtchBrkt's menu
+	items are placed.  Of course, you must be using gvim and have menu
+	support.
+
+==============================================================================
+5. HiMtchBrkt History					*himtchbrkt-history*
+
+    (began this history rather late I'm afraid)
+    v22  02/13/06: * bugfix: :HMBstop now also removes the CursorMove events
+         02/15/06  * bugfix: CursorMovedI event prevented inserting normal
+	             characters from proceeding properly.  Currently its been
+	             removed.
+	 02/21/06  * HiMtchBrkt now uses searchpairpos() to speed up
+	             determination of matching/surrounding brackets; this
+		     is used for version 7 (or later) of vim only.
+         02/28/06  * uses line("w0") and line("w$") and the new stopline
+	             parameter for searchpair*() to speed up setting up
+		     the match (vim v7 only)
+    v21  02/10/06: * :HMBsurround will start HiMtchBrkt mode if it needs to.
+                   * Menus are adjusted to show Surround On/Off choices
+	 02/13/06  * HiMtchBrkt now takes advantage of the new CursorMoved
+		     and CursorMovedI events
+    v20  01/19/06: * HMBMapper() now made script-local (s:HMBMapper())
+         01/20/06  * g:HiMtchBrktOn == 1 will auto-start HiMtchBrkt
+	 01/20/06  * g:HiMtchBrktOn variable for auto-startup installed
+	 01/23/06  * "norm! yl" used instead of "norm! vy" to grab a copy
+	             of the character under the cursor without clearing
+		     messages (with vim7.0aa snapshot#185)
+	 02/09/06  * HMBsurround implemented (surrounding brackets highlighted)
+    v19  01/12/06: * will now append its maps to any pre-existing maps.  If
+                     HMBstarted _after_ other plugins with maps have loaded,
+		     then HiMtchBrkt will work with them (in particular, if
+		     HiMtchBrkt is started _after_ matchit.vim, then both
+		     will work together).
+		   * bugfix with gvim+keys while in normal mode
+		   * CursorHold on an empty buffer no longer calls
+		     HiMtchBracket() (tnx to Gary Johnson)
+	01/17/06   * Worked around the scrolloffset option
+    v18  01/03/06: * unwanted blinking and other unfortunate behavior; setting
+                     sol (temporarily) to see if its fixed
+		   * g:himtchbrkt_ut option included
+    v15  12/22/05: * SaveMap() was issuing an error message, which had
+                     already been protected against with a maparg() check.
+		     Applied silent!.
+	 12/28/05  * now uses cecutil to save/restore user maps
+    v14  03/07/05: * At Armin Sander's suggestion, I moved the anti-beep
+                     code from start/stop to every HiMtchBrkt invocation.
+                     That way HiMtchBrkt will only stop itself from beeping
+		   * Added g:himtchbrkt_nocursorhold option when there are
+		     unmatched brackets.
+	 08/26/05  * HiMtchBrkt, upon initialization, will set whichwrap option
+		     (to b,s,<,>,[,]) and will restore the user's original
+		     whichwrap option setting upon termination
+	 08/31/05  * Added commands: :HMBstart and :HMBstop
+	           * Internal maps used to overload arrow-key motions
+		     now use jklh style motions for the sake of celerity
+         12/22/05  * if g:HiMtchBrktOn is true, then HiMtchBrkt will begin
+	             in bracket matching mode
+    v13  08/17/04: * global variables now prefixed with himtchbrkt_
+                   * now set CursorHold/FocusGained update time to 200ms
+         10/29/04  * marker-based folding installed
+                   * Now uses Search (instead of Special) highlighting
+    v12  03/26/04: if vim6.2 and has patch405, then the 0 command is
+                   also handled
+    v11  11/24/03: the "b" motion inadvertently got disabled, now fixed
+    v10  11/24/03: incorporated Benji Fisher's suggestions for
+                   improvements to document, incorporating CursorHold
+                   event, globalize dohimtchbrkt, using matchpairs
+                   option instead of hardcoded [](){}.
+                   Includes M Geddes' fix for \%#v instead of \%#c
+    v9   03/10/03: fixed bug (col() -> virtcol() )
+    v7   02/11/03: retains position, even with widely separated {}
+                   some optimization
+                   restores @0
+    v6   05/28/02: has("menu") included with menu tests
+    v4   05/23/02: eliminated a console-vim bug with g:DrChipTopLvlMenu
+    v3   04/11/02: Added e,B,E and <leftmouse> to movements supported
+                   (Thanks to Nidhir Kumar for suggesting e and <leftmouse>)
+                   Start/Stop menu items now toggle
+    v2   03/14/02: Thanks to Dan Sharp for suggesting <home>, <end>,
+                   and g:DrChipTopLvlMenu
+    v1   epoch
+
+=====================================================================
+vim:tw=78:ts=8:ft=help:sts=4

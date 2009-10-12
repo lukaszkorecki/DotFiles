@@ -1,0 +1,1 @@
+"set makeprg=php\ -l
