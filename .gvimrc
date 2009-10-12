@@ -89,7 +89,7 @@ command! -bar -narg=0 WinMax call s:MAX()
 
 
 function! s:ListFunctions()
-	vimgrep /function/ %
+	vimgrep /function/j %
 	copen
 endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
