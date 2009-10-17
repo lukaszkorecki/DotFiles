@@ -76,6 +76,9 @@ autocmd FileType php let php_noShortTags=1
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
 
+" activate the HiMtchBrkt
+au BufNewFile *.ctp,*.php,*.js,*.html,*.css call g:HMBstart
+au BufRead *.ctp,*.php,*.js,*.html,*.css call g:HMBstart
 " Maximize your (g|mac)vim window
 " Put this in your .(g)vimrc
 " :w | so %
@@ -93,3 +96,9 @@ function! s:ListFunctions()
 	copen
 endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
+
+" save all command under :W, possibly add new stuff to it
+function! s:SaveAll()
+	wall
+endfunction
+command! -bar -narg=0 W call s:SaveAll()
