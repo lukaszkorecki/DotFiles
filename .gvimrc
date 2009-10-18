@@ -49,8 +49,8 @@ set shiftwidth=4
 set softtabstop=4
 
 " temp files
-set backupdir=~/.vim/bak
-set directory=~/.vim/tmp
+set backupdir=~/.bak
+set directory=~/.tmp
 " colorz
 syntax on
 colorscheme kellys " molokai, zenburn, darkburn, vibrantink
@@ -77,8 +77,8 @@ au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
 
 " activate the HiMtchBrkt
-au BufNewFile *.ctp,*.php,*.js,*.html,*.css call g:HMBstart
-au BufRead *.ctp,*.php,*.js,*.html,*.css call g:HMBstart
+au BufNewFile *.ctp,*.php,*.js,*.html,*.css call HMBstart()
+au BufRead *.ctp,*.php,*.js,*.html,*.css call HMBstart()
 " Maximize your (g|mac)vim window
 " Put this in your .(g)vimrc
 " :w | so %
