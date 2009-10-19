@@ -102,3 +102,9 @@ function! s:SaveAll()
 	wall
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
+
+
+function! s:Vimsh() 
+	so ~/.vim/plugin/vimsh.vim
+endfunction
+command! -bar -narg=0 Vimsh call s:Vimsh()
