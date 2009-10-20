@@ -76,9 +76,6 @@ autocmd FileType php let php_noShortTags=1
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
 
-" activate the HiMtchBrkt
-au BufNewFile *.ctp,*.php,*.js,*.html,*.css call HMBstart()
-au BufRead *.ctp,*.php,*.js,*.html,*.css call HMBstart()
 " Maximize your (g|mac)vim window
 " Put this in your .(g)vimrc
 " :w | so %
