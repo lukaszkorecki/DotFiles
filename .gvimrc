@@ -53,7 +53,8 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme kellys " molokai, zenburn, darkburn, vibrantink
+colorscheme xoria256 " molokai, zenburn, darkburn, vibrantink
+
 
 " PLUGINZ
  " allml settings
