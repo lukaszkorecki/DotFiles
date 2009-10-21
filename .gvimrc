@@ -19,7 +19,12 @@ set cursorline
 set number
 
 " yummy
-set guifont=Monaco:h11.00
+if has('unix')
+	set guifont=DejaVu\ Sans\ Mono\ 8
+elseif has('mac')
+	set guifont=Monaco:h11.00
+elseif has('windows')
+	set guifont=Monaco:h8
 
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
