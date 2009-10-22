@@ -17,13 +17,15 @@ set cursorline
 set number
 
 " yummy
-if has('unix')
-	set guifont=DejaVu\ Sans\ Mono\ 8
-elseif has('mac')
-	set guifont=Monaco:h11.00
-elseif has('windows')
-	set guifont=Monaco:h8
-
+if has('gui')
+	if has('gui_gnome')
+		set guifont=DejaVu\ Sans\ Mono\ 8
+	elseif has('gui_macvim')
+		set guifont=Monaco:h11.00
+	elseif has('gui_win32')
+		set guifont=Monaco:h8
+	endif
+endif
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
 set transparency=9
@@ -56,7 +58,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme xoria256 " molokai, zenburn, darkburn, vibrantink
+""colorscheme xoria256 " molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
