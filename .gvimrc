@@ -6,7 +6,10 @@ set ignorecase
 set hlsearch
 
 " make the status line more useful
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
+set laststatus=2
+
 set nocompatible
 
 " backspace mode
@@ -22,13 +25,13 @@ if has('gui')
 		set guifont=DejaVu\ Sans\ Mono\ 8
 	elseif has('gui_macvim')
 		set guifont=Monaco:h11.00
+		set transparency=9
 	elseif has('gui_win32')
 		set guifont=Monaco:h8
 	endif
 endif
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
-set transparency=9
 
 
 ""set foldenable
@@ -58,7 +61,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-""colorscheme xoria256 " molokai, zenburn, darkburn, vibrantink
+colorscheme herald "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
