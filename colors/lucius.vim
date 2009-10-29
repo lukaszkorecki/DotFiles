@@ -1,7 +1,7 @@
 " Vim color file
 " Maintainer:   Jonathan Filip <jfilip1024@gmail.com>
-" Last Modified: Tue Jul 14, 2009  08:06AM
-" Version: 2.6
+" Last Modified: Wed Oct 21, 2009  11:39AM
+" Version: 3.1
 "
 " GUI / 256 color terminal
 "
@@ -17,137 +17,141 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
-let g:colors_name="lucius"
+let colors_name="lucius"
 
+" Some other colors to save
 " blue: 3eb8e5
 " green: 92d400
+" c green: d5f876, cae682
+" new blue: 002D62
+" new gray: CCCCCC
 
 
 " Base color
 " ----------
-hi Normal           guifg=#e4e4e4           guibg=#242424
-hi Normal           ctermfg=254             ctermbg=235
+hi Normal           guifg=#e0e0e0           guibg=#202020
+hi Normal           ctermfg=253             ctermbg=235
 
 
 " Comment Group
 " -------------
 " any comment
-hi Comment          guifg=#808080                                   gui=none
-hi Comment          ctermfg=243                                     cterm=none
+hi Comment          guifg=#606060                                   gui=none
+hi Comment          ctermfg=240                                     cterm=none
 
 
 " Constant Group
 " --------------
 " any constant
-hi Constant         guifg=#96ded1                                   gui=none
-hi Constant         ctermfg=116                                      cterm=none
+hi Constant         guifg=#8cd0d3                                   gui=none
+hi Constant         ctermfg=116                                     cterm=none
 " strings
-hi String           guifg=#87ceeb                                   gui=none
-hi String           ctermfg=117                                     cterm=none
+hi String           guifg=#80c0d9                                   gui=none
+hi String           ctermfg=110                                     cterm=none
 " character constant
-hi Character        guifg=#87ceeb                                   gui=none
-hi Character        ctermfg=117                                     cterm=none
+hi Character        guifg=#80c0d9                                   gui=none
+hi Character        ctermfg=110                                     cterm=none
 " numbers decimal/hex
-hi Number           guifg=#96ded1                                   gui=none
-hi Number           ctermfg=116                                      cterm=none
+hi Number           guifg=#8cd0d3                                   gui=none
+hi Number           ctermfg=116                                     cterm=none
 " true, false
-hi Boolean          guifg=#96ded1                                   gui=none
-hi Boolean          ctermfg=116                                      cterm=none
+hi Boolean          guifg=#8cd0d3                                   gui=none
+hi Boolean          ctermfg=116                                     cterm=none
 " float
-hi Float            guifg=#96ded1                                   gui=none
-hi Float            ctermfg=116                                      cterm=none
+hi Float            guifg=#8cd0d3                                   gui=none
+hi Float            ctermfg=116                                     cterm=none
 
 
 " Identifier Group
 " ----------------
 " any variable name
-hi Identifier       guifg=#f4a460                                   gui=none
-hi Identifier       ctermfg=215                                     cterm=none
+hi Identifier       guifg=#efaf7f                                   gui=none
+hi Identifier       ctermfg=216                                     cterm=none
 " function, method, class
-hi Function         guifg=#f4a460                                   gui=none
-hi Function         ctermfg=215                                     cterm=none
+hi Function         guifg=#efaf7f                                   gui=none
+hi Function         ctermfg=216                                     cterm=none
 
 
 " Statement Group
 " ---------------
 " any statement
-hi Statement        guifg=#c9dc89                                   gui=none
-hi Statement        ctermfg=186                                     cterm=none
+hi Statement        guifg=#b3d38c                                   gui=none
+hi Statement        ctermfg=150                                     cterm=none
 " if, then, else
-hi Conditional      guifg=#c9dc89                                   gui=none
-hi Conditional      ctermfg=186                                     cterm=none
+hi Conditional      guifg=#b3d38c                                   gui=none
+hi Conditional      ctermfg=150                                     cterm=none
 " try, catch, throw, raise
-hi Exception        guifg=#c9dc89                                   gui=none
-hi Exception        ctermfg=186                                     cterm=none
+hi Exception        guifg=#b3d38c                                   gui=none
+hi Exception        ctermfg=150                                     cterm=none
 " for, while, do
-hi Repeat           guifg=#c9dc89                                   gui=none
-hi Repeat           ctermfg=186                                     cterm=none
+hi Repeat           guifg=#b3d38c                                   gui=none
+hi Repeat           ctermfg=150                                     cterm=none
 " case, default
-hi Label            guifg=#c9dc89                                   gui=none
-hi Label            ctermfg=186                                     cterm=none
+hi Label            guifg=#b3d38c                                   gui=none
+hi Label            ctermfg=150                                     cterm=none
 " sizeof, +, *
-hi Operator         guifg=#c9dc89                                   gui=none
-hi Operator         ctermfg=186                                     cterm=none
+hi Operator         guifg=#b3d38c                                   gui=none
+hi Operator         ctermfg=150                                     cterm=none
 " any other keyword
-hi Keyword          guifg=#c9dc89                                   gui=none
-hi Keyword          ctermfg=186                                     cterm=none
+hi Keyword          guifg=#b3d38c                                   gui=none
+hi Keyword          ctermfg=150                                     cterm=none
 
 
 " Preprocessor Group
 " ------------------
 " generic preprocessor
-hi PreProc          guifg=#efefaf                                   gui=none
-hi PreProc          ctermfg=229                                     cterm=none
+hi PreProc          guifg=#f0dfaf                                   gui=none
+hi PreProc          ctermfg=223                                     cterm=none
 " #include
-hi Include          guifg=#efefaf                                   gui=none
-hi Include          ctermfg=229                                     cterm=none
+hi Include          guifg=#f0dfaf                                   gui=none
+hi Include          ctermfg=223                                     cterm=none
 " #define
-hi Define           guifg=#efefaf                                   gui=none
-hi Define           ctermfg=229                                     cterm=none
+hi Define           guifg=#f0dfaf                                   gui=none
+hi Define           ctermfg=223                                     cterm=none
 " same as define
-hi Macro            guifg=#efefaf                                   gui=none
-hi Macro            ctermfg=229                                     cterm=none
+hi Macro            guifg=#f0dfaf                                   gui=none
+hi Macro            ctermfg=223                                     cterm=none
 " #if, #else, #endif
-hi PreCondit        guifg=#efefaf                                   gui=none
-hi PreCondit        ctermfg=229                                     cterm=none
+hi PreCondit        guifg=#f0dfaf                                   gui=none
+hi PreCondit        ctermfg=223                                     cterm=none
 
 
 " Type Group
 " ----------
 " int, long, char
-hi Type             guifg=#ace1af                                   gui=none
-hi Type             ctermfg=151                                     cterm=none
+hi Type             guifg=#93d6a9                                   gui=none
+hi Type             ctermfg=115                                     cterm=none
 " static, register, volative
-hi StorageClass     guifg=#ace1af                                   gui=none
-hi StorageClass     ctermfg=151                                     cterm=none
+hi StorageClass     guifg=#93d6a9                                   gui=none
+hi StorageClass     ctermfg=115                                     cterm=none
 " struct, union, enum
-hi Structure        guifg=#ace1af                                   gui=none
-hi Structure        ctermfg=151                                     cterm=none
+hi Structure        guifg=#93d6a9                                   gui=none
+hi Structure        ctermfg=115                                     cterm=none
 " typedef
-hi Typedef          guifg=#ace1af                                   gui=none
-hi Typedef          ctermfg=151                                     cterm=none
+hi Typedef          guifg=#93d6a9                                   gui=none
+hi Typedef          ctermfg=115                                     cterm=none
 
 
 " Special Group
 " -------------
 " any special symbol
-hi Special          guifg=#cfafcf                                   gui=none
-hi Special          ctermfg=182                                     cterm=none
+hi Special          guifg=#cca3b3                                   gui=none
+hi Special          ctermfg=181                                     cterm=none
 " special character in a constant
-hi SpecialChar      guifg=#cfafcf                                   gui=none
-hi SpecialChar      ctermfg=182                                     cterm=none
+hi SpecialChar      guifg=#cca3b3                                   gui=none
+hi SpecialChar      ctermfg=181                                     cterm=none
 " things you can CTRL-]
-hi Tag              guifg=#cfafcf                                   gui=none
-hi Tag              ctermfg=182                                     cterm=none
+hi Tag              guifg=#cca3b3                                   gui=none
+hi Tag              ctermfg=181                                     cterm=none
 " character that needs attention
-hi Delimiter        guifg=#cfafcf                                   gui=none
-hi Delimiter        ctermfg=182                                     cterm=none
+hi Delimiter        guifg=#cca3b3                                   gui=none
+hi Delimiter        ctermfg=181                                     cterm=none
 " special things inside a comment
-hi SpecialComment   guifg=#cfafcf                                   gui=none
-hi SpecialComment   ctermfg=182                                     cterm=none
+hi SpecialComment   guifg=#cca3b3                                   gui=none
+hi SpecialComment   ctermfg=181                                     cterm=none
 " debugging statements
-hi Debug            guifg=#cfafcf           guibg=NONE              gui=none
-hi Debug            ctermfg=182             ctermbg=NONE            cterm=none
+hi Debug            guifg=#cca3b3           guibg=NONE              gui=none
+hi Debug            ctermfg=181             ctermbg=NONE            cterm=none
 
 
 " Underlined Group
@@ -167,15 +171,15 @@ hi Ignore           ctermfg=bg
 " Error Group
 " -----------
 " any erroneous construct
-hi Error            guifg=#dd4040           guibg=NONE              gui=none
-hi Error            ctermfg=160             ctermbg=NONE            cterm=none
+hi Error            guifg=#e37170           guibg=#432323           gui=none
+hi Error            ctermfg=167             ctermbg=52            cterm=none
 
 
 " Todo Group
 " ----------
 " todo, fixme, note, xxx
-hi Todo             guifg=#deee33           guibg=NONE              gui=underline
-hi Todo             ctermfg=190             ctermbg=NONE            cterm=underline
+hi Todo             guifg=#efef8f           guibg=NONE              gui=underline
+hi Todo             ctermfg=228             ctermbg=NONE            cterm=underline
 
 
 " Spelling
@@ -203,11 +207,11 @@ hi Cursor           ctermfg=bg              ctermbg=153
 hi CursorIM         guifg=bg                guibg=#96cdcd
 hi CursorIM         ctermfg=bg              ctermbg=116
 " cursor column
-hi CursorColumn                             guibg=#2d2d3d
-hi CursorColumn     cterm=NONE              ctermbg=236
+hi CursorColumn     guifg=NONE              guibg=#202438           gui=none
+hi CursorColumn     ctermfg=NONE            ctermbg=236             cterm=none
 " cursor line/row
-hi CursorLine                               guibg=#2d2d3d
-hi CursorLine       cterm=NONE              ctermbg=236             
+hi CursorLine       gui=NONE                guibg=#202438           gui=none
+hi CursorLine       cterm=NONE              ctermbg=236             cterm=none
 
 
 " Misc
@@ -219,68 +223,68 @@ hi Directory        ctermfg=151                                     cterm=none
 hi ErrorMsg         guifg=#ee0000           guibg=NONE              gui=none
 hi ErrorMsg         ctermfg=196             ctermbg=NONE            cterm=none
 " column separating vertically split windows
-hi VertSplit        guifg=#777777           guibg=#444444           gui=none
-hi VertSplit        ctermfg=244             ctermbg=238             cterm=none
+hi VertSplit        guifg=#777777           guibg=#363946           gui=none
+hi VertSplit        ctermfg=242             ctermbg=237             cterm=none
 " columns where signs are displayed (used in IDEs)
 hi SignColumn       guifg=#9fafaf           guibg=#181818           gui=none
 hi SignColumn       ctermfg=145             ctermbg=233             cterm=none
 " line numbers
-hi LineNr           guifg=#8090a0           guibg=#343434
-hi LineNr           ctermfg=103             ctermbg=235
+hi LineNr           guifg=#818698           guibg=#363946
+hi LineNr           ctermfg=102             ctermbg=237
 " match parenthesis, brackets
-hi MatchParen       guifg=#00ff00           guibg=NONE              gui=none
-hi MatchParen       ctermfg=46              ctermbg=NONE            cterm=none
-" text showing what mode you are in
+hi MatchParen       guifg=#00ff00           guibg=NONE              gui=bold
+hi MatchParen       ctermfg=46              ctermbg=NONE            cterm=bold
+" the 'more' prompt when output takes more than one line
 hi MoreMsg          guifg=#2e8b57                                   gui=none
 hi MoreMsg          ctermfg=29                                      cterm=none
+" text showing what mode you are in
+hi ModeMsg          guifg=#76d5f8           guibg=NONE              gui=none
+hi ModeMsg          ctermfg=117             ctermbg=NONE            cterm=none
 " the '~' and '@' and showbreak, '>' double wide char doesn't fit on line
-hi ModeMsg          guifg=#90ee90           guibg=NONE              gui=none
-hi ModeMsg          ctermfg=120             ctermbg=NONE            cterm=none
-" the 'more' prompt when output takes more than one line
-hi NonText          guifg=#343434                                   gui=none
+hi NonText          guifg=#404040                                   gui=none
 hi NonText          ctermfg=235                                     cterm=none
 " the hit-enter prompt (show more output) and yes/no questions
 hi Question         guifg=fg                                        gui=none
 hi Question         ctermfg=fg                                      cterm=none
 " meta and special keys used with map, unprintable characters
-hi SpecialKey       guifg=#505050
-hi SpecialKey       ctermfg=238
+hi SpecialKey       guifg=#404040
+hi SpecialKey       ctermfg=237
 " titles for output from :set all, :autocmd, etc
-hi Title            guifg=#42adde                                   gui=none
-hi Title            ctermfg=38                                      cterm=none
+hi Title            guifg=#62bdde                                   gui=none
+hi Title            ctermfg=74                                      cterm=none
 "hi Title            guifg=#5ec8e5                                   gui=none
 " warning messages
 hi WarningMsg       guifg=#e5786d                                   gui=none
 hi WarningMsg       ctermfg=173                                     cterm=none
 " current match in the wildmenu completion
-hi WildMenu         guifg=#000000           guibg=#cae682
-hi WildMenu         ctermfg=16              ctermbg=186             
+hi WildMenu         guifg=#cae682           guibg=#363946           gui=bold,underline
+hi WildMenu         ctermfg=16              ctermbg=186             cterm=bold
 
 
 " Diff
 " ----
 " added line
-hi DiffAdd          guifg=fg                guibg=#705070
-hi DiffAdd          ctermfg=fg              ctermbg=59
+hi DiffAdd          guifg=#80a090           guibg=#313c36           gui=none
+hi DiffAdd          ctermfg=108             ctermbg=22              cterm=none
 " changed line
-hi DiffChange       guifg=fg                guibg=#007000
-hi DiffChange       ctermfg=fg              ctermbg=22
+hi DiffChange       guifg=NONE              guibg=#4a343a           gui=none
+hi DiffChange       ctermfg=fg              ctermbg=52              cterm=none
 " deleted line
-hi DiffDelete       guifg=fg                guibg=#a08040
-hi DiffDelete       ctermfg=fg              ctermbg=136
+hi DiffDelete       guifg=#6c6661           guibg=#3c3631           gui=none
+hi DiffDelete       ctermfg=59              ctermbg=58              cterm=none
 " changed text within line
-hi DiffText         guifg=fg                guibg=#a00000
-hi DiffText         ctermfg=fg              ctermbg=160
+hi DiffText         guifg=#f05060           guibg=#4a343a           gui=bold
+hi DiffText         ctermfg=203             ctermbg=52             cterm=bold
 
 
 " Folds
 " -----
 " line used for closed folds
-hi Folded           guifg=#c0c0c0           guibg=#305060           gui=none
-hi Folded           ctermfg=249             ctermbg=23              cterm=none
+hi Folded           guifg=#91d6f8           guibg=#363946           gui=none
+hi Folded           ctermfg=117             ctermbg=238             cterm=none
 " column on side used to indicated open and closed folds
-hi FoldColumn       guifg=#c0c0c0           guibg=#305060           gui=none
-hi FoldColumn       ctermfg=249             ctermbg=23              cterm=none
+hi FoldColumn       guifg=#91d6f8           guibg=#363946           gui=none
+hi FoldColumn       ctermfg=117             ctermbg=238             cterm=none
 
 
 " Search
@@ -296,47 +300,47 @@ hi Search                                    ctermbg=214            cterm=none
 " Popup Menu
 " ----------
 " normal item in popup
-hi Pmenu            guifg=#f6f3e8           guibg=#444444           gui=none
-hi Pmenu            ctermfg=254             ctermbg=238             cterm=none
+hi Pmenu            guifg=#e0e0e0           guibg=#303840           gui=none
+hi Pmenu            ctermfg=253             ctermbg=233             cterm=none
 " selected item in popup
-hi PmenuSel         guifg=#000000           guibg=#cae682           gui=none
-hi PmenuSel         ctermfg=16              ctermbg=186             cterm=none
+hi PmenuSel         guifg=#cae682           guibg=#505860           gui=none
+hi PmenuSel         ctermfg=186             ctermbg=237             cterm=none
 " scrollbar in popup
-hi PMenuSbar                                guibg=#608090           gui=none
-hi PMenuSbar                                ctermbg=66              cterm=none
+hi PMenuSbar                                guibg=#505860           gui=none
+hi PMenuSbar                                ctermbg=59              cterm=none
 " thumb of the scrollbar in the popup
-hi PMenuThumb                               guibg=#aaaaaa           gui=none
-hi PMenuThumb                               ctermbg=247             cterm=none
+hi PMenuThumb                               guibg=#808890           gui=none
+hi PMenuThumb                               ctermbg=102             cterm=none
 
 
 " Status Line
 " -----------
 " status line for current window
-hi StatusLine       guifg=#e0e0e0           guibg=#444444           gui=none
-hi StatusLine       ctermfg=254             ctermbg=238             cterm=none
+hi StatusLine       guifg=#e0e0e0           guibg=#363946           gui=bold
+hi StatusLine       ctermfg=254             ctermbg=237             cterm=bold
 " status line for non-current windows
-hi StatusLineNC     guifg=#777777           guibg=#444444           gui=none
-hi StatusLineNC     ctermfg=244             ctermbg=238             cterm=none
+hi StatusLineNC     guifg=#767986           guibg=#363946           gui=none
+hi StatusLineNC     ctermfg=244             ctermbg=237             cterm=none
 
 
 " Tab Lines
 " ---------
 " tab pages line, not active tab page label
-hi TabLine          guifg=#b6bf98           guibg=#181818           gui=none
-hi TabLine          ctermfg=244             ctermbg=233             cterm=none
+hi TabLine          guifg=#b6bf98           guibg=#363946           gui=none
+hi TabLine          ctermfg=244             ctermbg=236             cterm=none
 " tab pages line, where there are no labels
-hi TabLineFill      guifg=#cfcfaf           guibg=#181818           gui=none
-hi TabLineFill      ctermfg=187             ctermbg=233             cterm=none
+hi TabLineFill      guifg=#cfcfaf           guibg=#363946           gui=none
+hi TabLineFill      ctermfg=187             ctermbg=236             cterm=none
 " tab pages line, active tab page label
-hi TabLineSel       guifg=#efefef           guibg=#1c1c1b           gui=none
-hi TabLineSel       ctermfg=254             ctermbg=233             cterm=none
+hi TabLineSel       guifg=#efefef           guibg=#414658           gui=bold
+hi TabLineSel       ctermfg=254             ctermbg=236             cterm=bold
 
 
 " Visual
 " ------
 " visual mode selection
-hi Visual           guifg=NONE              guibg=#334455
-hi Visual           ctermfg=NONE            ctermbg=60
-" visual mode selection when vim is 'not owning the selection' (x11 only)
+hi Visual           guifg=NONE              guibg=#364458
+hi Visual           ctermfg=NONE            ctermbg=24
+" visual mode selection when vim is not owning the selection (x11 only)
 hi VisualNOS        guifg=fg                                        gui=underline
 hi VisualNOS        ctermfg=fg                                      cterm=underline
