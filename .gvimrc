@@ -25,7 +25,7 @@ if has('gui')
 		set guifont=DejaVu\ Sans\ Mono\ 8
 	elseif has('gui_macvim')
 		set guifont=Monaco:h11.00
-		set transparency=9
+		"set transparency=9
 	elseif has('gui_win32')
 		set guifont=Monaco:h8
 	endif
@@ -61,7 +61,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme herald "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme omen "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
@@ -108,3 +108,12 @@ function! s:SaveAll()
 	wall
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
+
+
+function! s:SuperSearch(filetype, what)
+	let command = "vimgrep /" . a:what . "/j **/*". a:filetype
+	echo command
+	execute command
+	copen
+endfunction
+command! -bar -nargs=* SS call s:SuperSearch(<args>)
