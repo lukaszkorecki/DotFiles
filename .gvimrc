@@ -61,7 +61,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme omen "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme herald "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
@@ -81,6 +81,7 @@ autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_htmlInStrings=1
 " discourages use oh short tags. c'mon its deprecated remember
 autocmd FileType php let php_noShortTags=1
+autocmd FileType php set makeprg=php\ -l\ %
 " settings for cake
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php

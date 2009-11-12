@@ -51,8 +51,8 @@ if has("gui_running")
 	hi ModeMsg        guibg=#1F1F1F guifg=#FFA500 gui=none
 
 	" -> Search 
-	hi Search         guibg=#FF9E16               gui=none 
-	hi IncSearch      guibg=#FF9E16               gui=none
+	hi Search         guibg=#696567 guifg=#FFEE68 gui=none 
+	hi IncSearch      guibg=#696567 guifg=#FFEE68 gui=none
 
 	" -> Diff
 	hi DiffAdd        guibg=#006124 guifg=#ED9000 gui=none
@@ -86,12 +86,12 @@ if has("gui_running")
 	hi Ignore         guibg=#1F1F1F guifg=#1F1F1F gui=none
 	hi MatchParen     guibg=#FFA500 guifg=#1F1F1F gui=none
 	hi PreProc        guibg=#1F1F1F guifg=#BF81FA gui=none
-	hi Special        guibg=#1F1F1F guifg=#FFB539 gui=none
+	hi Special        guibg=#1F1F1F guifg=#FFEE68 gui=none
 	hi Todo           guibg=#1F1F1F guifg=#FC4234 gui=bold
 	hi Underlined     guibg=#1F1F1F guifg=#FC4234 gui=underline
 	hi Statement      guibg=#1F1F1F guifg=#E783E9 gui=none
 	hi Operator       guibg=#1F1F1F guifg=#FC6984 gui=none
-	hi Delimiter      guibg=#1F1F1F guifg=#FFEC48 gui=none
+	hi Delimiter      guibg=#1F1F1F guifg=#FC6984 gui=none
 	hi Type           guibg=#1F1F1F guifg=#FFEE68 gui=none
 	hi Exception      guibg=#1F1F1F guifg=#FC4234 gui=none
 
@@ -138,8 +138,8 @@ elseif &t_Co == 256
 	hi ModeMsg        ctermbg=234  ctermfg=214   cterm=none
 
 	" -> Search 
-	hi Search         ctermbg=214                cterm=none 
-	hi IncSearch      ctermbg=214                cterm=none
+	hi Search         ctermbg=241  ctermfg=227   cterm=none 
+	hi IncSearch      ctermbg=241  ctermfg=227   cterm=none
 
 	" -> Diff
 	hi DiffAdd        ctermbg=22   ctermfg=208   cterm=none
@@ -173,12 +173,12 @@ elseif &t_Co == 256
 	hi Ignore         ctermbg=234  ctermfg=234   cterm=none
 	hi MatchParen     ctermbg=214  ctermfg=234   cterm=none
 	hi PreProc        ctermbg=234  ctermfg=141   cterm=none
-	hi Special        ctermbg=234  ctermfg=215   cterm=none
+	hi Special        ctermbg=234  ctermfg=227   cterm=none
 	hi Todo           ctermbg=234  ctermfg=203   cterm=bold
 	hi Underlined     ctermbg=234  ctermfg=203   cterm=underline
 	hi Statement      ctermbg=234  ctermfg=176   cterm=none
 	hi Operator       ctermbg=234  ctermfg=204   cterm=none
-	hi Delimiter      ctermbg=234  ctermfg=227   cterm=none
+	hi Delimiter      ctermbg=234  ctermfg=204   cterm=none
 	hi Type           ctermbg=234  ctermfg=227   cterm=none
 	hi Exception      ctermbg=234  ctermfg=203   cterm=none 
 
@@ -225,8 +225,8 @@ elseif &t_Co == 16
   hi ModeMsg        ctermbg=8  ctermfg=14 cterm=none
 
   " -> Search 
-  hi Search         ctermbg=6             cterm=none 
-  hi IncSearch      ctermbg=6             cterm=none
+  hi Search         ctermbg=7  ctermfg=14 cterm=none 
+  hi IncSearch      ctermbg=7  ctermfg=14 cterm=none
 
   " -> Diff
   hi DiffAdd        ctermbg=0  ctermfg=10 cterm=none
@@ -260,12 +260,12 @@ elseif &t_Co == 16
   hi Ignore         ctermbg=8  ctermfg=8  cterm=none
   hi MatchParen     ctermbg=14 ctermfg=8  cterm=none
   hi PreProc        ctermbg=8  ctermfg=5  cterm=none
-  hi Special        ctermbg=8  ctermfg=12 cterm=none
+  hi Special        ctermbg=8  ctermfg=14 cterm=none
   hi Todo           ctermbg=8  ctermfg=12 cterm=bold
   hi Underlined     ctermbg=8  ctermfg=12 cterm=underline
   hi Statement      ctermbg=8  ctermfg=13 cterm=none
   hi Operator       ctermbg=8  ctermfg=4  cterm=none
-  hi Delimiter      ctermbg=8  ctermfg=14 cterm=none
+  hi Delimiter      ctermbg=8  ctermfg=4 cterm=none
   hi Type           ctermbg=8  ctermfg=14 cterm=none
   hi Exception      ctermbg=8  ctermfg=12 cterm=none
 
@@ -313,8 +313,8 @@ elseif &t_Co == 8
   hi ModeMsg        ctermbg=8  ctermfg=6  cterm=none
 
   " -> Search 
-  hi Search         ctermbg=6             cterm=none 
-  hi IncSearch      ctermbg=6             cterm=none
+  hi Search         ctermbg=7  ctermfg=6  cterm=none 
+  hi IncSearch      ctermbg=7  ctermfg=6  cterm=none
 
   " -> Diff
   hi DiffAdd        ctermbg=0  ctermfg=2  cterm=none
@@ -348,12 +348,12 @@ elseif &t_Co == 8
   hi Ignore         ctermbg=8  ctermfg=8  cterm=none
   hi MatchParen     ctermbg=6  ctermfg=8  cterm=none
   hi PreProc        ctermbg=8  ctermfg=5  cterm=none
-  hi Special        ctermbg=8  ctermfg=4 cterm=none
+  hi Special        ctermbg=8  ctermfg=6 cterm=none
   hi Todo           ctermbg=8  ctermfg=4 cterm=bold
   hi Underlined     ctermbg=8  ctermfg=4 cterm=underline
   hi Statement      ctermbg=8  ctermfg=5 cterm=none
   hi Operator       ctermbg=8  ctermfg=4  cterm=none
-  hi Delimiter      ctermbg=8  ctermfg=6 cterm=none
+  hi Delimiter      ctermbg=8  ctermfg=4 cterm=none
   hi Type           ctermbg=8  ctermfg=6 cterm=none
   hi Exception      ctermbg=8  ctermfg=4 cterm=none
 
