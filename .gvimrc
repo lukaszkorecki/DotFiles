@@ -24,7 +24,7 @@ if has('gui')
 	if has('gui_gnome')
 		set guifont=DejaVu\ Sans\ Mono\ 8
 	elseif has('gui_macvim')
-		set guifont=Monaco:h11.00
+		set guifont=Monaco:h12.00
 		"set transparency=9
 	elseif has('gui_win32')
 		set guifont=Monaco:h8

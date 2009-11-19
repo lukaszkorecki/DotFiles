@@ -165,29 +165,36 @@ snippet do
 		${2:// code... }
 	} while (${1:/* condition */});
 snippet if
-	if (${1:/* condition */}) {
+	if (${1:/* condition */})
+	{
 		${2:// code...}
 	}
 snippet ife
-	if (${1:/* condition */}) {
+	if (${1:/* condition */})
+	{
 		${2:// code...}
-	} else {
+	}
+	else
+	{
 		${3:// code...}
 	}
 	${4}
 snippet else
-	else {
+	else
+	{
 		${1:// code...}
 	}
 snippet elseif
-	elseif (${1:/* condition */}) {
+	elseif (${1:/* condition */})
+	{
 		${2:// code...}
 	}
 # Tertiary conditional
 snippet t
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
-	switch ($${1:variable}) {
+	switch ($${1:variable})
+	{
 		case '${2:value}':
 			${3:// code...}
 			break;
@@ -201,15 +208,18 @@ snippet case
 		${2:// code...}
 		break;${3}
 snippet for
-	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++})
+	{
 		${4: // code...}
 	}
 snippet foreach
-	foreach ($${1:variable} as $${2:key}) {
+	foreach ($${1:variable} as $${2:key})
+	{
 		${3:// code...}
 	}
 snippet fun
-	${1:public} function ${2:FunctionName}(${3}) {
+	${1:public} function ${2:FunctionName}(${3})
+	{
 		${4}
 	}
 # $... = array (...)
@@ -239,7 +249,7 @@ snippet php
 snippet phpi
 	<?php ${1} ?>
 snippet p=
-	<?=${1} ?>
+	<?php echo ${1} ?>
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -441,7 +451,8 @@ snippet for
 		${4: // code...}
 	}
 snippet foreach
-	foreach ($${1:variable} as $${2:key}) {
+	foreach ($${1:variable} as $${2:key})
+	{
 		${3:// code...}
 	}
 snippet fun
@@ -473,13 +484,28 @@ snippet pri
 # cake stuff
 snippet newc
 	<?php
-	Class ${1:YourController} extends AppController {
+	Class ${1:YourController} extends AppController
+	{
 		${2}
 	}
 	?>
 snippet newm
 	<?php
-	Class ${1:Model} extends AppModel {
+	Class ${1:Model} extends AppModel
+	{
 		${2}
 	}
 	?>
+snippet foreachv
+	<?php foreach($${1:variable} as $${2:key}):?>
+		${3}
+	<?php endforeach;?>
+snippet ifv
+	<?php if($${1}): ?>
+	<?php endif; ?>
+snippet ifelsev
+	<?php if($${1}): ?>
+		${2}
+	<?php else: ?>
+		${3}
+	<?php endif; ?>
