@@ -61,7 +61,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme herald "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme mustang "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
@@ -73,6 +73,9 @@ let g:SCMDiffCommand="/opt/subversion/bin/svn"
 inoremap <C-B> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-B> :call PhpDocSingle()<CR>
 vnoremap <C-B> :call PhpDocRange()<CR> 
+
+noremap <F7> :call NERDTreeToggle()<CR>
+inoremap <F7> <ESC>:call NERDTreeToggle()<CR>
 
 " PHP specific fixes
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
@@ -86,6 +89,8 @@ autocmd FileType php set makeprg=php\ -l\ %
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
 
+au BufNewFile  *.md set filetype=mkd
+au BufRead *.md set filetype=mkd
 " Maximize your (g|mac)vim window
 " Put this in your .(g)vimrc
 " :w | so %
