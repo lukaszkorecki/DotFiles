@@ -1,6 +1,8 @@
 " window settings
 set fileencoding=utf8
 
+" lame...
+set spell
 set incsearch
 set ignorecase
 set hlsearch
@@ -63,7 +65,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme mustang "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
