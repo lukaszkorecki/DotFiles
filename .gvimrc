@@ -1,8 +1,6 @@
 " window settings
 set fileencoding=utf8
 
-" lame...
-set spell
 set incsearch
 set ignorecase
 set hlsearch
@@ -95,23 +93,23 @@ au BufRead *.ctp set filetype=php
 
 au BufNewFile  *.md set filetype=mkd
 au BufRead *.md set filetype=mkd
-" Maximize your (g|mac)vim window
-" Put this in your .(g)vimrc
-" :w | so %
-" :WinMax (can be whatever you like) - just change the alias in the last line (own functions need to start with capital letter)
-function! s:MAX()
-    set lines=999
-    set columns=999
-endfunction
+"
+" set spellcheck for markdown files
+au BufNewFile  *.md set spell
+au BufRead *.md set spell
 
-command! -bar -narg=0 WinMax call s:MAX()
-
-
-function! s:ListFunctions()
+function! s:ListFunctions() " C style
     vimgrep /function/j %
     copen
 endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
+
+
+function! s:ListFunctions() " Ruby style
+    vimgrep /def/j %
+    copen
+endfunction
+command! -bar -narg=0 RS call s:ListRubyFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
