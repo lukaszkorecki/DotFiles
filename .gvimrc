@@ -21,14 +21,14 @@ set number
 
 " yummy
 if has('gui')
-	if has('gui_gnome')
-		set guifont=DejaVu\ Sans\ Mono\ 8
-	elseif has('gui_macvim')
-		set guifont=Monaco:h12.00
-		"set transparency=9
-	elseif has('gui_win32')
-		set guifont=Monaco:h8
-	endif
+    if has('gui_gnome')
+        set guifont=DejaVu\ Sans\ Mono\ 8
+    elseif has('gui_macvim')
+        set guifont=Monaco:h12.00
+        "set transparency=9
+    elseif has('gui_win32')
+        set guifont=Monaco:h8
+    endif
 endif
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
@@ -47,15 +47,17 @@ set autoindent
 " display improvements
 set list
 " show indents
-set listchars=tab:\.\ ,trail:-
 set ruler
 set showcmd
 " i use tabs instead of spaces, wanna make something of it?
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=8
+au BufRead,BufNewFile *.rb,*.erb set shiftwidth=2 
+au BufRead,BufNewFile *.rb,*.erb set softtabstop=2
 
+set listchars=tab:\.\ ,trail:-
 " temp files
 set backupdir=~/.bak
 set directory=~/.tmp
@@ -74,7 +76,7 @@ inoremap <C-B> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-B> :call PhpDocSingle()<CR>
 vnoremap <C-B> :call PhpDocRange()<CR> 
 
-noremap <F7> :call NERDTreeToggle()<CR>
+noremap <F7> :NERDTreeToggle<CR>
 inoremap <F7> <ESC>:call NERDTreeToggle()<CR>
 
 " PHP specific fixes
@@ -96,30 +98,30 @@ au BufRead *.md set filetype=mkd
 " :w | so %
 " :WinMax (can be whatever you like) - just change the alias in the last line (own functions need to start with capital letter)
 function! s:MAX()
-	set lines=999
-	set columns=999
+    set lines=999
+    set columns=999
 endfunction
 
 command! -bar -narg=0 WinMax call s:MAX()
 
 
 function! s:ListFunctions()
-	vimgrep /function/j %
-	copen
+    vimgrep /function/j %
+    copen
 endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
-	wall
+    wall
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
 
 
 function! s:SuperSearch(filetype, what)
-	let command = "vimgrep /" . a:what . "/j **/*". a:filetype
-	echo command
-	execute command
-	copen
+    let command = "vimgrep /" . a:what . "/j **/*". a:filetype
+    echo command
+    execute command
+    copen
 endfunction
 command! -bar -nargs=* SS call s:SuperSearch(<args>)
