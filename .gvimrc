@@ -105,11 +105,11 @@ endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
 
 
-function! s:ListFunctions() " Ruby style
+function! s:ListRubyFunctions() " Ruby style
     vimgrep /def/j %
     copen
 endfunction
-command! -bar -narg=0 RS call s:ListRubyFunctions()
+command! -bar -narg=0 DS call s:ListRubyFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
