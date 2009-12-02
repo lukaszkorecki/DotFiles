@@ -120,7 +120,7 @@ command! -bar -narg=0 DS call s:ListRubyFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
-    wall
+    w | make
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
 
