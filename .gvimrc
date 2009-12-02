@@ -50,12 +50,14 @@ set list
 set ruler
 set showcmd
 " i use tabs instead of spaces, wanna make something of it?
-set expandtab
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
-set softtabstop=8
+set softtabstop=4
 au BufRead,BufNewFile *.rb,*.erb set shiftwidth=2 
 au BufRead,BufNewFile *.rb,*.erb set softtabstop=2
+au BufRead,BufNewFile *.rb,*.erb set expandtab
+au BufRead,BufNewFile *.rb,*.erb set expandtab
 
 set listchars=tab:\.\ ,trail:-
 " temp files
@@ -87,6 +89,11 @@ autocmd FileType php let php_htmlInStrings=1
 " discourages use oh short tags. c'mon its deprecated remember
 autocmd FileType php let php_noShortTags=1
 autocmd FileType php set makeprg=php\ -l\ %
+
+" ruby"
+autocmd FileType rb set makeprg=rb\ -wc\ %
+let g:surround_45 = "<% \r %>"
+let g:surround_61 = "<%= \r %>"
 " settings for cake
 au BufNewFile  *.ctp set filetype=php
 au BufRead *.ctp set filetype=php
