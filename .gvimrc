@@ -65,7 +65,7 @@ set backupdir=~/.bak
 set directory=~/.tmp
 " colorz
 syntax on
-colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme skittles_dark "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
@@ -106,15 +106,15 @@ au BufNewFile  *.md set spell
 au BufRead *.md set spell
 
 function! s:ListFunctions() " C style
-    vimgrep /function/j %
-    copen
+    lvimgrep /function/j %
+    lopen
 endfunction
 command! -bar -narg=0 LS call s:ListFunctions()
 
 
 function! s:ListRubyFunctions() " Ruby style
-    vimgrep /def/j %
-    copen
+    lvimgrep /def/j %
+    lopen
 endfunction
 command! -bar -narg=0 DS call s:ListRubyFunctions()
 
@@ -126,7 +126,7 @@ command! -bar -narg=0 W call s:SaveAll()
 
 
 function! s:SuperSearch(filetype, what)
-    let command = "vimgrep /" . a:what . "/j **/*". a:filetype
+    let command = "lvimgrep /" . a:what . "/j **/*". a:filetype
     echo command
     execute command
     copen
