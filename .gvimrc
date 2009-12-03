@@ -109,14 +109,14 @@ function! s:ListFunctions() " C style
     lvimgrep /function/j %
     lopen
 endfunction
-command! -bar -narg=0 LS call s:ListFunctions()
+command! -bar -narg=0 LF call s:ListFunctions()
 
 
 function! s:ListRubyFunctions() " Ruby style
     lvimgrep /def/j %
     lopen
 endfunction
-command! -bar -narg=0 DS call s:ListRubyFunctions()
+command! -bar -narg=0 LD call s:ListRubyFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
