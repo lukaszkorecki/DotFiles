@@ -27,7 +27,7 @@ if has('gui')
         set guifont=Monaco:h12.00
         "set transparency=9
     elseif has('gui_win32')
-        set guifont=Monaco:h8
+        set guifont=Consolas:h8
     endif
 endif
 " turn off the scrollbars and the rest of the crap
@@ -61,8 +61,15 @@ au BufRead,BufNewFile *.rb,*.erb set expandtab
 
 set listchars=tab:\.\ ,trail:-
 " temp files
-set backupdir=~/.bak
-set directory=~/.tmp
+if has('gui')
+    if has('gui_win32')
+		set backupdir=$HOME/.bak
+		set directory=$HOME/.tmp
+    else
+		set backupdir=~/.bak
+		set directory=~/.tmp
+	endif
+endif
 " colorz
 syntax on
 colorscheme skittles_dark "xoria256  molokai, zenburn, darkburn, vibrantink
