@@ -85,8 +85,8 @@ inoremap <C-B> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-B> :call PhpDocSingle()<CR>
 vnoremap <C-B> :call PhpDocRange()<CR> 
 
-noremap <F7> :NERDTreeToggle<CR>
-inoremap <F7> <ESC>:call NERDTreeToggle()<CR>
+noremap <F6> :NERDTreeToggle<CR>
+inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
 
 " PHP specific fixes
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
