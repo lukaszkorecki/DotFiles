@@ -72,7 +72,7 @@ if has('gui')
 endif
 " colorz
 syntax on
-colorscheme skittles_dark "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme vylight "xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " PLUGINZ
