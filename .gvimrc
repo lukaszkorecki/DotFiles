@@ -139,3 +139,7 @@ function! s:SuperSearch(filetype, what)
     copen
 endfunction
 command! -bar -nargs=* SS call s:SuperSearch(<args>)
+nmap <tab> v>
+nmap <s-tab> v<
+vmap <tab> >gv
+vmap <s-tab> <gv
