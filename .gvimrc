@@ -124,6 +124,11 @@ function! s:ListRubyFunctions() " Ruby style
     lopen
 endfunction
 command! -bar -narg=0 LD call s:ListRubyFunctions()
+function! s:ListJSFunctions() " js style
+	lvimgrep /\w*:.*function.*{/ %
+    lopen
+endfunction
+command! -bar -narg=0 JF call s:ListJSFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
