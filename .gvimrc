@@ -50,25 +50,25 @@ set list
 set ruler
 set showcmd
 " i use tabs instead of spaces, wanna make something of it?
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-au BufRead,BufNewFile *.rb,*.erb set shiftwidth=2 
-au BufRead,BufNewFile *.rb,*.erb set softtabstop=2
-au BufRead,BufNewFile *.rb,*.erb set expandtab
-au BufRead,BufNewFile *.rb,*.erb set expandtab
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+""au BufRead,BufNewFile *.rb,*.erb set shiftwidth=2 
+""au BufRead,BufNewFile *.rb,*.erb set softtabstop=2
+""au BufRead,BufNewFile *.rb,*.erb set expandtab
+""au BufRead,BufNewFile *.rb,*.erb set expandtab
 
 set listchars=tab:\.\ ,trail:-
 " temp files
 if has('gui')
     if has('gui_win32')
-		set backupdir=$HOME/.bak
-		set directory=$HOME/.tmp
+    set backupdir=$HOME/.bak
+    set directory=$HOME/.tmp
     else
-		set backupdir=~/.bak
-		set directory=~/.tmp
-	endif
+    set backupdir=~/.bak
+    set directory=~/.tmp
+  endif
 endif
 " colorz
 syntax on
@@ -125,7 +125,7 @@ function! s:ListRubyFunctions() " Ruby style
 endfunction
 command! -bar -narg=0 LD call s:ListRubyFunctions()
 function! s:ListJSFunctions() " js style
-	lvimgrep /\w*:.*function.*{/ %
+  lvimgrep /\w*:.*function.*{/ %
     lopen
 endfunction
 command! -bar -narg=0 JF call s:ListJSFunctions()
