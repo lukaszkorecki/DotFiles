@@ -54,10 +54,11 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-""au BufRead,BufNewFile *.rb,*.erb set shiftwidth=2 
-""au BufRead,BufNewFile *.rb,*.erb set softtabstop=2
-""au BufRead,BufNewFile *.rb,*.erb set expandtab
-""au BufRead,BufNewFile *.rb,*.erb set expandtab
+" PHP FIX
+au BufRead,BufNewFile *.php,*.ctp set shiftwidth=4 
+au BufRead,BufNewFile *.php,*.ctp set softtabstop=4
+au BufRead,BufNewFile *.php,*.ctp set noexpandtab
+au BufRead,BufNewFile *.php,*.ctp set noexpandtab
 
 set listchars=tab:\.\ ,trail:-
 " temp files
