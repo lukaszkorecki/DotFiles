@@ -56,6 +56,7 @@ set shiftwidth=2
 set softtabstop=2
 " PHP FIX
 au BufRead,BufNewFile *.php,*.ctp set shiftwidth=4 
+au BufRead,BufNewFile *.php,*.ctp set tabstop=4 
 au BufRead,BufNewFile *.php,*.ctp set softtabstop=4
 au BufRead,BufNewFile *.php,*.ctp set noexpandtab
 au BufRead,BufNewFile *.php,*.ctp set noexpandtab
