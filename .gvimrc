@@ -73,7 +73,9 @@ if has('gui')
 endif
 " colorz
 syntax on
-colorscheme vylight "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
+" change background
+let g:molokai_original=1
 
 
 " PLUGINZ
@@ -85,6 +87,8 @@ let g:SCMDiffCommand="/opt/subversion/bin/svn"
 inoremap <C-B> <ESC>:call PhpDocSingle()<CR>
 nnoremap <C-B> :call PhpDocSingle()<CR>
 vnoremap <C-B> :call PhpDocRange()<CR> 
+
+au BufNewFile, BufRead * :call HMBstart
 
 noremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
