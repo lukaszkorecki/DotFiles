@@ -76,6 +76,7 @@
 :MkVimball	pi_vimball.txt	/*:MkVimball*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
+:NERDTreeFind	NERD_tree.txt	/*:NERDTreeFind*
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
 :NERDTreeMirror	NERD_tree.txt	/*:NERDTreeMirror*
 :NERDTreeToggle	NERD_tree.txt	/*:NERDTreeToggle*
@@ -665,6 +666,7 @@ surround-mappings	surround.txt	/*surround-mappings*
 surround-replacements	surround.txt	/*surround-replacements*
 surround-targets	surround.txt	/*surround-targets*
 surround.txt	surround.txt	/*surround.txt*
+taskpaper	taskpaper.txt	/*taskpaper*
 twitvim-identi.ca	twitvim.txt	/*twitvim-identi.ca*
 twitvim.txt	twitvim.txt	/*twitvim.txt*
 twitvim_api_root	twitvim.txt	/*twitvim_api_root*

@@ -34,8 +34,8 @@ endif
 set guioptions=eg
 
 
-""set foldenable
-""set foldmethod=indent
+set foldenable
+set foldmethod=syntax
 filetype plugin on
 filetype on
 
@@ -154,3 +154,11 @@ nmap <tab> v>
 nmap <s-tab> v<
 vmap <tab> >gv
 vmap <s-tab> <gv
+
+" Open todo using taskpaper"
+" TODO / FIXME add different taskapaper locations or/and different todo files
+" (work/home/etc)"
+function! s:OpenTodo()
+   sp | e ~/Dropbox/todo.taskpaper
+endfunction
+command! -bar -nargs=* ToDo call s:OpenTodo()
