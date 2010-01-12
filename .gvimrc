@@ -35,8 +35,8 @@ endif
 set guioptions=eg
 
 
-set foldenable
-set foldmethod=syntax
+""set foldenable
+""set foldmethod=syntax
 filetype plugin on
 filetype on
 
@@ -101,7 +101,9 @@ autocmd FileType php let php_noShortTags=1
 autocmd FileType php set makeprg=php\ -l\ %
 
 " ruby"
-autocmd FileType rb set makeprg=rb\ -wc\ %
+autocmd FileType rb set makeprg=ruby\ -wc\ %
+autocmd FileType ruby set makeprg=ruby\ -wc\ %
+autocmd FileType Rails set makeprg=ruby\ -wc\ %
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 " settings for cake
@@ -159,3 +161,4 @@ function! s:OpenTodo()
    sp | e ~/Dropbox/todo.taskpaper
 endfunction
 command! -bar -nargs=* ToDo call s:OpenTodo()
+cmap w!! %!sudo tee > /dev/null %
