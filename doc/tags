@@ -33,6 +33,10 @@
 'loaded_nerd_comments'	NERD_commenter.txt	/*'loaded_nerd_comments'*
 'loaded_nerd_tree'	NERD_tree.txt	/*'loaded_nerd_tree'*
 'snippets'	snipMate.txt	/*'snippets'*
+'syntastic_auto_loc_list'	syntastic.txt	/*'syntastic_auto_loc_list'*
+'syntastic_disabled_filetypes'	syntastic.txt	/*'syntastic_disabled_filetypes'*
+'syntastic_enable_signs'	syntastic.txt	/*'syntastic_enable_signs'*
+'syntastic_quiet_warnings'	syntastic.txt	/*'syntastic_quiet_warnings'*
 .snippet	snipMate.txt	/*.snippet*
 .snippets	snipMate.txt	/*.snippets*
 :ABitLy	twitvim.txt	/*:ABitLy*
@@ -51,6 +55,7 @@
 :Cligs	twitvim.txt	/*:Cligs*
 :DMSentTwitter	twitvim.txt	/*:DMSentTwitter*
 :DMTwitter	twitvim.txt	/*:DMTwitter*
+:Errors	syntastic.txt	/*:Errors*
 :ForwardTwitter	twitvim.txt	/*:ForwardTwitter*
 :FriendsTwitter	twitvim.txt	/*:FriendsTwitter*
 :FufAddBookmark	fuf.txt	/*:FufAddBookmark*
@@ -102,6 +107,8 @@
 :SendDMTwitter	twitvim.txt	/*:SendDMTwitter*
 :Snippet	snippets_emu.txt	/*:Snippet*
 :Snipurl	twitvim.txt	/*:Snipurl*
+:SyntasticDisable	syntastic.txt	/*:SyntasticDisable*
+:SyntasticEnable	syntastic.txt	/*:SyntasticEnable*
 :TinyURL	twitvim.txt	/*:TinyURL*
 :Trim	twitvim.txt	/*:Trim*
 :Tweetburner	twitvim.txt	/*:Tweetburner*
@@ -213,6 +220,7 @@ NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 SHINKUU-TATSUMAKI-SENPUU-KYAKU	mimicpak.txt	/*SHINKUU-TATSUMAKI-SENPUU-KYAKU*
 Stallman	mimicpak.txt	/*Stallman*
+SyntasticMake()	syntastic.txt	/*SyntasticMake()*
 TwitVim	twitvim.txt	/*TwitVim*
 TwitVim-A-d	twitvim.txt	/*TwitVim-A-d*
 TwitVim-A-g	twitvim.txt	/*TwitVim-A-g*
@@ -666,6 +674,21 @@ surround-mappings	surround.txt	/*surround-mappings*
 surround-replacements	surround.txt	/*surround-replacements*
 surround-targets	surround.txt	/*surround-targets*
 surround.txt	surround.txt	/*surround.txt*
+syntastic	syntastic.txt	/*syntastic*
+syntastic-about	syntastic.txt	/*syntastic-about*
+syntastic-changelog	syntastic.txt	/*syntastic-changelog*
+syntastic-commands	syntastic.txt	/*syntastic-commands*
+syntastic-contents	syntastic.txt	/*syntastic-contents*
+syntastic-credits	syntastic.txt	/*syntastic-credits*
+syntastic-error-signs	syntastic.txt	/*syntastic-error-signs*
+syntastic-error-window	syntastic.txt	/*syntastic-error-window*
+syntastic-functionality	syntastic.txt	/*syntastic-functionality*
+syntastic-intro	syntastic.txt	/*syntastic-intro*
+syntastic-license	syntastic.txt	/*syntastic-license*
+syntastic-options	syntastic.txt	/*syntastic-options*
+syntastic-statusline-flag	syntastic.txt	/*syntastic-statusline-flag*
+syntastic-syntax-checkers	syntastic.txt	/*syntastic-syntax-checkers*
+syntastic.txt	syntastic.txt	/*syntastic.txt*
 taskpaper	taskpaper.txt	/*taskpaper*
 twitvim-identi.ca	twitvim.txt	/*twitvim-identi.ca*
 twitvim.txt	twitvim.txt	/*twitvim.txt*
