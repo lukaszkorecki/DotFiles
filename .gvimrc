@@ -7,10 +7,11 @@ set hlsearch
 
 " make the status line more useful
 ""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
+set statusline=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
 set laststatus=2
 
 set nocompatible
@@ -101,12 +102,6 @@ autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_htmlInStrings=1
 " discourages use oh short tags. c'mon its deprecated remember
 autocmd FileType php let php_noShortTags=1
-autocmd FileType php set makeprg=php\ -l\ %
-
-" ruby"
-autocmd FileType rb set makeprg=ruby\ -wc\ %
-autocmd FileType ruby set makeprg=ruby\ -wc\ %
-autocmd FileType Rails set makeprg=ruby\ -wc\ %
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 " settings for cake
@@ -140,7 +135,7 @@ command! -bar -narg=0 JF call s:ListJSFunctions()
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
-    w | make
+    w | :Error
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
 
