@@ -7,13 +7,14 @@ set hlsearch
 
 " make the status line more useful
 ""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-set statusline=%f\ %2*%m\ %1*%h
+set statusline=%{VimBuddy()}\ \  
+set statusline+=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
 set laststatus=2
-
+z
 set nocompatible
 
 " backspace mode
@@ -163,7 +164,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 " marvim settings
 "
-let marvim_store = '~/.vim/marvim_macros'
-let marvim_find_key = "<space>"
-let marvim_store_key = "ms"
 source ~/.vim/plugin/marvim.vim
+let g:marvim_store = '~/.vim/marvim_macros'
+let g:marvim_find_key = "<space>"
+let g:marvim_store_key = "<C-space>"
