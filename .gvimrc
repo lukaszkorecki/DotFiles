@@ -5,6 +5,7 @@ set incsearch
 set ignorecase
 set hlsearch
 
+so ~/.vim/plugin/vimbuddy.vim
 " make the status line more useful
 ""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 set statusline=%{VimBuddy()}\ \  
@@ -162,6 +163,10 @@ endfunction
 command! -bar -nargs=* ToDo call s:OpenTodo()
 cmap w!! %!sudo tee > /dev/null %
 
+
+function! g:CleanUp()
+  %s/^[\ \t]*\n//g
+endfunction
 " marvim settings
 "
 source ~/.vim/plugin/marvim.vim
