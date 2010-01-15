@@ -160,3 +160,6 @@ function! s:OpenTodo()
 endfunction
 command! -bar -nargs=* ToDo call s:OpenTodo()
 cmap w!! %!sudo tee > /dev/null %
+
+map <a-h> h
+map <a-y> echo "dupa"
