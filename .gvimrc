@@ -161,5 +161,9 @@ endfunction
 command! -bar -nargs=* ToDo call s:OpenTodo()
 cmap w!! %!sudo tee > /dev/null %
 
-map <a-h> h
-map <a-y> echo "dupa"
+" marvim settings
+"
+let marvim_store = '~/.vim/marvim_macros'
+let marvim_find_key = "<space>"
+let marvim_store_key = "ms"
+source ~/.vim/plugin/marvim.vim

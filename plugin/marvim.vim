@@ -177,11 +177,11 @@ if !exists('marvim_register')
 endif
 
 if !exists('marvim_find_key')
-    let g:marvim_find_key = '<F9>'
+    let g:marvim_find_key = '<F2>'
 endif
 
 if !exists('marvim_store_key')
-    let g:marvim_store_key = '<F8>'
+    let g:marvim_store_key = '<F3>'
 endif
 
 if !exists('marvim_prefix')
