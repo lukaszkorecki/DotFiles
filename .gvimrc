@@ -5,10 +5,6 @@ set incsearch
 set ignorecase
 set hlsearch
 
-" "so ~/.vim/plugin/vimbuddy.vim
-" make the status line more useful
-""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-""set statusline=%{VimBuddy()}\ \  
 set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
@@ -16,7 +12,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
 set laststatus=2
-z
 set nocompatible
 
 " backspace mode
