@@ -5,10 +5,11 @@ set incsearch
 set ignorecase
 set hlsearch
 
-so ~/.vim/plugin/vimbuddy.vim
+" "so ~/.vim/plugin/vimbuddy.vim
 " make the status line more useful
 ""set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-set statusline=%{VimBuddy()}\ \  
+""set statusline=%{VimBuddy()}\ \  
+set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -31,7 +32,8 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        set guifont=Monaco:h11.00
+        ""set guifont=Monaco:h11.00
+        set guifont=Inconsolata:h12.00
         "set transparency=9
     elseif has('gui_win32')
         set guifont=Consolas:h8
@@ -77,9 +79,9 @@ if has('gui')
 endif
 " colorz
 syntax on
+let g:molokai_original=1
 colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
-let g:molokai_original=1
 
 
 " PLUGINZ
