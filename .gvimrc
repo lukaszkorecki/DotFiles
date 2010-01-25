@@ -127,7 +127,8 @@ function! s:ListRubyFunctions() " Ruby style
 endfunction
 command! -bar -narg=0 LD call s:ListRubyFunctions()
 function! s:ListJSFunctions() " js style
-  lvimgrep /\w*:.*function.*{/ %
+		lvimgrep /\w*:.*function.*{/ %
+    lvimgrepa /^\sfunction/j %
     lopen
 endfunction
 command! -bar -narg=0 JF call s:ListJSFunctions()
