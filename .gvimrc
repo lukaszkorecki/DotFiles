@@ -61,6 +61,8 @@ set softtabstop=2
 " PHP FIX
 au BufRead,BufNewFile *.php,*.ctp set noexpandtab
 
+au BufNewFile, BufNewFile * HMBstart
+
 set listchars=tab:\.\ ,trail:-
 " temp files
 if has('gui')
@@ -171,3 +173,9 @@ source ~/.vim/plugin/marvim.vim
 let g:marvim_store = '~/.vim/marvim_macros'
 let g:marvim_find_key = "<space>"
 let g:marvim_store_key = "<C-space>"
+
+
+" folding"
+set foldmethod=marker
+set foldmarker={,}
+
