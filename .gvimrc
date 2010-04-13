@@ -178,4 +178,7 @@ let g:marvim_store_key = "<C-space>"
 " folding"
 set foldmethod=marker
 set foldmarker={,}
+set nobackup
+set nowritebackup
+set noswapfile
 
