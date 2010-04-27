@@ -27,9 +27,8 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        ""set guifont=Monaco:h11.00
-        set guifont=Inconsolata:h12.00
-        "set transparency=9
+        set guifont=Monaco:h11.00
+        set transparency=2
     elseif has('gui_win32')
         set guifont=Consolas:h8
     endif
@@ -38,7 +37,6 @@ endif
 set guioptions=eg
 
 
-""set foldenable
 ""set foldmethod=syntax
 filetype plugin on
 filetype on
@@ -181,4 +179,4 @@ set foldmarker={,}
 set nobackup
 set nowritebackup
 set noswapfile
-
+set nofoldenable
