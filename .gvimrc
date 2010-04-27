@@ -56,8 +56,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-" PHP FIX
-au BufRead,BufNewFile *.php,*.ctp set noexpandtab
 
 au BufNewFile, BufNewFile * HMBstart
 
@@ -83,29 +81,17 @@ colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
  " allml settings
 let g:allml_global_maps = 1
 let g:HiMtchBrktOn=1
-let g:SCMDiffCommand="/opt/subversion/bin/svn"
+let g:SCMDiffCommand="git"
 
-inoremap <C-B> <ESC>:call PhpDocSingle()<CR>
-nnoremap <C-B> :call PhpDocSingle()<CR>
-vnoremap <C-B> :call PhpDocRange()<CR> 
 
 au BufNewFile, BufRead * :call HMBstart
 
 noremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
 
-" PHP specific fixes
-" highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-autocmd FileType php let php_sql_query=1
-" does exactly that. highlights html inside of php strings
-autocmd FileType php let php_htmlInStrings=1
-" discourages use oh short tags. c'mon its deprecated remember
-autocmd FileType php let php_noShortTags=1
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
 " settings for cake
-au BufNewFile  *.ctp set filetype=php
-au BufRead *.ctp set filetype=php
 
 au BufNewFile  *.md set filetype=mkd
 au BufRead *.md set filetype=mkd
@@ -165,14 +151,6 @@ cmap w!! %!sudo tee > /dev/null %
 function! g:CleanUp()
   %s/^[\ \t]*\n//g
 endfunction
-" marvim settings
-"
-source ~/.vim/plugin/marvim.vim
-let g:marvim_store = '~/.vim/marvim_macros'
-let g:marvim_find_key = "<space>"
-let g:marvim_store_key = "<C-space>"
-
-
 " folding"
 set foldmethod=marker
 set foldmarker={,}
