@@ -52,10 +52,10 @@ set list
 set ruler
 set showcmd
 
-set expandtab
-set tabstop=2
-set shiftwidth=2
 set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
 
 au BufNewFile, BufNewFile * HMBstart
 
@@ -91,15 +91,20 @@ inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
 
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
-" settings for cake
 
+""""""""" "MARKDOWN
 au BufNewFile  *.md set filetype=mkd
 au BufRead *.md set filetype=mkd
+au BufNewFile  *.markdown set filetype=mkd
+au BufRead *.markdown set filetype=mkd
 "
 " set spellcheck for markdown files
 au BufNewFile  *.md set spell
 au BufRead *.md set spell
-
+au BufNewFile  *.markdown set spell
+au BufRead *.markdown set spell
+"
+""""""""""" TOTALLY COOL FUNCTIONS"
 function! s:ListFunctions() " C style
     lvimgrep /function/j %
     lopen
