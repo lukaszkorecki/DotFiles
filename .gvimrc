@@ -51,15 +51,15 @@ set list
 " show indents
 set ruler
 set showcmd
-
+set listchars=tab:\.\ ,trail:-
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
 
+
 au BufNewFile, BufNewFile * HMBstart
 
-set listchars=tab:\.\ ,trail:-
 " temp files
 if has('gui')
     if has('gui_win32')
