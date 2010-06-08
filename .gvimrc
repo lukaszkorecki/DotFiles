@@ -1,5 +1,7 @@
 " window settings
 set fileencoding=utf8
+noremap <C-a> ^
+noremap <C-l> $
 
 set incsearch
 set ignorecase
@@ -34,7 +36,7 @@ if has('gui')
     endif
 endif
 " turn off the scrollbars and the rest of the crap
-set guioptions=eg
+set guioptions=egT
 
 
 ""set foldmethod=syntax
