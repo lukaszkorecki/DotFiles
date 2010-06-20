@@ -75,7 +75,7 @@ endif
 " colorz
 syntax on
 let g:molokai_original=1
-colorscheme molokai "xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme railscasts "xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 
