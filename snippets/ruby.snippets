@@ -418,3 +418,13 @@ snippet tas
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
 	end
+
+snippet it
+	it "should ${1:task description}" do
+		${2}
+	end
+
+snippet describe
+	describe ${1:Object}, "${2:Context}" do
+		${3}
+	end

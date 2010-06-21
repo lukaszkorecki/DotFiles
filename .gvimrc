@@ -74,10 +74,9 @@ if has('gui')
 endif
 " colorz
 syntax on
-let g:molokai_original=1
+" let g:molokai_original=1
 colorscheme railscasts "xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
-
 
 " PLUGINZ
  " allml settings
