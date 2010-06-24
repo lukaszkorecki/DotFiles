@@ -3,6 +3,12 @@ set fileencoding=utf8
 noremap <C-a> ^
 noremap <C-l> $
 
+" Peepopen remap
+noremap <D-S-o> :PeepOpen
+vnoremap <D-S-o> :PeepOpen
+
+inoremap <D-S-o> :PeepOpen
+
 set incsearch
 set ignorecase
 set hlsearch
@@ -29,14 +35,15 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        set guifont=Monaco:h11.00
+        "set guifont=Monaco:h12.00
+        set guifont=Menlo:h12.00
         set transparency=2
     elseif has('gui_win32')
         set guifont=Consolas:h8
     endif
 endif
 " turn off the scrollbars and the rest of the crap
-set guioptions=egT
+set guioptions=eg
 
 
 ""set foldmethod=syntax
@@ -89,6 +96,7 @@ au BufNewFile, BufRead * :call HMBstart
 
 noremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
+
 
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
