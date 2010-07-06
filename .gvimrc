@@ -60,7 +60,6 @@ set list
 " show indents
 set ruler
 set showcmd
-set listchars=tab:\.\ ,trail:-
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
@@ -161,13 +160,46 @@ endfunction
 command! -bar -nargs=* ToDo call s:OpenTodo()
 cmap w!! %!sudo tee > /dev/null %
 
+" tabbing and retabbing function for ruby (or any lang that uses 2 spaces for
+" indents), so that you can see indent levels specified using listchars"
 
+set listchars=tab:\∣\ ,trail:-
+function! s:ShowIndents()
+  let curr = line(".")
+  %s/  /\t/g
+  execute "".curr
+endfunction
+function! s:HideIndents()
+  retab
+endfunction
+
+function! s:ToggleIndents()
+  let g:indents_shown = exists(g:indents_shown) ? g:indents_shown : 0
+  if g:indents_shown == 1
+    retab
+    g:indents_shown = 0
+  else
+    let curr = line(".")
+    %s/  /\t/g
+    execute "".curr
+    g:indents_shown = 1
+  endif
+endfunction
+
+command! -bar -nargs=* IndSh call s:ShowIndents()
+command! -bar -nargs=* IndH call s:HideIndents()
+command! -bar -nargs=* TIn call s:ToggleIndents()
+" end retabbing
+
+" CLEANUP EMPTY LINES WITH WHITESPACE
 function! g:CleanUp()
   %s/^[\ \t]*\n//g
 endfunction
+command! -bar -nargs=* CleanEmptyLines call s:CleanUp()
+
 " folding"
 set foldmethod=marker
-set foldmarker={,}
+set foldmarker=do,end
 set nobackup
 set nowritebackup
 set noswapfile
