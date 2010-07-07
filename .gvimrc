@@ -192,7 +192,7 @@ command! -bar -nargs=* TIn call s:ToggleIndents()
 " end retabbing
 
 " CLEANUP EMPTY LINES WITH WHITESPACE
-function! g:CleanUp()
+function! s:CleanUp()
   %s/^[\ \t]*\n//g
 endfunction
 command! -bar -nargs=* CleanEmptyLines call s:CleanUp()
