@@ -81,7 +81,7 @@ endif
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme strawimodo "railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme BusyBee "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 " PLUGINZ
