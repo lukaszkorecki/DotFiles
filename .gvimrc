@@ -96,6 +96,7 @@ au BufNewFile, BufRead * :call HMBstart
 noremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
 
+noremap <F7> :CommandT<CR>
 
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
