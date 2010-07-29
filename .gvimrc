@@ -37,7 +37,7 @@ if has('gui')
     elseif has('gui_macvim')
         "set guifont=Monaco:h12.00
         set guifont=Menlo:h12.00
-        set transparency=2
+        set transparency=0
     elseif has('gui_win32')
         set guifont=Consolas:h8
     endif
@@ -81,7 +81,7 @@ endif
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme bespin "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 " PLUGINZ
@@ -127,7 +127,7 @@ function! s:ListRubyFunctions() " Ruby style
 endfunction
 command! -bar -narg=0 LD call s:ListRubyFunctions()
 function! s:ListJSFunctions() " js style
-		lvimgrep /\w*:.*function.*{/ %
+    lvimgrep /\w*:.*function.*{/ %
     lvimgrepa /^\sfunction/j %
     lopen
 endfunction
@@ -167,30 +167,27 @@ cmap w!! %!sudo tee > /dev/null %
 set listchars=tab:\∣\ ,trail:-
 function! s:ShowIndents()
   let curr = line(".")
-  %s/  /\t/g
+  %s/^(  )/\t/g
   execute "".curr
+  set noexpandtab
 endfunction
 function! s:HideIndents()
+  set expandtab
   retab
 endfunction
 
-function! s:ToggleIndents()
-  let g:indents_shown = exists(g:indents_shown) ? g:indents_shown : 0
-  if g:indents_shown == 1
-    retab
-    g:indents_shown = 0
-  else
-    let curr = line(".")
-    %s/  /\t/g
-    execute "".curr
-    g:indents_shown = 1
-  endif
-endfunction
 
 command! -bar -nargs=* IndSh call s:ShowIndents()
 command! -bar -nargs=* IndH call s:HideIndents()
-command! -bar -nargs=* TIn call s:ToggleIndents()
 " end retabbing
+" Save    ruby    files with    spaces    instead of    tabs, but when    editing use tabs
+" so    that    listchars can be    seen
+""au  BufNewFile  *.rb  call  s:ShowIndents()
+""au  BufNew  *.rb  call  s:ShowIndents()
+""au  BufRead *.rb  call  s:ShowIndents()
+""
+""au  BufWrite  *.rb  call  s:HideIndents()
+""au  FileWritePre  *.rb  call  s:HideIndents()
 
 " CLEANUP EMPTY LINES WITH WHITESPACE
 function! s:CleanUp()
