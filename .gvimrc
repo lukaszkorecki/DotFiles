@@ -167,11 +167,12 @@ cmap w!! %!sudo tee > /dev/null %
 set listchars=tab:\∣\ ,trail:-
 function! s:ShowIndents()
   let curr = line(".")
-  %s/^(  )/\t/g
+  %s/  /\t/g
   execute "".curr
   set noexpandtab
 endfunction
 function! s:HideIndents()
+  %s/\t/  /g
   set expandtab
   retab
 endfunction
