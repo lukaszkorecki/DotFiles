@@ -81,7 +81,7 @@ endif
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme bespin "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 " PLUGINZ
@@ -122,7 +122,7 @@ command! -bar -narg=0 LF call s:ListFunctions()
 
 
 function! s:ListRubyFunctions() " Ruby style
-    lvimgrep /def/j %
+    lvimgrep /^\s*def/j %
     lopen
 endfunction
 command! -bar -narg=0 LD call s:ListRubyFunctions()
@@ -196,6 +196,11 @@ function! s:CleanUp()
 endfunction
 command! -bar -nargs=* CleanEmptyLines call s:CleanUp()
 
+function! s:CleanTrailing()
+  %s/\s\+$//
+endfunction
+command! -bar -nargs=0 ClTrailing call s:CleanTrailing()
+
 " folding"
 set foldmethod=marker
 set foldmarker=do,end
@@ -203,3 +208,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 set nofoldenable
+
+" disable xrargs for grep.vim
+let Grep_Find_Use_Xargs = 0
