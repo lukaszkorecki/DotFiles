@@ -3,16 +3,39 @@ set fileencoding=utf8
 noremap <C-a> ^
 noremap <C-l> $
 
+" DISABLE ARROWS
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
+
+" make tab key more better
+nmap <tab> v>
+nmap <s-tab> v<
+vmap <tab> >gv
+vmap <s-tab> <gv
+
 " Peepopen remap
 noremap <D-S-o> :PeepOpen
 vnoremap <D-S-o> :PeepOpen
 
 inoremap <D-S-o> :PeepOpen
 
+" important settings
 set incsearch
 set ignorecase
 set hlsearch
 
+set nobackup
+set nowritebackup
+set noswapfile
+set nofoldenable
+
+" status line
 set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
@@ -67,6 +90,7 @@ set expandtab
 
 
 au BufNewFile, BufNewFile * HMBstart
+au BufNewFile, BufRead * :call HMBstart
 
 " temp files
 if has('gui')
@@ -85,18 +109,14 @@ colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn,
 " change background
 
 " PLUGINZ
+" disable xrargs for grep.vim
+let Grep_Find_Use_Xargs = 0
  " allml settings
 let g:allml_global_maps = 1
 let g:HiMtchBrktOn=1
 let g:SCMDiffCommand="git"
 
 
-au BufNewFile, BufRead * :call HMBstart
-
-noremap <F6> :NERDTreeToggle<CR>
-inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
-
-noremap <F7> :CommandT<CR>
 
 let g:surround_45 = "<% \r %>"
 let g:surround_61 = "<%= \r %>"
@@ -113,25 +133,25 @@ au BufRead *.md set spell
 au BufNewFile  *.markdown set spell
 au BufRead *.markdown set spell
 "
+" mappings:
+
+noremap <F6> :NERDTreeToggle<CR>
+inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
+
+noremap <F7> :CommandT<CR>
 """"""""""" TOTALLY COOL FUNCTIONS"
-function! s:ListFunctions() " C style
-    lvimgrep /function/j %
-    lopen
-endfunction
-command! -bar -narg=0 LF call s:ListFunctions()
+command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
+noremap <M-g> :GREP<CR>
 
-
-function! s:ListRubyFunctions() " Ruby style
+function! s:ListRubyFunctions(search)
     lvimgrep /^\s*def/j %
     lopen
+    if a:search != ""
+     execute '/'.a:search
+    endif
 endfunction
-command! -bar -narg=0 LD call s:ListRubyFunctions()
-function! s:ListJSFunctions() " js style
-    lvimgrep /\w*:.*function.*{/ %
-    lvimgrepa /^\sfunction/j %
-    lopen
-endfunction
-command! -bar -narg=0 JF call s:ListJSFunctions()
+command! -bar -narg=* ListDefs call s:ListRubyFunctions(search)
+noremap <C-h> :ListDefs<CR>
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
@@ -140,26 +160,6 @@ endfunction
 command! -bar -narg=0 W call s:SaveAll()
 
 
-function! s:SuperSearch(filetype, what)
-    let command = "lvimgrep /" . a:what . "/j **/*". a:filetype
-    echo command
-    execute command
-    copen
-endfunction
-command! -bar -nargs=* SS call s:SuperSearch(<args>)
-nmap <tab> v>
-nmap <s-tab> v<
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-" Open todo using taskpaper"
-" TODO / FIXME add different taskapaper locations or/and different todo files
-" (work/home/etc)"
-function! s:OpenTodo()
-   sp | e ~/Dropbox/todo.taskpaper
-endfunction
-command! -bar -nargs=* ToDo call s:OpenTodo()
-cmap w!! %!sudo tee > /dev/null %
 
 " tabbing and retabbing function for ruby (or any lang that uses 2 spaces for
 " indents), so that you can see indent levels specified using listchars"
@@ -180,15 +180,7 @@ endfunction
 
 command! -bar -nargs=* IndSh call s:ShowIndents()
 command! -bar -nargs=* IndH call s:HideIndents()
-" end retabbing
-" Save    ruby    files with    spaces    instead of    tabs, but when    editing use tabs
-" so    that    listchars can be    seen
-""au  BufNewFile  *.rb  call  s:ShowIndents()
-""au  BufNew  *.rb  call  s:ShowIndents()
-""au  BufRead *.rb  call  s:ShowIndents()
-""
-""au  BufWrite  *.rb  call  s:HideIndents()
-""au  FileWritePre  *.rb  call  s:HideIndents()
+
 
 " CLEANUP EMPTY LINES WITH WHITESPACE
 function! s:CleanUp()
@@ -201,13 +193,4 @@ function! s:CleanTrailing()
 endfunction
 command! -bar -nargs=0 ClTrailing call s:CleanTrailing()
 
-" folding"
-set foldmethod=marker
-set foldmarker=do,end
-set nobackup
-set nowritebackup
-set noswapfile
-set nofoldenable
 
-" disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 0
