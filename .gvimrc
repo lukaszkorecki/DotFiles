@@ -1,7 +1,7 @@
 " window settings
 set fileencoding=utf8
 noremap <C-a> ^
-noremap <C-l> $
+noremap <C-e> $
 imap jj <Esc>
 
 " DISABLE ARROWS
@@ -105,7 +105,7 @@ endif
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme BusyBee "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme BlackboardBlack "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 " PLUGINZ
