@@ -2,6 +2,7 @@
 set fileencoding=utf8
 noremap <C-a> ^
 noremap <C-l> $
+imap jj <Esc>
 
 " DISABLE ARROWS
 inoremap  <Up>     <NOP>
@@ -22,7 +23,6 @@ vmap <s-tab> <gv
 " Peepopen remap
 noremap <D-S-o> :PeepOpen
 vnoremap <D-S-o> :PeepOpen
-
 inoremap <D-S-o> :PeepOpen
 
 " important settings
@@ -105,7 +105,7 @@ endif
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme BusyBee "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 " change background
 
 " PLUGINZ
