@@ -2,7 +2,10 @@
 set fileencoding=utf8
 noremap <C-a> ^
 noremap <C-e> $
-imap jj <Esc>
+
+ino jj <esc>
+cno jj <c-c>
+
 map tt <C-w>
 
 " DISABLE ARROWS
@@ -14,6 +17,13 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
 
 " make tab key more better
 nmap <tab> v>
@@ -144,15 +154,17 @@ noremap <F7> :CommandT<CR>
 command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 noremap <M-g> :GREP<CR>
 
-function! s:ListRubyFunctions(search)
+function! s:ListRubyFunctions()
     lvimgrep /^\s*def/j %
     lopen
-    if a:search != ""
-     execute '/'.a:search
-    endif
 endfunction
-command! -bar -narg=* ListDefs call s:ListRubyFunctions(search)
-noremap <C-h> :ListDefs<CR>
+command! -bar -narg=* ListDefs call s:ListRubyFunctions()
+
+function! s:GotoRubyFunc()
+    execute 'lvimgrep /def '.expand("<cword>").'/ **/*.rb'
+endfunction
+command! -bar -narg=* GotoDef call s:GotoRubyFunc()
+
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
