@@ -19,3 +19,6 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = http://github.com/vim-scripts/grep.vim.git
+[submodule "bundle/autoclose"]
+	path = bundle/autoclose
+	url = http://github.com/Townk/vim-autoclose.git
