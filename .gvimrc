@@ -1,5 +1,6 @@
 " PATHOGENIC
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 " window settings
 set fileencoding=utf8
@@ -62,7 +63,7 @@ colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn,
 
 
 " display improvements
-set list
+" set list
 " show indents
 set ruler
 set showcmd
