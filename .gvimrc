@@ -1,3 +1,7 @@
+" PATHOGENIC
+call pathogen#runtime_append_all_bundles()
+
+
 " window settings
 set fileencoding=utf8
 noremap <C-a> ^
