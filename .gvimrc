@@ -4,6 +4,10 @@ call pathogen#runtime_append_all_bundles()
 
 " window settings
 set fileencoding=utf8
+filetype plugin on
+filetype indent on
+filetype on
+
 noremap <C-a> ^
 noremap <C-e> $
 
@@ -85,9 +89,6 @@ set guioptions=eg
 
 
 ""set foldmethod=syntax
-filetype plugin on
-filetype on
-
 " autoindenting
 set cindent
 set smartindent
