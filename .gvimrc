@@ -63,6 +63,7 @@ colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn,
 
 " display improvements
 set list
+set lcs=tab:>-,trail:-
 " show indents
 set ruler
 set showcmd
@@ -165,4 +166,5 @@ function! s:CleanTrailing()
 endfunction
 command! -bar -nargs=0 ClTrailing call s:CleanTrailing()
 
-
+" tags:
+set tags=./tags
