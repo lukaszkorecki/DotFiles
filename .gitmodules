@@ -22,6 +22,3 @@
 [submodule "bundle/autoclose"]
 	path = bundle/autoclose
 	url = http://github.com/Townk/vim-autoclose.git
-[submodule "bundle/taglist"]
-	path = bundle/taglist
-	url = http://github.com/vim-scripts/taglist.vim.git
