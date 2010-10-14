@@ -111,11 +111,6 @@ vmap <s-tab> <gv
 " PLUGINZ
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
- " allml settings
-let g:allml_global_maps = 1
-let g:HiMtchBrktOn=1
-let g:SCMDiffCommand="git"
-
 
 
 """"""""" "MARKDOWN
@@ -137,7 +132,6 @@ noremap <M-g> :GREP<CR>
 noremap <F6> :NERDTreeToggle<CR>
 inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
 
-noremap <F7> :CommandT<CR>
 """"""""""" TOTALLY COOL FUNCTIONS"
 
 function! s:ListRubyFunctions()
@@ -157,9 +151,6 @@ function! s:SaveAll()
     w | :Error
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
-
-
-
 
 function! s:CleanTrailing()
   %s/\s\+$//
