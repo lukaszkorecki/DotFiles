@@ -1,6 +1,6 @@
 " PATHOGENIC
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#helptags()
 
 " window settings
 set fileencoding=utf8
