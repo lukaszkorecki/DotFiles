@@ -131,8 +131,7 @@ au BufRead *.markdown set spell
 command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
 noremap <M-g> :GREP<CR>
 
-noremap <F6> :NERDTreeToggle<CR>
-inoremap <F6> <ESC>:call NERDTreeToggle()<CR>
+noremap <Leader>n :NERDTreeToggle<CR>
 
 """"""""""" TOTALLY COOL FUNCTIONS"
 
