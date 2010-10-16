@@ -127,9 +127,6 @@ au BufRead *.md set spell
 au BufNewFile  *.markdown set spell
 au BufRead *.markdown set spell
 "
-" mappings:
-command! GREP :execute 'vimgrep /'.expand('<cword>').'/gj '.expand('%') | copen
-noremap <M-g> :GREP<CR>
 
 noremap <Leader>n :NERDTreeToggle<CR>
 
