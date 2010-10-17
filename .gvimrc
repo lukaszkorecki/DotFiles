@@ -54,7 +54,7 @@ if has('gui')
 endif
 
 " turn off the scrollbars and the rest of the crap
-set guioptions=eg
+set guioptions=ac
 
 " colorz
 syntax on
@@ -150,10 +150,14 @@ function! s:SaveAll()
 endfunction
 command! -bar -narg=0 W call s:SaveAll()
 
-function! s:CleanTrailing()
-  %s/\s\+$//
-endfunction
-command! -bar -nargs=0 ClTrailing call s:CleanTrailing()
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
 
 " tags:
 set tags=./tags
