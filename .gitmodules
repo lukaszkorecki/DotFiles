@@ -24,4 +24,4 @@
 	url = http://github.com/Townk/vim-autoclose.git
 [submodule "snippets"]
 	path = snippets
-	url = http://github.com/scrooloose/snipmate-snippets.git
+	url = http://github.com/lukaszkorecki/snipmate-snippets.git
