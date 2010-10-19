@@ -129,6 +129,7 @@ au BufRead *.markdown set spell
 "
 
 noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>g :GundoToggle<CR>
 
 """"""""""" TOTALLY COOL FUNCTIONS"
 
