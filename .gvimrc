@@ -9,6 +9,8 @@ filetype indent on
 filetype on
 
 
+" set line length for all files at 78
+autocmd FileType text setlocal textwidth=78
 
 " important settings
 set incsearch
