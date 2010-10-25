@@ -130,6 +130,15 @@ au BufRead *.md set spell
 au BufNewFile  *.markdown set spell
 au BufRead *.markdown set spell
 "
+" non ruby files
+
+au BufNewFile  Gemfile set filetype=ruby
+au BufRead Gemfile set filetype=ruby
+au BufNewFile  Gemfile.lock set filetype=ruby
+au BufRead Gemfile.lock set filetype=ruby
+
+au BufNewFile  Rakefile set filetype=ruby
+au BufRead Rakefile set filetype=ruby
 
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>g :GundoToggle<CR>
