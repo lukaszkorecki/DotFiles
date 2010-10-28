@@ -19,12 +19,12 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = http://github.com/vim-scripts/grep.vim.git
-[submodule "bundle/autoclose"]
-	path = bundle/autoclose
-	url = http://github.com/Townk/vim-autoclose.git
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:lukaszkorecki/snipmate-snippets.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "bundle/delimitmate"]
+	path = bundle/delimitmate
+	url = http://github.com/Raimondi/delimitMate.git

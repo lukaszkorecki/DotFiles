@@ -62,7 +62,7 @@ set guioptions=ac
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme molokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme sorceror "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " display improvements
