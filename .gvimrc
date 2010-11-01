@@ -62,7 +62,7 @@ set guioptions=ac
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme sorceror "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme Monokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " display improvements
@@ -174,3 +174,23 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " tags:
 set tags=./tags
+
+fun! s:ReloadSnippets()
+  execute ReloadAllSnippets()
+endfun
+command -bar -narg=0 RelSni call s:ReloadSnippets()
+
+" Shell command output piping to a new split
+
+function! s:RunSpecForCurrentFile()
+  let res = system('spec '.expand('%'))
+  let tfile = tempname()
+  vnew
+  e tfile
+  put = res
+  w
+  set ro
+endfunction
+
+
+command! -bar -narg=0 RSpec call s:RunSpecForCurrentFile()
