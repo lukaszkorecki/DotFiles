@@ -183,14 +183,9 @@ command -bar -narg=0 RelSni call s:ReloadSnippets()
 " Shell command output piping to a new split
 
 function! s:RunSpecForCurrentFile()
-  let res = system('spec '.expand('%'))
-  let tfile = tempname()
-  vnew
-  e tfile
-  put = res
-  w
-  set ro
+  let formatter_path = expand('~').'/.vim/rspec_formatter.rb'
+  cgetexpr system('spec --require '.formatter_path.' --format VimForm '.expand('%'))
+  set errorformat=
+  copen
 endfunction
-
-
-command! -bar -narg=0 RSpec call s:RunSpecForCurrentFile()
+command! -bar -narg=0 Spec call s:RunSpecForCurrentFile()
