@@ -25,7 +25,6 @@ set nofoldenable
 
 " status line
     set statusline=
-    set statusline+=%{VimBuddy()}
     set statusline+=%f\ %2*%m\ %1*%h
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -63,7 +62,7 @@ set guioptions=ac
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme Monokai "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme lilypink "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " display improvements

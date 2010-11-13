@@ -31,3 +31,6 @@
 [submodule "bundle/rainbow-para"]
 	path = bundle/rainbow-para
 	url = https://github.com/vim-scripts/Rainbow-Parenthsis-Bundle.git
+[submodule "bundle/lilypink"]
+	path = bundle/lilypink
+	url = https://github.com/vim-scripts/lilypink.git
