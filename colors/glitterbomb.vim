@@ -10,7 +10,7 @@ endif
 
 let g:colors_name = "GlitterBomb"
 
-hi Cursor  guifg=NONE guibg=#333333 gui=NONE
+hi Cursor  guifg=NONE guibg=#ff0000 gui=NONE
 hi Visual  guifg=NONE guibg=#5e5d5d gui=NONE
 hi CursorLine  guifg=NONE guibg=#282828 gui=NONE
 hi CursorColumn  guifg=NONE guibg=#242424 gui=NONE
