@@ -62,7 +62,7 @@ set guioptions=ac
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme railscasts2_hack "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme glitterbomb "railscasts2_hack strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " display improvements
@@ -188,4 +188,12 @@ function! s:RunSpecForCurrentFile()
   set errorformat=
   copen
 endfunction
-command! -bar -narg=0 Spec call s:RunSpecForCurrentFile()
+
+fun! GetSnipsInCurrentScope()
+  let snips = {}
+  for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
+    call extend(snips, get(s:snippets, scope, {}), 'keep')
+    call extend(snips, get(s:multi_snips, scope, {}), 'keep')
+  endfor
+  return snips
+endf
