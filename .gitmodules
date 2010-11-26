@@ -34,3 +34,6 @@
 [submodule "bundle/lilypink"]
 	path = bundle/lilypink
 	url = https://github.com/vim-scripts/lilypink.git
+[submodule "bundle/conqueshell"]
+	path = bundle/conqueshell
+	url = https://github.com/vim-scripts/Conque-Shell.git
