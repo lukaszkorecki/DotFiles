@@ -175,10 +175,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " tags:
 set tags=./tags
 
-fun! s:ReloadSnippets()
-  execute ReloadAllSnippets()
-endfun
-command -bar -narg=0 RelSni call s:ReloadSnippets()
+"command -bar -narg=0 RelSni call ReloadAllSnippets()
 
 " Shell command output piping to a new split
 
@@ -189,3 +186,15 @@ function! s:RunSpecForCurrentFile()
   copen
 endfunction
 command! -bar -narg=0 Spec call s:RunSpecForCurrentFile()
+
+
+function! SplitMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  vnew
+  silent put=message
+  %s/\r//
+  set nomodified
+endfunction
+command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
