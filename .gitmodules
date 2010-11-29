@@ -37,3 +37,9 @@
 [submodule "bundle/autocompletepop"]
 	path = bundle/autocompletepop
 	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "bundle/conqueshell"]
+	path = bundle/conqueshell
+	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
