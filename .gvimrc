@@ -57,7 +57,7 @@ if has('gui')
 endif
 
 " turn off the scrollbars and the rest of the crap
-set guioptions=ac
+set guioptions=eg
 
 " colorz
 syntax on
