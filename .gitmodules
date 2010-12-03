@@ -43,3 +43,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/specky"]
+	path = bundle/specky
+	url = https://github.com/vim-scripts/Specky.git

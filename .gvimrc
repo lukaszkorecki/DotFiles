@@ -175,28 +175,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " tags:
 set tags=./tags
 
-"command -bar -narg=0 RelSni call ReloadAllSnippets()
-
-" Shell command output piping to a new split
-
-function! s:RunSpecForCurrentFile()
-  let formatter_path = expand('~').'/.vim/rspec_formatter.rb'
-  cgetexpr system('spec --require '.formatter_path.' --format VimForm '.expand('%'))
-  set errorformat=
-  copen
-endfunction
-
-fun! GetSnipsInCurrentScope()
-  let snips = {}
-  for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
-    call extend(snips, get(s:snippets, scope, {}), 'keep')
-    call extend(snips, get(s:multi_snips, scope, {}), 'keep')
-  endfor
-  return snips
-endf
-command! -bar -narg=0 Spec call s:RunSpecForCurrentFile()
-
-
+" Any command output piping to a new split
 function! SplitMessage(cmd)
   redir => message
   silent execute a:cmd
