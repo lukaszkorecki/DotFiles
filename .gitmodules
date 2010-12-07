@@ -16,9 +16,6 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = http://github.com/vim-scripts/grep.vim.git
-[submodule "snippets"]
-	path = snippets
-	url = git@github.com:lukaszkorecki/snipmate-snippets.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
@@ -28,6 +25,6 @@
 [submodule "bundle/autocompletepop"]
 	path = bundle/autocompletepop
 	url = https://github.com/vim-scripts/AutoComplPop.git
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "snippets"]
+	path = snippets
+	url = git@github.com:lukaszkorecki/snipmate-snippets.git
