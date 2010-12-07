@@ -85,7 +85,7 @@ noremap <C-e> $
 ino jj <esc>
 cno jj <c-c>
 
-map tt <C-w>
+map ee <C-w>
 
 " DISABLE ARROWS
 inoremap  <Up>     <NOP>
