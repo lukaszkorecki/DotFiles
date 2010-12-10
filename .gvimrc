@@ -196,8 +196,10 @@ function! s:RunRspec(mode)
   if a:mode == 'line'
     let line_num = line(".")
     let res =  system('spec -l '.line_num.' '.expand('%'))
-  else
+  elseif a:mode == 'file'
     let res = system('spec '.expand('%'))
+  elseif a:mode == 'all'
+    let res = system('RAILS_ENV=test rake spec')
   endif
   vnew
   let e_file = tempname()
@@ -211,3 +213,4 @@ endfunction
 
 command! -bar -narg=0 RSpecF call s:RunRspec('file')
 command! -bar -narg=0 RSpecL call s:RunRspec('line')
+command! -bar -narg=0 RSpecAll call s:RunRspec('all')
