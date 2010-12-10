@@ -62,7 +62,7 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme glitterbomb "railscasts2_hack strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme railscasts2_hack "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
 
 
 " display improvements
@@ -186,3 +186,28 @@ function! SplitMessage(cmd)
   set nomodified
 endfunction
 command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
+
+
+" RSPEC FUNCTIONS
+" RspecF - current file
+" RspecL - current example
+
+function! s:RunRspec(mode)
+  if a:mode == 'line'
+    let line_num = line(".")
+    let res =  system('spec -l '.line_num.' '.expand('%'))
+  else
+    let res = system('spec '.expand('%'))
+  endif
+  vnew
+  let e_file = tempname()
+  silent execute 'e '.e_file
+  put = res
+  silent w | bd
+  set errorformat=%f:%l:
+  silent execute 'cgetfile '.e_file
+  copen
+endfunction
+
+command! -bar -narg=0 RSpecF call s:RunRspec('file')
+command! -bar -narg=0 RSpecL call s:RunRspec('line')
