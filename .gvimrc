@@ -1,8 +1,8 @@
-" PATHOGENIC
+"" Pathogen
 call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 
-" window settings
+"" Global settings
 set fileencoding=utf8
 filetype plugin on
 filetype indent on
@@ -24,14 +24,14 @@ set noswapfile
 set nofoldenable
 
 " status line
-    set statusline=
-    set statusline+=%f\ %2*%m\ %1*%h
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%{fugitive#statusline()}
-    set statusline+=%*
-    set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
-    set laststatus=2
+set statusline=
+set statusline+=%f\ %2*%m\ %1*%h
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
+set statusline+=%*
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
+set laststatus=2
 
 set nocompatible
 
@@ -62,7 +62,7 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme railscasts2_hack "strawimodo railscasts xoria256  molokai, zenburn, darkburn, vibrantink
+colorscheme  chance-of-storm
 
 
 " display improvements
@@ -82,12 +82,14 @@ set expandtab
 noremap <C-a> ^
 noremap <C-e> $
 
+" better esc
 ino jj <esc>
 cno jj <c-c>
 
+" better buffer/window/tab navigation
 map ee <C-w>
 
-" DISABLE ARROWS
+" disable arrows
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -110,28 +112,21 @@ nmap <s-tab> v<
 vmap <tab> >gv
 vmap <s-tab> <gv
 
+"" Filetype specific settings
 
-" change background
-
-" PLUGINZ
-" disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 0
-
-
-""""""""" "MARKDOWN
+" markdown filetype
 au BufNewFile  *.md set filetype=mkd
 au BufRead *.md set filetype=mkd
 au BufNewFile  *.markdown set filetype=mkd
 au BufRead *.markdown set filetype=mkd
-"
+
 " set spellcheck for markdown files
 au BufNewFile  *.md set spell
 au BufRead *.md set spell
 au BufNewFile  *.markdown set spell
 au BufRead *.markdown set spell
-"
-" non ruby files
 
+" non ruby files
 au BufNewFile  Gemfile set filetype=ruby
 au BufRead Gemfile set filetype=ruby
 au BufNewFile  Gemfile.lock set filetype=ruby
@@ -140,22 +135,16 @@ au BufRead Gemfile.lock set filetype=ruby
 au BufNewFile  Rakefile set filetype=ruby
 au BufRead Rakefile set filetype=ruby
 
+"" Plugin settings
+
+" disable xrargs for grep.vim
+let Grep_Find_Use_Xargs = 0
+
 noremap <Leader>n :NERDTreeToggle<CR>
+
 noremap <Leader>g :GundoToggle<CR>
 
-""""""""""" TOTALLY COOL FUNCTIONS"
-
-function! s:ListRubyFunctions()
-    lvimgrep /^\s*def/j %
-    lopen
-endfunction
-command! -bar -narg=* ListDefs call s:ListRubyFunctions()
-
-function! s:GotoRubyFunc()
-    execute 'lvimgrep /def '.expand("<cword>").'/ **/*.rb'
-endfunction
-command! -bar -narg=* GotoDef call s:GotoRubyFunc()
-
+"" Functions
 
 " save all command under :W, possibly add new stuff to it
 function! s:SaveAll()
@@ -172,9 +161,6 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 
-" tags:
-set tags=./tags
-
 " Any command output piping to a new split
 function! SplitMessage(cmd)
   redir => message
@@ -186,31 +172,3 @@ function! SplitMessage(cmd)
   set nomodified
 endfunction
 command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
-
-
-" RSPEC FUNCTIONS
-" RspecF - current file
-" RspecL - current example
-
-function! s:RunRspec(mode)
-  if a:mode == 'line'
-    let line_num = line(".")
-    let res =  system('spec -l '.line_num.' '.expand('%'))
-  elseif a:mode == 'file'
-    let res = system('spec '.expand('%'))
-  elseif a:mode == 'all'
-    let res = system('RAILS_ENV=test rake spec')
-  endif
-  vnew
-  let e_file = tempname()
-  silent execute 'e '.e_file
-  put = res
-  silent w | bd
-  set errorformat=%f:%l:
-  silent execute 'cgetfile '.e_file
-  copen
-endfunction
-
-command! -bar -narg=0 RSpecF call s:RunRspec('file')
-command! -bar -narg=0 RSpecL call s:RunRspec('line')
-command! -bar -narg=0 RSpecAll call s:RunRspec('all')
