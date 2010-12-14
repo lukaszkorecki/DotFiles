@@ -28,3 +28,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git@github.com:lukaszkorecki/snipmate-snippets.git
+[submodule "bundle/mgutz-colors"]
+	path = bundle/mgutz-colors
+	url = https://github.com/mgutz/vim-colors.git
