@@ -24,17 +24,25 @@ let g:loaded_autoload_ruby_tools = 1
 
 " Lists functions/methods in current file
 function! g:ListRubyFunctions()
-  let def_cmd = 'grep -wnH def '.expand("%")
+  let s:file_name = expand("%")
+  let def_cmd = 'grep -wnH def '.s:file_name
   set errorformat=%f:%l:%m
   lexpr system(def_cmd)
-  " use :%s/expand('%') to replace content"
-  " TODO make it appear on the right
-  lopen
+
+  au BufReadPost quickfix  setlocal modifiable
+    \ | silent exe '%s/'.s:file_name.'//g'
+    \ | silent exe '%s/def //g'
+    \ | setlocal nomodifiable
+  vertical lopen
 endfunction
 
 " Searches for function/method definition under the cursor
 function! g:GotoRubyFunc()
-    execute 'lvimgrep /def '.expand("<cword>").'/ **/*.rb'
+  let find_command = 'find . -type f | grep .rb  | xargs grep -n def\ '.expand('<cword>')
+  echo(find_command)
+  set errorformat=%f:%l:%m
+  lgetexpr system(find_command)
+  rightb lopen
 endfunction
 
 
