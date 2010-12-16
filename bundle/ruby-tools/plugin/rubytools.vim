@@ -25,15 +25,18 @@ let g:loaded_autoload_ruby_tools = 1
 " Lists functions/methods in current file
 function! g:ListRubyFunctions()
   let s:file_name = expand("%")
-  let def_cmd = 'grep -wnH def '.s:file_name
-  set errorformat=%f:%l:%m
-  lexpr system(def_cmd)
 
-  au BufReadPost quickfix  setlocal modifiable
-    \ | silent exe '%s/'.s:file_name.'//g'
-    \ | silent exe '%s/def //g'
-    \ | setlocal nomodifiable
+  exe 'lvimgrep /def\ / ' . s:file_name
+
   vertical lopen
+  vertical resize 50
+
+  set modifiable
+  silent exe '%s$' . s:file_name . '$$g'
+  silent exe '%s/def //g'
+  silent exe '%s$ col \d*$$g'
+  w tempname()
+  set nomodifiable
 endfunction
 
 " Searches for function/method definition under the cursor
