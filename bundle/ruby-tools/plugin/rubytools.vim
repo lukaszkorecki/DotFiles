@@ -26,17 +26,18 @@ let g:loaded_autoload_ruby_tools = 1
 function! g:ListRubyFunctions()
   let s:file_name = expand("%")
 
-  exe 'lvimgrep /def\ / ' . s:file_name
+  exe 'lvimgrep =def = ' . s:file_name
 
   vertical lopen
   vertical resize 50
 
   set modifiable
-  silent exe '%s$' . s:file_name . '$$g'
+  silent exe '%s=' . s:file_name . '==g'
   silent exe '%s/def //g'
   silent exe '%s$ col \d*$$g'
-  w tempname()
+  setlocal nomodified
   set nomodifiable
+  set readonly
 endfunction
 
 " Searches for function/method definition under the cursor
