@@ -144,6 +144,7 @@ noremap <Leader>n :NERDTreeToggle<CR>
 
 noremap <Leader>g :GundoToggle<CR>
 
+noremap <Leader>l :RRSpecL<CR>
 "" Functions
 
 " save all command under :W, possibly add new stuff to it

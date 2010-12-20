@@ -26,18 +26,19 @@ let g:loaded_autoload_ruby_tools = 1
 function! g:ListRubyFunctions()
   let s:file_name = expand("%")
 
-  exe 'lvimgrep =def = ' . s:file_name
+  exe 'vimgrep =def = ' . s:file_name
 
-  vertical lopen
+  vertical copen
   vertical resize 50
 
-  set modifiable
+  setlocal modifiable
   silent exe '%s=' . s:file_name . '==g'
-  silent exe '%s/def //g'
-  silent exe '%s$ col \d*$$g'
+  silent exe '%s=def ==g'
+  silent exe '%s=|.*|==g'
   setlocal nomodified
-  set nomodifiable
-  set readonly
+  setlocal nomodifiable
+  setlocal nonumber
+  setlocal readonly
 endfunction
 
 " Searches for function/method definition under the cursor
@@ -60,6 +61,7 @@ endfunction
 " - line - current context or current example (cursor within context {} or it   {} block
 " - all - runs whole test case
 function! g:RunRspec(mode)
+  "current line
   if a:mode == 'line'
     let line_num = line(".")
     let res =  system('spec -l '.line_num.' '.expand('%'))
