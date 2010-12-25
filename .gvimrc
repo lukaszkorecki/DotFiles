@@ -114,6 +114,14 @@ vmap <s-tab> <gv
 
 "" Filetype specific settings
 
+" json as javascript
+au BufNewFile  *.json set filetype=javascript
+au BufRead *.json set filetype=javascript
+
+" mustache templates
+au BufNewFile  *.mustache set filetype=mustache
+au BufRead *.mustache set filetype=mustache
+
 " markdown filetype
 au BufNewFile  *.md set filetype=mkd
 au BufRead *.md set filetype=mkd
