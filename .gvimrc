@@ -62,12 +62,16 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  chance-of-storm
+colorscheme  railscasts2_hack
+
 
 
 " display improvements
 set list
-set lcs=tab:>-,trail:-
+" Shortcut to rapidly toggle `set list`
+nmap <leader>s :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 " show indents
 set ruler
