@@ -86,3 +86,41 @@ command! -bar -narg=* RRListDefs call g:ListRubyFunctions()
 command! -bar -narg=0 RRSpecF call g:RunRspec('file')
 command! -bar -narg=0 RRSpecL call g:RunRspec('line')
 command! -bar -narg=0 RRSpecAll call g:RunRspec('all')
+
+" shows expanded tabs (2 spaces) using
+" vim's listchars (which only work with
+" hard tabs) but still saves spaces instead of tabs
+" needds following settings:
+" set softtabstop=2
+" set shiftwidth=2
+" set tabstop=2
+" set expandtab
+" set list
+" set listchars=tab:▸\ ,eol:.
+" but it can be made more flexible
+function! g:ShowIndents()
+  let line_num = line(".")
+  setlocal noexpandtab
+  " FIXME this regex needs to work only with
+  " something like ^(\ \ )*"
+  silent exe '%s=  =\t=g'
+  setlocal nomodified
+  exe "goto ".line_num
+endfunction
+
+function! g:HideIndents()
+  let line_num = line(".")
+  setlocal expandtab
+  retab
+  setlocal nomodified
+  exe "goto ".line_num
+endfunction
+
+"auto commands
+" autocmd BufWritePre *.rb call g:HideIndents()
+" autocmd BufWritePost *.rb call g:ShowIndents()
+" autocmd BufRead *.rb call g:ShowIndents()
+" autocmd BufNewFile *.rb call g:ShowIndents()
+
+command! -bar -narg=* RRShowI call g:ShowIndents()
+command! -bar -narg=* RRHideI call g:HideIndents()

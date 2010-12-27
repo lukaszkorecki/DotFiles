@@ -71,7 +71,7 @@ set list
 " Shortcut to rapidly toggle `set list`
 nmap <leader>s :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:⋅
 
 " show indents
 set ruler
