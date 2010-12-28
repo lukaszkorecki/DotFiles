@@ -40,3 +40,6 @@
 [submodule "bundle/railscasts2_hack"]
 	path = bundle/railscasts2_hack
 	url = git@github.com:lukaszkorecki/RailsCastsThemeHack.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = https://github.com/edsono/vim-matchit.git
