@@ -46,3 +46,6 @@
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
+[submodule "bundle/ruby-refactoring"]
+	path = bundle/ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
