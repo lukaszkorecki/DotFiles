@@ -185,3 +185,12 @@ function! SplitMessage(cmd)
   set nomodified
 endfunction
 command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
+
+fun! s:SaveHamlToHtml()
+  w | :Error
+  let f=expand('%')
+  let new_name = substitute(f,'.html','.haml','g')
+  let cmd='haml ' . f . ' > '.new_name
+  silent exe system(cmd)
+endf
+command! -nargs=0  -bar SaveHaml call s:SaveHamlToHtml()
