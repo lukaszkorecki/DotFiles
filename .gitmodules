@@ -49,3 +49,6 @@
 [submodule "bundle/ruby-refactoring"]
 	path = bundle/ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/indent-guides"]
+	path = bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git

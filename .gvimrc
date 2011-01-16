@@ -67,11 +67,11 @@ colorscheme  railscasts2_hack
 
 
 " display improvements
-set list
-" Shortcut to rapidly toggle `set list`
-nmap <leader>s :set list!<CR>
-" Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:⋅
+" set list
+" " Shortcut to rapidly toggle `set list`
+" nmap <leader>s :set list!<CR>
+" " Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:⋅
 
 " show indents
 set ruler
@@ -80,7 +80,6 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
-
 
 " nice mappings
 noremap <C-a> ^
@@ -147,7 +146,11 @@ au BufRead Gemfile.lock set filetype=ruby
 au BufNewFile  Rakefile set filetype=ruby
 au BufRead Rakefile set filetype=ruby
 
+
 "" Plugin settings
+
+" indent guides
+exec 'IndentGuidesEnable'
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
