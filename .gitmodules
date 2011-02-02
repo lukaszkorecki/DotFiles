@@ -52,3 +52,6 @@
 [submodule "bundle/indent-guides"]
 	path = bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/js-extra"]
+	path = bundle/js-extra
+	url = https://github.com/vim-scripts/Javascript-syntax-with-Ajax-Support.git
