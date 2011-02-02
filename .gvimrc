@@ -62,7 +62,9 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  railscasts2_hack
+colorscheme  molokai
+
+IndentGuidesEnable
 
 
 
@@ -150,7 +152,7 @@ au BufRead Rakefile set filetype=ruby
 "" Plugin settings
 
 " indent guides
-exec 'IndentGuidesEnable'
+" exec 'IndentGuidesEnable'
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
