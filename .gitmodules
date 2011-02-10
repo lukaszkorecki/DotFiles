@@ -55,3 +55,9 @@
 [submodule "bundle/js-extra"]
 	path = bundle/js-extra
 	url = https://github.com/vim-scripts/Javascript-syntax-with-Ajax-Support.git
+[submodule "bundle/cobaltish"]
+	path = bundle/cobaltish
+	url = https://github.com/dterei/VimCobaltColourScheme.git
+[submodule "bundle/getafe"]
+	path = bundle/getafe
+	url = https://github.com/larssmit/Getafe.git
