@@ -63,9 +63,8 @@ syntax on
 " let g:molokai_original=1
 colorscheme  molokai
 
-IndentGuidesEnable
 
-
+au BufNewFile,BufRead * call indent_guides#enable()
 
 " display improvements
 " set list
@@ -119,33 +118,35 @@ vmap <s-tab> <gv
 "" Filetype specific settings
 
 " json as javascript
-au BufNewFile  *.json set filetype=javascript
-au BufRead *.json set filetype=javascript
+au BufNewFile,BufRead  *.json set filetype=javascript
 
 " mustache templates
-au BufNewFile  *.mustache set filetype=mustache
-au BufRead *.mustache set filetype=mustache
+au BufNewFile,BufRead  *.mustache set filetype=mustache
 
 " markdown filetype
-au BufNewFile  *.md set filetype=mkd
-au BufRead *.md set filetype=mkd
-au BufNewFile  *.markdown set filetype=mkd
-au BufRead *.markdown set filetype=mkd
+au BufNewFile,BufRead  *.md set filetype=markdown
+au BufNewFile,BufRead  *.mkd set filetype=markdown
+au BufNewFile,BufRead  *.markdown set filetype=markdown
 
 " set spellcheck for markdown files
-au BufNewFile  *.md set spell
-au BufRead *.md set spell
-au BufNewFile  *.markdown set spell
-au BufRead *.markdown set spell
+au BufNewFile,BufRead  *.md set spell
+au BufNewFile,BufRead  *.mkd set spell
+au BufNewFile,BufRead  *.markdown set spell
 
 " non ruby files
-au BufNewFile  Gemfile set filetype=ruby
-au BufRead Gemfile set filetype=ruby
-au BufNewFile  Gemfile.lock set filetype=ruby
-au BufRead Gemfile.lock set filetype=ruby
+au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 
-au BufNewFile  Rakefile set filetype=ruby
-au BufRead Rakefile set filetype=ruby
+au BufNewFile,BufRead Rakefile set filetype=ruby
+
+" Python specific settings
+let NERDTreeIgnore = ['\.pyc$', '\~$']
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set smarttab
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set smartindent
 
 
 "" Plugin settings
