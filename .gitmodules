@@ -58,6 +58,3 @@
 [submodule "bundle/cobaltish"]
 	path = bundle/cobaltish
 	url = https://github.com/dterei/VimCobaltColourScheme.git
-[submodule "bundle/getafe"]
-	path = bundle/getafe
-	url = https://github.com/larssmit/Getafe.git

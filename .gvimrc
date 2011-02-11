@@ -144,9 +144,7 @@ let NERDTreeIgnore = ['\.pyc$', '\~$']
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set smarttab
 au BufNewFile,BufRead *.py set expandtab
-au BufNewFile,BufRead *.py set smartindent
 
 
 "" Plugin settings
