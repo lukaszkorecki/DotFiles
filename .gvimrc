@@ -61,7 +61,7 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  molokai
+colorscheme  rubyblue
 
 
 au BufNewFile,BufRead * call indent_guides#enable()
