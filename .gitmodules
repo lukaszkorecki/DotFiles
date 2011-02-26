@@ -58,3 +58,6 @@
 [submodule "bundle/cobaltish"]
 	path = bundle/cobaltish
 	url = https://github.com/dterei/VimCobaltColourScheme.git
+[submodule "bundle/rubyblue"]
+	path = bundle/rubyblue
+	url = https://github.com/jlong/rubyblue.git
