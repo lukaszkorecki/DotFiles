@@ -61,3 +61,9 @@
 [submodule "bundle/rubyblue"]
 	path = bundle/rubyblue
 	url = https://github.com/jlong/rubyblue.git
+[submodule "bundle/extradite"]
+	path = bundle/extradite
+	url = https://github.com/int3/vim-extradite.git
+[submodule "bundle/taglist"]
+	path = bundle/taglist
+	url = https://github.com/vim-scripts/taglist.vim.git

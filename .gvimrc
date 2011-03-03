@@ -61,7 +61,7 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  rubyblue
+colorscheme  molokai
 
 
 au BufNewFile,BufRead * call indent_guides#enable()
@@ -160,6 +160,7 @@ noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>g :GundoToggle<CR>
 
 noremap <Leader>l :RRSpecL<CR>
+noremap <Leader>t :TlistToggle<CR>
 "" Functions
 
 " save all command under :W, possibly add new stuff to it
