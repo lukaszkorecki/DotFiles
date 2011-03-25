@@ -41,6 +41,7 @@ set bs=2
 " highlitt current line and add line numbers
 set cursorline
 set number
+set showbreak=↪
 
 " yummy
 set antialias
