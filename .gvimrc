@@ -61,8 +61,20 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  mustang
+set background=dark
+colorscheme  solarized
 
+function! ToggleBackground()
+    if (w:solarized_style=="dark")
+    let w:solarized_style="light"
+    colorscheme solarized
+else
+    let w:solarized_style="dark"
+    colorscheme solarized
+endif
+endfunction
+
+command! Togbg call ToggleBackground()
 
 au BufNewFile,BufRead * call indent_guides#enable()
 
