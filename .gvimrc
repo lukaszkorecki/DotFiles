@@ -49,7 +49,7 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        set guifont=Monaco:h11.00
+        set guifont=Monaco:h12.00
         set transparency=0
     elseif has('gui_win32')
         set guifont=Consolas:h8
@@ -62,8 +62,20 @@ set guioptions=eg
 " colorz
 syntax on
 " let g:molokai_original=1
-colorscheme  mustang
+set background=dark
+colorscheme  solarized
 
+function! ToggleBackground()
+    if (w:solarized_style=="dark")
+    let w:solarized_style="light"
+    colorscheme solarized
+else
+    let w:solarized_style="dark"
+    colorscheme solarized
+endif
+endfunction
+
+command! Togbg call ToggleBackground()
 
 au BufNewFile,BufRead * call indent_guides#enable()
 
