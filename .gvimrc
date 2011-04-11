@@ -151,6 +151,10 @@ au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 
 au BufNewFile,BufRead Rakefile set filetype=ruby
 
+" Clojure
+
+let g:vimclojure#ParenRainbow=1
+
 " Python specific settings
 let NERDTreeIgnore = ['\.pyc$', '\~$']
 au BufNewFile,BufRead *.py set tabstop=4

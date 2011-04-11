@@ -79,3 +79,6 @@
 [submodule "bundle/vimclojure"]
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/conque"]
+	path = bundle/conque
+	url = https://github.com/vim-scripts/Conque-Shell.git
