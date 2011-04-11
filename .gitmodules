@@ -73,6 +73,9 @@
 [submodule "bundle/taglist-plus"]
 	path = bundle/taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "bundle/screen"]
+	path = bundle/screen
+	url = https://github.com/ervandew/screen.git
 [submodule "bundle/solarized_cs"]
 	path = bundle/solarized_cs
 	url = https://github.com/altercation/vim-colors-solarized.git
