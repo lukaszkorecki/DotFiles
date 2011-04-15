@@ -52,33 +52,27 @@
 [submodule "bundle/indent-guides"]
 	path = bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/js-extra"]
-	path = bundle/js-extra
-	url = https://github.com/vim-scripts/Javascript-syntax-with-Ajax-Support.git
 [submodule "bundle/cobaltish"]
 	path = bundle/cobaltish
 	url = https://github.com/dterei/VimCobaltColourScheme.git
 [submodule "bundle/rubyblue"]
 	path = bundle/rubyblue
 	url = https://github.com/jlong/rubyblue.git
-[submodule "bundle/extradite"]
-	path = bundle/extradite
-	url = https://github.com/int3/vim-extradite.git
-[submodule "bundle/ack"]
-	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/todotxt"]
 	path = bundle/todotxt
 	url = https://github.com/davidoc/todo.txt-vim.git
 [submodule "bundle/taglist-plus"]
 	path = bundle/taglist-plus
 	url = https://github.com/int3/vim-taglist-plus.git
-[submodule "bundle/screen"]
-	path = bundle/screen
-	url = https://github.com/ervandew/screen.git
 [submodule "bundle/solarized_cs"]
 	path = bundle/solarized_cs
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vimclojure"]
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
+[submodule "bundle/conque"]
+	path = bundle/conque
+	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "bundle/coffeescript"]
+	path = bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git
