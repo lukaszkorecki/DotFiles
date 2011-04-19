@@ -57,9 +57,16 @@ endif
 
 " turn off the scrollbars and the rest of the crap
 set guioptions=eg
+syntax on
+set background=dark
 
 " colorz
-syntax on
+if ! has('gui')
+  set t_Co=256
+  let g:solarized_termcolors=256
+endif
+
+
 " let g:molokai_original=1
 set background=dark
 colorscheme  solarized
