@@ -69,7 +69,7 @@ endif
 
 " let g:molokai_original=1
 set background=dark
-colorscheme  solarized
+colorscheme  molokai
 
 function! ToggleBackground()
     if (w:solarized_style=="dark")
