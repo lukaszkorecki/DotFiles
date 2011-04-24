@@ -179,6 +179,8 @@ au BufNewFile,BufRead *.py set expandtab
 let Grep_Find_Use_Xargs = 0
 
 noremap <Leader>n :NERDTreeToggle<CR>
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
 noremap <Leader>g :GundoToggle<CR>
 
