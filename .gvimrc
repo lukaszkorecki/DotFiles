@@ -61,30 +61,25 @@ syntax on
 set background=dark
 
 " colorz
-if ! has('gui')
-  set t_Co=256
-  let g:solarized_termcolors=256
-endif
-
-
-" let g:molokai_original=1
+let g:molokai_original=1
 set background=dark
 colorscheme  molokai
 
-function! ToggleBackground()
-    if (w:solarized_style=="dark")
-    let w:solarized_style="light"
-    colorscheme solarized
-else
-    let w:solarized_style="dark"
-    colorscheme solarized
-endif
+function! FixIndents()
+  if ! has('gui')
+    hi IndentGuidesOdd  ctermbg=darkgrey
+    hi IndentGuidesEven ctermbg=black
+  endif
 endfunction
 
-command! Togbg call ToggleBackground()
+command! FixInd call FixIndents()
+
+if ! has('gui')
+  set t_Co=256
+endif
 
 au BufNewFile,BufRead * call indent_guides#enable()
-
+au BufNewFile,BufRead * call FixIndents()
 " display improvements
 " set list
 " " Shortcut to rapidly toggle `set list`
