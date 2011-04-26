@@ -21,7 +21,9 @@ set hlsearch
 set nobackup
 set nowritebackup
 set noswapfile
-set nofoldenable
+
+" folding
+set foldmethod=syntax
 
 " status line
 set statusline=
