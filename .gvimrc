@@ -23,7 +23,7 @@ set nowritebackup
 set noswapfile
 
 " folding
-set foldmethod=syntax
+set foldmethod=manual
 
 " status line
 set statusline=
@@ -65,7 +65,7 @@ set background=dark
 " colorz
 let g:molokai_original=1
 set background=dark
-colorscheme  molokai
+colorscheme  solarized
 
 function! FixIndents()
   if ! has('gui')
@@ -78,6 +78,8 @@ command! FixInd call FixIndents()
 
 if ! has('gui')
   set t_Co=256
+  colorscheme molokai
+  call FixIndents()
 endif
 
 au BufNewFile,BufRead * call indent_guides#enable()
