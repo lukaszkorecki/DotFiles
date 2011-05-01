@@ -66,7 +66,7 @@ set background=dark
 " colorz
 let g:molokai_original=1
 set background=dark
-colorscheme  solarized
+colorscheme  BlackboardBlack
 
 function! FixIndents()
   if ! has('gui')
