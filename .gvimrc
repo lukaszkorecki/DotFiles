@@ -110,6 +110,8 @@ cno jj <c-c>
 
 " better buffer/window/tab navigation
 map ee <C-w>
+nnoremap <D-d> <C-w>v<C-w>l
+nnoremap <D-D> <C-w>s<C-w>j
 
 " disable arrows
 inoremap  <Up>     <NOP>
