@@ -76,3 +76,9 @@
 [submodule "bundle/coffeescript"]
 	path = bundle/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/ruby-block-c"]
+	path = bundle/ruby-block-c
+	url = https://github.com/bronson/vim-ruby-block-conv.git
+[submodule "bundle/gitv"]
+	path = bundle/gitv
+	url = https://github.com/gregsexton/gitv.git
