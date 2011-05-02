@@ -43,6 +43,7 @@ set bs=2
 " highlitt current line and add line numbers
 set cursorline
 set number
+set showbreak=↪
 
 " yummy
 set antialias
@@ -65,7 +66,7 @@ set background=dark
 " colorz
 let g:molokai_original=1
 set background=dark
-colorscheme  solarized
+colorscheme  BlackboardBlack
 
 function! FixIndents()
   if ! has('gui')
@@ -109,6 +110,8 @@ cno jj <c-c>
 
 " better buffer/window/tab navigation
 map ee <C-w>
+nnoremap <D-d> <C-w>v<C-w>l
+nnoremap <D-D> <C-w>s<C-w>j
 
 " disable arrows
 inoremap  <Up>     <NOP>
