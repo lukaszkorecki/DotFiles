@@ -61,9 +61,6 @@
 [submodule "bundle/todotxt"]
 	path = bundle/todotxt
 	url = https://github.com/davidoc/todo.txt-vim.git
-[submodule "bundle/taglist-plus"]
-	path = bundle/taglist-plus
-	url = https://github.com/int3/vim-taglist-plus.git
 [submodule "bundle/solarized_cs"]
 	path = bundle/solarized_cs
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -82,3 +79,9 @@
 [submodule "bundle/gitv"]
 	path = bundle/gitv
 	url = https://github.com/gregsexton/gitv.git
+[submodule "bundle/githubdashboard"]
+	path = bundle/githubdashboard
+	url = git@github.com:lukaszkorecki/vim-GitHubDashBoard.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git

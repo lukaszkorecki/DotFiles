@@ -66,7 +66,7 @@ set background=dark
 " colorz
 let g:molokai_original=1
 set background=dark
-colorscheme  BlackboardBlack
+colorscheme  molokai
 
 function! FixIndents()
   if ! has('gui')
@@ -180,6 +180,7 @@ au BufNewFile,BufRead *.py set expandtab
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
 
+noremap <leader>t :TagbarToggle<CR>
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
@@ -187,7 +188,6 @@ let NERDTreeDirArrows=1
 noremap <Leader>g :GundoToggle<CR>
 
 noremap <Leader>l :RRSpecL<CR>
-noremap <Leader>t :TlistToggle<CR>
 "" Functions
 
 " save all command under :W, possibly add new stuff to it
