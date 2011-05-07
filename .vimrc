@@ -181,6 +181,21 @@ au BufNewFile,BufRead *.py set expandtab
 let Grep_Find_Use_Xargs = 0
 
 noremap <leader>t :TagbarToggle<CR>
+let g:tagbar_type_coffee = {
+  \ 'ctagstype' : 'coffee',
+  \ 'kinds' : [
+  \   'o:objects',
+  \   'c:classes',
+  \   'm:method',
+  \   'f:functions'
+  \ ],
+  \ 'scope2kind' : {
+  \   'm' : ['class',
+  \   'f' : 'object'
+  \ },
+  \ 'sro' : '.',
+  \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
+\ }
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1

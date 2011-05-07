@@ -1,0 +1,6 @@
+--langdef=coffee
+--langmap=coffee:.coffee
+--regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=.*->.*$/\1/f,function/
+--regex-coffee=/^[ \t]*class ([A-Za-z.]+)/\1/o,class/
+--regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]*=[^->\n]*$/\1/o,object/
+--regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]*:.*->.*$/\1/f,method/
