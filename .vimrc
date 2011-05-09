@@ -190,7 +190,7 @@ let g:tagbar_type_coffee = {
   \   'f:functions'
   \ ],
   \ 'scope2kind' : {
-  \   'm' : ['class',
+  \   'm' : 'class',
   \   'f' : 'object'
   \ },
   \ 'sro' : '.',
