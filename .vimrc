@@ -68,6 +68,9 @@ let g:molokai_original=1
 set background=dark
 colorscheme  molokai
 
+let g:PreviewBrowsers='qlmanage -p'
+:nmap <Leader>v :Preview<CR>
+
 function! FixIndents()
   if ! has('gui')
     hi IndentGuidesOdd  ctermbg=darkgrey
