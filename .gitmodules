@@ -88,3 +88,6 @@
 [submodule "bundle/preview"]
 	path = bundle/preview
 	url = https://github.com/greyblake/vim-preview.git
+[submodule "bundle/vim-ruby-refactoring"]
+	path = bundle/vim-ruby-refactoring
+	url = https://github.com/ecomba/vim-ruby-refactoring.git
