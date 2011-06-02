@@ -85,3 +85,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/preview"]
+	path = bundle/preview
+	url = https://github.com/greyblake/vim-preview.git

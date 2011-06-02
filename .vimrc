@@ -184,16 +184,17 @@ noremap <leader>t :TagbarToggle<CR>
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
   \ 'kinds' : [
-  \   'o:objects',
-  \   'c:classes',
-  \   'm:method',
-  \   'f:functions'
+  \   'c:class',
+  \   'o:object',
+  \   'm:methods',
+  \   'f:functions',
+  \   'i:instance variables'
   \ ],
   \ 'scope2kind' : {
-  \   'm' : 'class',
-  \   'f' : 'object'
+  \   'c' : 'methods',
+  \   'm' : 'class'
   \ },
-  \ 'sro' : '.',
+  \ 'sro' : "\n",
   \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
 \ }
 noremap <Leader>n :NERDTreeToggle<CR>
