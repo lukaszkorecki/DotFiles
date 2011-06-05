@@ -191,8 +191,11 @@ let g:tagbar_type_coffee = {
   \   'i:instance variables'
   \ ],
   \ 'scope2kind' : {
-  \   'c' : 'methods',
+  \   'c' : 'class',
   \   'm' : 'class'
+  \ },
+  \ 'kind2scope' : {
+  \   'class' : 'c'
   \ },
   \ 'sro' : "\n",
   \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
