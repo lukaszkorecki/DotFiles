@@ -67,7 +67,7 @@ set background=dark
 let g:molokai_original=1
 set background=dark
 colorscheme  molokai
-
+map w! w !sudo tee % >/dev/null
 let g:PreviewBrowsers='qlmanage -p'
 :nmap <Leader>v :Preview<CR>
 
