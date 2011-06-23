@@ -71,23 +71,14 @@ map w! w !sudo tee % >/dev/null
 let g:PreviewBrowsers='qlmanage -p'
 :nmap <Leader>v :Preview<CR>
 
-function! FixIndents()
-  if ! has('gui')
-    hi IndentGuidesOdd  ctermbg=darkgrey
-    hi IndentGuidesEven ctermbg=black
-  endif
-endfunction
-
-command! FixInd call FixIndents()
 
 if ! has('gui')
   set t_Co=256
   colorscheme molokai
-  call FixIndents()
+  set background=dark
 endif
 
 au BufNewFile,BufRead * call indent_guides#enable()
-au BufNewFile,BufRead * call FixIndents()
 " display improvements
 " set list
 " " Shortcut to rapidly toggle `set list`
