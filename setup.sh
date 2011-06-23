@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-export CURR_PATH=`pwd`
+echo Moving from `pwd` to home
 cd ~
+echo Cloning
+git clone git://github.com/lukaszkorecki/VimConfig.git .vim
 echo Symlinking .vimrc and .vim
-ln -s $CURR_PATH/.vimrc .vimrc
-ln -s $CURR_PATH/ .vim
-
+ln -s .vim/.vimrc .vimrc
 echo done

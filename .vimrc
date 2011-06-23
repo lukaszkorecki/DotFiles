@@ -45,6 +45,9 @@ set cursorline
 set number
 set showbreak=↪
 
+set guioptions=eg
+syntax on
+
 " yummy
 set antialias
 if has('gui')
@@ -59,34 +62,18 @@ if has('gui')
 endif
 
 " turn off the scrollbars and the rest of the crap
-set guioptions=eg
-syntax on
-set background=dark
-
-" colorz
-let g:molokai_original=1
-set background=dark
-colorscheme  molokai
-map w! w !sudo tee % >/dev/null
-let g:PreviewBrowsers='qlmanage -p'
-:nmap <Leader>v :Preview<CR>
-
 
 if ! has('gui')
   set t_Co=256
-  colorscheme molokai
-  set background=dark
 endif
 
-au BufNewFile,BufRead * call indent_guides#enable()
-" display improvements
-" set list
-" " Shortcut to rapidly toggle `set list`
-" nmap <leader>s :set list!<CR>
-" " Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:⋅
+" colorz
+let g:molokai_original=1
+colorscheme  molokai
+set background=dark
 
-" show indents
+
+" indent settings
 set ruler
 set showcmd
 set softtabstop=2
@@ -97,6 +84,9 @@ set expandtab
 " nice mappings
 noremap <C-a> ^
 noremap <C-e> $
+
+" sudo write
+map w! w !sudo tee % >/dev/null
 
 " better esc
 ino jj <esc>
@@ -168,12 +158,18 @@ au BufNewFile,BufRead *.py set expandtab
 
 "" Plugin settings
 
+let g:PreviewBrowsers='qlmanage -p'
+:nmap <Leader>v :Preview<CR>
+
 " indent guides
-" exec 'IndentGuidesEnable'
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+au BufNewFile,BufRead * call indent_guides#enable()
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
 
+" Tagbar
 noremap <leader>t :TagbarToggle<CR>
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
@@ -229,12 +225,3 @@ function! SplitMessage(cmd)
   set nomodified
 endfunction
 command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
-
-fun! s:SaveHamlToHtml()
-  w | :Error
-  let f=expand('%')
-  let new_name = substitute(f,'.html','.haml','g')
-  let cmd='haml ' . f . ' > '.new_name
-  silent exe system(cmd)
-endf
-command! -nargs=0  -bar SaveHaml call s:SaveHamlToHtml()
