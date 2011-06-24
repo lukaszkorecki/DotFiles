@@ -68,9 +68,10 @@ if ! has('gui')
 endif
 
 " colorz
-let g:molokai_original=1
-colorscheme  molokai
-set background=dark
+let g:solarized_termcolors=256
+set background=light
+colorscheme  solarized
+set background=light
 
 
 " indent settings
