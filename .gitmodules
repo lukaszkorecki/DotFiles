@@ -91,3 +91,6 @@
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "bundle/ri-viewer"]
+	path = bundle/ri-viewer
+	url = https://github.com/vim-scripts/ri-viewer.git
