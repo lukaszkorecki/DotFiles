@@ -22,9 +22,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" folding
-set foldmethod=manual
-
 " status line
 set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
