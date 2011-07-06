@@ -22,9 +22,6 @@
 [submodule "bundle/autocompletepop"]
 	path = bundle/autocompletepop
 	url = https://github.com/vim-scripts/AutoComplPop.git
-[submodule "snippets"]
-	path = snippets
-	url = git@github.com:lukaszkorecki/snipmate-snippets.git
 [submodule "bundle/mgutz-colors"]
 	path = bundle/mgutz-colors
 	url = https://github.com/mgutz/vim-colors.git
@@ -91,3 +88,12 @@
 [submodule "bundle/ri-viewer"]
 	path = bundle/ri-viewer
 	url = https://github.com/vim-scripts/ri-viewer.git
+[submodule "bundle/tlib"]
+	path = bundle/tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/mv-utils"]
+	path = bundle/mv-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = https://github.com/garbas/vim-snipmate.git
