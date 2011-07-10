@@ -94,9 +94,6 @@
 [submodule "bundle/mv-utils"]
 	path = bundle/mv-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate.git
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
