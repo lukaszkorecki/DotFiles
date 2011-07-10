@@ -112,10 +112,10 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
 " make tab key more better
-nmap <tab> v>
-nmap <s-tab> v<
-vmap <tab> >gv
-vmap <s-tab> <gv
+noremap <tab> v>
+noremap <s-tab> v<
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
 
 "" Filetype specific settings
 
