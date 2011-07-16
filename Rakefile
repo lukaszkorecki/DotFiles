@@ -27,8 +27,13 @@ desc "Remove existing rc files and directories"
 task :implode do
   puts "Removing .rc files and directories!"
   go_home
-  rm_rf DIRS
-   RCLIST.each{ |rc| rm rc }
+  begin
+    rm_rf DIRS
+    RCLIST.each{ |rc| rm rc }
+  rescue
+    puts "nothing to delete?".yellow
+  end
+  puts "finished removing".pur
 end
 
 desc "Get DotFiles and other dependencies"
@@ -36,12 +41,12 @@ task :get do
   puts "Cloning dependiencies".green
   go_home
 
-
   REPOS.each do |git_url, directory|
     puts directory.yellow
     rm_rf directory
     STDOUT << `git clone #{git_url} #{directory}`
   end
+  puts "finished cloning".pur
 end
 
 desc "Create symlinks"
@@ -54,12 +59,15 @@ task :symlink do
     puts to.yellow
     ln_s from, to
   end
+  puts "finished symlinking".pur
 end
 
 task "Update main repo"
 task :update do
   puts "Updating .DotFiles".green
   STDOUT << `git pull`
+
+  puts "updated".pur
 end
 
 namespace :vim do
@@ -72,8 +80,10 @@ namespace :vim do
       'git submodule update',
       'git submodule foreach git pull origin master'
     ].each do |cmd|
-      STDOUT << cmd
+      STDOUT << `#{cmd}`
     end
+
+    puts "plugins updated".pur
   end
 end
 
