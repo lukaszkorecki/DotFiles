@@ -1,8 +1,8 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w( .vimrc .zshrc .gemrc .irbrc)
-DIRS = %w( .oh-my-zsh)
+RCLIST = %w(.vimrc .zshrc .gemrc .irbrc)
+DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
 }
@@ -44,7 +44,7 @@ task :get do
   REPOS.each do |git_url, directory|
     puts directory.yellow
     rm_rf directory
-    STDOUT << `git clone #{git_url} #{directory}`
+    STDOUT << `git clone -q #{git_url} #{directory}`
   end
   puts "finished cloning".pur
 end
@@ -54,7 +54,11 @@ task :symlink do
   puts "Creating symlinks to rc files and such".green
   go_home
   puts ".vim".yellow
-  ln_s '.DotFiles', '.vim'
+  begin
+    ln_s '.DotFiles', '.vim'
+  rescue
+  puts "hm".red
+  end
   RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, to|
     puts to.yellow
     ln_s from, to
@@ -65,7 +69,7 @@ end
 task "Update main repo"
 task :update do
   puts "Updating .DotFiles".green
-  STDOUT << `git pull`
+  STDOUT << `git pull -q`
 
   puts "updated".pur
 end
@@ -78,7 +82,7 @@ namespace :vim do
     [
       'git submodule init',
       'git submodule update',
-      'git submodule foreach git pull origin master'
+      'git submodule foreach git pull -q origin master'
     ].each do |cmd|
       STDOUT << `#{cmd}`
     end
