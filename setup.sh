@@ -11,6 +11,7 @@ rm -rf .oh-my-zsh
 rm .zshrc
 
 rm .gemrc
+rm .irbrc
 
 echo Cloning dotfiles and oh-my-zsh
 git clone git@github.com:lukaszkorecki/DotFiles.git .DotFiles > /dev/null
@@ -21,6 +22,7 @@ ln -s ~/.DotFiles .vim
 ln -s ~/.DotFiles/.vimrc .vimrc
 ln -s ~/.DotFiles/.zshrc .zshrc
 ln -s ~/.DotFiles/.gemrc .gemrc
+ln -s ~/.DotFiles/.irbrc .irbrc
 
 echo Getting submodules for vim
 cd .vim
