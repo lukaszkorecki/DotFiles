@@ -29,8 +29,8 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 
 alias gs='git status'
+alias gcm='git commit -m '
 alias testenv='RAILS_ENV=test '
-alias staging='ssh lukasz@staging.billmonitor.com'
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
 
@@ -45,13 +45,6 @@ function Grep() {
   grep -cnHir $1
 }
 # PATH crap
-
-export PATH=/opt/local/bin:/opt/local/sbin:/Users/lukasz/bin:/opt/local/lib/ruby/gems/1.8/gems/:$PATH
-export PATH=/Users/lukasz/.gem/ruby/1.8/bin:$PATH
-export PATH=/opt/local/lib:$PATH
-export PATH=/Users/optimor/.gem/ruby/1.8/bin:$PATH
-export PATH=/Users/lukaszkorecki/Dev/Tools:$PATH
-export PATH=/Users/optimor/Tools:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH

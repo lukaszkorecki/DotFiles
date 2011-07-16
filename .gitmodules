@@ -13,45 +13,21 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = http://github.com/vim-scripts/grep.vim.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
 [submodule "bundle/delimitmate"]
 	path = bundle/delimitmate
 	url = http://github.com/Raimondi/delimitMate.git
 [submodule "bundle/autocompletepop"]
 	path = bundle/autocompletepop
 	url = https://github.com/vim-scripts/AutoComplPop.git
-[submodule "bundle/mgutz-colors"]
-	path = bundle/mgutz-colors
-	url = https://github.com/mgutz/vim-colors.git
-[submodule "bundle/textobj-rubyblock"]
-	path = bundle/textobj-rubyblock
-	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "bundle/textobj-user"]
-	path = bundle/textobj-user
-	url = https://github.com/kana/vim-textobj-user.git
-[submodule "bundle/railscasts2_hack"]
-	path = bundle/railscasts2_hack
-	url = git@github.com:lukaszkorecki/RailsCastsThemeHack.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
-[submodule "bundle/gist-vim"]
-	path = bundle/gist-vim
-	url = https://github.com/mattn/gist-vim.git
 [submodule "bundle/ruby-refactoring"]
 	path = bundle/ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
 [submodule "bundle/indent-guides"]
 	path = bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/cobaltish"]
-	path = bundle/cobaltish
-	url = https://github.com/dterei/VimCobaltColourScheme.git
-[submodule "bundle/rubyblue"]
-	path = bundle/rubyblue
-	url = https://github.com/jlong/rubyblue.git
 [submodule "bundle/todotxt"]
 	path = bundle/todotxt
 	url = https://github.com/davidoc/todo.txt-vim.git
@@ -61,18 +37,9 @@
 [submodule "bundle/vimclojure"]
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
-[submodule "bundle/conque"]
-	path = bundle/conque
-	url = https://github.com/vim-scripts/Conque-Shell.git
 [submodule "bundle/coffeescript"]
 	path = bundle/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/ruby-block-c"]
-	path = bundle/ruby-block-c
-	url = https://github.com/bronson/vim-ruby-block-conv.git
-[submodule "bundle/gitv"]
-	path = bundle/gitv
-	url = https://github.com/gregsexton/gitv.git
 [submodule "bundle/githubdashboard"]
 	path = bundle/githubdashboard
 	url = git@github.com:lukaszkorecki/vim-GitHubDashBoard.git
@@ -85,15 +52,6 @@
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
-[submodule "bundle/ri-viewer"]
-	path = bundle/ri-viewer
-	url = https://github.com/vim-scripts/ri-viewer.git
-[submodule "bundle/tlib"]
-	path = bundle/tlib
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "bundle/mv-utils"]
-	path = bundle/mv-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "snippets"]
 	path = snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
