@@ -3,26 +3,26 @@ echo Going home
 cd ~
 
 echo Cleaning up
-echo \tVim
+echo Vim
 rm -rf .vim
 rm .vimrc
 
-echo \tZSH + Oh My ZSH!
+echo ZSH + Oh My ZSH!
 rm -rf .oh-my-zsh
 rm .zshrc
 
-echo Cloning
-git clone git@github.com:lukaszkorecki/DotFiles.git .vim
-git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+echo Cloning dotfiles and oh-my-zsh
+git clone git@github.com:lukaszkorecki/DotFiles.git .vim > /dev/null
+git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh > /dev/null
 
 echo Symlinking .vimrc and .zshrc
 ln -s ~/.vim/.vimrc .vimrc
 ln -s ~/.vim/.zshrc .zshrc
 
-echo Getting submodules
+echo Getting submodules for vim
 cd .vim
-git submodule init
+git submodule init > /dev/null
 
-git submodule update
+git submodule update  > /dev/null
 
 echo DONE
