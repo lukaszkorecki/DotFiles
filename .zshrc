@@ -45,6 +45,7 @@ function Grep() {
   grep -cnHir $1
 }
 # PATH crap
+export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
