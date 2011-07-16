@@ -44,6 +44,14 @@ function SuperKill() {
 function Grep() {
   grep -cnHir $1
 }
+
+function CopyPwd() {
+  pwd | pbcopy
+}
+function GotoPath() {
+  cd `pbpaste`
+}
+
 # PATH crap
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
