@@ -67,7 +67,7 @@ endif
 " colorz
 let g:solarized_termcolors=256
 colorscheme  solarized
-set background=light
+set background=dark
 
 
 " indent settings
