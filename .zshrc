@@ -52,6 +52,15 @@ function GotoPath() {
   cd `pbpaste`
 }
 
+function GrepFind() {
+  echo "Searching in ".`pwd`
+  find -L -f . | grep $1
+}
+
+function LaunchApp() {
+  open /Applications/$1.app
+}
+
 # PATH crap
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
