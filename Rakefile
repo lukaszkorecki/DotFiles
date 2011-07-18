@@ -61,7 +61,11 @@ task :symlink do
   end
   RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, to|
     puts to.yellow
-    ln_s from, to
+    begin
+      ln_s from, to
+    rescue =>e
+      puts e.inspect.red
+    end
   end
   puts "finished symlinking".pur
 end
@@ -96,4 +100,6 @@ task :setup do
   ['implode', 'get', 'symlink', 'vim:update'].each do |task|
     Rake::Task[task].invoke
   end
+  puts "="*80
+  puts "Close the terminal and start a new session".green
 end
