@@ -167,7 +167,7 @@ au BufNewFile,BufRead * call indent_guides#enable()
 let Grep_Find_Use_Xargs = 0
 
 " Tagbar
-noremap <leader>T :TagbarToggle<CR>
+noremap <leader>o :TagbarToggle<CR>
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
   \ 'kinds' : [
