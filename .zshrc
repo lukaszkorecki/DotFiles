@@ -63,6 +63,7 @@ function LaunchApp() {
 }
 
 # PATH crap
+export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH

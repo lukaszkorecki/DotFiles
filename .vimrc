@@ -39,6 +39,7 @@ set bs=2
 
 " highlitt current line and add line numbers
 set cursorline
+set colorcolumn=80
 set number
 set showbreak=↪
 
@@ -66,7 +67,7 @@ endif
 
 " colorz
 let g:solarized_termcolors=256
-colorscheme  solarized
+colorscheme  molokai "solarized
 set background=dark
 
 
