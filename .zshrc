@@ -28,8 +28,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # Aliases
 
+alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
-alias gcm='git commit -m '
+alias gco='git commit -m '
 alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '

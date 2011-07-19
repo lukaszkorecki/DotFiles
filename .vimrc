@@ -1,6 +1,6 @@
 "" Pathogen
 call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
+call pathogen#helptags()
 
 "" Global settings
 set fileencoding=utf8
@@ -67,7 +67,7 @@ endif
 " colorz
 let g:solarized_termcolors=256
 colorscheme  solarized
-set background=light
+set background=dark
 
 
 " indent settings
