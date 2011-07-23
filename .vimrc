@@ -39,7 +39,9 @@ set bs=2
 
 " highlitt current line and add line numbers
 set cursorline
-set colorcolumn=80
+if version > 702
+  set colorcolumn=80
+endif
 set number
 set showbreak=↪
 
