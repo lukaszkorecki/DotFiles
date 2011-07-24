@@ -75,6 +75,8 @@ task :update do
   puts "Updating .DotFiles".green
   STDOUT << `git pull -q`
 
+  Rake::Task['vim:update'].invoke
+
   puts "updated".pur
 end
 
@@ -88,6 +90,7 @@ namespace :vim do
       'git submodule update',
       'git submodule foreach git pull -q origin master'
     ].each do |cmd|
+      puts cmd.green
       STDOUT << `#{cmd}`
     end
 
