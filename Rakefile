@@ -96,6 +96,18 @@ namespace :vim do
 
     puts "plugins updated".pur
   end
+
+  desc "install vim plugin via pathogen (use PLUGIN)"
+  task :plugin_install do
+    url = ENV['PLUGIN']
+    fail "no url!" if url.nil?
+
+    name = url.split('/').last.sub('.git','')
+    puts "Installing #{name} from #{url}".green
+    STDOUT << `git submodule add #{url} bundle/#{name}`
+    STDOUT << `git submodule init`
+    STDOUT << `git submodule update`
+  end
 end
 
 task :setup do
