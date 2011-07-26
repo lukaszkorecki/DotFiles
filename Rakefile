@@ -1,7 +1,7 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w(.vimrc .zshrc .gemrc .irbrc)
+RCLIST = %w(.vimrc .zshrc .gemrc .irbrc .tmux.conf)
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
