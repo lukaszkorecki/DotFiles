@@ -66,7 +66,8 @@ function LaunchApp() {
 export PATH=/usr/local/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
