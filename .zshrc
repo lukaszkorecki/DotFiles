@@ -62,6 +62,8 @@ function LaunchApp() {
   open /Applications/$1.app
 }
 
+export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
+
 # PATH crap
 export PATH=/usr/local/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH

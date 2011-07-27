@@ -68,7 +68,7 @@ if ! has('gui')
 endif
 
 " colorz
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 colorscheme  molokai "solarized
 set background=dark
 
