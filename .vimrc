@@ -158,6 +158,7 @@ au BufNewFile,BufRead *.py set expandtab
 
 "" Plugin settings
 
+let  twitvim_browser_cmd="open"
 let g:PreviewBrowsers='qlmanage -p'
 :nmap <Leader>v :Preview<CR>
 

@@ -67,3 +67,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/twitvim"]
+	path = bundle/twitvim
+	url = https://github.com/vim-scripts/TwitVim.git
