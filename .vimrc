@@ -143,6 +143,7 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 
 au BufNewFile,BufRead Rakefile set filetype=ruby
+au BufNewFile,BufRead Guardfile set filetype=ruby
 
 " Clojure
 
