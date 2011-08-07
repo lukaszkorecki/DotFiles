@@ -31,9 +31,6 @@
 [submodule "bundle/todotxt"]
 	path = bundle/todotxt
 	url = https://github.com/davidoc/todo.txt-vim.git
-[submodule "bundle/solarized_cs"]
-	path = bundle/solarized_cs
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vimclojure"]
 	path = bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
