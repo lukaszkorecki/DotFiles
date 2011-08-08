@@ -69,7 +69,7 @@ endif
 
 " colorz
 " let g:solarized_termcolors=256
-colorscheme  molokai "solarized
+colorscheme  bespin "solarized
 set background=dark
 
 

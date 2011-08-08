@@ -30,5 +30,4 @@ noremap <s-tab> v<
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-colorscheme  molokai "solarized
 set background=dark

@@ -58,8 +58,8 @@ function GrepFind() {
   find -L -f . | grep $1
 }
 
-function LaunchApp() {
-  open /Applications/$1.app
+function GemInst() {
+  gem install $1 --no-ri --no-rdoc
 }
 
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
