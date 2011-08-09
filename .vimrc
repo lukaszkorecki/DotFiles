@@ -174,6 +174,7 @@ let Grep_Find_Use_Xargs = 0
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
+set tags=tags,.git/tags,TAGS
 
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
