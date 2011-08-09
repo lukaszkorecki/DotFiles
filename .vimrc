@@ -54,7 +54,7 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        set guifont=Monaco:h12.00
+        set guifont=Menlo:h12.00
         set transparency=0
     elseif has('gui_win32')
         set guifont=Consolas:h8
@@ -150,7 +150,7 @@ au BufNewFile,BufRead Guardfile set filetype=ruby
 let g:vimclojure#ParenRainbow=1
 
 " Python specific settings
-let NERDTreeIgnore = ['\.pyc$', '\~$']
+let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
