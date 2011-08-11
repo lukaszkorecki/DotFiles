@@ -70,3 +70,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "bundle/vim_colors"]
+	path = bundle/vim_colors
+	url = https://github.com/squil/vim_colors.git
