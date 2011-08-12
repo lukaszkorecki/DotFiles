@@ -35,6 +35,8 @@ alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
 
+alias vitodo='mvim ~/Dropbox/todo/todo.txt'
+
 function ShowProc() {
   ps aux | grep $1 | grep -v grep
 }
@@ -61,6 +63,7 @@ function GrepFind() {
 function GemInst() {
   gem install $1 --no-ri --no-rdoc
 }
+
 
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
 
