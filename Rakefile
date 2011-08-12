@@ -1,7 +1,7 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w(.vimrc .zshrc .gemrc .irbrc .tmux.conf)
+RCLIST = %w(.vimrc .zshrc .gemrc .irbrc .tmux.conf .todotxt.cfg )
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
@@ -62,6 +62,7 @@ task :symlink do
   RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, to|
     puts to.yellow
     begin
+      rm to
       ln_s from, to
     rescue =>e
       puts e.inspect.red
