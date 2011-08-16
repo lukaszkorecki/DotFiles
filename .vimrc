@@ -179,20 +179,21 @@ set tags=tags,.git/tags,TAGS
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
   \ 'kinds' : [
+  \   'n:namespace',
   \   'c:class',
   \   'o:object',
   \   'm:methods',
   \   'f:functions',
-  \   'i:instance variables'
+  \   'i:instance variables',
+  \   'v:var:1',
   \ ],
+  \ 'sro' : ".",
   \ 'scope2kind' : {
-  \   'c' : 'class',
-  \   'm' : 'class'
+  \   'f' : 'function',
+  \   'm' : 'method',
+  \   'v' : 'var',
+  \   'i' : 'ivar'
   \ },
-  \ 'kind2scope' : {
-  \   'class' : 'c'
-  \ },
-  \ 'sro' : "\n",
   \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
 \ }
 noremap <Leader>n :NERDTreeToggle<CR>
