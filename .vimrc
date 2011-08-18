@@ -170,10 +170,13 @@ let g:indent_guides_guide_size=1
 au BufNewFile,BufRead * call indent_guides#enable()
 
 " disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 0
+let Grep_Find_Use_Xargs = 1
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
+
+let g:tagbar_left=1
+let g:tagbar_autofocus = 1
 set tags=tags,.git/tags,TAGS
 
 let g:tagbar_type_coffee = {
@@ -189,20 +192,27 @@ let g:tagbar_type_coffee = {
   \ ],
   \ 'sro' : ".",
   \ 'scope2kind' : {
+  \   'o' : 'object',
   \   'f' : 'function',
   \   'm' : 'method',
   \   'v' : 'var',
   \   'i' : 'ivar'
   \ },
+  \ 'kind2scope' : {
+  \  'function' : 'f',
+  \  'method' : 'm',
+  \  'var' : 'v',
+  \  'ivar' : 'i',
+  \ 'object' : 'o'
+  \},
   \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
 \ }
+
+" Nerdtree
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-noremap <Leader>g :GundoToggle<CR>
-
-noremap <Leader>l :RRSpecL<CR>
 "" Functions
 
 " save all command under :W, possibly add new stuff to it
@@ -218,16 +228,3 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-
-" Any command output piping to a new split
-function! SplitMessage(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  vnew
-  silent put=message
-  %s/\r//
-  set nomodified
-endfunction
-command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
