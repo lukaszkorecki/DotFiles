@@ -142,7 +142,12 @@ au BufNewFile,BufRead  *.markdown set spell
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 
-au BufNewFile,BufRead Rakefile set filetype=ruby
+au BufNewFile,BufRead Rakefile set filetype=rake
+au BufNewFile,BufRead Rakefile set syntax=ruby
+
+au BufNewFile,BufRead *.rake set filetype=rake
+au BufNewFile,BufRead *.rake set syntax=ruby
+
 au BufNewFile,BufRead Guardfile set filetype=ruby
 
 " Clojure
@@ -170,11 +175,33 @@ let g:indent_guides_guide_size=1
 au BufNewFile,BufRead * call indent_guides#enable()
 
 " disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 0
+let Grep_Find_Use_Xargs = 1
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
+
+let g:tagbar_left=1
+let g:tagbar_autofocus = 1
 set tags=tags,.git/tags,TAGS
+let g:tagbar_type_rake = {
+      \ 'ctagstype' : 'rake',
+      \ 'kinds' : [
+      \ 'f:functions',
+      \ 'n:namespaces',
+      \ 't:tasks'
+      \],
+      \ 'scope2kind' : {
+      \ 'f' : 'function',
+      \ 'n' : 'namespace',
+      \ 't' : 'task'
+      \},
+      \ 'kind2scope' : {
+      \ 'function' : 'f',
+      \ 'namespace' : 'n',
+      \ 'task' : 't'
+      \},
+      \ 'deffile' : expand('<sfile>:p:h') . '/.vim/rake.ctags'
+      \ }
 
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
@@ -189,20 +216,27 @@ let g:tagbar_type_coffee = {
   \ ],
   \ 'sro' : ".",
   \ 'scope2kind' : {
+  \   'o' : 'object',
   \   'f' : 'function',
   \   'm' : 'method',
   \   'v' : 'var',
   \   'i' : 'ivar'
   \ },
+  \ 'kind2scope' : {
+  \  'function' : 'f',
+  \  'method' : 'm',
+  \  'var' : 'v',
+  \  'ivar' : 'i',
+  \ 'object' : 'o'
+  \},
   \ 'deffile' : expand('<sfile>:p:h') . '/.vim/coffee.ctags'
 \ }
+
+" Nerdtree
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-noremap <Leader>g :GundoToggle<CR>
-
-noremap <Leader>l :RRSpecL<CR>
 "" Functions
 
 " save all command under :W, possibly add new stuff to it
@@ -219,15 +253,11 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-
-" Any command output piping to a new split
-function! SplitMessage(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  vnew
-  silent put=message
-  %s/\r//
-  set nomodified
+fun! s:IDELayout()
+  :TagbarToggle<cr>
+  :q
+  :NERDTreeToggle<cr>
+  :new
+  b __tagbar__
 endfunction
-command! -nargs=+ -complete=command SplitMessage call SplitMessage(<q-args>)
+command! -bar -narg=0 S call s:IDELayout()
