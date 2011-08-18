@@ -142,7 +142,12 @@ au BufNewFile,BufRead  *.markdown set spell
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead Gemfile.lock set filetype=ruby
 
-au BufNewFile,BufRead Rakefile set filetype=ruby
+au BufNewFile,BufRead Rakefile set filetype=rake
+au BufNewFile,BufRead Rakefile set syntax=ruby
+
+au BufNewFile,BufRead *.rake set filetype=rake
+au BufNewFile,BufRead *.rake set syntax=ruby
+
 au BufNewFile,BufRead Guardfile set filetype=ruby
 
 " Clojure
@@ -178,6 +183,25 @@ noremap <leader>o :TagbarToggle<CR>
 let g:tagbar_left=1
 let g:tagbar_autofocus = 1
 set tags=tags,.git/tags,TAGS
+let g:tagbar_type_rake = {
+      \ 'ctagstype' : 'rake',
+      \ 'kinds' : [
+      \ 'f:functions',
+      \ 'n:namespaces',
+      \ 't:tasks'
+      \],
+      \ 'scope2kind' : {
+      \ 'f' : 'function',
+      \ 'n' : 'namespace',
+      \ 't' : 'task'
+      \},
+      \ 'kind2scope' : {
+      \ 'function' : 'f',
+      \ 'namespace' : 'n',
+      \ 'task' : 't'
+      \},
+      \ 'deffile' : expand('<sfile>:p:h') . '/.vim/rake.ctags'
+      \ }
 
 let g:tagbar_type_coffee = {
   \ 'ctagstype' : 'coffee',
@@ -228,3 +252,12 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+fun! s:IDELayout()
+  :TagbarToggle<cr>
+  :q
+  :NERDTreeToggle<cr>
+  :new
+  b __tagbar__
+endfunction
+command! -bar -narg=0 S call s:IDELayout()
