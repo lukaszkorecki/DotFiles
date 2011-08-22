@@ -69,8 +69,8 @@ endif
 
 " colorz
 " let g:solarized_termcolors=256
-colorscheme  Tomorrow-Night
-set background=dark
+colorscheme tomorrownight
+" set background=dark
 
 
 " indent settings
@@ -179,7 +179,7 @@ let Grep_Find_Use_Xargs = 0
 
 " command t
 noremap <Leader>p :CommandT<CR>
-noremap <Leader>P :CommandTBuffer<CR>
+noremap <Leader>l :CommandTBuffer<CR>
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>

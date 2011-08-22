@@ -3,7 +3,7 @@
 "
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
-let g:colors_name = "Tomorrow-Night"
+let g:colors_name = "tomorrownight"
 
 " Default GUI Colours
 let s:foreground = "c5c8c6"
@@ -275,9 +275,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Operator", s:foreground, "", "none")
 	call <SID>X("Type", s:blue, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
-	call <SID>X("Include", s:blue, "", "") 
+	call <SID>X("Include", s:blue, "", "")
 	"call <SID>X("Ignore", "666666", "", "")
-	
+
 	" Vim Highlighting
 	call <SID>X("vimCommand", s:red, "", "none")
 
@@ -292,7 +292,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("phpConditional", s:purple, "", "")
 	call <SID>X("phpStatement", s:purple, "", "")
 	call <SID>X("phpMemberSelector", s:foreground, "", "")
-	
+
 	" Ruby Highlighting
 	call <SID>X("rubySymbol", s:green, "", "")
 	call <SID>X("rubyConstant", s:yellow, "", "")
