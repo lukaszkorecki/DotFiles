@@ -175,13 +175,16 @@ let g:indent_guides_guide_size=1
 au BufNewFile,BufRead * call indent_guides#enable()
 
 " disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 1
+let Grep_Find_Use_Xargs = 0
+
+" command t
+noremap <Leader>p :CommandT<CR>
+noremap <Leader>P :CommandTBuffer<CR>
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
 
 let g:tagbar_left=1
-let g:tagbar_autofocus = 1
 set tags=tags,.git/tags,TAGS
 let g:tagbar_type_rake = {
       \ 'ctagstype' : 'rake',
