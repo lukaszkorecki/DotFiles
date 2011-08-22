@@ -69,7 +69,7 @@ endif
 
 " colorz
 " let g:solarized_termcolors=256
-colorscheme  wombat
+colorscheme  Tomorrow-Night
 set background=dark
 
 
