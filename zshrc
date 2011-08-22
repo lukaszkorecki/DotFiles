@@ -34,6 +34,7 @@ alias gco='git commit -m '
 alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
+function git(){hub "$@"}
 
 function ShowProc() {
   ps aux | grep $1 | grep -v grep

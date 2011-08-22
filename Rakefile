@@ -1,7 +1,7 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w(.vimrc .zshrc .gemrc .irbrc .tmux.conf .todotxt.cfg )
+RCLIST = %w(vimrc zshrc gemrc irbrc tmux.conf todotxt.cfg rvmrc )
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
@@ -45,7 +45,7 @@ task :implode do
   go_home
   begin
     rm_rf DIRS
-    RCLIST.each{ |rc| rm rc }
+    RCLIST.map {|i| ".#{i}"}.each{ |rc| rm rc }
   rescue
     puts "nothing to delete?".yellow
   end
@@ -75,14 +75,15 @@ task :symlink do
   rescue
     puts "hm".red
   end
-  RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, to|
+  RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, _to|
+    to = ".#{_to}"
     puts to.yellow
     begin
       rm to
-      ln_s from, to
     rescue =>e
       puts e.inspect.red
     end
+    ln_s from, to
   end
   puts "finished symlinking".pur
 end
