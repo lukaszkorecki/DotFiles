@@ -69,7 +69,7 @@ endif
 
 " colorz
 " let g:solarized_termcolors=256
-colorscheme tomorrownight
+colorscheme lucius
 " set background=dark
 
 
