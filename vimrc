@@ -176,6 +176,7 @@ au BufNewFile,BufRead * call indent_guides#enable()
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
+noremap <Leader>r :Rfgrep<CR>
 
 " command t
 noremap <Leader>p :CommandT<CR>
