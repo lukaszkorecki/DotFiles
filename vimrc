@@ -54,7 +54,7 @@ if has('gui')
     if has('gui_gnome')
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has('gui_macvim')
-        set guifont=Menlo:h11.00
+        set guifont=Menlo:h12.00
         set transparency=0
     elseif has('gui_win32')
         set guifont=Consolas:h8
@@ -69,7 +69,8 @@ endif
 
 " colorz
 set background=dark
-colorscheme wombat
+let g:solarized_contrast='high'
+colorscheme solarized
 
 
 " indent settings
