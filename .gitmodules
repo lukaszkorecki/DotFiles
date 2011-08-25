@@ -58,15 +58,9 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/web-indent"]
-	path = bundle/web-indent
-	url = https://github.com/garbas/vim-web-indent.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/twitvim"]
-	path = bundle/twitvim
-	url = https://github.com/vim-scripts/TwitVim.git
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
@@ -82,3 +76,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/ShowMarks7"]
+	path = bundle/ShowMarks7
+	url = https://github.com/vim-scripts/ShowMarks7.git
