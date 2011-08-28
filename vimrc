@@ -122,6 +122,8 @@ vnoremap <s-tab> <gv
 
 "" Filetype specific settings
 
+" qml
+au BufNewFile,BufRead  *.qml set filetype=qml
 " json as javascript
 au BufNewFile,BufRead  *.json set filetype=javascript
 
