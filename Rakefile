@@ -105,8 +105,8 @@ namespace :vim do
     go_home '/.vim'
     [
       'git submodule init',
-      'git submodule update',
-      'git submodule foreach git pull -q origin master'
+      'git submodule foreach git pull -q origin master',
+      'git submodule update'
     ].each do |cmd|
       puts cmd.green
       STDOUT << `#{cmd}`
