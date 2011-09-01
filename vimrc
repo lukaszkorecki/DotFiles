@@ -174,7 +174,9 @@ let g:PreviewBrowsers='qlmanage -p'
 " indent guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
-au BufNewFile,BufRead * call indent_guides#enable()
+au BufLeave * :IndentGuidesDisable
+au BufEnter * :IndentGuidesEnable
+
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0

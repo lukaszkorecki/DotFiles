@@ -65,6 +65,7 @@ function GemInst() {
   gem install $1 --no-ri --no-rdoc
 }
 
+REPORTTIME=5
 
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
 
