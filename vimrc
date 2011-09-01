@@ -70,7 +70,7 @@ endif
 " colorz
 set background=dark
 let g:solarized_contrast='high'
-colorscheme solarized
+colorscheme Tomorrow-Night
 
 
 " indent settings
