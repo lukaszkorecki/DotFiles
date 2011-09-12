@@ -180,6 +180,8 @@ let g:indent_guides_guide_size=1
 let Grep_Find_Use_Xargs = 0
 noremap <Leader>r :Rfgrep<CR>
 
+" Ack
+noremap <Leader>a :Ack
 " command t
 noremap <Leader>p :CommandT<CR>
 noremap <Leader>l :CommandTBuffer<CR>
