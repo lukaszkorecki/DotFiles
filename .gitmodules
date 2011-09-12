@@ -79,3 +79,6 @@
 [submodule "bundle/ShowMarks7"]
 	path = bundle/ShowMarks7
 	url = https://github.com/vim-scripts/ShowMarks7.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
