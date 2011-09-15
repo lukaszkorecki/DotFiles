@@ -1,3 +1,4 @@
 .netrwhist
 bundle/gist-vim/cookies
 bundle/*/doc/*
+.DotFiles
