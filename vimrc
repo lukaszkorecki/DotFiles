@@ -131,18 +131,11 @@ au BufNewFile,BufRead  *.json set filetype=javascript
 au BufNewFile,BufRead  *.mustache set filetype=mustache
 
 " markdown filetype
-au BufNewFile,BufRead  *.md set filetype=markdown
-au BufNewFile,BufRead  *.mkd set filetype=markdown
-au BufNewFile,BufRead  *.markdown set filetype=markdown
-
-" set spellcheck for markdown files
-au BufNewFile,BufRead  *.md set spell
-au BufNewFile,BufRead  *.mkd set spell
-au BufNewFile,BufRead  *.markdown set spell
+au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
+au BufNewFile,BufRead  *.md,*.mkd,*.markdown set spell
 
 " non ruby files
-au BufNewFile,BufRead Gemfile set filetype=ruby
-au BufNewFile,BufRead Gemfile.lock set filetype=ruby
+au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile set filetype=ruby
 
 au BufNewFile,BufRead Rakefile set filetype=rake
 au BufNewFile,BufRead Rakefile set syntax=ruby
@@ -150,8 +143,8 @@ au BufNewFile,BufRead Rakefile set syntax=ruby
 au BufNewFile,BufRead *.rake set filetype=rake
 au BufNewFile,BufRead *.rake set syntax=ruby
 
-au BufNewFile,BufRead Guardfile set filetype=ruby
 
+au BufNewFile,BufRead *tmux.conf set syntax=tmux
 " Clojure
 
 let g:vimclojure#ParenRainbow=1
