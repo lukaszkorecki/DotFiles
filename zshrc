@@ -94,6 +94,9 @@ REPORTTIME=5
 
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
 
+export GITHUB_TOKEN=`git config --global --get github.token`
+export GITHUB_USER=`git config --global --get github.user`
+
 # PATH crap
 export PATH=/usr/local/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
