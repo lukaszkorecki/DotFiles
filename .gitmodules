@@ -85,3 +85,6 @@
 [submodule "bins/spotify"]
 	path = bins/spotify
 	url = https://github.com/jacktams/Spotify-Applescripts.git
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = https://github.com/mattn/gist-vim.git
