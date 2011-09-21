@@ -168,6 +168,9 @@ let g:PreviewBrowsers='qlmanage -p'
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
+" gist vim
+let g:gist_show_privates=1
+let g:gist_clip_command = 'pbcopy'
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0
