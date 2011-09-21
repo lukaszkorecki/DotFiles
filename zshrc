@@ -40,6 +40,29 @@ function git(){hub "$@"}
 
 alias vitodo='mvim ~/Dropbox/todo/todo.txt'
 
+function spotify() {
+if [[ $1 == 'pp' ]]; then
+  osascript ~/.DotFiles/bins/spotify/PlayPause.scpt > /dev/null
+fi
+
+if [[ $1 == 'n' ]]; then
+  osascript ~/.DotFiles/bins/spotify/NextTrack.scpt > /dev/null
+
+fi
+
+if [[ $1 == 'p' ]]; then
+  osascript ~/.DotFiles/bins/spotify/PreviousTrack.scpt > /dev/null
+
+fi
+
+if [[ $1 == '' ]]; then
+  echo 'pp - play/pause'
+  echo 'p  - previous'
+  echo 'n  - next'
+fi
+
+}
+
 function ShowProc() {
   ps aux | grep $1 | grep -v grep
 }
