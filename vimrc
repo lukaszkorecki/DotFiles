@@ -164,6 +164,9 @@ let twitvim_count = 50
 let g:PreviewBrowsers='qlmanage -p'
 :nmap <Leader>v :Preview<CR>
 
+" syntastic
+let g:syntastic_auto_loc_lis=1
+let g:syntastic_enable_signs=1
 " indent guides
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
