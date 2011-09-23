@@ -187,40 +187,20 @@ noremap <leader>o :TagbarToggle<CR>
 
 let g:tagbar_left=1
 set tags=tags,.git/tags,TAGS
-let g:tagbar_type_rake = {
-      \ 'ctagstype' : 'rake',
-      \ 'kinds' : [
-      \ 'f:functions',
-      \ 'n:namespaces',
-      \ 't:tasks'
-      \],
-      \ 'scope2kind' : {
-      \ 'f' : 'function',
-      \ 'n' : 'namespace',
-      \ 't' : 'task'
-      \},
-      \ 'kind2scope' : {
-      \ 'function' : 'f',
-      \ 'namespace' : 'n',
-      \ 'task' : 't'
-      \},
-      \ 'deffile' : expand('<sfile>:p:h') . '/.vim/rake.ctags'
-      \ }
 
-let g:tagbar_type_coffee = {
-      \ 'kinds' : [
-      \ 'c:class',
-      \ 'f:functions',
-      \ 'v:variables'
-      \ ],
-      \ 'kind2scope' : {
-      \ 'c' : 'namespace',
-      \ 'v' : 'namespace'
-      \ },
-      \ 'sro' : ".",
-      \ 'ctagsbin' : 'coffeetags',
-      \ 'ctagsargs' : '',
-      \ }
+ let g:tagbar_type_coffee = {
+  \ 'kinds' : [
+  \   'f:functions',
+  \   'o:object'
+  \ ],
+  \ 'kind2scope' : {
+  \  'f' : 'object',
+  \   'o' : 'object'
+  \},
+  \ 'sro' : ".",
+  \ 'ctagsbin' : 'coffeetags',
+  \ 'ctagsargs' : '',
+  \}
 " Nerdtree
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
