@@ -2,6 +2,5 @@
 tell application "Spotify"
   set _track to name of current track
   set _artist to artist of current track
-  set _album to album of current track
-  return _artist & " - " & _track & " (" & _album & ")"
+  return _artist & " - " & _track
 end tell
