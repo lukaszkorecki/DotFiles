@@ -85,6 +85,8 @@ set expandtab
 noremap <C-a> ^
 noremap <C-e> $
 
+noremap <C-P> :tabp<CR>
+noremap <C-N> :tabn<CR>
 " sudo write
 map w! w !sudo tee % >/dev/null
 
