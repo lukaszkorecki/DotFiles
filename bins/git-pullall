@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+git branch | while read __branch ; do git checkout $branch && git pull -u origin $branch; done
