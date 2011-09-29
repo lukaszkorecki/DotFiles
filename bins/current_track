@@ -1,6 +1,14 @@
 #!/usr/bin/osascript
-tell application "Spotify"
-  set _track to name of current track
-  set _artist to artist of current track
-  return _artist & " - " & _track
-end tell
+on appIsRunning(appName)
+ tell application "System Events" to (name of processes) contains appName
+ end appIsRunning
+
+if appIsRunning("Spotify") then
+  tell application "Spotify"
+    set _track to name of current track
+    set _artist to artist of current track
+    return _artist & " - " & _track
+  end tell
+else
+  return "silence!"
+end if
