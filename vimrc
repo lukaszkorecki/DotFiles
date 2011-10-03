@@ -87,6 +87,8 @@ noremap <C-e> $
 
 noremap <C-P> :tabp<CR>
 noremap <C-N> :tabn<CR>
+
+noremap <leader>S /asdf<CR>
 " sudo write
 map w! w !sudo tee % >/dev/null
 
@@ -213,12 +215,6 @@ let NERDTreeDirArrows=1
 
 "" Functions
 
-" save all command under :W, possibly add new stuff to it
-function! s:SaveAll()
-    w | :Error
-endfunction
-command! -bar -narg=0 W call s:SaveAll()
-
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -226,12 +222,3 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-fun! s:IDELayout()
-  :TagbarToggle<cr>
-  :q
-  :NERDTreeToggle<cr>
-  :new
-  b __tagbar__
-endfunction
-command! -bar -narg=0 S call s:IDELayout()
