@@ -92,7 +92,7 @@ function GemInst() {
 
 REPORTTIME=5
 
-export RPS1=$RPS1' $(rvm current)'
+export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
 
