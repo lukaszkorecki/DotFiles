@@ -92,6 +92,8 @@ function GemInst() {
 
 REPORTTIME=5
 
+export RPS1=$RPS1' $(rvm current)'
+
 export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
 
 export GITHUB_TOKEN=`git config --global --get github.token`
