@@ -89,6 +89,8 @@ noremap <C-P> :tabp<CR>
 noremap <C-N> :tabn<CR>
 
 noremap <leader>S /asdf<CR>
+noremap <leader>- :sp<CR>
+noremap <leader>\| :vsp<CR>
 " sudo write
 map w! w !sudo tee % >/dev/null
 
@@ -206,7 +208,6 @@ set tags=tags,.git/tags,TAGS
   \},
   \ 'sro' : ".",
   \ 'ctagsbin' : 'coffeetags',
-  \ 'ctagsargs' : '--include-vars ',
   \}
 " Nerdtree
 noremap <Leader>n :NERDTreeToggle<CR>
