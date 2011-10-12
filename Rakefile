@@ -64,7 +64,6 @@ task :get do
   end
   puts "finished cloning".pur
 end
-
 desc "Create symlinks"
 task :symlink do
   puts "Creating symlinks to rc files and such".green
@@ -136,3 +135,4 @@ task :setup do
   puts "="*80
   puts "Close the terminal and start a new session".green
 end
+

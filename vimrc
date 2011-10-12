@@ -164,9 +164,12 @@ au BufNewFile,BufRead *.py set expandtab
 
 
 "" Plugin settings
+" screen.vim
+let g:ScreenImpl='Tmux'
 
 let  twitvim_browser_cmd="open"
 let twitvim_count = 50
+
 let g:PreviewBrowsers='qlmanage -p'
 :nmap <Leader>v :Preview<CR>
 
@@ -194,7 +197,6 @@ noremap <Leader>l :CommandTBuffer<CR>
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
 
-let g:tagbar_left=1
 set tags=tags,.git/tags,TAGS
 
  let g:tagbar_type_coffee = {
