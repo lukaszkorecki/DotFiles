@@ -94,7 +94,7 @@ REPORTTIME=5
 
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
-export EDITOR='vim --noplugin -u ~/.DotFiles/.simplerc'
+export EDITOR='vim' # --noplugin -u ~/.DotFiles/.simplerc'
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
