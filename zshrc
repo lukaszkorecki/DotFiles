@@ -38,30 +38,8 @@ alias prev='qlmanage -p '
 alias tm='tmux -2 -u'
 function git(){hub "$@"}
 
-alias vitodo='mvim ~/Dropbox/todo/todo.txt'
+alias vitodo='vim ~/Dropbox/todo/todo.txt'
 
-function spotify() {
-if [[ $1 == 'pp' ]]; then
-  osascript ~/.DotFiles/bins/spotify/PlayPause.scpt > /dev/null
-fi
-
-if [[ $1 == 'n' ]]; then
-  osascript ~/.DotFiles/bins/spotify/NextTrack.scpt > /dev/null
-
-fi
-
-if [[ $1 == 'p' ]]; then
-  osascript ~/.DotFiles/bins/spotify/PreviousTrack.scpt > /dev/null
-
-fi
-
-if [[ $1 == '' ]]; then
-  echo 'pp - play/pause'
-  echo 'p  - previous'
-  echo 'n  - next'
-fi
-
-}
 
 function ShowProc() {
   ps aux | grep $1 | grep -v grep
@@ -70,24 +48,13 @@ function SuperKill() {
   ps aux | grep $1 | grep -v grep | awk {' print $2 '} | xargs kill -9
 }
 
-function Grep() {
-  grep -cnHir $1
-}
-
-function CopyPwd() {
-  pwd | pbcopy
-}
-function GotoPath() {
-  cd `pbpaste`
-}
-
-function GrepFind() {
-  echo "Searching in ".`pwd`
-  find -L -f . | grep $1
-}
 
 function GemInst() {
   gem install $1 --no-ri --no-rdoc
+}
+
+function growl() {
+echo -e $'\e]9;'${1}'\007' ; return
 }
 
 REPORTTIME=5
