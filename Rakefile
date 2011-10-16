@@ -2,6 +2,7 @@ require 'fileutils'
 include FileUtils
 
 RCLIST = %w(vimrc zshrc gemrc irbrc tmux.conf todotxt.cfg rvmrc ackrc irssi tmuxinator)
+
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
@@ -22,6 +23,21 @@ def go_home path=''
   puts "Going home".green
   cd File.expand_path "~#{path}"
 end
+
+def required_stuff
+  [].tap do |str|
+    str << 'Before you start make sure you have the following:'
+    str << 'vim 7.3 (terminal edition, no gui)'.pur
+    str << 'tmux'.pur
+    str << 'zsh'.pur
+    str << 'irssi'.pur
+    str << 'hub'.pur
+    str << 'and following gems:'
+    str << 'flamethrower'.green
+    str << 'tmuxinator'.green
+  end.join "\n"
+end
+
 
 desc "Remove existing rc files and directories"
 task :implode do
@@ -118,5 +134,6 @@ task :setup do
   end
   puts "="*80
   puts "Close the terminal and start a new session".green
+  puts required_stuff
 end
 
