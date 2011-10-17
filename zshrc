@@ -57,6 +57,15 @@ function growl() {
 echo -e $'\e]9;'${1}'\007' ; return
 }
 
+function EarthQuakeScreen() {
+  while true; do
+    earthquake -c :recent
+    sleep 20
+    echo `date` '=========================================>'
+  done
+
+}
+
 REPORTTIME=5
 
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'

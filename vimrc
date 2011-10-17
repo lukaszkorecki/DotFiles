@@ -164,6 +164,8 @@ au BufNewFile,BufRead *.py set expandtab
 
 
 "" Plugin settings
+
+
 " screen.vim
 let g:ScreenImpl='Tmux'
 
@@ -183,6 +185,7 @@ let g:indent_guides_guide_size=1
 " gist vim
 let g:gist_show_privates=1
 let g:gist_clip_command = 'pbcopy'
+let g:gist_open_browser_after_post = 1
 
 " disable xrargs for grep.vim
 let Grep_Find_Use_Xargs = 0

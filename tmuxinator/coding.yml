@@ -1,0 +1,21 @@
+# ~/.tmuxinator/coding.yml
+# you can make as many tabs as you wish...
+
+project_name: Coding
+project_root: ~/Dev/Projects/
+tabs:
+  - Vim:
+      layout: main-vertical
+      panes:
+        - vim
+        -
+  - Shell:
+      layout: main-vertical
+      panes:
+        -
+        -
+  - Twitter:
+      layout: main-horizontal
+      panes:
+        - EarthQuakeScreen
+        - earthquake

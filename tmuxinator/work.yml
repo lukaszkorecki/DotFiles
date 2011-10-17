@@ -4,19 +4,24 @@
 project_name: Work
 project_root: ~/Dev/Work/
 tabs:
-  - editor:
+  - VIM:
       layout: main-vertical
       panes:
         - vim
         - #empty, will just run plain bash
-  - shell:
+  - ZSH:
       layout: even-vertical
       panes:
         - #zsh
         - #zsh
-  - chat:
+  - Campfire:
       layout: main-horizontal
       panes:
         - irssi -c localhost
         - cat ~/.irssi/nicklistfifo
         - flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+  - Twitter:
+      layout: main-horizontal
+      panes:
+        - EarthQuakeScreen
+        - earthquake
