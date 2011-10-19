@@ -1,7 +1,7 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w(vimrc zshrc gemrc irbrc tmux.conf todotxt.cfg rvmrc ackrc irssi tmuxinator)
+RCLIST = %w( vim vimrc zshrc gemrc irbrc tmux.conf todotxt.cfg rvmrc ackrc irssi tmuxinator)
 
 DIRS = %w(.oh-my-zsh)
 REPOS = {
