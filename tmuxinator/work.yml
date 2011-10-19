@@ -23,5 +23,4 @@ tabs:
   - Twitter:
       layout: main-horizontal
       panes:
-        - EarthQuakeScreen
         - earthquake
