@@ -264,8 +264,9 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "envy"; };
-  "perl/core/scripts" = { 
+  "perl/core/scripts" = {
     nicklist_height = "300";
     nicklist_width = "20";
+    growl_on_regex = ".*";
   };
 };

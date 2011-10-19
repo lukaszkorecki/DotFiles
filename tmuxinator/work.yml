@@ -14,13 +14,10 @@ tabs:
       panes:
         - #zsh
         - #zsh
-  - Campfire:
+  - Communication:
       layout: main-horizontal
       panes:
         - irssi -c localhost
+        - earthquake
         - cat ~/.irssi/nicklistfifo
         - flamethrower -c ~/Dropbox/Work/flamethrower.yaml
-  - Twitter:
-      layout: main-horizontal
-      panes:
-        - earthquake
