@@ -19,5 +19,4 @@ tabs:
       panes:
         - irssi -c localhost
         - earthquake
-        - cat ~/.irssi/nicklistfifo
         - flamethrower -c ~/Dropbox/Work/flamethrower.yaml
