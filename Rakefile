@@ -121,7 +121,7 @@ namespace :vim do
 
     name = url.split('/').last.sub('.git','')
     puts "Installing #{name} from #{url}".green
-    STDOUT << `git submodule add #{url} bundle/#{name}`
+    STDOUT << `git submodule add #{url} vim/bundle/#{name}`
     STDOUT << `git submodule init`
     STDOUT << `git submodule update`
   end
