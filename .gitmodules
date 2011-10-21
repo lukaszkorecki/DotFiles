@@ -66,8 +66,8 @@
 	path = vim/bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
   ignore = untracked
-[submodule "snippets"]
-	path = snippets
+[submodule "vim/snippets"]
+	path = vim/snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
   ignore = untracked
 [submodule "vim/bundle/snipmate"]
