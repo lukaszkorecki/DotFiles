@@ -94,10 +94,6 @@
 	path = vim/bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
   ignore = untracked
-[submodule "vim/bundle/vim-scratch"]
-	path = vim/bundle/vim-scratch
-	url = https://github.com/kana/vim-scratch.git
-  ignore = untracked
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git

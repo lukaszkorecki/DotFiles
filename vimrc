@@ -168,6 +168,9 @@ au BufNewFile,BufRead *.py set expandtab
 
 " screen.vim
 let g:ScreenImpl='Tmux'
+noremap <leader>S :ScreenShell
+vnoremap <leader>s :ScreenSend<CR>
+noremap <leader>s :ScreenSend<CR>
 
 let  twitvim_browser_cmd="open"
 let twitvim_count = 50
