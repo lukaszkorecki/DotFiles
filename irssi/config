@@ -263,7 +263,7 @@ settings = {
     nick = "lukaszkorecki";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "envy"; };
+  "fe-common/core" = { theme = "envy"; hilight_nick_matches = "yes"; };
   "perl/core/scripts" = {
     nicklist_height = "300";
     nicklist_width = "20";
@@ -271,3 +271,25 @@ settings = {
     growl_icon = "campfire.png";
   };
 };
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#success_crew_alpha_go";
+        tag = "localhost";
+      }
+    );
+  };
+  3 = { name = "hilight"; sticky = "yes"; };
+};
+mainwindows = {
+  2 = { first_line = "8"; lines = "36"; };
+  3 = { first_line = "1"; lines = "7"; };
+};
+hilights = (
+  { text = "help"; nick = "yes"; word = "yes"; },
+  { text = "lukasz"; act_color = "%R"; nick = "no"; word = "yes"; }
+);
