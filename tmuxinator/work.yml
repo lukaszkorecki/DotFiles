@@ -8,7 +8,6 @@ tabs:
       layout: main-vertical
       panes:
         - vim
-        - #empty, will just run plain bash
   - ZSH:
       layout: even-vertical
       panes:

@@ -8,9 +8,8 @@ tabs:
       layout: main-vertical
       panes:
         - vim
-        -
   - Shell:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         -
         -
