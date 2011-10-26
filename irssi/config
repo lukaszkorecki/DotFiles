@@ -2,13 +2,13 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -33,7 +33,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -57,7 +57,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  OFTC = { 
+  OFTC = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -75,7 +75,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -259,8 +259,8 @@ statusbar = {
 settings = {
   core = {
     real_name = "Lukasz Korecki";
-    user_name = "lukaszkorecki";
-    nick = "lukaszkorecki";
+    user_name = "Lukasz_Korecki";
+    nick = "lukasz_korecki";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "envy"; hilight_nick_matches = "yes"; };
@@ -271,25 +271,28 @@ settings = {
     growl_icon = "campfire.png";
   };
 };
+hilights = (
+  { text = "help"; nick = "yes"; word = "yes"; },
+  { text = "lukasz"; act_color = "%R"; nick = "no"; word = "yes"; },
+  { text = "lukasz -color 200"; nick = "no"; word = "yes"; },
+  { text = "łukasz -color 200"; nick = "no"; word = "yes"; }
+);
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = {
+  2 = { };
+  3 = { name = "hilight"; sticky = "yes"; };
+  4 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#success_crew_alpha_go";
-        tag = "localhost";
+        tag = "localhost2";
       }
     );
   };
-  3 = { name = "hilight"; sticky = "yes"; };
 };
 mainwindows = {
-  2 = { first_line = "8"; lines = "36"; };
+  4 = { first_line = "8"; lines = "36"; };
   3 = { first_line = "1"; lines = "7"; };
 };
-hilights = (
-  { text = "help"; nick = "yes"; word = "yes"; },
-  { text = "lukasz"; act_color = "%R"; nick = "no"; word = "yes"; }
-);
