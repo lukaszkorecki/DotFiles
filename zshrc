@@ -77,6 +77,7 @@ export GITHUB_USER=`git config --global --get github.user`
 
 # PATH crap
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
