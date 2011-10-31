@@ -101,7 +101,7 @@ namespace :vim do
   desc "Update vim plugins"
   task :update do
     puts "Updating vim plugins".green
-    go_home '/.vim'
+    go_home '/.DotFiles'
     [
   #    'git submodule init',
       'git submodule foreach git pull -q origin master',

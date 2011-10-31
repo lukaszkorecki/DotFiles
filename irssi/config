@@ -287,12 +287,12 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#success_crew_alpha_go";
-        tag = "localhost2";
+        tag = "localhost";
       }
     );
   };
 };
 mainwindows = {
-  4 = { first_line = "8"; lines = "36"; };
+  4 = { first_line = "8"; lines = "25"; };
   3 = { first_line = "1"; lines = "7"; };
 };
