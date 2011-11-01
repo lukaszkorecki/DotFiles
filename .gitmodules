@@ -118,3 +118,6 @@
 	path = vim/bundle/screen
 	url = https://github.com/ervandew/screen.git
   ignore = untracked
+[submodule "vim/bundle/vim-statline"]
+	path = vim/bundle/vim-statline
+	url = https://github.com/millermedeiros/vim-statline.git
