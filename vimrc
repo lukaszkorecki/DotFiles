@@ -163,8 +163,10 @@ au BufNewFile,BufRead *.py set shiftwidth=4
 au BufNewFile,BufRead *.py set expandtab
 
 
-"" Plugin settings
+"" Plugins settings
 
+" statline
+let g:statline_fugitive = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
