@@ -218,7 +218,7 @@ set tags=tags,.git/tags,TAGS
   \},
   \ 'sro' : ".",
   \ 'ctagsbin' : 'coffeetags',
-  \ 'ctagsargs' : ' '
+  \ 'ctagsargs' : '--include-vars '
   \}
 " Nerdtree
 noremap <Leader>n :NERDTreeToggle<CR>
