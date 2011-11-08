@@ -14,10 +14,11 @@ tabs:
         - #zsh
         - #zsh
   - Communication:
-      layout: even-vertical
+      layout: tiled
       panes:
+        - irssi -c localhost
         - irssi -c localhost
         - earthquake
   - Services:
       panes:
-        - flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+        - ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
