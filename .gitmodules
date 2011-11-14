@@ -30,17 +30,9 @@
 	path = vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
   ignore = untracked
-[submodule "vim/bundle/ruby-refactoring"]
-	path = vim/bundle/ruby-refactoring
-	url = https://github.com/ecomba/vim-ruby-refactoring.git
-  ignore = untracked
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
-  ignore = untracked
-[submodule "vim/bundle/todotxt"]
-	path = vim/bundle/todotxt
-	url = https://github.com/davidoc/todo.txt-vim.git
   ignore = untracked
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
@@ -58,22 +50,6 @@
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
   ignore = untracked
-[submodule "vim/bundle/preview"]
-	path = vim/bundle/preview
-	url = https://github.com/greyblake/vim-preview.git
-  ignore = untracked
-[submodule "vim/bundle/vim-ruby-refactoring"]
-	path = vim/bundle/vim-ruby-refactoring
-	url = https://github.com/ecomba/vim-ruby-refactoring.git
-  ignore = untracked
-[submodule "vim/snippets"]
-	path = vim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
-  ignore = untracked
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
-  ignore = untracked
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
@@ -86,10 +62,6 @@
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
   ignore = untracked
-[submodule "vim/bundle/Command-T"]
-	path = vim/bundle/Command-T
-	url = https://github.com/wincent/Command-T.git
-  ignore = untracked
 [submodule "vim/bundle/SearchComplete"]
 	path = vim/bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete.git
@@ -97,10 +69,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-  ignore = untracked
-[submodule "vim/bundle/ShowMarks7"]
-	path = vim/bundle/ShowMarks7
-	url = https://github.com/vim-scripts/ShowMarks7.git
   ignore = untracked
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
@@ -121,3 +89,8 @@
 [submodule "vim/bundle/vim-statline"]
 	path = vim/bundle/vim-statline
 	url = https://github.com/millermedeiros/vim-statline.git
+  ignore = untracked
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+  ignore = untracked

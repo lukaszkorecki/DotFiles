@@ -85,8 +85,8 @@ set expandtab
 noremap <C-a> ^
 noremap <C-e> $
 
-noremap <C-P> :tabp<CR>
-noremap <C-N> :tabn<CR>
+" noremap <C-P> :tabp<CR>
+" noremap <C-N> :tabn<CR>
 
 noremap <leader>S /asdf<CR>
 noremap <leader>- :sp<CR>
