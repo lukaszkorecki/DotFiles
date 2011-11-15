@@ -17,7 +17,6 @@ tabs:
       layout: tiled
       panes:
         - irssi -c localhost
-        - irssi -c localhost
         - earthquake
   - Services:
       panes:

@@ -49,28 +49,14 @@ set guioptions=eg
 syntax on
 
 " yummy
-set antialias
-if has('gui')
-    if has('gui_gnome')
-        set guifont=DejaVu\ Sans\ Mono\ 8
-    elseif has('gui_macvim')
-        set guifont=Menlo:h12.00
-        set transparency=0
-    elseif has('gui_win32')
-        set guifont=Consolas:h8
-    endif
-endif
-
-" turn off the scrollbars and the rest of the crap
-
-if ! has('gui')
-  set t_Co=256
-endif
 
 " colorz
+set t_Co=256
+
 set background=dark
 let g:solarized_contrast='high'
-colorscheme  molokai_mac "Tomorrow-Night
+let g:solarized_termcolors=256
+colorscheme  solarized "molokai_mac Tomorrow-Night
 
 
 " indent settings
@@ -183,9 +169,15 @@ let g:PreviewBrowsers='qlmanage -p'
 " syntastic
 let g:syntastic_auto_loc_lis=1
 let g:syntastic_enable_signs=1
+
 " indent guides
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=black
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+" au BufNewFile,BufRead *.py,*.rb,*.coffee,*.haml,*.sass,*.scss call :IndentGuidesEnable
 
 " gist vim
 let g:gist_show_privates=1
