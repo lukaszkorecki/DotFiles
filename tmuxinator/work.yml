@@ -14,10 +14,11 @@ tabs:
         - #zsh
         - #zsh
   - Communication:
-      layout: tiled
+      layout: main-vertical
       panes:
-        - irssi -c localhost
+        - irssi -c localhost -p 6667
+        - mcabber -f ~/Dropbox/Scripts/jabber_work.conf
         - earthquake
   - Services:
       panes:
-        - ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+        - RECENT_COUNT=50 ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
