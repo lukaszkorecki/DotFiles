@@ -17,7 +17,7 @@ tabs:
       layout: main-vertical
       panes:
         - irssi -c localhost -p 6667
-        - mcabber -f ~/Dropbox/Scripts/jabber_work.conf
+        - mcabber -f ~/.DotFiles/mcabber/jabber.conf
         - earthquake
   - Services:
       panes:
