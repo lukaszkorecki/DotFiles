@@ -9,7 +9,7 @@ tabs:
       panes:
         - vim
   - ZSH:
-      layout: even-vertical
+      layout: even-horizontal
       panes:
         - #zsh
         - #zsh
@@ -17,7 +17,6 @@ tabs:
       layout: main-vertical
       panes:
         - irssi -c localhost -p 6667
-        - mcabber -f ~/.DotFiles/mcabber/jabber.conf
         - earthquake
   - Services:
       panes:

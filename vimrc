@@ -190,9 +190,6 @@ noremap <Leader>r :Rfgrep<CR>
 
 " Ack
 noremap <Leader>a :Ack
-" command t
-noremap <Leader>p :CommandT<CR>
-noremap <Leader>l :CommandTBuffer<CR>
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>

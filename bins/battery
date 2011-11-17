@@ -1,2 +1,3 @@
-#!/usr/bin/env zsh
-ioreg -l | grep -i capacity | tr '\n' ' | ' | awk '{printf("%.2f%%", $10/$5 * 100)}'
+#!/usr/bin/env bash
+
+ ioreg -l | grep -i capacity | tr '\n' ' | ' | awk '{printf("%.2f%%", $10/$5 * 100)}'
