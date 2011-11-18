@@ -1,3 +1,4 @@
 --type-set=sass=.sass
 --type-set=coffeescript=.coffee
 --type-set=haml=.haml
+--type-set=clj=.clj

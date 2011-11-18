@@ -14,9 +14,6 @@
 	path = vim/bundle/haml
 	url = http://github.com/tpope/vim-haml.git
   ignore = untracked
-[submodule "vim/bundle/grep"]
-	path = vim/bundle/grep
-	url = http://github.com/vim-scripts/grep.vim.git
   ignore = untracked
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
