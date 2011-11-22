@@ -26,6 +26,10 @@ plugins=(git rvm bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+#
+bindkey '\C-x' edit-command-line
+
+
 # Aliases
 
 alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
