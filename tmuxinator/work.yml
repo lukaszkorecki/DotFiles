@@ -20,4 +20,4 @@ tabs:
         - earthquake
   - Services:
       panes:
-        - RECENT_COUNT=50 ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+        -  flamethrower -c ~/Dropbox/Work/flamethrower.yaml

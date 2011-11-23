@@ -32,7 +32,7 @@ bindkey '\C-x' edit-command-line
 
 # Aliases
 
-alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
+# alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
 alias gco='git commit -m '
@@ -73,9 +73,12 @@ function EarthQuakeScreen() {
 
 REPORTTIME=5
 
+
+export TERM=xterm-256color
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
-export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
+# export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
+export EDITOR='vim'
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
