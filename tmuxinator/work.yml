@@ -16,7 +16,7 @@ tabs:
   - Communication:
       layout: main-vertical
       panes:
-        - centerim
+        - irssi -c localhost
         - earthquake
   - Services:
       panes:
