@@ -1,7 +1,13 @@
 require 'fileutils'
 include FileUtils
 
-RCLIST = %w( vim vimrc zshrc gemrc irbrc tmux.conf todotxt.cfg rvmrc ackrc irssi tmuxinator)
+RCLIST = [
+  "vim", "vimrc", "zshrc", "gemrc",
+  "irbrc", "tmux.conf", "todotxt.cfg",
+  "rvmrc", "ackrc", "irssi", "tmuxinator",
+  "centerim/external",
+  "centerim/colorscheme"
+]
 
 DIRS = %w(.oh-my-zsh)
 REPOS = {
@@ -74,8 +80,7 @@ task :symlink do
   rescue
     puts "hm".red
   end
-  RCLIST.map {|file| [ ".DotFiles/#{file}", file]}.each do |from, _to|
-    to = ".#{_to}"
+  RCLIST.map {|file| [ ".DotFiles/#{file}", ".#{file}"]}.each do |from, to|
     puts to.yellow
     begin
       rm to

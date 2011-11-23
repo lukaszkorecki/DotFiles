@@ -1,0 +1,15 @@
+%action Growl
+event   msg
+options nowait
+proto   all
+
+%exec
+#!/usr/bin/env ruby
+
+ev        = ENV['EVENT_TYPE']
+network   = ENV['EVENT_NETWORK']
+nick      = ENV['CONTACT_NICK']
+
+body = "msg from #{nick}(#{network})"
+
+`growlnotify -n "CenterIM" -t "CenterIM(#{network})" -m "#{body}"` if ev =~ /msg/
