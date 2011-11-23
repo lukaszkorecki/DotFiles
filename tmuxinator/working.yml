@@ -1,0 +1,15 @@
+# ~/.tmuxinator/work.yml
+# you can make as many tabs as you wish...
+
+project_name: Work
+project_root: ~/Dev/Work/
+tabs:
+  - VIM:
+      layout: main-vertical
+      panes:
+        - vim
+  - ZSH:
+      layout: even-horizontal
+      panes:
+        - #zsh
+        - #zsh
