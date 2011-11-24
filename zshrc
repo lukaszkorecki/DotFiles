@@ -45,6 +45,15 @@ function git(){hub "$@"}
 
 alias vitodo='vim ~/Dropbox/todo/todo.txt'
 
+# SSH crap for linux
+
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+  eval `$SSHAGENT $SSHAGENTARGS`
+  trap "kill $SSH_AGENT_PID" 0
+fi
+
 
 function ShowProc() {
   ps aux | grep $1 | grep -v grep
@@ -93,3 +102,7 @@ export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+# ssh agent stuff
+eval `ssh-agent`
+ssh-add ~/.ssh/id_rsa
