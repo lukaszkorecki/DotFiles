@@ -2,7 +2,7 @@
 # you can make as many tabs as you wish...
 
 project_name: Work
-project_root: ~/Dev/Work/
+project_root: ~/Dev/Work
 tabs:
   - VIM:
       layout: main-vertical
@@ -16,8 +16,8 @@ tabs:
   - Communication:
       layout: main-vertical
       panes:
-        - irssi -c localhost
+        - shic -c localhost
         - earthquake
   - Services:
       panes:
-        - RECENT_COUNT=50 ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+        -  ~/Dev/Work/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml

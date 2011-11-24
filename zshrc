@@ -32,7 +32,7 @@ bindkey '\C-x' edit-command-line
 
 # Aliases
 
-alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
+# alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
 alias gco='git commit -m '
@@ -44,6 +44,16 @@ alias tm='tmux -2 -u'
 function git(){hub "$@"}
 
 alias vitodo='vim ~/Dropbox/todo/todo.txt'
+alias ack='ack-grep'
+
+# SSH crap for linux
+
+SSHAGENT=/usr/bin/ssh-agent
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+  eval `$SSHAGENT $SSHAGENTARGS`
+  trap "kill $SSH_AGENT_PID" 0
+fi
 
 
 function ShowProc() {
@@ -71,11 +81,20 @@ function EarthQuakeScreen() {
 
 }
 
+function Agent(){
+  # ssh agent stuff
+  eval `ssh-agent`
+  ssh-add ~/.ssh/id_rsa
+}
+
 REPORTTIME=5
 
+
+export TERM=xterm-256color
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
-export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
+# export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
+export EDITOR='vim'
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
@@ -90,3 +109,4 @@ export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
