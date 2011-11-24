@@ -80,6 +80,12 @@ function EarthQuakeScreen() {
 
 }
 
+function Agent(){
+  # ssh agent stuff
+  eval `ssh-agent`
+  ssh-add ~/.ssh/id_rsa
+}
+
 REPORTTIME=5
 
 
@@ -103,6 +109,3 @@ export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-# ssh agent stuff
-eval `ssh-agent`
-ssh-add ~/.ssh/id_rsa
