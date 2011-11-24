@@ -44,6 +44,7 @@ alias tm='tmux -2 -u'
 function git(){hub "$@"}
 
 alias vitodo='vim ~/Dropbox/todo/todo.txt'
+alias ack='ack-grep'
 
 # SSH crap for linux
 

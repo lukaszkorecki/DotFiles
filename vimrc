@@ -184,6 +184,9 @@ noremap <Leader>r :Rfgrep<CR>
 
 " Ack
 noremap <Leader>a :Ack
+if executable('ack-grep')
+  let g:ackprg='ack-grep -H --nocolor --nogroup --column'
+endif
 
 " Tagbar
 noremap <leader>o :TagbarToggle<CR>
