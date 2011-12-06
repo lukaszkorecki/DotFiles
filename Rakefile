@@ -132,6 +132,39 @@ namespace :vim do
   end
 end
 
+namespace :base do
+  desc "Prints out a command which installs GCC, use `rake base:gcc_command` to install it"
+  task :gcc_command do
+    puts "curl https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.6.pkg > GCC-10.6.pkg"
+  end
+
+  desc "Prints out a command which installs RVM, use `rake base:rvm_command` to install it"
+  task :rvm_command do
+    puts "bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)"
+  end
+
+  desc "Prints out a command which installs homebrew, use `rake base:brew_command` to install it"
+  task :brew_command do
+    puts " /usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
+  end
+
+
+  desc "Installs essential tools via homebrew" do
+    task :tools do
+      [
+        'ack',
+        'zsh',
+        'hub',
+        'irssi',
+        'tmux',
+        'https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb',
+      ].each do |tool|
+          STDOUT << `brew install #{tool}`
+        end
+    end
+  end
+end
+
 task :setup do
   puts "SETTING UP".red
   ['implode', 'get', 'symlink', 'vim:update'].each do |task|
