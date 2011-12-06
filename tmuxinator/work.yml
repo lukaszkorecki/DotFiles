@@ -20,4 +20,4 @@ tabs:
         - earthquake
   - Services:
       panes:
-        -  ~/Dev/Work/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml
+        -  ~/Dev/Projects/flamethrower/bin/flamethrower -c ~/Dropbox/Work/flamethrower.yaml

@@ -44,7 +44,9 @@ alias tm='tmux -2 -u'
 function git(){hub "$@"}
 
 alias vitodo='vim ~/Dropbox/todo/todo.txt'
-alias ack='ack-grep'
+if  [[ -e /usr/bin/ack-grep ]]; then
+  alias ack='ack-grep'
+fi
 
 # SSH crap for linux
 
@@ -90,7 +92,7 @@ function Agent(){
 REPORTTIME=5
 
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
 # export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
