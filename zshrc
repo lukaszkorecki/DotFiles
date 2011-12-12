@@ -21,7 +21,7 @@ export ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm bundler)
+plugins=(git rvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,8 +100,11 @@ export EDITOR='vim'
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
+export ARCHFLAGS="-arch x86_64"
 
-# PATH crap
+
+export GIT_SSL_NO_VERIFY=true
+
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
