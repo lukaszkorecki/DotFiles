@@ -21,7 +21,7 @@ export ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm)
+plugins=(git rvm ruby)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,6 +87,9 @@ function Agent(){
   # ssh agent stuff
   eval `ssh-agent`
   ssh-add ~/.ssh/id_rsa
+}
+function using_gcc() {
+  env CC="/usr/bin/gcc-4.2" ARCHFLAGS="-arch x86_32" ARCHS="x86_32" $*
 }
 
 REPORTTIME=5
