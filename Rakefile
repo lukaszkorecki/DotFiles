@@ -11,7 +11,8 @@ RCLIST = [
 
 DIRS = %w(.oh-my-zsh)
 REPOS = {
-  'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
+  'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh',
+  'git://github.com/zsh-users/zsh-syntax-highlighting.git' => '.oh-my-zsh/plugins'
 }
 
 class String
@@ -108,9 +109,9 @@ namespace :vim do
     puts "Updating vim plugins".green
     go_home '/.DotFiles'
     [
-      #    'git submodule init',
+      'git submodule init',
+      'git submodule update',
       'git submodule foreach git pull -q origin master',
-      'git submodule update'
     ].each do |cmd|
       puts cmd.green
       STDOUT << `#{cmd}`

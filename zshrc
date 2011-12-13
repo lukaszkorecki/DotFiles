@@ -21,7 +21,7 @@ export ZSH_THEME="terminalparty"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm ruby)
+plugins=(git rvm ruby zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
