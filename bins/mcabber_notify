@@ -10,7 +10,7 @@ def notify(body,file=nil)
     file = nil
   end
   file = body if file.nil?
-  `growlnotify -n "mcabber" -t "mcabber" -s "#{body}" -m "#{file}"`
+  `growlnotify -n "mcabber" -t "mcabber" -t "#{body}" -m "#{file}"`
 end
 
 def char_to_status ch
