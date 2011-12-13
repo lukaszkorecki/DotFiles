@@ -41,6 +41,7 @@ alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --wi
 alias prev='qlmanage -p '
 
 alias tm='tmux -2 -u'
+alias ng=~/.nginx/sbin/nginx
 function git(){hub "$@"}
 
 alias vitodo='vim ~/Dropbox/todo/todo.txt'
