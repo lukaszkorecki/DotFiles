@@ -32,7 +32,7 @@ when 'MSG'
   when /IN|OUT/
     notify "Incoming from #{arg2}"
   when 'MUC'
-    notify "Groupchat message #{arg2}"
+    notify "MUC #{arg2}"
   end
 when 'STATUS'
   notify "#{arg2} -> #{char_to_status arg1}"
