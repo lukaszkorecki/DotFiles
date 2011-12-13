@@ -129,7 +129,7 @@ au BufNewFile,BufRead  *.mustache set filetype=mustache
 
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
-au BufNewFile,BufRead  *.md,*.mkd,*.markdown set spell
+#au BufNewFile,BufRead  *.md,*.mkd,*.markdown set spell
 
 " non ruby files which are ruby
 au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile set filetype=ruby

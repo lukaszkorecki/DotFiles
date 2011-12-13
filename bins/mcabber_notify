@@ -3,8 +3,14 @@
 event, arg1, arg2, file = ARGV
 
 
-def notify(body)
-  `growlnotify -n "mcabber" -t "mcabber" -m "#{body}"`
+def notify(body,file=nil)
+  begin
+    file = File.read(file)
+  rescue
+    file = nil
+  end
+  file = body if file.nil?
+  `growlnotify -n "mcabber" -t "mcabber" -s "#{body}" -m "#{file}"`
 end
 
 def char_to_status ch
@@ -30,9 +36,9 @@ case event
 when 'MSG'
   case arg1
   when /IN|OUT/
-    notify "Incoming from #{arg2}"
+    notify "From #{arg2}", file
   when 'MUC'
-    notify "MUC #{arg2}"
+    notify "MUC #{arg2}",file
   end
 when 'STATUS'
   notify "#{arg2} -> #{char_to_status arg1}"
