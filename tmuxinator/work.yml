@@ -16,5 +16,4 @@ tabs:
   - Communication:
       layout: main-vertical
       panes:
-        - mcabber
-        - earthquake
+        - mcabber -f ~/Dropbox/Scripts/jabber_work.conf
