@@ -32,6 +32,7 @@ bindkey '\C-x' edit-command-line
 
 # Aliases
 
+alias be='bundle exec '
 # alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
@@ -109,6 +110,7 @@ export ARCHFLAGS="-arch x86_64"
 
 export GIT_SSL_NO_VERIFY=true
 
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH

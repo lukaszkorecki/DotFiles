@@ -153,6 +153,7 @@ let g:vimclojure#ParenRainbow=1
 
 " statline
 let g:statline_fugitive = 1
+let g:statline_filename_relative = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
