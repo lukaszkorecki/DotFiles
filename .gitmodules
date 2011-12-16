@@ -95,3 +95,7 @@
 	path = vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
   ignore = untracked
+[submodule "vim/bundle/MatchTag"]
+	path = vim/bundle/MatchTag
+	url = https://github.com/gregsexton/MatchTag.git
+  ignore = untracked
