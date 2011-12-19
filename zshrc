@@ -33,7 +33,6 @@ bindkey '\C-x' edit-command-line
 # Aliases
 
 alias be='bundle exec '
-# alias vim='/usr/local/Cellar/vim/7.3.333/bin/vim'
 alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
 alias gco='git commit -m '
@@ -41,11 +40,10 @@ alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
 
-alias tm='tmux -2 -u'
 alias ng=~/.nginx/sbin/nginx
-function git(){hub "$@"}
 
-alias vitodo='vim ~/Dropbox/todo/todo.txt'
+alias vless='/usr/local/share/vim/vim73/macros/less.sh'
+
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
