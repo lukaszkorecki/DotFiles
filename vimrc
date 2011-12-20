@@ -53,11 +53,10 @@ autocmd FileType text setlocal textwidth=78
 
 
 " colors -------------------------------------------------------------------
-set t_Co=256
-
-let g:solarized_termcolors=256
 set background=dark
-colorscheme  molokai_mac
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme molokai
 
 
 " indent --------------------------------------------------------------------
@@ -80,8 +79,8 @@ noremap <leader>\| :vsp<CR>
 map w! w !sudo tee % >/dev/null
 
 " better esc
-ino jj <esc>
-cno jj <c-c>
+ino jj <esc>l
+cno jj <c-c>l
 
 " better buffer/window/tab navigation
 nnoremap <D-d> <C-w>v<C-w>l
@@ -212,6 +211,10 @@ let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+
+" CtrlP
+
+let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*|./release/.*|./releases/.*|./.sass-cache/*'
 
 " Functions ----------------------------------------------------------------
 

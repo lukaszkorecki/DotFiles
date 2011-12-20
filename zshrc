@@ -1,23 +1,11 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-
 # Set name of the theme to load.
+
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 export ZSH_THEME="terminalparty"
-
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -33,7 +21,6 @@ bindkey '\C-x' edit-command-line
 # Aliases
 
 alias be='bundle exec '
-alias palm-tunnel='ssh -p 5522 -L 5581:localhost:8080 root@localhost'
 alias gs='git status'
 alias gco='git commit -m '
 alias testenv='RAILS_ENV=test '
@@ -70,17 +57,8 @@ function GemInst() {
   gem install $1 --no-ri --no-rdoc
 }
 
-function growl() {
-echo -e $'\e]9;'${1}'\007' ; return
-}
-
-function EarthQuakeScreen() {
-  while true; do
-    earthquake -c :recent
-    sleep 20
-    echo `date` '=========================================>'
-  done
-
+function Growl() {
+growlnotify -m $1 -n "(s)HELL"
 }
 
 function Agent(){
@@ -94,11 +72,9 @@ function using_gcc() {
 
 REPORTTIME=5
 
-
-# export TERM=xterm-256color
+export TERM=screen-256color-bce
 export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
-# export EDITOR='/usr/local/Cellar/vim/7.3.333/bin/vim'
 export EDITOR='vim'
 
 export GITHUB_TOKEN=`git config --global --get github.token`

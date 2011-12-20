@@ -4,6 +4,3 @@
 --type-set=clj=.clj
 --ignore-dir=releases
 --ignore-dir=release
---ignore-dir=dojo
---ignore-dir=dojox
---ignore-dir=dijit
