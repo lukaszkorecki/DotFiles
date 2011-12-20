@@ -99,3 +99,6 @@
 	path = vim/bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
   ignore = untracked
+[submodule "vim/bundle/vim-monokai"]
+	path = vim/bundle/vim-monokai
+	url = https://github.com/sickill/vim-monokai.git

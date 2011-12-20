@@ -58,7 +58,7 @@ function GemInst() {
 }
 
 function Growl() {
-growlnotify -m $1 -n "(s)HELL"
+  growlnotify -n "(s)HELL" -m "$*"
 }
 
 function Agent(){
