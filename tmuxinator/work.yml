@@ -17,3 +17,10 @@ tabs:
       layout: main-vertical
       panes:
         - mcabber -f ~/Dropbox/Scripts/jabber_work.conf
+
+  - Servers:
+    panes:
+      - ng
+      - searchd --nodetach
+      - echo "START SERVER"
+      - echo "START WORKER"
