@@ -130,13 +130,7 @@ au BufNewFile,BufRead  *.mustache set filetype=mustache
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
 " non ruby files which are ruby
-au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile set filetype=ruby
-
-au BufNewFile,BufRead Rakefile set filetype=rake
-au BufNewFile,BufRead Rakefile set syntax=ruby
-
-au BufNewFile,BufRead *.rake set filetype=rake
-au BufNewFile,BufRead *.rake set syntax=ruby
+au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
 
 " tmux
 
@@ -150,6 +144,8 @@ let g:vimclojure#ParenRainbow=1
 
 " Plugins settings ----------------------------------------------------------
 
+" snipmate
+let g:snippets_dir = "~/.vim/snippets/"
 " statline
 let g:statline_fugitive = 1
 let g:statline_filename_relative = 1
