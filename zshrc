@@ -46,6 +46,16 @@ if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
   trap "kill $SSH_AGENT_PID" 0
 fi
 
+function any() {
+  emulate -L zsh
+  unsetopt KSH_ARRAYS
+  if [[ -z "$1" ]] ; then
+    echo "any - grep for process(es) by keyword" >&2
+    echo "Usage: any " >&2 ; return 1
+  else
+    ps xauwww | grep -i --color=auto "[${1[1]}]${1[2,-1]}"
+  fi
+}
 
 function ShowProc() {
   ps aux | grep $1 | grep -v grep
