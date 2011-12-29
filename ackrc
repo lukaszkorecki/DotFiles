@@ -2,4 +2,7 @@
 --type-set=scss=.scss
 --type-set=coffeescript=.coffee
 --type-set=haml=.haml
+--type-set=pp=.pp
 --type-set=clj=.clj
+--ignore-dir=releases
+--ignore-dir=release

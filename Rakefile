@@ -11,7 +11,8 @@ RCLIST = [
 
 DIRS = %w(.oh-my-zsh)
 REPOS = {
-  'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh'
+  'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh',
+  'git://github.com/zsh-users/zsh-syntax-highlighting.git' => '.oh-my-zsh/plugins'
 }
 
 class String
@@ -108,9 +109,10 @@ namespace :vim do
     puts "Updating vim plugins".green
     go_home '/.DotFiles'
     [
-  #    'git submodule init',
+      'git submodule init',
+      'git submodule update',
+      'git submodule foreach git checkout master',
       'git submodule foreach git pull -q origin master',
-      'git submodule update'
     ].each do |cmd|
       puts cmd.green
       STDOUT << `#{cmd}`
@@ -149,19 +151,19 @@ namespace :base do
   end
 
 
-  desc "Installs essential tools via homebrew" do
-    task :tools do
-      [
-        'ack',
-        'zsh',
-        'hub',
-        'irssi',
-        'tmux',
-        'https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb',
-      ].each do |tool|
-          STDOUT << `brew install #{tool}`
-        end
-    end
+  desc "Installs essential tools via homebrew"
+  task :tools do
+    [
+      'ack',
+      'zsh',
+      'hub',
+      'irssi',
+      'tmux',
+      'https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb',
+    ].each do |tool|
+        puts "Installing #{too}".green
+        STDOUT << `brew install #{tool}`
+      end
   end
 end
 

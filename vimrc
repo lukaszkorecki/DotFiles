@@ -1,6 +1,7 @@
 "" Pathogen -----------------------------------------------------------------
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+runtime macros/matchit.vim
 
 "" Global settings ----------------------------------------------------------
 set fileencoding=utf8
@@ -53,11 +54,10 @@ autocmd FileType text setlocal textwidth=78
 
 
 " colors -------------------------------------------------------------------
-set t_Co=256
-
-let g:solarized_termcolors=256
 set background=dark
-colorscheme  molokai_mac
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme Monokai
 
 
 " indent --------------------------------------------------------------------
@@ -80,8 +80,8 @@ noremap <leader>\| :vsp<CR>
 map w! w !sudo tee % >/dev/null
 
 " better esc
-ino jj <esc>
-cno jj <c-c>
+inoremap jj <esc>l
+cnoremap jj <c-c>l
 
 " better buffer/window/tab navigation
 nnoremap <D-d> <C-w>v<C-w>l
@@ -129,16 +129,14 @@ au BufNewFile,BufRead  *.mustache set filetype=mustache
 
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
-au BufNewFile,BufRead  *.md,*.mkd,*.markdown set spell
 
 " non ruby files which are ruby
-au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile set filetype=ruby
+au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
 
-au BufNewFile,BufRead Rakefile set filetype=rake
-au BufNewFile,BufRead Rakefile set syntax=ruby
-
-au BufNewFile,BufRead *.rake set filetype=rake
-au BufNewFile,BufRead *.rake set syntax=ruby
+" reject! and responds_to? are methods in ruby
+autocmd FileType ruby setlocal iskeyword+=!,?
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+highlight def link rubyRspec Function
 
 " tmux
 
@@ -152,8 +150,11 @@ let g:vimclojure#ParenRainbow=1
 
 " Plugins settings ----------------------------------------------------------
 
+" snipmate
+let g:snippets_dir = "~/.vim/snippets/"
 " statline
 let g:statline_fugitive = 1
+let g:statline_filename_relative = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
@@ -206,12 +207,18 @@ set tags=tags,.git/tags,TAGS
   \ 'ctagsbin' : 'coffeetags',
   \ 'ctagsargs' : '--include-vars '
   \}
+
 " Nerdtree
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>D :NERDTreeFind<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
+
+" CtrlP
+
+let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*|./release/.*|./releases/.*|./.sass-cache/*'
 
 " Functions ----------------------------------------------------------------
 
