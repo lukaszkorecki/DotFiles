@@ -37,15 +37,6 @@ if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
-# SSH crap for linux
-
-SSHAGENT=/usr/bin/ssh-agent
-SSHAGENTARGS="-s"
-if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
-  eval `$SSHAGENT $SSHAGENTARGS`
-  trap "kill $SSH_AGENT_PID" 0
-fi
-
 function any() {
   emulate -L zsh
   unsetopt KSH_ARRAYS

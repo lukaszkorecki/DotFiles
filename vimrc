@@ -1,6 +1,7 @@
 "" Pathogen -----------------------------------------------------------------
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+runtime macros/matchit.vim
 
 "" Global settings ----------------------------------------------------------
 set fileencoding=utf8
@@ -79,8 +80,8 @@ noremap <leader>\| :vsp<CR>
 map w! w !sudo tee % >/dev/null
 
 " better esc
-ino jj <esc>l
-cno jj <c-c>l
+inoremap jj <esc>l
+cnoremap jj <c-c>l
 
 " better buffer/window/tab navigation
 nnoremap <D-d> <C-w>v<C-w>l
@@ -131,6 +132,10 @@ au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
 " non ruby files which are ruby
 au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
+" reject! and responds_to? are methods in ruby
+autocmd FileType ruby setlocal iskeyword+=!,?
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+highlight def link rubyRspec Function
 
 " tmux
 
@@ -201,10 +206,12 @@ set tags=tags,.git/tags,TAGS
   \ 'ctagsbin' : 'coffeetags',
   \ 'ctagsargs' : '--include-vars '
   \}
+
 " Nerdtree
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
 noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>D :NERDTreeFind<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
