@@ -132,6 +132,7 @@ au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
 " non ruby files which are ruby
 au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
+
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
