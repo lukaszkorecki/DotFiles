@@ -12,7 +12,9 @@ RCLIST = [
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh',
-  'git://github.com/zsh-users/zsh-syntax-highlighting.git' => '.oh-my-zsh/plugins'
+  'git://github.com/zsh-users/zsh-syntax-highlighting.git' => '.oh-my-zsh/plugins',
+  'git@github.com:lukaszkorecki/Private-Configs.git' => '.private'
+
 }
 
 class String

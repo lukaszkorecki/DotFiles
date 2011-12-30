@@ -4,6 +4,11 @@
 project_name: Work
 project_root: ~/Projects/
 tabs:
+  - Communication:
+      layout: main-horizontal
+      panes:
+        - mcabber -f ~/.private/jabber_work.conf
+        - mutt -F ~/.private/muttrc
   - VIM:
       layout: main-vertical
       panes:
@@ -13,14 +18,3 @@ tabs:
       panes:
         - #zsh
         - #zsh
-  - Communication:
-      layout: main-vertical
-      panes:
-        - mcabber -f ~/Dropbox/Scripts/jabber_work.conf
-
-  - Servers:
-    panes:
-      - ng
-      - searchd --nodetach
-      - echo "START SERVER"
-      - echo "START WORKER"
