@@ -23,10 +23,6 @@
 	path = vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
   ignore = untracked
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
-  ignore = untracked
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
 	url = https://github.com/vim-scripts/VimClojure.git
