@@ -19,10 +19,6 @@
 	path = vim/bundle/delimitmate
 	url = http://github.com/Raimondi/delimitMate.git
   ignore = untracked
-[submodule "vim/bundle/autocompletepop"]
-	path = vim/bundle/autocompletepop
-	url = https://github.com/vim-scripts/AutoComplPop.git
-  ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
