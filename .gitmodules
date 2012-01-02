@@ -63,10 +63,6 @@
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
   ignore = untracked
-[submodule "bins/spotify"]
-	path = bins/spotify
-	url = https://github.com/jacktams/Spotify-Applescripts.git
-  ignore = untracked
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
