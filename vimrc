@@ -229,3 +229,10 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+
+" Lang specific abbreviations ('cause snippets are overkill) --------------
+" Ruby
+
+iabbr d_ do<CR>end<ESC>O
+iabbr d- do \|_param\|<CR>end<ESC>?_param<CR>ciw

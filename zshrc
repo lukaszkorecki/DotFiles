@@ -5,11 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+export ZSH_THEME="Soliah"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rvm ruby ) #zsh-syntax-highlighting)
-export ZSH_THEME="sunrise"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +77,7 @@ function using_gcc() {
 REPORTTIME=5
 
 export TERM=screen-256color-bce
-export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
+# export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
 export EDITOR='vim'
 
