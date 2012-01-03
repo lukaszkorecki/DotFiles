@@ -5,11 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="apple"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rvm ruby ) #zsh-syntax-highlighting)
+export ZSH_THEME="sunrise"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,6 +37,7 @@ if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
+function current_branch() {}
 function any() {
   emulate -L zsh
   unsetopt KSH_ARRAYS
