@@ -5,11 +5,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="terminalparty"
+export ZSH_THEME="apple"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm ruby zsh-syntax-highlighting)
+plugins=(git rvm ruby ) #zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -22,7 +22,7 @@ bindkey '\C-x' edit-command-line
 
 alias be='bundle exec '
 alias gs='git status'
-alias gco='git commit -m '
+alias gco='git commit'
 alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
@@ -76,7 +76,7 @@ function using_gcc() {
 REPORTTIME=5
 
 export TERM=screen-256color-bce
-# export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
+export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
 export EDITOR='vim'
 
