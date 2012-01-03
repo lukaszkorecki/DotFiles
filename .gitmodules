@@ -19,17 +19,9 @@
 	path = vim/bundle/delimitmate
 	url = http://github.com/Raimondi/delimitMate.git
   ignore = untracked
-[submodule "vim/bundle/autocompletepop"]
-	path = vim/bundle/autocompletepop
-	url = https://github.com/vim-scripts/AutoComplPop.git
-  ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/edsono/vim-matchit.git
-  ignore = untracked
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides.git
   ignore = untracked
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
@@ -70,10 +62,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-  ignore = untracked
-[submodule "bins/spotify"]
-	path = bins/spotify
-	url = https://github.com/jacktams/Spotify-Applescripts.git
   ignore = untracked
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
