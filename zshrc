@@ -1,5 +1,5 @@
-# Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
+# Path to your oh-my-zsh configuration.
 # Set name of the theme to load.
 
 # Look in ~/.oh-my-zsh/themes/
@@ -76,7 +76,7 @@ function using_gcc() {
 REPORTTIME=5
 
 export TERM=screen-256color-bce
-export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
+# export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
 
 export EDITOR='vim'
 
