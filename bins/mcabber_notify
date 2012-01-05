@@ -3,11 +3,11 @@
 event, arg1, arg2, file = ARGV
 
 
-def to_file(status)
-  File.open(File.expand_path("~/.mcabber_unread")) do |f|
-    f.write status
-  end
+def to_file(_status)
+  status = _status.split('')[0..16].join('')+"..."
+  `echo '#{status}' > ~/.mcabber_unread`
 end
+
 def notify(body,file=nil)
   begin
     file = File.read(file)
@@ -42,13 +42,14 @@ when 'MSG'
   case arg1
   when /IN|OUT/
     notify "From #{arg2}", file
+    to_file "IN/OUT #{arg2}"
   when 'MUC'
     notify "MUC #{arg2}",file
+    to_file "MUC #{arg2}"
   end
 when 'STATUS'
   notify "#{arg2} -> #{char_to_status arg1}"
 when 'UNREAD'
-  s = "Unread #{arg1}"
-  notify  s
-  to_file s
+  notify  "Unread #{arg1}"
+  to_file "Unread #{arg1}"
 end
