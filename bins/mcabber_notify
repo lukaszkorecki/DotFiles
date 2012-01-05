@@ -5,7 +5,7 @@ event, arg1, arg2, file = ARGV
 
 def to_file(_status)
   status = _status.split('')[0..16].join('')+"..."
-  `echo '#{status}' > ~/.mcabber_unread`
+  `echo '#{status}' >> ~/.mcabber_unread`
 end
 
 def notify(body,file=nil)
