@@ -231,6 +231,13 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 
+fun! PastedFromTmux()
+  %s/\\015/\r/g
+endfun
+
+command  -nargs=0 FromTmux call PastedFromTmux(<args>)
+
+
 " Lang specific abbreviations ('cause snippets are overkill) --------------
 " Ruby
 
