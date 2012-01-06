@@ -235,11 +235,15 @@ fun! PastedFromTmux()
   %s/\\015/\r/g
 endfun
 
-command  -nargs=0 FromTmux call PastedFromTmux(<args>)
+command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
 
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
 " Ruby
+autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
+autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
+autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
+autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
 
-iabbr d_ do<CR>end<ESC>O
-iabbr d- do \|_param\|<CR>end<ESC>?_param<CR>ciw
+" Javascript
+autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
