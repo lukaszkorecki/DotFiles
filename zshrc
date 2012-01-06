@@ -23,6 +23,7 @@ bindkey '\C-x' edit-command-line
 alias be='bundle exec '
 alias gs='git status'
 alias gco='git commit'
+alias gc='git commit'
 alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '

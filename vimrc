@@ -73,8 +73,8 @@ noremap <C-a> ^
 noremap <C-e> $
 
 noremap <leader>S /asdf<CR>
-noremap <leader>- :sp<CR>
-noremap <leader>\| :vsp<CR>
+noremap <leader>- :sp<CR><C-w>j
+noremap <leader>\| :vsp<CR><C-w>l
 
 " sudo write
 map w! w !sudo tee % >/dev/null
