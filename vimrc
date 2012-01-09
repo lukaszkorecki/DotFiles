@@ -149,6 +149,12 @@ let g:vimclojure#ParenRainbow=1
 
 
 " Plugins settings ----------------------------------------------------------
+" TwitVim
+let twitvim_enable_ruby = 1
+let twitvim_browser_cmd = 'open'
+let twitvim_show_header = 0
+let twitvim_filter_enable = 1
+let twitvim_filter_regex = '@GetGlue\|/youtu\.be/'
 
 " snipmate
 let g:snippets_dir = "~/.vim/snippets/"
