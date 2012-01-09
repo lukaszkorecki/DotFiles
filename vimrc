@@ -150,7 +150,7 @@ let g:vimclojure#ParenRainbow=1
 
 " Plugins settings ----------------------------------------------------------
 " TwitVim
-let twitvim_enable_ruby = 1
+let twitvim_count = 50
 let twitvim_browser_cmd = 'open'
 let twitvim_show_header = 0
 let twitvim_filter_enable = 1
