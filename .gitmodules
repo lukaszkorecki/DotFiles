@@ -119,3 +119,6 @@
 	path = vim/bundle/cocoa.vim
 	url = https://github.com/stephenprater/cocoa.vim.git
   ignore = untracked
+[submodule "vim/bundle/vim_colors"]
+	path = vim/bundle/vim_colors
+	url = https://github.com/squil/vim_colors
