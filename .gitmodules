@@ -122,3 +122,4 @@
 [submodule "vim/bundle/vim_colors"]
 	path = vim/bundle/vim_colors
 	url = https://github.com/squil/vim_colors
+  ignore = untracked

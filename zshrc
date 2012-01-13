@@ -82,6 +82,13 @@ export TERM=screen-256color-bce
 
 export EDITOR='vim'
 
+function viman() {
+env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+      vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+          -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+              -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
+}
+
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
 export ARCHFLAGS="-arch x86_64"
