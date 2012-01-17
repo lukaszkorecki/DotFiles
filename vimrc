@@ -259,7 +259,7 @@ let NERDTreeDirArrows=1
 
 " CtrlP
 
-let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*|./release/.*|./releases/.*|./.sass-cache/*'
+set wildignore +=*/.sass-cache/*,*/release/*
 
 " Functions ----------------------------------------------------------------
 
@@ -275,8 +275,11 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 fun! PastedFromTmux()
   %s/\\015/\r/g
 endfun
-
 command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
+
+" reload file from disk and discard changes
+command!  -nargs=0 R e! %
+
 
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
