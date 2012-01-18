@@ -5,10 +5,10 @@ project_name: Work
 project_root: ~/Projects/
 tabs:
   - Communication:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
-        - mcabber -f ~/.private/jabber_work.conf
-        - mutt -F ~/.private/muttrc
+        - cd ~/.DotFiles/irssi && echo 'cat the nicklist'
+        - irssi -c localhost -p 6667
   - VIM:
       layout: main-vertical
       panes:
