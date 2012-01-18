@@ -115,3 +115,15 @@
 	path = vim/bundle/TwitVim
 	url = https://github.com/vim-scripts/TwitVim.git
   ignore = untracked
+[submodule "vim/bundle/todotxt.vim"]
+	path = vim/bundle/todotxt.vim
+	url = https://github.com/Lejdborg/todotxt.vim.git
+  ignore = untracked
+[submodule "vim/bundle/vimtodo"]
+	path = vim/bundle/vimtodo
+	url = https://github.com/mivok/vimtodo.git
+  ignore = untracked
+[submodule "vim/bundle/todo.txt-vim"]
+	path = vim/bundle/todo.txt-vim
+	url = https://github.com/davidoc/todo.txt-vim.git
+  ignore = untracked
