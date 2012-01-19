@@ -16,7 +16,13 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 #
 bindkey '\C-x' edit-command-line
+# Search backwards and forwards with a pattern
+bindkey -M vicmd '/' history-incremental-pattern-search-backward
+bindkey -M vicmd '?' history-incremental-pattern-search-forward
 
+# set up for insert mode too
+bindkey -M viins '^P' history-incremental-pattern-search-backward
+bindkey -M viins '^N' history-incremental-pattern-search-forward
 
 # Aliases
 
