@@ -9,7 +9,7 @@ export ZSH_THEME="Soliah"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm ruby ) #zsh-syntax-highlighting)
+plugins=(vi-mode git rvm ruby)
 
 source $ZSH/oh-my-zsh.sh
 
