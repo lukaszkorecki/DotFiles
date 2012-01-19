@@ -2,13 +2,13 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -49,7 +49,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -73,7 +73,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  OFTC = { 
+  OFTC = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -91,7 +91,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -286,7 +286,7 @@ settings = {
     nicklist_height = "300";
     nicklist_width = "20";
     growl_on_regex = ".*";
-    growl_icon = "campfire.png";
+    growl_icon = "icon.png";
   };
 };
 hilights = (
@@ -299,18 +299,44 @@ windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
   2 = { };
   3 = { name = "hilight"; sticky = "yes"; };
-  4 = {
+  4 = { };
+  5 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#success_crew_alpha_go";
-        tag = "localhost";
+        name = "&bitlbee";
+        tag = "work";
       }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&msp";
+        tag = "work";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&msp-dev";
+        tag = "work";
+      }
+    );
+  };
+  8 = {
+    items = (
+      { type = "QUERY"; chat_type = "IRC"; name = "mwk"; tag = "work"; }
     );
   };
 };
 mainwindows = {
-  4 = { first_line = "8"; lines = "25"; };
+  7 = { first_line = "8"; lines = "69"; };
   3 = { first_line = "1"; lines = "7"; };
 };
