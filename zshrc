@@ -1,21 +1,21 @@
+export MODE_INDICATOR="%{$fg_bold[red]%}N%{$fg[red]%}ormal%{$reset_color%}"
 export ZSH=$HOME/.oh-my-zsh
-# Path to your oh-my-zsh configuration.
-# Set name of the theme to load.
 
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export TERM=screen-256color-bce
+export EDITOR='vim'
+
+# over write default mode indicator from vi-mode
 export ZSH_THEME="Soliah"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(vi-mode git rvm ruby)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-#
+# key shortcuts
+
 bindkey '\C-x' edit-command-line
+
+# Tweak the vi mode
 # Search backwards and forwards with a pattern
 bindkey -M vicmd '/' history-incremental-pattern-search-backward
 bindkey -M vicmd '?' history-incremental-pattern-search-forward
@@ -82,11 +82,6 @@ function using_gcc() {
 }
 
 REPORTTIME=5
-
-export TERM=screen-256color-bce
-# export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
-
-export EDITOR='vim'
 
 function viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \

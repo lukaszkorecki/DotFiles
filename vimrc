@@ -190,7 +190,7 @@ let Grep_Find_Use_Xargs = 0
 noremap <Leader>r :Rfgrep<CR>
 
 " Ack
-noremap <Leader>a :Ack
+noremap <Leader>a :Ack <cword><cr>
 if executable('ack-grep')
   let g:ackprg='ack-grep -H --nocolor --nogroup --column'
 endif
