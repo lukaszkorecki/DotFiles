@@ -127,3 +127,6 @@
 	path = vim/bundle/todo.txt-vim
 	url = https://github.com/davidoc/todo.txt-vim.git
   ignore = untracked
+[submodule "vim/bundle/vim-buffergator"]
+	path = vim/bundle/vim-buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git

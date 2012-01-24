@@ -24,6 +24,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Folding ------------------------------------------------------------------
+set foldmethod=syntax
+set foldcolumn=1
+set foldlevel=2
+
 " status line --------------------------------------------------------------
 " XXX disabled because of statline plugin
 " set statusline=
@@ -161,6 +166,7 @@ let g:snippets_dir = "~/.vim/snippets/"
 " statline
 let g:statline_fugitive = 1
 let g:statline_filename_relative = 1
+let g:statline_show_charcode = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
@@ -259,7 +265,7 @@ let NERDTreeDirArrows=1
 
 " CtrlP
 
-set wildignore +=*/.sass-cache/*,*/release/*
+set wildignore +=*/.sass-cache/* ",*/release/*
 
 " Functions ----------------------------------------------------------------
 
@@ -291,3 +297,4 @@ autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
 
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
+autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a
