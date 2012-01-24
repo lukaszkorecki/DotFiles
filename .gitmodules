@@ -130,3 +130,8 @@
 [submodule "vim/bundle/vim-buffergator"]
 	path = vim/bundle/vim-buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
+  ignore = untracked
+[submodule "vim/bundle/gitignore"]
+	path = vim/bundle/gitignore
+	url = https://github.com/vim-scripts/gitignore.git
+  ignore = untracked
