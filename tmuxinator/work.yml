@@ -8,8 +8,8 @@ tabs:
   - Communication:
       layout: main-vertical
       panes:
-        - cd ~/.DotFiles/irssi && echo 'cat the nicklist'
         - irssi -c localhost -p 6667
+        - mutt
   - VIM:
       panes:
         - vim
