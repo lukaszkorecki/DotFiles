@@ -291,6 +291,8 @@ command!  -nargs=0 R e! %
 
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
+iabbr me_ Łukasz
+iabbr sig_ -- <CR>Łukasz
 " Ruby
 autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
