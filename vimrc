@@ -263,6 +263,8 @@ noremap <Leader>D :NERDTreeFind<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
+let NERDTreeWinPos='right'
+
 " CtrlP
 
 set wildignore +=*/.sass-cache/* ",*/release/*
