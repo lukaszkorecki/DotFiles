@@ -304,6 +304,7 @@ formats = {
     set_not_boolean = "%r:%K:: Setting {hilight $0} isn't boolean, use /SET";
     translation_not_found = "%r:%K:: %rError%K opening translation table file $0: $1";
     translation_file_error = "%r:%K:: %rError%K parsing translation table file $0";
+    pubmsg = "{pubmsgnick $2 {pubnick \00303$0}}$1";
   };
   "fe-common/irc/dcc" = {
     dcc_list_header = "{line_start_irssi}{dcc DCC connections:}";
