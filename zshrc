@@ -97,6 +97,9 @@ export ARCHFLAGS="-arch x86_64"
 
 export GIT_SSL_NO_VERIFY=true
 
+# make less suck less
+export LESS="-RSM~gIsw"
+
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
