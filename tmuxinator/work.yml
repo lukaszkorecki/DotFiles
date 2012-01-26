@@ -6,7 +6,7 @@ project_root: ~/Projects/
 pre: bitlbee -D
 tabs:
   - Communication:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         - irssi -c localhost -p 6667
         - mutt
