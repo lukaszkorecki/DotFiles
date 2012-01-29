@@ -5,27 +5,40 @@ RCLIST = [
   "vim", "vimrc", "zshrc", "gemrc",
   "irbrc", "tmux.conf", "todotxt.cfg",
   "rvmrc", "ackrc", "irssi", "tmuxinator",
-  "centerim/external",
-  "centerim/colorscheme"
 ]
 
 DIRS = %w(.oh-my-zsh)
 REPOS = {
   'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh',
-  'git://github.com/zsh-users/zsh-syntax-highlighting.git' => '.oh-my-zsh/plugins',
   'git@github.com:lukaszkorecki/Private-Configs.git' => '.private'
 
 }
 
 class String
-  def red;    colorize(self, "\e[1m\e[31m");  end
-  def green;    colorize(self, "\e[1m\e[32m");  end
-  def dark_green;    colorize(self, "\e[32m");  end
-  def yellow;    colorize(self, "\e[1m\e[33m");  end
-  def blue;    colorize(self, "\e[1m\e[34m");  end
-  def dark_blue;    colorize(self, "\e[34m");  end
-  def pur;    colorize(self, "\e[1m\e[35m");  end
-  def colorize(text, color_code);    "#{color_code}#{text}\e[0m";  end
+  def red
+    colorize(self, "\e[1m\e[31m")
+  end
+  def green
+    colorize(self, "\e[1m\e[32m")
+  end
+  def dark_green
+    colorize(self, "\e[32m")
+  end
+  def yellow
+    colorize(self, "\e[1m\e[33m")
+  end
+  def blue
+    colorize(self, "\e[1m\e[34m")
+  end
+  def dark_blue
+    colorize(self, "\e[34m")
+  end
+  def pur
+    colorize(self, "\e[1m\e[35m")
+  end
+  def colorize(text, color_code)
+    "#{color_code}#{text}\e[0m"
+  end
 end
 
 def go_home path=''
@@ -42,8 +55,8 @@ def required_stuff
     str << 'irssi'.pur
     str << 'hub'.pur
     str << 'and following gems:'
-    str << 'flamethrower'.green
     str << 'tmuxinator'.green
+    str << 'earthquake'.green
   end.join "\n"
 end
 

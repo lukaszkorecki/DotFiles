@@ -24,6 +24,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Folding ------------------------------------------------------------------
+set foldmethod=syntax
+set foldcolumn=1
+set foldlevel=2
+
 " status line --------------------------------------------------------------
 " XXX disabled because of statline plugin
 " set statusline=
@@ -55,7 +60,7 @@ autocmd FileType text setlocal textwidth=78
 
 " colors -------------------------------------------------------------------
 set background=dark
-set t_Co=256
+let &t_Co=256
 let g:solarized_termcolors=256
 colorscheme Monokai
 
@@ -73,8 +78,8 @@ noremap <C-a> ^
 noremap <C-e> $
 
 noremap <leader>S /asdf<CR>
-noremap <leader>- :sp<CR>
-noremap <leader>\| :vsp<CR>
+noremap <leader>- :sp<CR><C-w>j
+noremap <leader>\| :vsp<CR><C-w>l
 
 " sudo write
 map w! w !sudo tee % >/dev/null
@@ -149,12 +154,19 @@ let g:vimclojure#ParenRainbow=1
 
 
 " Plugins settings ----------------------------------------------------------
+" TwitVim
+let twitvim_count = 50
+let twitvim_browser_cmd = 'open'
+let twitvim_show_header = 0
+let twitvim_filter_enable = 1
+let twitvim_filter_regex = '@GetGlue\|/youtu\.be/'
 
 " snipmate
 let g:snippets_dir = "~/.vim/snippets/"
 " statline
 let g:statline_fugitive = 1
 let g:statline_filename_relative = 1
+let g:statline_show_charcode = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
@@ -184,7 +196,7 @@ let Grep_Find_Use_Xargs = 0
 noremap <Leader>r :Rfgrep<CR>
 
 " Ack
-noremap <Leader>a :Ack
+noremap <Leader>a :Ack <cword><cr>
 if executable('ack-grep')
   let g:ackprg='ack-grep -H --nocolor --nogroup --column'
 endif
@@ -208,6 +220,41 @@ set tags=tags,.git/tags,TAGS
   \ 'ctagsargs' : '--include-vars '
   \}
 
+" add a definition for Objective-C to tagbar
+let g:tagbar_type_objc = {
+    \ 'ctagstype' : 'ObjectiveC',
+    \ 'kinds'     : [
+        \ 'i:interface',
+        \ 'I:implementation',
+        \ 'p:Protocol',
+        \ 'm:Object_method',
+        \ 'c:Class_method',
+        \ 'v:Global_variable',
+        \ 'F:Object field',
+        \ 'f:function',
+        \ 'p:property',
+        \ 't:type_alias',
+        \ 's:type_structure',
+        \ 'e:enumeration',
+        \ 'M:preprocessor_macro',
+    \ ],
+    \ 'sro'        : ' ',
+    \ 'kind2scope' : {
+        \ 'i' : 'interface',
+        \ 'I' : 'implementation',
+        \ 'p' : 'Protocol',
+        \ 's' : 'type_structure',
+        \ 'e' : 'enumeration'
+    \ },
+    \ 'scope2kind' : {
+        \ 'interface'      : 'i',
+        \ 'implementation' : 'I',
+        \ 'Protocol'       : 'p',
+        \ 'type_structure' : 's',
+        \ 'enumeration'    : 'e'
+    \ }
+\ }
+
 " Nerdtree
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
@@ -216,9 +263,11 @@ noremap <Leader>D :NERDTreeFind<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
+let NERDTreeWinPos='right'
+
 " CtrlP
 
-let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*|./release/.*|./releases/.*|./.sass-cache/*'
+set wildignore +=*/.sass-cache/* ",*/release/*
 
 " Functions ----------------------------------------------------------------
 
@@ -229,3 +278,27 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+
+fun! PastedFromTmux()
+  %s/\\015/\r/g
+endfun
+command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
+
+" reload file from disk and discard changes
+command!  -nargs=0 R e! %
+
+
+
+" Lang specific abbreviations ('cause snippets are overkill) --------------
+iabbr me_ Łukasz
+iabbr sig_ -- <CR>Łukasz
+" Ruby
+autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
+autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
+autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
+autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
+
+" Javascript
+autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
+autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a

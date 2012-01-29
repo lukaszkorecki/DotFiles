@@ -1,14 +1,17 @@
 #!/usr/bin/env ruby
 
 event, arg1, arg2, file = ARGV
+str = ""
+str << [ event , arg1, arg2, file].join(' | ')
+`echo '#{str}' >> ~/.mcabber_debug`
 
-
-def to_file(status)
-  File.open(File.expand_path("~/.mcabber_unread")) do |f|
-    f.write status
-  end
+def to_file(_status)
+  status = _status.split('')[0..16].join('')+"..."
+  `echo '#{status}' >> ~/.mcabber_unread`
 end
+
 def notify(body,file=nil)
+  STDERR << body
   begin
     file = File.read(file)
   rescue
@@ -19,7 +22,7 @@ def notify(body,file=nil)
 end
 
 def char_to_status ch
-  case ch
+  case ch.chomp.strip
     when '+' then 'is typing'
     when '.' then 'stopped typing'
     when '_' then 'offline'
@@ -40,15 +43,17 @@ end
 case event
 when 'MSG'
   case arg1
-  when /IN|OUT/
-    notify "From #{arg2}", file
+  when 'IN'
+    notify "! #{arg2}", file
+    to_file "! #{arg2}"
   when 'MUC'
-    notify "MUC #{arg2}",file
+    s = "!! #{arg2}"
+    notify s
+    to_file s
   end
 when 'STATUS'
-  notify "#{arg2} -> #{char_to_status arg1}"
+  notify "#{arg2} #{char_to_status arg1}"
 when 'UNREAD'
-  s = "Unread #{arg1}"
-  notify  s
-  to_file s
+  notify  "* #{arg1}"
+  to_file "* #{arg1}"
 end

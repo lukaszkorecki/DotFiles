@@ -1,116 +1,19 @@
 servers = (
-  { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
-  { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
-  },
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
-  { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  {
-    address = "irc.gamesurge.net";
-    chatnet = "GameSurge";
-    port = "6667";
-  },
-  { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
-  { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
-  { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
   {
     address = "localhost";
-    chatnet = "work";
+    chatnet = "bitlbee";
     port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    autoconnect = "yes";
-  },
-  {
-    address = "localhost";
-    chatnet = "bee";
-    port = "6668";
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
   }
 );
 
-chatnets = {
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "5";
-    max_whois = "4";
-    max_query_chans = "5";
-  };
-  EFNet = { 
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "1";
-  };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  OFTC = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  WebChat = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  Rizon = { 
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  LinkNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "3";
-    max_whois = "30";
-  };
-  SILC = { type = "SILC"; };
-  work = { type = "IRC"; };
-  bee = { type = "IRC"; };
-};
+chatnets = { bitlbee = { type = "IRC"; }; };
 
 channels = (
-  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; }
+  { name = "&msp"; chatnet = "bitlbee"; autojoin = "yes"; },
+  { name = "&msp-dev"; chatnet = "bitlbee"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -276,8 +179,8 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Lukasz Korecki";
-    user_name = "Lukasz_Korecki";
+    real_name = "Łukasz Korecki";
+    user_name = "lukasz";
     nick = "lukasz_korecki";
   };
   "fe-text" = { actlist_sort = "refnum"; };
@@ -286,7 +189,7 @@ settings = {
     nicklist_height = "300";
     nicklist_width = "20";
     growl_on_regex = ".*";
-    growl_icon = "campfire.png";
+    growl_icon = "icon.png";
   };
 };
 hilights = (
@@ -297,20 +200,40 @@ hilights = (
 );
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = { };
-  3 = { name = "hilight"; sticky = "yes"; };
-  4 = {
+  2 = { name = "hilight"; sticky = "yes"; };
+  3 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#success_crew_alpha_go";
-        tag = "localhost";
+        name = "&bitlbee";
+        tag = "work";
+      }
+    );
+  };
+  4 = {
+    items = (
+      { 
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&msp";
+        tag = "work";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "&msp-dev";
+        tag = "work";
       }
     );
   };
 };
 mainwindows = {
-  4 = { first_line = "8"; lines = "25"; };
-  3 = { first_line = "1"; lines = "7"; };
+  1 = { first_line = "8"; lines = "69"; };
+  2 = { first_line = "1"; lines = "7"; };
 };
+logs = { };

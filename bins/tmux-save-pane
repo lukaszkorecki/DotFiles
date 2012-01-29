@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+if ARGV.empty?
+  puts <<-HHH
+tmux-save-pane window_id pane_id file='~/{session_name}.{window_id}.{pane_id}.txt'
+
+window_id - if of the window (check with 'tmux list-windows')
+pane_id - if of the window (check with 'tmux list-panes')
+file - by default it's going to be a combination of current session name, window id and pane id
+  HHH
+  exit 1
+end
+window_id, pane_id, file, DEBUG = ARGV
+
+def tmux_current_session
+  `tmux list-sessions | grep attached | awk '{ print $1 }'`.gsub(':','').chomp
+end
+
+def tmux_pipe_output(window_id, pane_id, file = nil)
+
+  session = tmux_current_session
+
+  file = "~/" + [session, window_id, pane_id, 'txt'].join('.') if file.nil?
+
+  pipe_str = "#{session}:#{window_id}.#{pane_id}"
+
+  c = "tmux pipe-pane -o -t #{pipe_str} 'cat > #{file}'"
+  puts c unless DEBUG.nil?
+  exec(c)
+end
+
+
+tmux_pipe_output window_id, pane_id, file

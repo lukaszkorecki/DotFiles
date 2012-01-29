@@ -1,28 +1,35 @@
-# Path to your oh-my-zsh configuration.
+export MODE_INDICATOR="%{$fg_bold[red]%}N%{$fg[red]%}ormal%{$reset_color%}"
 export ZSH=$HOME/.oh-my-zsh
-# Set name of the theme to load.
 
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-export ZSH_THEME="terminalparty"
+export TERM=screen-256color-bce
+export EDITOR='vim'
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm ruby zsh-syntax-highlighting)
+# over write default mode indicator from vi-mode
+export ZSH_THEME="Soliah"
+
+plugins=(vi-mode git rvm ruby)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-#
+# key shortcuts
+
 bindkey '\C-x' edit-command-line
 
+# Tweak the vi mode
+# Search backwards and forwards with a pattern
+bindkey -M vicmd '/' history-incremental-pattern-search-backward
+bindkey -M vicmd '?' history-incremental-pattern-search-forward
+
+# set up for insert mode too
+bindkey -M viins '^P' history-incremental-pattern-search-backward
+bindkey -M viins '^N' history-incremental-pattern-search-forward
 
 # Aliases
 
 alias be='bundle exec '
 alias gs='git status'
-alias gco='git commit -m '
+alias gco='git commit'
+alias gc='git commit'
 alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 alias prev='qlmanage -p '
@@ -37,6 +44,7 @@ if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
+function current_branch() {}
 function any() {
   emulate -L zsh
   unsetopt KSH_ARRAYS
@@ -75,10 +83,12 @@ function using_gcc() {
 
 REPORTTIME=5
 
-export TERM=screen-256color-bce
-export RPS1=$RPS1' %{$fg[red]%}❖ $(rvm current | sed s/ruby-//) %{$reset_color%}'
-
-export EDITOR='vim'
+function viman() {
+env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+      vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+          -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+              -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
+}
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
@@ -86,6 +96,9 @@ export ARCHFLAGS="-arch x86_64"
 
 
 export GIT_SSL_NO_VERIFY=true
+
+# make less suck less
+export LESS="-RSM~gIsw"
 
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
