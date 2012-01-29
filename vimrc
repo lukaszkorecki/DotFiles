@@ -28,6 +28,7 @@ set noswapfile
 set foldmethod=syntax
 set foldcolumn=1
 set foldlevel=2
+let g:f__olded = 0
 
 " status line --------------------------------------------------------------
 " XXX disabled because of statline plugin
@@ -88,9 +89,9 @@ map w! w !sudo tee % >/dev/null
 inoremap jj <esc>l
 cnoremap jj <c-c>l
 
-" better buffer/window/tab navigation
-nnoremap <D-d> <C-w>v<C-w>l
-nnoremap <D-D> <C-w>s<C-w>j
+" tabs
+map <leader>P :tabprevious<CR>
+map <leader>N :tabnext<CR>
 
 " disable arrows
 inoremap  <Up>     <NOP>
@@ -279,6 +280,17 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+fun! ToggleFolds()
+  if g:f__olded == 1
+    let g:f__olded = 0
+    set foldlevel=9999
+  else
+    let g:f__olded = 1
+    set foldlevel=2
+  endif
+endfun
+command!  -nargs=0 FoldToggle call ToggleFolds(<args>)
+noremap <leader>f :FoldToggle<CR>
 
 fun! PastedFromTmux()
   %s/\\015/\r/g

@@ -1,7 +1,6 @@
 export MODE_INDICATOR="%{$fg_bold[red]%}N%{$fg[red]%}ormal%{$reset_color%}"
 export ZSH=$HOME/.oh-my-zsh
 
-export TERM=screen-256color-bce
 export EDITOR='vim'
 
 # over write default mode indicator from vi-mode
