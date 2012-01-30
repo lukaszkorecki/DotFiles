@@ -63,7 +63,7 @@ autocmd FileType text setlocal textwidth=78
 set background=dark
 let &t_Co=256
 let g:solarized_termcolors=256
-colorscheme Monokai
+colorscheme grb256
 
 
 " indent --------------------------------------------------------------------
