@@ -104,6 +104,7 @@ export LESS="-RSM~gIsw"
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
