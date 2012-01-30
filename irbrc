@@ -22,3 +22,9 @@ end
 def paste
   `pbpaste`
 end
+
+def _load_bundler
+  require 'rubygems'
+  require 'bundler'
+  Bundler.require
+end
