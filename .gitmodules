@@ -135,3 +135,6 @@
 	path = vim/bundle/gitignore
 	url = https://github.com/vim-scripts/gitignore.git
   ignore = untracked
+[submodule "vim/bundle/scratch.vim"]
+	path = vim/bundle/scratch.vim
+	url = https://github.com/vim-scripts/scratch.vim.git

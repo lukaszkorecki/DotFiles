@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+require 'rubygems'
+require 'json'
+require 'yaml'
+
+
+while f = ARGF.read
+
+y JSON.parse f
+
+end
