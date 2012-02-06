@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require "json"
+require 'yaml'
+puts YAML::load_file(ARGV[0]).to_json
