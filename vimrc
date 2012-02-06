@@ -306,6 +306,7 @@ fun! ToggleFolds()
   endif
 endfun
 noremap <leader>f :call ToggleFolds()<CR>
+vnoremap <leader>f :call ToggleFolds()<CR>
 
 fun! PastedFromTmux()
   %s/\\015/\r/g
