@@ -198,26 +198,34 @@ hilights = (
   { text = "lukasz -color 200"; nick = "no"; word = "yes"; },
   { text = "łukasz -color 200"; nick = "no"; word = "yes"; }
 );
+logs = { };
 windows = {
-  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
-  2 = { name = "hilight"; sticky = "yes"; };
+  1 = { 
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
+  };
+  2 = { name = "hilight"; sticky = "yes"; parent = "1"; };
   3 = {
     items = (
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "&bitlbee";
-        tag = "work";
+        name = "&msp";
+        tag = "bitlbee";
       }
     );
+    sticky = "yes";
+    parent = "1";
   };
   4 = {
     items = (
-      { 
+      {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "&msp";
-        tag = "work";
+        name = "&msp-dev";
+        tag = "bitlbee";
       }
     );
   };
@@ -226,14 +234,30 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "&msp-dev";
-        tag = "work";
+        name = "&bitlbee";
+        tag = "bitlbee";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "tomdunning";
+        tag = "bitlbee";
+      }
+    );
+  };
+  7 = {
+    items = (
+      { 
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "mwk";
+        tag = "bitlbee";
       }
     );
   };
 };
-mainwindows = {
-  1 = { first_line = "8"; lines = "69"; };
-  2 = { first_line = "1"; lines = "7"; };
-};
-logs = { };
+mainwindows = { 1 = { first_line = "1"; lines = "76"; }; };
