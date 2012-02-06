@@ -138,3 +138,4 @@
 [submodule "vim/bundle/scratch.vim"]
 	path = vim/bundle/scratch.vim
 	url = https://github.com/vim-scripts/scratch.vim.git
+  ignore = untracked

@@ -125,10 +125,17 @@ au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
 au BufNewFile,BufRead *.py set expandtab
 
+" ... and so is puppet
+au BufNewFile,BufRead *.pp set tabstop=4
+au BufNewFile,BufRead *.pp set softtabstop=4
+au BufNewFile,BufRead *.pp set shiftwidth=4
+au BufNewFile,BufRead *.pp set expandtab
+
 " qml
 au BufNewFile,BufRead  *.qml set filetype=qml
+
 " json as javascript
-au BufNewFile,BufRead  *.json set filetype=javascript
+au BufNewFile,BufRead  *.json set syntax=javascript
 
 " mustache templates
 au BufNewFile,BufRead  *.mustache set filetype=mustache
@@ -140,7 +147,7 @@ au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
 
 " reject! and responds_to? are methods in ruby
-autocmd FileType ruby setlocal iskeyword+=!,?
+autocmd FileType ruby setlocal iskeyword+=!,?,@
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
@@ -275,11 +282,15 @@ set wildignore +=*/.sass-cache/* ",*/release/*
 " Lang specific abbreviations ('cause snippets are overkill) --------------
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
+
+iabbr pry_ require 'pry'; binding.pry
+
 " Ruby
 autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
+
 
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
