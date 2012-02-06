@@ -270,36 +270,6 @@ let NERDTreeWinPos='right'
 
 set wildignore +=*/.sass-cache/* ",*/release/*
 
-" Functions ----------------------------------------------------------------
-
-fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfun
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-fun! ToggleFolds()
-  if g:f__olded == 1
-    let g:f__olded = 0
-    set foldlevel=9999
-  else
-    let g:f__olded = 1
-    set foldlevel=2
-  endif
-endfun
-command!  -nargs=0 FoldToggle call ToggleFolds(<args>)
-noremap <leader>f :FoldToggle<CR>
-
-fun! PastedFromTmux()
-  %s/\\015/\r/g
-endfun
-command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
-
-" reload file from disk and discard changes
-command!  -nargs=0 R e! %
-
 
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
@@ -315,6 +285,52 @@ autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
 autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a
 
+
+" Functions ----------------------------------------------------------------
+
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+fun! ToggleFolds()
+  if g:f__olded == 0
+    let g:f__olded = 1
+    set foldlevel=9999
+  else
+    let g:f__olded = 0
+    set foldlevel=2
+  endif
+endfun
+noremap <leader>f :call ToggleFolds()<CR>
+
+fun! PastedFromTmux()
+  %s/\\015/\r/g
+  /asdf
+endfun
+
+command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
+
+" reload file from disk and discard changes
+command!  -nargs=0 R e! %
+
+" quickly switch between absolute and relative line numbers
+" "number" option was set at the beginning of the file
+let g:___number_active=1
+function! NumSwap()
+  if g:___number_active
+    set relativenumber
+    let g:___number_active = 0
+  else
+    set number
+    let g:___number_active = 1
+  endif
+endf
+
+nmap <silent> <leader>l :call NumSwap()<cr>
 
 " split management
 function! MarkWindowSwap()
