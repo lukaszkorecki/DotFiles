@@ -65,7 +65,7 @@ set background=dark
 let &t_Co=256
 let g:solarized_termtrans  = 0
 let g:solarized_termcolors = 256
-colorscheme solarized
+colorscheme Monokai
 " XXX use these only if solarized dark is used!
 hi Normal  ctermbg=NONE cterm=NONE
 hi Number  ctermbg=NONE cterm=NONE
