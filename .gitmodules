@@ -154,6 +154,8 @@
 [submodule "emacs.d/vendor/evil"]
 	path = emacs.d/vendor/evil
 	url = git://gitorious.org/evil/evil.git
+  ignore = untracked
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
+  ignore = untracked
