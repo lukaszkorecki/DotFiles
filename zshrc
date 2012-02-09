@@ -8,7 +8,7 @@ export EDITOR='vim'
 # over write default mode indicator from vi-mode
 export ZSH_THEME="Soliah"
 
-plugins=(vi-mode git rvm ruby)
+plugins=(vi-mode git ruby)
 
 source $ZSH/oh-my-zsh.sh
 
