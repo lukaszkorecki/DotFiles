@@ -4,3 +4,6 @@ bundle/*/doc/*
 .DotFiles
 nicklistfifo
 irssi/*.log
+emacs.d/elpa/
+emacs.d/eshell/
+#*
