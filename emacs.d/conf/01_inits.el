@@ -1,3 +1,6 @@
+; Settings
+(global-linum-mode)
+
 ; Packages  init and conf code
 
 ; Colors :-)
@@ -17,6 +20,8 @@
 
 (provide-package 'ruby-mode)
 (setq auto-mode-alist (cons '("\\Rakefile\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\Gemfile\\'" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\Vagrantfile\\'" . ruby-mode) auto-mode-alist))
 
 (provide-package 'markdown-mode )
 (provide-package 'sass-mode )
@@ -42,8 +47,7 @@
 ;;; Stuff not in elpa
 ;;;; EVIL
 (add-to-list 'load-path "~/.emacs.d/vendor/evil")
-(require 'evil)  
-(evil-mode 1)
+; Evil is loaded in 02_evli_custom.el
 
 ;;;; Ack
 (add-to-list 'load-path "~/.emacs.d/vendor/full-ack")
