@@ -22,6 +22,7 @@
        'magit 
        'markdown-mode 
        'rspec-mode 
+       'mode-compile
        'ruby-end 
        'ruby-mode
        
