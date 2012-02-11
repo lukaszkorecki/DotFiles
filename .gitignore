@@ -7,3 +7,5 @@ irssi/*.log
 emacs.d/elpa/
 emacs.d/eshell/
 #*
+#*#
+emacs.d/url/
