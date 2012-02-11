@@ -5,6 +5,7 @@ RCLIST = [
   "vim", "vimrc", "zshrc", "gemrc",
   "irbrc", "tmux.conf", "todotxt.cfg",
   "rvmrc", "ackrc", "irssi", "tmuxinator",
+  "emacs", "emacs.d"
 ]
 
 DIRS = %w(.oh-my-zsh)
