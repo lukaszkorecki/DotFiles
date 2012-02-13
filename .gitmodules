@@ -14,7 +14,6 @@
 	path = vim/bundle/haml
 	url = http://github.com/tpope/vim-haml.git
   ignore = untracked
-  ignore = untracked
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = http://github.com/Raimondi/delimitMate.git
@@ -50,10 +49,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
-  ignore = untracked
-[submodule "vim/bundle/SearchComplete"]
-	path = vim/bundle/SearchComplete
-	url = https://github.com/vim-scripts/SearchComplete.git
   ignore = untracked
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
@@ -99,14 +94,6 @@
 	path = vim/bundle/vim-puppet
 	url = https://github.com/rodjek/vim-puppet.git
   ignore = untracked
-[submodule "vim/snippets"]
-	path = vim/snippets
-	url = https://github.com/honza/snipmate-snippets.git
-  ignore = untracked
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-  ignore = untracked
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
@@ -114,22 +101,6 @@
 [submodule "vim/bundle/TwitVim"]
 	path = vim/bundle/TwitVim
 	url = https://github.com/vim-scripts/TwitVim.git
-  ignore = untracked
-[submodule "vim/bundle/todotxt.vim"]
-	path = vim/bundle/todotxt.vim
-	url = https://github.com/Lejdborg/todotxt.vim.git
-  ignore = untracked
-[submodule "vim/bundle/vimtodo"]
-	path = vim/bundle/vimtodo
-	url = https://github.com/mivok/vimtodo.git
-  ignore = untracked
-[submodule "vim/bundle/todo.txt-vim"]
-	path = vim/bundle/todo.txt-vim
-	url = https://github.com/davidoc/todo.txt-vim.git
-  ignore = untracked
-[submodule "vim/bundle/vim-buffergator"]
-	path = vim/bundle/vim-buffergator
-	url = https://github.com/jeetsukumaran/vim-buffergator.git
   ignore = untracked
 [submodule "vim/bundle/gitignore"]
 	path = vim/bundle/gitignore
@@ -159,3 +130,6 @@
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
   ignore = untracked
+[submodule "vim/bundle/vim-orgmode"]
+	path = vim/bundle/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode.git
