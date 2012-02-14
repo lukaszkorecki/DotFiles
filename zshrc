@@ -113,3 +113,5 @@ export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
