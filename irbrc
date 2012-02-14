@@ -1,30 +1,21 @@
 #!/usr/bin/ruby
-require 'irb/completion'
-require 'irb/ext/save-history'
+require 'rubygems'
+require 'awesome_print'
 
-IRB.conf[:SAVE_HISTORY] = 1000
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+if defined? IRB
+  require 'irb/completion'
+  require 'irb/ext/save-history'
 
-IRB.conf[:PROMPT_MODE] = :SIMPLE
+  IRB.conf[:SAVE_HISTORY] = 1000
+  IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
-def copy(str)
-  IO.popen('pbcopy', 'w') { |f| f << str.to_s }
+  IRB.conf[:PROMPT_MODE] = :SIMPLE
 end
 
-def copy_history
-  history = Readline::HISTORY.entries
-  index = history.rindex("exit") || -1
-  content = history[(index+1)..-2].join("\n")
-  puts content
-  copy content
-end
-
-def paste
-  `pbpaste`
-end
-
-def _load_bundler
-  require 'rubygems'
-  require 'bundler'
-  Bundler.require
+module H_
+  def self.load_bundler
+    require 'rubygems'
+    require 'bundler'
+    Bundler.require
+  end
 end

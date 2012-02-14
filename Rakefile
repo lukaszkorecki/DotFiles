@@ -3,7 +3,8 @@ include FileUtils
 
 RCLIST = [
   "vim", "vimrc", "zshrc", "gemrc",
-  "irbrc", "tmux.conf", "todotxt.cfg",
+  "irbrc", 'pryrc',
+  "tmux.conf", "todotxt.cfg",
   "rvmrc", "ackrc", "irssi", "tmuxinator",
   "emacs", "emacs.d"
 ]
