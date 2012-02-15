@@ -84,7 +84,7 @@ task :get do
   REPOS.each do |git_url, directory|
     puts directory.yellow
     rm_rf directory
-    STDOUT << `git clone -q #{git_url} #{directory}`
+    STDOUT << `git clone -q #{git_url} #{directory} --recursive`
   end
   puts "finished cloning".pur
 end
@@ -113,7 +113,7 @@ end
 task "Update main repo"
 task :update do
   puts "Updating .DotFiles".green
-  STDOUT << `git pull -q`
+  STDOUT << `git pull -q --recursive`
 
   Rake::Task['vim:update'].invoke
 

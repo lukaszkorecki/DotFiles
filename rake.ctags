@@ -1,5 +1,0 @@
---langdef=rake
---langmap=rake:.rake,Rakefile
---regex-rake=/[ \t]*def[ \t]([a-z_0-9]*)[ \t\(]/\1/f,function/
---regex-rake=/[ \t]*task[ \t]:([a-z]*)[ \t]/\1/t,task/
---regex-rake=/[ \t]*namespace[ \t]:([a-z]*)[ \t]/\1/n,namespace/
