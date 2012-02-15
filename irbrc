@@ -1,6 +1,10 @@
 #!/usr/bin/ruby
 require 'rubygems'
 require 'awesome_print'
+require 'yaml'
+require 'fileutils'
+include FileUtils
+
 
 if defined? IRB
   require 'irb/completion'
