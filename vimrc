@@ -297,10 +297,16 @@ autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
 
+" Rspec yeah
+autocmd Filetype ruby iabbr desc_ describe "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
+
 
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
 autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a
+
 
 
 " Functions ----------------------------------------------------------------
@@ -349,6 +355,7 @@ function! NumSwap()
 endf
 
 nmap <silent> <leader>l :call NumSwap()<cr>
+vmap <silent> <leader>l :call NumSwap()<cr>
 
 " split management
 function! MarkWindowSwap()
