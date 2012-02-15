@@ -2,11 +2,11 @@
 require 'rubygems'
 require 'awesome_print'
 require 'yaml'
-require 'fileutils'
-include FileUtils
 
 
 if defined? IRB
+  require 'fileutils'
+  include FileUtils
   require 'irb/completion'
   require 'irb/ext/save-history'
 
