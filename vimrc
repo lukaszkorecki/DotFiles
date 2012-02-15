@@ -355,7 +355,7 @@ function! NumSwap()
 endf
 
 nmap <silent> <leader>l :call NumSwap()<cr>
-vmap <silent> <leader>l :call NumSwap()<cr>
+vmap <silent> <leader>l :call NumSwap()<cr>gv
 
 " split management
 function! MarkWindowSwap()
