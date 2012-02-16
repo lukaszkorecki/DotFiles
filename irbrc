@@ -22,4 +22,9 @@ module H_
     require 'bundler'
     Bundler.require
   end
+
+
+  def self.defined_methods object
+    object.methods - Object.new.methods
+  end
 end
