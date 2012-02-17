@@ -295,7 +295,7 @@ iabbr pry_ require 'pry'; binding.pry
 autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
-autocmd Filetype ruby iabbr d- do \|ppp\|<CR>end<ESC>?ppp<ESC>diw
+autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>kf|a
 
 " Rspec yeah
 autocmd Filetype ruby iabbr desc_ describe "" do<CR>end<ESC>?""<ESC>a
