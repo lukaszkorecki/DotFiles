@@ -8,7 +8,7 @@ tabs:
       layout: even-vertical
       panes:
         - mcabber -f ~/.private/jabber_work.conf
-        - alpine
+        -
   - VIM:
       panes:
         - vim
