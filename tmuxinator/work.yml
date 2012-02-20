@@ -3,13 +3,12 @@
 
 project_name: Work
 project_root: ~/Projects/
-pre: bitlbee -D
 tabs:
   - Communication:
       layout: even-vertical
       panes:
-        - irssi -c localhost -p 6667
-        - mutt
+        - mcabber -f ~/.private/jabber_work.conf
+        - alpine
   - VIM:
       panes:
         - vim
