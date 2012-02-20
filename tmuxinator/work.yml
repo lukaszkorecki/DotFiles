@@ -4,11 +4,6 @@
 project_name: Work
 project_root: ~/Projects/
 tabs:
-  - Communication:
-      layout: even-vertical
-      panes:
-        - mcabber -f ~/.private/jabber_work.conf
-        -
   - VIM:
       panes:
         - vim
@@ -17,3 +12,8 @@ tabs:
       panes:
         - #zsh
         - #zsh
+  - Communication:
+      layout: even-vertical
+      panes:
+        - mcabber -f ~/.private/jabber_work.conf
+        -
