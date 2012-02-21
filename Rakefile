@@ -48,21 +48,6 @@ def go_home path=''
   cd File.expand_path "~#{path}"
 end
 
-def required_stuff
-  [].tap do |str|
-    str << 'Before you start make sure you have the following:'
-    str << 'vim 7.3 (terminal edition, no gui)'.pur
-    str << 'tmux'.pur
-    str << 'zsh'.pur
-    str << 'irssi'.pur
-    str << 'hub'.pur
-    str << 'and following gems:'
-    str << 'tmuxinator'.green
-    str << 'earthquake'.green
-  end.join "\n"
-end
-
-
 desc "Remove existing rc files and directories"
 task :implode do
   puts "Removing .rc files and directories!"
@@ -154,17 +139,20 @@ end
 namespace :base do
   desc "Prints out a command which installs GCC, use `rake base:gcc_command` to install it"
   task :gcc_command do
-    puts "curl https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.6.pkg > GCC-10.6.pkg"
+    `echo 'gcc' >> ~/.installed`
+    exec "curl https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.6.pkg > GCC-10.6.pkg"
   end
 
   desc "Prints out a command which installs RVM, use `rake base:rvm_command` to install it"
   task :rvm_command do
-    puts "bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)"
+    `echo 'rvm' >> ~/.installed`
+    exec "bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)"
   end
 
   desc "Prints out a command which installs homebrew, use `rake base:brew_command` to install it"
   task :brew_command do
-    puts " /usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
+    `echo 'brew' >> ~/.installed`
+    exec " /usr/bin/ruby -e \"$(curl -fsSL https://raw.github.com/gist/323731)\""
   end
 
 
@@ -173,8 +161,8 @@ namespace :base do
     [
       'ack',
       'zsh',
-      'hub',
-      'irssi',
+      'git',
+      'mcabber',
       'tmux',
       'https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb',
     ].each do |tool|
@@ -191,6 +179,5 @@ task :setup do
   end
   puts "="*80
   puts "Close the terminal and start a new session".green
-  puts required_stuff
 end
 
