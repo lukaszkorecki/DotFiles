@@ -27,4 +27,10 @@ module H_
   def self.defined_methods object
     object.methods - Object.new.methods
   end
+
+
+  def apf o
+    ap o
+    false
+  end
 end

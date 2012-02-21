@@ -49,7 +49,9 @@ set bs=2
 " lines and margins --------------------------------------------------------
 " highlight current line and add line numbers
 set cursorline
+
 set number
+let g:___number_active=1
 
 " right margin settings
 if version > 702
@@ -67,9 +69,9 @@ let g:solarized_termtrans  = 0
 let g:solarized_termcolors = 256
 colorscheme Monokai
 " XXX use these only if solarized dark is used!
-hi Normal  ctermbg=NONE cterm=NONE
-hi Number  ctermbg=NONE cterm=NONE
-hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
+" hi Normal  ctermbg=NONE cterm=NONE
+" hi Number  ctermbg=NONE cterm=NONE
+" hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
 
 
 " indent --------------------------------------------------------------------
@@ -83,6 +85,12 @@ set expandtab
 " Key mappings -------------------------------------------------------------
 noremap <C-a> ^
 noremap <C-e> $
+
+
+noremap <C-h> h
+noremap <C-j> j
+noremap <C-k> k
+noremap <C-l> l
 
 noremap <leader>S /asdf<CR>
 noremap <leader>- :sp<CR><C-w>j
@@ -154,7 +162,7 @@ au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetyp
 
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?,@
-autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+autocmd BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
 " tmux
@@ -175,8 +183,6 @@ let twitvim_show_header = 0
 let twitvim_filter_enable = 1
 let twitvim_filter_regex = '@GetGlue\|/youtu\.be/'
 
-" snipmate
-let g:snippets_dir = "~/.vim/snippets/"
 " statline
 let g:statline_fugitive = 1
 let g:statline_filename_relative = 1
@@ -277,22 +283,20 @@ noremap <Leader>D :NERDTreeFind<cr>
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-let NERDTreeWinPos='right'
-
 " CtrlP
 
 set wildignore +=*/.sass-cache/* ",*/release/*
-
 
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
 
-iabbr pry_ require 'pry'; binding.pry
+iabbr pry_ require 'pry'; binding.pry if ENV['WITH_PRY']
 
 " Ruby
-autocmd Filetype ruby iabbrev cls class<CR>end<ESC>?class<ESC>$a
+autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
+autocmd Filetype ruby iabbr mod module<CR>end<ESC>?module<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
@@ -306,8 +310,6 @@ autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
 autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a
-
-
 
 " Functions ----------------------------------------------------------------
 
@@ -343,7 +345,7 @@ command!  -nargs=0 R e! %
 
 " quickly switch between absolute and relative line numbers
 " "number" option was set at the beginning of the file
-let g:___number_active=1
+
 function! NumSwap()
   if g:___number_active
     set relativenumber
@@ -356,26 +358,3 @@ endf
 
 nmap <silent> <leader>l :call NumSwap()<cr>
 vmap <silent> <leader>l :call NumSwap()<cr>gv
-
-" split management
-function! MarkWindowSwap()
-    let g:markedWinNum = winnr()
-endfunction
-
-function! DoWindowSwap()
-    "Mark destination
-    let curNum = winnr()
-    let curBuf = bufnr( "%" )
-    exe g:markedWinNum . "wincmd w"
-    "Switch to source and shuffle dest->source
-    let markedBuf = bufnr( "%" )
-    "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' curBuf
-    "Switch to dest and shuffle source->dest
-    exe curNum . "wincmd w"
-    "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf
-endfunction
-
-nmap <silent> <leader>mw :call MarkWindowSwap()<CR>
-nmap <silent> <leader>pw :call DoWindowSwap()<CR>
