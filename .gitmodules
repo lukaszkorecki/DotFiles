@@ -78,17 +78,9 @@
 	path = vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
   ignore = untracked
-[submodule "vim/bundle/MatchTag"]
-	path = vim/bundle/MatchTag
-	url = https://github.com/gregsexton/MatchTag.git
-  ignore = untracked
 [submodule "vim/bundle/vim-monokai"]
 	path = vim/bundle/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
-  ignore = untracked
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
   ignore = untracked
 [submodule "vim/bundle/vim-puppet"]
 	path = vim/bundle/vim-puppet
@@ -97,10 +89,6 @@
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-  ignore = untracked
-[submodule "vim/bundle/TwitVim"]
-	path = vim/bundle/TwitVim
-	url = https://github.com/vim-scripts/TwitVim.git
   ignore = untracked
 [submodule "vim/bundle/gitignore"]
 	path = vim/bundle/gitignore
@@ -130,9 +118,3 @@
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
   ignore = untracked
-[submodule "vim/bundle/vim-orgmode"]
-	path = vim/bundle/vim-orgmode
-	url = https://github.com/jceb/vim-orgmode.git
-[submodule "vim/bundle/badwolf"]
-	path = vim/bundle/badwolf
-	url = https://github.com/sjl/badwolf.git

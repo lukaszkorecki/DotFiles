@@ -100,12 +100,12 @@ noremap <leader>\| :vsp<CR><C-w>l
 map w! w !sudo tee % >/dev/null
 
 " better esc
-inoremap jj <esc>l
-cnoremap jj <c-c>l
+inoremap jj <esc>
+cnoremap jj <c-c>
 
 " tabs
-map <leader>P :tabprevious<CR>
-map <leader>N :tabnext<CR>
+map <leader>[ :tabprevious<CR>
+map <leader>] :tabnext<CR>
 
 " disable arrows
 inoremap  <Up>     <NOP>
