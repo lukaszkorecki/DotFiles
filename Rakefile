@@ -113,8 +113,6 @@ namespace :vim do
     [
       'git submodule init',
       'git submodule update',
-      'git submodule foreach git checkout master',
-      'git submodule foreach git pull -q origin master',
     ].each do |cmd|
       puts cmd.green
       STDOUT << `#{cmd}`
