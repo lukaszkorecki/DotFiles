@@ -92,9 +92,14 @@ noremap <C-j> j
 noremap <C-k> k
 noremap <C-l> l
 
-noremap <leader>S /asdf<CR>
+" Better split management, kept in sync with tmux' mappings
+" (<prefix>| and <prefix>-)
 noremap <leader>- :sp<CR><C-w>j
 noremap <leader>\| :vsp<CR><C-w>l
+
+
+noremap <leader>z zO
+noremap <leader>Z zc
 
 " sudo write
 map w! w !sudo tee % >/dev/null
@@ -222,7 +227,7 @@ if executable('ack-grep')
 endif
 
 " Tagbar
-noremap <leader>o :TagbarToggle<CR>
+noremap <leader>t :TagbarToggle<CR>
 
 set tags=tags,.git/tags,TAGS
 
@@ -292,7 +297,8 @@ set wildignore +=*/.sass-cache/* ",*/release/*
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
 
-iabbr pry_ require 'pry'; binding.pry if ENV['WITH_PRY']
+" pry abbrev, delimitmate handles inserting missing pairs
+iabbr pry_ require 'pry'; require 'pry-nav';  binding.pry if ENV['WITH_PRY
 
 " Ruby
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
