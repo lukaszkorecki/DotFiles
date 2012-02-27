@@ -298,7 +298,11 @@ iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
 
 " pry abbrev, delimitmate handles inserting missing pairs
-iabbr pry_ require 'pry'; require 'pry-nav';  binding.pry if ENV['WITH_PRY
+iabbr pry_ require 'pry'; binding.pry
+iabbr pry__ require 'pry';   binding.pry if ENV['WITH_PRY
+
+iabbr pry= require 'pry'; require 'pry-nav'; binding.pry
+iabbr pry== require 'pry'; require 'pry-nav';  binding.pry if ENV['WITH_PRY
 
 " Ruby
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
