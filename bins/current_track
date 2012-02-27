@@ -1,4 +1,5 @@
 #!/usr/bin/osascript
+# vi: set ft=ruby:
 on appIsRunning(appName)
  tell application "System Events" to (name of processes) contains appName
  end appIsRunning
@@ -10,5 +11,6 @@ if appIsRunning("Spotify") then
     return _artist & " - " & _track
   end tell
 else
-  return "silence!"
+  return "Spotify is off"
 end if
+

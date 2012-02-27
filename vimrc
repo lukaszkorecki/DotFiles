@@ -65,10 +65,10 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-let g:solarized_termtrans  = 0
-let g:solarized_termcolors = 256
-colorscheme Monokai
+colorscheme zenburn
 " XXX use these only if solarized dark is used!
+" let g:solarized_termtrans  = 0
+" let g:solarized_termcolors = 256
 " hi Normal  ctermbg=NONE cterm=NONE
 " hi Number  ctermbg=NONE cterm=NONE
 " hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
@@ -85,12 +85,6 @@ set expandtab
 " Key mappings -------------------------------------------------------------
 noremap <C-a> ^
 noremap <C-e> $
-
-
-noremap <C-h> h
-noremap <C-j> j
-noremap <C-k> k
-noremap <C-l> l
 
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
