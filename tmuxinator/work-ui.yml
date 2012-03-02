@@ -1,0 +1,19 @@
+# ~/.tmuxinator/work.yml
+# you can make as many tabs as you wish...
+
+project_name: Work UI
+project_root: ~/Projects/
+tabs:
+  - VIM:
+      panes:
+        - vim
+  - Terms:
+      layout: even-horizontal
+      panes:
+        - #zsh
+        - #zsh
+  - Servers:
+      layout: even-horizontal
+      panes:
+        - cd msp-ui
+        - cd msp
