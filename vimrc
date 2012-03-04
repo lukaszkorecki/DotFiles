@@ -306,7 +306,7 @@ autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
 " Rspec yeah
-autocmd Filetype ruby iabbr desc_ describe "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 
