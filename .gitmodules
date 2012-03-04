@@ -122,3 +122,6 @@
 	path = vim/bundle/IndexedSearch
 	url = https://github.com/vim-scripts/IndexedSearch.git
   ignore = untracked
+[submodule "vim/bundle/workflowish"]
+	path = vim/bundle/workflowish
+	url = git@github.com:lukaszkorecki/workflowish.git
