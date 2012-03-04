@@ -51,6 +51,7 @@ set bs=2
 set cursorline
 
 set number
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 let g:___number_active=1
 
 " right margin settings
