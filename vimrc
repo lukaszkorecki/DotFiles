@@ -13,6 +13,7 @@ filetype on
 syntax on
 set showbreak=↪
 set guioptions=eg
+set title
 
 " search --------------------------------------------------------------------
 set incsearch
