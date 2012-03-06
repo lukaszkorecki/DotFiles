@@ -3,6 +3,7 @@
 
 project_name: Work UI
 project_root: ~/Projects/
+pre: ng
 tabs:
   - VIM:
       panes:
@@ -15,5 +16,5 @@ tabs:
   - Servers:
       layout: even-horizontal
       panes:
-        - cd msp-ui
-        - cd msp
+        - cd msp-ui && rake css:watch
+        - cd msp && ./bin/msp server --log-stdout
