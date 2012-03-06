@@ -1,4 +1,14 @@
-export MODE_INDICATOR="%{$fg_bold[red]%}N%{$fg[red]%}ormal%{$reset_color%}"
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
+export PATH=~/Dropbox/Scripts:$PATH
+export PATH=$HOME/.DotFiles/bins:$PATH
+export PATH=/opt/PalmSDK/Current/bin/:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+
 export ZSH=$HOME/.oh-my-zsh
 
 export LANG=en_US.UTF-8
@@ -101,16 +111,6 @@ export GIT_SSL_NO_VERIFY=true
 # make less suck less
 export LESS="-RSM~gIsw"
 
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
-export PATH=~/Dropbox/Scripts:$PATH
-export PATH=$HOME/.DotFiles/bins:$PATH
-export PATH=/opt/PalmSDK/Current/bin/:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 
