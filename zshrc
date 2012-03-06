@@ -4,6 +4,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
+export PATH=$HOME/.DotFiles/bins/incognito_chrome:$PATH
 export PATH=/opt/PalmSDK/Current/bin/:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH

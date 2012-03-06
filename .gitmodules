@@ -125,3 +125,6 @@
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
+[submodule "bins/incognito_chrome"]
+	path = bins/incognito_chrome
+	url = https://github.com/bytespider/Incognitus.git
