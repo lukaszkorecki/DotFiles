@@ -2,11 +2,8 @@ require 'fileutils'
 include FileUtils
 
 RCLIST = [
-  "vim", "vimrc", "zshrc", "gemrc",
-  "irbrc", 'pryrc',
-  "tmux.conf", "todotxt.cfg",
-  "rvmrc", "ackrc", "irssi", "tmuxinator",
-  "emacs", "emacs.d"
+  "vim", "vimrc", "zshrc", "gemrc", "irbrc", 'pryrc',
+  "tmux.conf" "rvmrc", "ackrc",  "tmuxinator"
 ]
 
 DIRS = %w(.oh-my-zsh)

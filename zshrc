@@ -106,6 +106,7 @@ export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
 export ARCHFLAGS="-arch x86_64"
 
+export ZAKUIP=`cat ~/Dropbox/zaku_ip`
 
 export GIT_SSL_NO_VERIFY=true
 
