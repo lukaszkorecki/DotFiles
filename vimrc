@@ -33,14 +33,13 @@ set foldlevel=2
 let g:f__olded = 0
 
 " status line --------------------------------------------------------------
-" XXX disabled because of statline plugin
-" set statusline=
-" set statusline+=%f\ %2*%m\ %1*%h
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%{fugitive#statusline()}
-" set statusline+=%*
-" set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
+set statusline=
+set statusline+=%f\ %2*%m\ %1*%h
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{fugitive#statusline()}
+set statusline+=%*
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
 set laststatus=2
 
 
