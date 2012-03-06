@@ -118,3 +118,10 @@
 	path = emacs.d/vendor/full-ack
 	url = https://github.com/nschum/full-ack.git
   ignore = untracked
+[submodule "vim/bundle/IndexedSearch"]
+	path = vim/bundle/IndexedSearch
+	url = https://github.com/vim-scripts/IndexedSearch.git
+  ignore = untracked
+[submodule "vim/bundle/workflowish"]
+	path = vim/bundle/workflowish
+	url = git@github.com:lukaszkorecki/workflowish.git

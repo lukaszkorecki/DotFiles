@@ -13,6 +13,7 @@ filetype on
 syntax on
 set showbreak=↪
 set guioptions=eg
+set title
 
 " search --------------------------------------------------------------------
 set incsearch
@@ -51,6 +52,7 @@ set bs=2
 set cursorline
 
 set number
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 let g:___number_active=1
 
 " right margin settings
@@ -65,10 +67,10 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-let g:solarized_termtrans  = 0
-let g:solarized_termcolors = 256
-colorscheme Monokai
+colorscheme zenburn
 " XXX use these only if solarized dark is used!
+" let g:solarized_termtrans  = 0
+" let g:solarized_termcolors = 256
 " hi Normal  ctermbg=NONE cterm=NONE
 " hi Number  ctermbg=NONE cterm=NONE
 " hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
@@ -86,15 +88,14 @@ set expandtab
 noremap <C-a> ^
 noremap <C-e> $
 
-
-noremap <C-h> h
-noremap <C-j> j
-noremap <C-k> k
-noremap <C-l> l
-
-noremap <leader>S /asdf<CR>
+" Better split management, kept in sync with tmux' mappings
+" (<prefix>| and <prefix>-)
 noremap <leader>- :sp<CR><C-w>j
 noremap <leader>\| :vsp<CR><C-w>l
+
+
+noremap <leader>z zO
+noremap <leader>Z zc
 
 " sudo write
 map w! w !sudo tee % >/dev/null
@@ -222,7 +223,7 @@ if executable('ack-grep')
 endif
 
 " Tagbar
-noremap <leader>o :TagbarToggle<CR>
+noremap <leader>t :TagbarToggle<CR>
 
 set tags=tags,.git/tags,TAGS
 
@@ -292,7 +293,12 @@ set wildignore +=*/.sass-cache/* ",*/release/*
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
 
-iabbr pry_ require 'pry'; binding.pry if ENV['WITH_PRY']
+" pry abbrev, delimitmate handles inserting missing pairs
+iabbr pry_ require 'pry'; binding.pry
+iabbr pry__ require 'pry';   binding.pry if ENV['WITH_PRY
+
+iabbr pry= require 'pry'; require 'pry-nav'; binding.pry
+iabbr pry== require 'pry'; require 'pry-nav';  binding.pry if ENV['WITH_PRY
 
 " Ruby
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
@@ -302,7 +308,7 @@ autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
 " Rspec yeah
-autocmd Filetype ruby iabbr desc_ describe "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 
