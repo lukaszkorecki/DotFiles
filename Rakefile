@@ -95,7 +95,7 @@ end
 task "Update main repo"
 task :update do
   puts "Updating .DotFiles".green
-  STDOUT << `git pull -q `
+  STDOUT << `git pull -q --rebase `
 
   Rake::Task['vim:update'].invoke
 
