@@ -1,5 +1,6 @@
 --type-set=sass=.sass
 --type-set=scss=.scss
+--type-set=page=.page
 --type-set=cuce=.feature
 --type-set=coffeescript=.coffee
 --type-set=haml=.haml
