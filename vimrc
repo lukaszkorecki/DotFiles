@@ -15,6 +15,9 @@ set showbreak=↪
 set guioptions=eg
 set title
 
+set wildmenu
+set wildmode=list:longest,full
+
 " search --------------------------------------------------------------------
 set incsearch
 set ignorecase
@@ -66,7 +69,7 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-colorscheme zenburn
+colorscheme molokai "zenburn
 " XXX use these only if solarized dark is used!
 " let g:solarized_termtrans  = 0
 " let g:solarized_termcolors = 256
@@ -285,8 +288,9 @@ let NERDTreeDirArrows=1
 
 " CtrlP
 
-set wildignore +=*/.sass-cache/* ",*/release/*
-
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|release$\|dojo$\|dijit$\|dojox$\|util$',
+  \}
 
 " Lang specific abbreviations ('cause snippets are overkill) --------------
 iabbr me_ Łukasz
