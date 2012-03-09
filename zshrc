@@ -10,45 +10,79 @@ export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
-export ZSH=$HOME/.oh-my-zsh
+export LANG=en_US.UTF-8 # why?
 
-export LANG=en_US.UTF-8
 
-export EDITOR='vim'
+setopt prompt_subst
 
-# over write default mode indicator from vi-mode
-export ZSH_THEME="terminalparty"
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-plugins=(git)
+export WORDCHARS=''
 
-source $ZSH/oh-my-zsh.sh
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 
-# key shortcuts
 
+# History
+
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
+
+# Key key bindings
+bindkey '\C-p' up-line-or-search
+bindkey '\C-n' down-line-or-search
+
+# Edit command line in $EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
 bindkey '\C-x' edit-command-line
 
-# Tweak the vi mode
-# Search backwards and forwards with a pattern
-bindkey -M vicmd '/' history-incremental-pattern-search-backward
-bindkey -M vicmd '?' history-incremental-pattern-search-forward
+bindkey '\C-a' beginning-of-line
+bindkey '\C-e' end-of-line
+bindkey '\M-f' forward-word
+bindkey '\M-b' backward-word
 
-# set up for insert mode too
-bindkey -M viins '^P' history-incremental-pattern-search-backward
-bindkey -M viins '^N' history-incremental-pattern-search-forward
+bindkey '^r' history-incremental-search-backward
+
+
+# Completion
+unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
+
+zmodload -i zsh/complist
+
+# correction
+setopt correct_all
 
 # Aliases
+alias history='fc -l 1'
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# work out which ls version we're dealing with
+ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+alias lsa='ls -lah'
+alias l='ls -la'
+alias ll='ls -l'
 
 alias be='bundle exec '
 alias gs='git status'
 alias gco='git commit'
 alias gc='git commit'
-alias testenv='RAILS_ENV=test '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
-alias prev='qlmanage -p '
 
 alias ng="~/.nginx/sbin/nginx"
-alias bm="bin/msp"
-
 
 alias vless='/usr/local/share/vim/vim73/macros/less.sh'
 
@@ -56,7 +90,6 @@ if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
-function current_branch() {}
 function any() {
   emulate -L zsh
   unsetopt KSH_ARRAYS
@@ -93,22 +126,30 @@ function using_gcc() {
   env CC="/usr/bin/gcc-4.2" ARCHFLAGS="-arch x86_32" ARCHS="x86_32" $*
 }
 
-REPORTTIME=5
-
 function viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-      vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
-          -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-              -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
+  vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+  -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+  -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
 export ARCHFLAGS="-arch x86_64"
+export GIT_SSL_NO_VERIFY=true # sigh, self-signed certs, inhouse git servers
 
 export ZAKUIP=`cat ~/Dropbox/zaku_ip`
 
-export GIT_SSL_NO_VERIFY=true
+
+# GIT
+function git_prompt_info() {
+  git symbolic-ref HEAD | sed -e 's/refs.heads.//'
+}
+
+# GREP
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 
 # make less suck less
 export LESS="-RSM~gIsw"
@@ -117,3 +158,8 @@ export LESS="-RSM~gIsw"
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Prompt
+autoload -U colors && colors
+PROMPT="%{$fg[blue]%}%~ %{$reset_color%}> %{$fg[red]%}%n%{$reset_color%}: "
+RPROMPT="%{$fg[green]%}$(git_prompt_info) %{$fg[yellow]%}%M %{$reset_color%}"
