@@ -10,6 +10,7 @@ export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
+export ZAKUIP=`cat ~/Dropbox/zaku_ip`
 export LANG=en_US.UTF-8 # why?
 
 
@@ -47,28 +48,26 @@ bindkey '\C-x' edit-command-line
 
 bindkey '\C-a' beginning-of-line
 bindkey '\C-e' end-of-line
-bindkey '\M-f' forward-word
-bindkey '\M-b' backward-word
+bindkey '\C-f' forward-word
+bindkey '\C-b' backward-word
 
 bindkey '^r' history-incremental-search-backward
 
 
 # Completion
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
+zmodload -i zsh/complist
+# unsetopt menu_complete   # do not autoselect the first completion entry
+# unsetopt flowcontrol
 setopt auto_menu         # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end
 
-zmodload -i zsh/complist
 
 # correction
 setopt correct_all
 
 # Aliases
 alias history='fc -l 1'
-alias ...='cd ../..'
-alias -- -='cd -'
 
 # work out which ls version we're dealing with
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
@@ -138,28 +137,29 @@ export GITHUB_USER=`git config --global --get github.user`
 export ARCHFLAGS="-arch x86_64"
 export GIT_SSL_NO_VERIFY=true # sigh, self-signed certs, inhouse git servers
 
-export ZAKUIP=`cat ~/Dropbox/zaku_ip`
-
-
-# GIT
-function git_prompt_info() {
-  git symbolic-ref HEAD | sed -e 's/refs.heads.//'
-}
-
 # GREP
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-
 # make less suck less
 export LESS="-RSM~gIsw"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# GIT
+function GitCurrentBranch() {
+  r=$(git symbolic-ref HEAD 2>/dev/null | sed 's/refs.heads.//')
+  echo $r
+}
 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+function GitDirty() {
+  r=$(git diff --quiet || echo '*')
+  echo $r
+}
 
 # Prompt
+setopt prompt_subst
 autoload -U colors && colors
-PROMPT="%{$fg[blue]%}%~ %{$reset_color%}> %{$fg[red]%}%n%{$reset_color%}: "
-RPROMPT="%{$fg[green]%}$(git_prompt_info) %{$fg[yellow]%}%M %{$reset_color%}"
+PROMPT="%{$fg[blue]%}%~ %{$reset_color%}> %n%{$reset_color%}: "
+RPROMPT="%{$fg[red]%}$(GitDirty) %{$fg[green]%}$(GitCurrentBranch) %{$fg[yellow]%}%M %{$reset_color%}"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
