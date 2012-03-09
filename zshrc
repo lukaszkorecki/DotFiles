@@ -146,20 +146,17 @@ export LESS="-RSM~gIsw"
 
 # GIT
 function GitCurrentBranch() {
-  r=$(git symbolic-ref HEAD 2>/dev/null | sed 's/refs.heads.//')
-  echo $r
+  BR=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3 }') # || { echo "$@" ; exit ; }
+  echo $BR
 }
-
-function GitDirty() {
-  r=$(git diff --quiet || echo '*')
-  echo $r
-}
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Prompt
 setopt prompt_subst
 autoload -U colors && colors
-PROMPT="%{$fg[blue]%}%~ %{$reset_color%}> %n%{$reset_color%}: "
-RPROMPT="%{$fg[red]%}$(GitDirty) %{$fg[green]%}$(GitCurrentBranch) %{$fg[yellow]%}%M %{$reset_color%}"
+local rvm_ruby=' %{$fg[red]%}[$(~/.rvm/bin/rvm-prompt i v g s)]%{$reset_color%}'
+local git_branch=' %{$fg[green]%}$(GitCurrentBranch)'
+PROMPT="%{$fg[blue]%}%M %{$reset_color%}> %n%{$reset_color%}: "
+RPROMPT="${rvm_ruby} ${git_branch} %{$fg[yellow]%}%~ %{$reset_color%}"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
