@@ -228,21 +228,6 @@ endif
 noremap <leader>t :TagbarToggle<CR>
 
 set tags=tags,.git/tags,TAGS
-
- let g:tagbar_type_coffee = {
-  \ 'kinds' : [
-  \   'f:functions',
-  \   'o:object'
-  \ ],
-  \ 'kind2scope' : {
-  \  'f' : 'object',
-  \   'o' : 'object'
-  \},
-  \ 'sro' : ".",
-  \ 'ctagsbin' : 'coffeetags',
-  \ 'ctagsargs' : '--include-vars '
-  \}
-
 " add a definition for Objective-C to tagbar
 let g:tagbar_type_objc = {
     \ 'ctagstype' : 'ObjectiveC',
