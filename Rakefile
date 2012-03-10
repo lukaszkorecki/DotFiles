@@ -6,11 +6,8 @@ RCLIST = [
   "tmux.conf" "rvmrc", "ackrc",  "tmuxinator"
 ]
 
-DIRS = %w(.oh-my-zsh)
 REPOS = {
-  'https://github.com/robbyrussell/oh-my-zsh.git' =>  '.oh-my-zsh',
-  'git@github.com:lukaszkorecki/Private-Configs.git' => '.private'
-
+  'git@bitbucket.org:lukaszkorecki/private-configs.git' => '~/.private'
 }
 
 class String
@@ -50,7 +47,6 @@ task :implode do
   puts "Removing .rc files and directories!"
   go_home
   begin
-    rm_rf DIRS
     RCLIST.map {|i| ".#{i}"}.each{ |rc| rm rc }
   rescue
     puts "nothing to delete?".yellow
@@ -63,7 +59,8 @@ task :get do
   puts "Cloning dependiencies".green
   go_home
 
-  REPOS.each do |git_url, directory|
+  REPOS.each do |git_url, _directory|
+    directory = File.expand_path(_directory)
     puts directory.yellow
     rm_rf directory
     STDOUT << `git clone -q #{git_url} #{directory} --recursive`
