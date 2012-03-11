@@ -41,6 +41,12 @@ setopt share_history # share command history data
 bindkey '\C-p' up-line-or-search
 bindkey '\C-n' down-line-or-search
 
+# autocompletion
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select
+setopt completealiases
+
 # Edit command line in $EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
