@@ -38,6 +38,7 @@ setopt inc_append_history
 setopt share_history # share command history data
 
 # Key key bindings
+bindkey -e # emacs-style, vi-style doesn't feel natural in command line
 bindkey '\C-p' up-line-or-search
 bindkey '\C-n' down-line-or-search
 
