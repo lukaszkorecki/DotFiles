@@ -47,6 +47,8 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 setopt completealiases
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+      'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Edit command line in $EDITOR
 autoload -U edit-command-line
