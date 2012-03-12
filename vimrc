@@ -179,17 +179,6 @@ let g:vimclojure#ParenRainbow=1
 
 
 " Plugins settings ----------------------------------------------------------
-" TwitVim
-let twitvim_count = 50
-let twitvim_browser_cmd = 'open'
-let twitvim_show_header = 0
-let twitvim_filter_enable = 1
-let twitvim_filter_regex = '@GetGlue\|/youtu\.be/'
-
-" statline
-let g:statline_fugitive = 1
-let g:statline_filename_relative = 1
-let g:statline_show_charcode = 1
 
 " screen.vim
 let g:ScreenImpl='Tmux'
@@ -201,14 +190,6 @@ noremap <leader>s :ScreenSend<CR>
 let g:syntastic_auto_loc_lis=1
 let g:syntastic_enable_signs=1
 
-" indent guides
-let g:indent_guides_auto_colors = 1
-let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=black
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-
 " gist vim
 let g:gist_show_privates=1
 let g:gist_clip_command = 'pbcopy'
@@ -219,7 +200,7 @@ let Grep_Find_Use_Xargs = 0
 noremap <Leader>r :Rfgrep<CR>
 
 " Ack
-noremap <Leader>a :Ack <cword><cr>
+noremap <Leader>a :Ack! <cword><cr>
 if executable('ack-grep')
   let g:ackprg='ack-grep -H --nocolor --nogroup --column'
 endif
