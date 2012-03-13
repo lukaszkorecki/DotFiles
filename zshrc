@@ -13,6 +13,7 @@ export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 export ZAKUIP=`cat ~/Dropbox/zaku_ip`
 export LANG=en_US.UTF-8 # why?
 
+export EDITOR=vim
 
 setopt prompt_subst
 
