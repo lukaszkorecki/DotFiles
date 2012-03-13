@@ -17,3 +17,5 @@ tabs:
       panes:
         - cd msp-ui && rake css:watch
         - cd msp && ./bin/msp server --log-stdout
+        - cd msp-sso && shotgun -p 9494
+        - ng
