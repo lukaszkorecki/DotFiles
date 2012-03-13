@@ -176,6 +176,11 @@ au BufNewFile,BufRead *tmux.conf set syntax=tmux
 
 let g:vimclojure#ParenRainbow=1
 
+" Scheme
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 
 " Plugins settings ----------------------------------------------------------
