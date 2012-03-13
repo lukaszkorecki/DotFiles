@@ -85,6 +85,7 @@ alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 
+alias tm='tmux -2 -u'
 alias be='bundle exec '
 alias gs='git status'
 alias gco='git commit'
