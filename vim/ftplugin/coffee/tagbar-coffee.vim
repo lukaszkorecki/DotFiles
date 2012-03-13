@@ -1,7 +1,7 @@
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
         \ 'ctagsbin' : 'coffeetags',
-        \ 'ctagsargs' : '--include-vars',
+        \ 'ctagsargs' : '',
         \ 'kinds' : [
         \ 'f:functions',
         \ 'o:object',
