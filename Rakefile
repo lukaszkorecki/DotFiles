@@ -107,6 +107,8 @@ namespace :vim do
     [
       'git submodule init',
       'git submodule update',
+      'git submodule foreach git checkout master',
+      'git submodule foreach git pull --rebase'
     ].each do |cmd|
       puts cmd.green
       STDOUT << `#{cmd}`
@@ -123,8 +125,7 @@ namespace :vim do
     name = url.split('/').last.sub('.git','')
     puts "Installing #{name} from #{url}".green
     STDOUT << `git submodule add #{url} vim/bundle/#{name}`
-    STDOUT << `git submodule init`
-    STDOUT << `git submodule update`
+    Rake::Task['vim:update'].invoke
   end
 end
 
