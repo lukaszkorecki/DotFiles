@@ -5,8 +5,7 @@ require 'json'
 require 'yaml'
 
 
-while f = ARGF.read
-
-y JSON.parse f
-
+while ! (f = ARGF.read).empty?
+  puts "# vim: ft=yaml"
+  y JSON.parse f unless f.empty?
 end
