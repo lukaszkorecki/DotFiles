@@ -127,6 +127,13 @@ namespace :vim do
     STDOUT << `git submodule add #{url} vim/bundle/#{name}`
     Rake::Task['vim:update'].invoke
   end
+
+  desc "remove plugin (submodule)"
+  task :plugin_uninstall do
+    path = ENV['PLUGIN']
+    `git rm --cached #{path}`
+    rm_r path
+  end
 end
 
 namespace :base do
