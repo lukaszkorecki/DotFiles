@@ -153,6 +153,7 @@ au BufNewFile,BufRead  *.qml set filetype=qml
 
 " json as javascript
 au BufNewFile,BufRead  *.json set syntax=javascript
+au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
 
 " mustache templates
 au BufNewFile,BufRead  *.mustache set filetype=mustache
