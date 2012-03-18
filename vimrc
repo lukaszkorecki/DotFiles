@@ -11,10 +11,15 @@ filetype plugin on
 filetype indent on
 filetype on
 syntax on
-set showbreak=↪
+set showbreak=$
 set guioptions=eg
 set title
 
+" visual clues for commands and navigation
+set showcmd
+set ruler
+
+" Wildmenu bro!
 set wildmenu
 set wildmode=list:longest,full
 
@@ -24,7 +29,7 @@ set ignorecase
 set hlsearch
 
 " No backups ----------------------------------------------------------------
-" Disable backup cuz I use that GIT fad
+" Vim crashes so rarely I don't feel like I need these
 set nobackup
 set nowritebackup
 set noswapfile
@@ -33,16 +38,27 @@ set noswapfile
 set foldmethod=syntax
 set foldcolumn=1
 set foldlevel=2
-let g:f__olded = 0
+let g:f__olded = 0 " helper var, probably can be removed
 
 " status line --------------------------------------------------------------
 set statusline=
+" file name
 set statusline+=%f\ %2*%m\ %1*%h
+" generic warning message
 set statusline+=%#warningmsg#
+" Syntastic status
 set statusline+=%{SyntasticStatuslineFlag()}
+" FuGITive status
 set statusline+=%{fugitive#statusline()}
+" span
 set statusline+=%*
-set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]\ %12.(%c:%l/%L%)
+" [ encoding CR-type filetype]
+set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]
+
+" current column line and total number of lines
+set statusline+=\ %12.(%c:%l/%L%)
+
+" always show status line
 set laststatus=2
 
 
@@ -54,8 +70,8 @@ set bs=2
 set cursorline
 
 set number
+let g:___number_active=1 " helper variable used by relativelines switch
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-let g:___number_active=1
 
 " right margin settings
 if version > 702
@@ -79,20 +95,35 @@ colorscheme Monokai "zenburn
 
 
 " indent --------------------------------------------------------------------
-set ruler
-set showcmd
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
 
 " Key mappings -------------------------------------------------------------
+" borrowed from Emacs
 noremap <C-a> ^
 noremap <C-e> $
 
+" make the command mode less annyoing
+cnoremap <c-a> <Home>
+cnoremap <c-e> <End>
+cnoremap <c-p> <Up>
+cnoremap <c-n> <Down>
+cnoremap <c-b> <Left>
+cnoremap <c-f> <Right>
+cnoremap <c-d> <Del>
+cnoremap <c-k> <C-\>estrpart(getcmdline(), 0, getcmdpos()-1)<cr>
+
+" open a new split with a netrw buffer pointing to current files' dir
+nmap <leader>D :e %:h<CR>
+
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
+
+"split horizontally and switch to new split
 noremap <leader>- :sp<CR><C-w>j
+"split vertically and switch to new split
 noremap <leader>\| :vsp<CR><C-w>l
 
 
@@ -106,7 +137,7 @@ map w! w !sudo tee % >/dev/null
 inoremap jj <esc>
 cnoremap jj <c-c>
 
-" tabs
+" tabs (not really optimal)
 map <leader>[ :tabprevious<CR>
 map <leader>] :tabnext<CR>
 
@@ -120,6 +151,7 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
 nmap <C-j> ddp
@@ -166,25 +198,21 @@ au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetyp
 
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?,@
-autocmd BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+
+" make rspec stuff part of ruby syntax
+autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
 " tmux
-
 au BufNewFile,BufRead *tmux.conf set syntax=tmux
 
-" Clojure
+" Plugins settings ----------------------------------------------------------
 
-let g:vimclojure#ParenRainbow=1
-
-" Scheme
+" Rainbo parens EVERYWHERE, DOUBLE RAINBOW OMG
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-
-" Plugins settings ----------------------------------------------------------
 
 " screen.vim
 let g:ScreenImpl='Tmux'
@@ -198,24 +226,15 @@ let g:syntastic_enable_signs=1
 
 " gist vim
 let g:gist_show_privates=1
-let g:gist_clip_command = 'pbcopy'
 let g:gist_open_browser_after_post = 1
-
-" disable xrargs for grep.vim
-let Grep_Find_Use_Xargs = 0
-noremap <Leader>r :Rfgrep<CR>
-
-" Ack
-noremap <Leader>a :Ack! <cword><cr>
-if executable('ack-grep')
-  let g:ackprg='ack-grep -H --nocolor --nogroup --column'
-endif
 
 " Tagbar
 noremap <leader>t :TagbarToggle<CR>
 
-set tags=tags,.git/tags,TAGS
+set tags=tags,TAGS,ctags,./**/*.ctags
+
 " add a definition for Objective-C to tagbar
+" requires HEAD ctags installed
 let g:tagbar_type_objc = {
     \ 'ctagstype' : 'ObjectiveC',
     \ 'kinds'     : [
@@ -250,21 +269,14 @@ let g:tagbar_type_objc = {
     \ }
 \ }
 
-" Nerdtree
-
-let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$']
-noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>D :NERDTreeFind<cr>
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
 
 " CtrlP
-
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|release$\|dojo$\|dijit$\|dojox$\|util$',
   \}
 
-" Lang specific abbreviations ('cause snippets are overkill) --------------
+" Abbreviations  ------------------------------------------------------------
+" 'cause snippets are overkill
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
 
@@ -285,8 +297,8 @@ autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 " Rspec yeah
 autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr cont- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
-
 
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
@@ -315,10 +327,8 @@ noremap <leader>f :call ToggleFolds()<CR>
 vnoremap <leader>f :call ToggleFolds()<CR>
 
 fun! PastedFromTmux()
-  %s/\\015/\r/g
-  /asdf
+  s/\\015/\r/g
 endfun
-
 command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
 
 " reload file from disk and discard changes
