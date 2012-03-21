@@ -18,4 +18,4 @@ macro index gs "<change-folder>=Sent Mail<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
 # colors
-source ~/.DotFiles/colors.molokai.mutt
+source ~/.DotFiles/zenburn.mutt

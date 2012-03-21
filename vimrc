@@ -85,7 +85,7 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-colorscheme Monokai "zenburn
+colorscheme zenburn
 " XXX use these only if solarized dark is used!
 " let g:solarized_termtrans  = 0
 " let g:solarized_termcolors = 256
