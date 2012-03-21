@@ -4,6 +4,11 @@
 project_name: Work UI
 project_root: ~/Projects/
 tabs:
+  - Commms:
+      panes:
+        - TERMINAL=screen-256colors mcabber -f ~/.private/jabber_work.conf
+
+
   - VIM:
       panes:
         - vim
