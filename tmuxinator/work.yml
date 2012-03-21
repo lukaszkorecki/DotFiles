@@ -4,15 +4,15 @@
 project_name: Work
 project_root: ~/Projects/
 tabs:
-  - Comms:
-    layout: even-vertical
-    panes:
-      - TERMINAL=screen-256colors mcabber -f ~/.private/jabber_work.conf
+  - Commms:
+      panes:
+        - TERM=screen-256color mcabber -f ~/.private/jabber_work.conf
+        - TERM=screen-256color mutt -e "source ~/.private/mutt_msp"
   - VIM:
-    panes:
-      - vim
+      panes:
+        - vim
   - ZSH:
-    layout: even-horizontal
-    panes:
-      - #zsh
-      - #zsh
+      layout: even-horizontal
+      panes:
+        - #zsh
+        - #zsh
