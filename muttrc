@@ -1,0 +1,21 @@
+# connection settings
+set mail_check       = 90
+set timeout          = 15
+set imap_keepalive   = 900
+
+# editing
+set charset          = utf-8
+set editor           = 'vim + -c "set textwidth=72" -c "set wrap" -c "set nocp"'
+set move             = no  #Stop asking to "move read messages to mbox"!
+set realname         = "Łukasz"
+
+# interface
+set sort=threads
+
+# Macros
+macro index gi "<change-folder>=Inbox<enter>" "Go to inbox"
+macro index gs "<change-folder>=Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
+
+# colors
+source ~/.DotFiles/colors.molokai.mutt
