@@ -199,12 +199,16 @@ au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetyp
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?,@
 
+
 " make rspec stuff part of ruby syntax
 autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
 " tmux
 au BufNewFile,BufRead *tmux.conf set syntax=tmux
+
+
+autocmd FileType scss setlocal iskeyword+=-,$,@
 
 " Plugins settings ----------------------------------------------------------
 
@@ -301,8 +305,9 @@ autocmd Filetype ruby iabbr cont- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 
 " Javascript
-autocmd Filetype javascript iabbr f_ function(){<CR>}<ESC>?{<ESC>o
-autocmd Filetype javascript iabbr f- function(){}<ESC>?{<ESC>a
+autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<ESC>o
+autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<ESC>c
+autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<ESC>c
 
 " Functions ----------------------------------------------------------------
 
