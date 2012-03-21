@@ -14,7 +14,7 @@ set sort=threads
 
 # Macros
 macro index gi "<change-folder>=Inbox<enter>" "Go to inbox"
-macro index gs "<change-folder>=Sent Mail<enter>" "Go to Sent Mail"
+macro index gs "<change-folder>=Sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
 # colors
