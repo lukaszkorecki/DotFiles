@@ -235,7 +235,7 @@ let g:gist_open_browser_after_post = 1
 " Tagbar
 noremap <leader>t :TagbarToggle<CR>
 
-set tags=tags,TAGS,ctags,./**/*.ctags
+set tags=./tags,tags,TAGS,ctags,./*.ctags
 
 " add a definition for Objective-C to tagbar
 " requires HEAD ctags installed
@@ -283,6 +283,7 @@ let g:ctrlp_custom_ignore = {
 " 'cause snippets are overkill
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
+iabbr sigw_ -- <CR>Łukasz<CR>http://mediasp.com
 
 " pry abbrev, delimitmate handles inserting missing pairs
 iabbr pry_ require 'pry'; binding.pry
