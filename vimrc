@@ -117,6 +117,7 @@ cnoremap <c-k> <C-\>estrpart(getcmdline(), 0, getcmdpos()-1)<cr>
 
 " open a new split with a netrw buffer pointing to current files' dir
 nmap <leader>D :e %:h<CR>
+nmap <leader>d :vsp  %:h<cr>
 
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
@@ -124,7 +125,7 @@ nmap <leader>D :e %:h<CR>
 "split horizontally and switch to new split
 noremap <leader>- :sp<CR><C-w>j
 "split vertically and switch to new split
-noremap <leader>\| :vsp<CR><C-w>l
+noremap <leader>\| :10vsp<CR><C-w>l
 
 
 noremap <leader>z zO
