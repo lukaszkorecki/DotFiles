@@ -208,8 +208,11 @@ highlight def link rubyRspec Function
 " tmux
 au BufNewFile,BufRead *tmux.conf set syntax=tmux
 
-
+" SCSS
 autocmd FileType scss setlocal iskeyword+=-,$,@
+
+" Scheme is a LISP
+au BufNewFile,BufRead *.scm set lisp
 
 " Plugins settings ----------------------------------------------------------
 
