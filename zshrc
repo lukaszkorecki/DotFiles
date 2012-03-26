@@ -93,6 +93,7 @@ alias gc='git commit'
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
 alias ng="~/.nginx/sbin/nginx"
+alias grp=grep -nHr --color
 
 alias vless='/usr/local/share/vim/vim73/macros/less.sh'
 
