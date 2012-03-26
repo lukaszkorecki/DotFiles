@@ -14,6 +14,7 @@ syntax on
 set showbreak=$
 set guioptions=eg
 set title
+set cm=blowfish "if X is used, make the encryption strong
 
 " visual clues for commands and navigation
 set showcmd
@@ -310,9 +311,9 @@ autocmd Filetype ruby iabbr cont- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 
 " Javascript
-autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<ESC>o
-autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<ESC>c
-autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<ESC>c
+autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>xO
+autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<CR><ESC>xO
+autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>c
 
 " Functions ----------------------------------------------------------------
 
