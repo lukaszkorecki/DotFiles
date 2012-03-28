@@ -120,6 +120,8 @@ cnoremap <c-k> <C-\>estrpart(getcmdline(), 0, getcmdpos()-1)<cr>
 nmap <leader>D :e %:h<CR>
 nmap <leader>d :30vsp  %:h<cr>
 
+nmap <leader>c :copen<cr>
+nmap <leader>C :cclose<cr>
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
 
