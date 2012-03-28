@@ -1,6 +1,10 @@
 #!/usr/bin/ruby
 require 'rubygems'
-require 'awesome_print'
+begin
+  require 'awesome_print'
+rescue => e
+  puts e
+end
 require 'yaml'
 
 
