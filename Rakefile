@@ -3,7 +3,7 @@ include FileUtils
 
 RCLIST = [
   "vim", "vimrc", "zshrc", "gemrc", "irbrc", 'pryrc',
-  "tmux.conf" "rvmrc", "ackrc",  "tmuxinator"
+  "tmux.conf", "rvmrc", "ackrc",  "tmuxinator"
 ]
 
 REPOS = {
