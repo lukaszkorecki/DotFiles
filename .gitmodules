@@ -125,8 +125,8 @@
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
-	path = vim/bundle/rainbow_parentheses.vim
 [submodule "vim/bundle/rainbow_parentheses.vim"]
+	path = vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
