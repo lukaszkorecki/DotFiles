@@ -4,6 +4,7 @@
 --type-set=cuce=.feature
 --type-set=coffeescript=.coffee
 --type-set=haml=.haml
+--type-set=po=.po
 --type-set=pp=.pp
 --type-set=erb=.erb
 --type-set=clj=.clj
