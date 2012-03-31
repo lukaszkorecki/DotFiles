@@ -9,7 +9,7 @@ tabs:
       panes:
         - TERM=screen-256color mcabber -f ~/.private/jabber_work.conf
         - TERM=screen-256color mutt -e "source ~/.private/mutt_msp"
-        - earthquake
+        - rvm use ruby-1.9.3 && earthquake
   - VIM:
       panes:
         - vim

@@ -5,16 +5,22 @@ project_name: Work
 project_root: ~/Projects/
 tabs:
   - Commms:
-      panes:
       layout: tiled
+      panes:
         - TERM=screen-256color mcabber -f ~/.private/jabber_work.conf
         - TERM=screen-256color mutt -e "source ~/.private/mutt_msp"
-        - earthquake
+        - rvm use ruby-1.9.3 && earthquake
   - VIM:
       panes:
         - vim
-  - ZSH:
+  - Terms:
       layout: even-horizontal
       panes:
         - #zsh
         - #zsh
+  - Servers:
+      layout: tiled
+      panes:
+        - cd msp && ./bin/msp server --log-stdout
+        - cd msp && ./bin/msp worker --log-stdout
+        - ng
