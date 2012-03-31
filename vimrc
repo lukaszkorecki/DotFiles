@@ -135,7 +135,7 @@ noremap <leader>z zO
 noremap <leader>Z zc
 
 " sudo write
-map w! w !sudo tee % >/dev/null
+map W w !sudo tee % >/dev/null
 
 " better esc
 inoremap jj <esc>
