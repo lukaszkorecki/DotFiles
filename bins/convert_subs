@@ -1,0 +1,3 @@
+#!/bin/zsh
+echo Converting all files to UTF
+foreach f (*.txt) iconv -f CP1250 -t UTF-8 < $f > "$f"2; cat "$f"2 > $f; rm "$f"2;  end
