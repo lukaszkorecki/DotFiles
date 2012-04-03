@@ -1,19 +1,18 @@
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
-export PATH=~/Dropbox/Scripts:$PATH
+
+# export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
-export PATH=$HOME/.DotFiles/bins/incognito_chrome:$PATH
-export PATH=/opt/PalmSDK/Current/bin/:$PATH
+export PATH=~/Dropbox/Scripts:$PATH
+
 export PATH=/usr/local/mysql/bin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
-export ZAKUIP=`cat ~/Dropbox/zaku_ip`
-export LANG=en_US.UTF-8 # why?
+export ZAKUIP=`cat ~/Dropbox/zaku_ip || ''`
+# export LANG=en_US.UTF-8 # why?
 
-export EDITOR=vim
 
 setopt prompt_subst
 
@@ -96,12 +95,26 @@ alias ng="~/.nginx/sbin/nginx"
 alias grp='grep -nHr --color '
 alias ggp='git --no-pager grep --color '
 
-alias vless='/usr/local/share/vim/vim73/macros/less.sh'
-
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
+
+# VIM stuff
+export EDITOR=vim
+
+# make vim a pager
+alias vless='/usr/local/share/vim/vim73/macros/less.sh'
+
+# use vim as man viewer
+function viman() {
+env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+  vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+  -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+  -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
+}
+
+# lolz
 function any() {
   emulate -L zsh
   unsetopt KSH_ARRAYS
@@ -113,21 +126,12 @@ function any() {
   fi
 }
 
-function ShowProc() {
-  ps aux | grep $1 | grep -v grep
-}
-function SuperKill() {
-  ps aux | grep $1 | grep -v grep | awk {' print $2 '} | xargs kill -9
-}
-
-
-function GemInst() {
-  gem install $1 --no-ri --no-rdoc
+function git-yest(){
+   _d=`date -v -1d "+%Y-%m-%d"`
+  echo "Showing commits since $_d"
+  git --no-pager log --since $_d
 }
 
-function Growl() {
-  growlnotify -n "(s)HELL" -m "$*"
-}
 
 function Agent(){
   # ssh agent stuff
@@ -136,13 +140,6 @@ function Agent(){
 }
 function using_gcc() {
   env CC="/usr/bin/gcc-4.2" ARCHFLAGS="-arch x86_32" ARCHS="x86_32" $*
-}
-
-function viman() {
-env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-  vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
-  -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-  -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
 
 export GITHUB_TOKEN=`git config --global --get github.token`
