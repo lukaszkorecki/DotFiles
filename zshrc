@@ -86,19 +86,14 @@ alias ll='ls -l'
 
 alias tm='tmux -2 -u'
 alias be='bundle exec '
-alias gs='git status'
-alias gco='git commit'
-alias gc='git commit'
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
 alias ng="~/.nginx/sbin/nginx"
 alias grp='grep -nHr --color '
-alias ggp='git --no-pager grep --color '
 
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
-
 
 # VIM stuff
 export EDITOR=vim
@@ -126,12 +121,18 @@ function any() {
   fi
 }
 
+# git tools
 function git-yest(){
    _d=`date -v -1d "+%Y-%m-%d"`
   echo "Showing commits since $_d"
   git --no-pager log --since $_d
 }
 
+alias gs='git status'
+alias gco='git commit'
+alias gc='git commit'
+alias git-pull-all='git pull --recurse-submodules '
+alias ggp='git --no-pager grep --color '
 
 function Agent(){
   # ssh agent stuff
