@@ -109,6 +109,11 @@ env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
   -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
 
+function EditHost() {
+  sudo vim /etc/hosts
+  dscacheutil -flushcache
+}
+
 # lolz
 function any() {
   emulate -L zsh
