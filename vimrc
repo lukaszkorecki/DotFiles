@@ -1,6 +1,9 @@
 "" Pathogen -----------------------------------------------------------------
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+if exists("pathogen")
+
+  call pathogen#runtime_append_all_bundles()
+  call pathogen#helptags()
+endif
 
 runtime macros/matchit.vim
 
@@ -14,7 +17,9 @@ syntax on
 set showbreak=$
 set guioptions=eg
 set title
-set cm=blowfish "if X is used, make the encryption strong
+if("&cm")
+  set cm=blowfish "if X is used, make the encryption strong
+endif
 
 " visual clues for commands and navigation
 set showcmd
@@ -47,10 +52,15 @@ set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
 " generic warning message
 set statusline+=%#warningmsg#
-" Syntastic status
-set statusline+=%{SyntasticStatuslineFlag()}
-" FuGITive status
-set statusline+=%{fugitive#statusline()}
+if exists("SyntasticStatuslineFlag")
+  " Syntastic status
+  set statusline+=%{SyntasticStatuslineFlag()}
+endif
+
+if exists("fugitive")
+  " FuGITive status
+  set statusline+=%{fugitive#statusline()}
+endif
 " span
 set statusline+=%*
 " [ encoding CR-type filetype]
@@ -86,7 +96,9 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-colorscheme zenburn
+if exists("##zenburn")
+  colorscheme zenburn
+endif
 " XXX use these only if solarized dark is used!
 " let g:solarized_termtrans  = 0
 " let g:solarized_termcolors = 256
@@ -217,7 +229,9 @@ autocmd FileType scss setlocal iskeyword+=-,$,@
 " Scheme is a LISP
 au BufNewFile,BufRead *.scm set lisp
 
+if exists("pathogen")
 " Plugins settings ----------------------------------------------------------
+" This work only if pathogen exists
 
 " Rainbo parens EVERYWHERE, DOUBLE RAINBOW OMG
 au VimEnter * RainbowParenthesesToggle
@@ -285,6 +299,9 @@ let g:tagbar_type_objc = {
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|release$\|dojo$\|dijit$\|dojox$\|util$',
   \}
+
+
+endif
 
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill
