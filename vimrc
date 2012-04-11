@@ -1,9 +1,6 @@
 "" Pathogen -----------------------------------------------------------------
-if exists("pathogen")
-
-  call pathogen#runtime_append_all_bundles()
-  call pathogen#helptags()
-endif
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 runtime macros/matchit.vim
 
@@ -96,15 +93,15 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 set background=dark
 let &t_Co=256
-if exists("##zenburn")
   colorscheme zenburn
-endif
 " XXX use these only if solarized dark is used!
-" let g:solarized_termtrans  = 0
-" let g:solarized_termcolors = 256
-" hi Normal  ctermbg=NONE cterm=NONE
-" hi Number  ctermbg=NONE cterm=NONE
-" hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
+if exists("##solarized")
+  let g:solarized_termtrans  = 0
+  let g:solarized_termcolors = 256
+  hi Normal  ctermbg=NONE cterm=NONE
+  hi Number  ctermbg=NONE cterm=NONE
+  hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
+endif
 
 
 " indent --------------------------------------------------------------------
