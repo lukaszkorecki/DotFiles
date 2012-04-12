@@ -10,8 +10,9 @@ export PATH=~/Dropbox/Scripts:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
-export ZAKUIP=`cat ~/Dropbox/zaku_ip || ''`
-# export LANG=en_US.UTF-8 # why?
+if [[ -f ~/Dropbox/zaku_ip ]]; then
+  export ZAKUIP=`cat ~/Dropbox/zaku_ip || ''`
+fi
 
 
 setopt prompt_subst
