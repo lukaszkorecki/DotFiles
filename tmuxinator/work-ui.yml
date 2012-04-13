@@ -9,7 +9,7 @@ tabs:
       panes:
         - TERM=screen-256color mcabber -f ~/.private/jabber_work.conf
         - TERM=screen-256color mutt -e "source ~/.private/mutt_msp"
-        - rvm use ruby-1.9.3 && earthquake
+        - rvm use ruby-1.9.2 && earthquake
   - VIM:
       panes:
         - vim
@@ -25,4 +25,4 @@ tabs:
         - cd msp && ./bin/msp server --log-stdout
         - cd msp && ./bin/msp worker --log-stdout
         - cd msp-sso && shotgun -p 9494
-        - ng
+        - sudo /etc/init.d/nginx-msp reload
