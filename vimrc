@@ -226,7 +226,7 @@ autocmd FileType scss setlocal iskeyword+=-,$,@
 " Scheme is a LISP
 au BufNewFile,BufRead *.scm set lisp
 
-if exists("pathogen")
+" if exists("pathogen")
 " Plugins settings ----------------------------------------------------------
 " This work only if pathogen exists
 
@@ -298,7 +298,7 @@ let g:ctrlp_custom_ignore = {
   \}
 
 
-endif
+" endif
 
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill

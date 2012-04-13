@@ -1,3 +1,4 @@
+export LANG=en_GB.UTF-8
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 
 export PATH=/usr/local/bin:$PATH
