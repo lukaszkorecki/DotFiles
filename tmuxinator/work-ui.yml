@@ -26,3 +26,4 @@ tabs:
         - cd msp && ./bin/msp worker --log-stdout
         - cd msp-sso && shotgun -p 9494
         - sudo /etc/init.d/nginx-msp reload
+        - cd msp && searchd indexes/sphinx.conf --nodetach
