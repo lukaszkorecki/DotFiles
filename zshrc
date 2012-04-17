@@ -80,6 +80,7 @@ setopt correct_all
 # Aliases
 alias history='fc -l 1'
 
+alias twitter='ttytter -ansi -verify'
 # work out which ls version we're dealing with
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 alias lsa='ls -lah'
