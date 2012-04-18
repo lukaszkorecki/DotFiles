@@ -49,16 +49,13 @@ set statusline=
 set statusline+=%f\ %2*%m\ %1*%h
 " generic warning message
 set statusline+=%#warningmsg#
-if exists("SyntasticStatuslineFlag")
-  " Syntastic status
-  set statusline+=%{SyntasticStatuslineFlag()}
-endif
+" Syntastic status
+set statusline+=%{SyntasticStatuslineFlag()}
 
-if exists("fugitive")
-  " FuGITive status
-  set statusline+=%{fugitive#statusline()}
-endif
+" FuGITive status
+set statusline+=%{fugitive#statusline()}
 " span
+"
 set statusline+=%*
 " [ encoding CR-type filetype]
 set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]
@@ -226,7 +223,6 @@ autocmd FileType scss setlocal iskeyword+=-,$,@
 " Scheme is a LISP
 au BufNewFile,BufRead *.scm set lisp
 
-" if exists("pathogen")
 " Plugins settings ----------------------------------------------------------
 " This work only if pathogen exists
 
@@ -297,8 +293,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|release$\|dojo$\|dijit$\|dojox$\|util$',
   \}
 
-
-" endif
 
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill
