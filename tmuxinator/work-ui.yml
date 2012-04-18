@@ -21,9 +21,13 @@ tabs:
   - Servers:
       layout: tiled
       panes:
-        - cd msp-ui && rake css:watch
         - cd msp && ./bin/msp server --log-stdout
         - cd msp && ./bin/msp worker --log-stdout
+
+  - Monitoring:
+      layout: tiled
+      panes:
+        - cd msp-ui && rake css:watch
         - cd msp-sso && shotgun -p 9494
-        - sudo /etc/init.d/nginx-msp reload
         - cd msp && searchd indexes/sphinx.conf --nodetach
+        - sudo /etc/init.d/nginx-msp reload
