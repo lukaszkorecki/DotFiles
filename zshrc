@@ -78,6 +78,7 @@ setopt always_to_end
 setopt correct_all
 
 # Aliases
+alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
 alias twitter='ttytter -ansi -verify'
