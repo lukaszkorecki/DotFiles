@@ -7,8 +7,8 @@ tabs:
   - Commms:
       layout: tiled
       panes:
-        - TERM=screen-256color mcabber -f ~/.private/jabber_work.conf
-        - TERM=screen-256color mutt -e "source ~/.private/mutt_msp"
+        - Mcabber jabber_work.conf
+        - Mutt mutt_msp
         - rvm use ruby-1.9.3 && earthquake
   - VIM:
       panes:
@@ -21,6 +21,5 @@ tabs:
   - Servers:
       layout: tiled
       panes:
-        - cd msp && ./bin/msp server --log-stdout
-        - cd msp && ./bin/msp worker --log-stdout
-        - ng
+        -
+        -

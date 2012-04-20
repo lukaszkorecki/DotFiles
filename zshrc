@@ -89,6 +89,7 @@ alias l='ls -la'
 alias ll='ls -l'
 
 alias tm='tmux -2 -u'
+alias tm-join='tmux -2 -u new-session -t '
 alias be='bundle exec '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
@@ -142,6 +143,14 @@ alias gco='git commit'
 alias gc='git commit'
 alias git-pull-all='git pull --recurse-submodules '
 alias ggp='git --no-pager grep --color '
+
+function Mutt() {
+  TERM=screen-256color mutt -e "source ~/.private/$1"
+}
+
+function Mcabber() {
+  TERM=screen-256color mcabber -f ~/.private/$1
+}
 
 function Agent(){
   # ssh agent stuff
