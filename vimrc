@@ -88,18 +88,10 @@ autocmd FileType text setlocal textwidth=78
 
 
 " colors -------------------------------------------------------------------
-set background=dark
 let &t_Co=256
-  colorscheme zenburn
+set background=dark
+  colorscheme  zenburn
 " XXX use these only if solarized dark is used!
-if exists("##solarized")
-  let g:solarized_termtrans  = 0
-  let g:solarized_termcolors = 256
-  hi Normal  ctermbg=NONE cterm=NONE
-  hi Number  ctermbg=NONE cterm=NONE
-  hi LineNr  ctermfg=darkgray    ctermbg=NONE        cterm=NONE
-endif
-
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
