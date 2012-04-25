@@ -90,8 +90,7 @@ autocmd FileType text setlocal textwidth=78
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-  colorscheme  zenburn
-" XXX use these only if solarized dark is used!
+  colorscheme  solarized
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
