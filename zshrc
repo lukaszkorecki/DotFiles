@@ -145,7 +145,7 @@ alias git-pull-all='git pull --recurse-submodules '
 alias ggp='git --no-pager grep --color '
 
 function Mutt() {
-  TERM=screen-256color mutt -e "source ~/.private/$1"
+  TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
 
 function Mcabber() {
