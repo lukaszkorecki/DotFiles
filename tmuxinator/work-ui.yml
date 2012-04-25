@@ -8,7 +8,7 @@ tabs:
       layout: tiled
       panes:
         - Mcabber jabber_work.conf
-        - Mutt mutt_msp
+        - Mutt msp
         - rvm use ruby-1.9.2 && earthquake
   - VIM:
       panes:
@@ -21,7 +21,7 @@ tabs:
   - Servers:
       layout: tiled
       panes:
-        - cd msp && ./bin/msp server --log-stdout
+        - cd msp && ./bin/msp server --log-stdout | tee msp.log
         - cd msp && ./bin/msp worker --log-stdout
 
   - Monitoring:
@@ -29,5 +29,4 @@ tabs:
       panes:
         - cd msp-ui && rake css:watch
         - cd msp-sso && shotgun -p 9494
-        - cd msp && searchd indexes/sphinx.conf --nodetach
-        - sudo /etc/init.d/nginx-msp reload
+        - ng -s reload && tail -f /var/log/nginx/error.log
