@@ -41,7 +41,6 @@ set noswapfile
 set foldmethod=syntax
 set foldcolumn=1
 set foldlevel=2
-let g:f__olded = 0 " helper var, probably can be removed
 
 " status line --------------------------------------------------------------
 set statusline=
@@ -75,7 +74,6 @@ set bs=2
 set cursorline
 
 set number
-let g:___number_active=1 " helper variable used by relativelines switch
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " right margin settings
@@ -212,7 +210,7 @@ au BufNewFile,BufRead *tmux.conf set syntax=tmux
 autocmd FileType scss setlocal iskeyword+=-,$,@
 
 " Scheme is a LISP
-au BufNewFile,BufRead *.scm set lisp
+au BufNewFile,BufRead *.scm,*.clj set lisp
 
 " Plugins settings ----------------------------------------------------------
 " This work only if pathogen exists
@@ -327,14 +325,14 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 fun! ToggleFolds()
-  if g:f__olded == 0
-    let g:f__olded = 1
+  echo &foldlevel
+  if &foldlevel == 2
     set foldlevel=9999
-  else
-    let g:f__olded = 0
+  elseif &foldlevel == 9999
     set foldlevel=2
   endif
 endfun
+
 noremap <leader>f :call ToggleFolds()<CR>
 vnoremap <leader>f :call ToggleFolds()<CR>
 
@@ -350,12 +348,10 @@ command!  -nargs=0 R e! %
 " "number" option was set at the beginning of the file
 
 function! NumSwap()
-  if g:___number_active
+  if &number
     set relativenumber
-    let g:___number_active = 0
   else
     set number
-    let g:___number_active = 1
   endif
 endf
 
