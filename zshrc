@@ -82,6 +82,7 @@ alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
 alias ts=task
+alias tsw='task project:Work'
 
 alias twitter='ttytter -ansi -verify'
 # work out which ls version we're dealing with
@@ -131,6 +132,9 @@ function any() {
   else
     ps xauwww | grep -i --color=auto "[${1[1]}]${1[2,-1]}"
   fi
+}
+function KillMatching() {
+  ps aux | grep $1 | grep -v grep | awk '{ print $2 } ' | xargs kill -9
 }
 
 # git tools
