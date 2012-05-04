@@ -122,6 +122,11 @@ function EditHost() {
   dscacheutil -flushcache
 }
 
+function grp() {
+  echo "searching everywhere! Add file ext to limit the scope"
+  grep -nHr --color ./**/*$1
+}
+
 # lolz
 function any() {
   emulate -L zsh
