@@ -81,6 +81,9 @@ setopt correct_all
 alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
+alias ts=task
+alias tsw='task project:Work'
+
 alias twitter='ttytter -ansi -verify'
 # work out which ls version we're dealing with
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
@@ -109,7 +112,7 @@ alias vless='/usr/local/share/vim/vim73/macros/less.sh'
 # use vim as man viewer
 function viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-  vim -R -c 'set ft=man nomod nolist' -c 'map q :q<CR>' \
+  vim -R -c 'set ft=man nomod nolist nonumber' -c 'map q :q<CR>' \
   -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
   -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
@@ -129,6 +132,9 @@ function any() {
   else
     ps xauwww | grep -i --color=auto "[${1[1]}]${1[2,-1]}"
   fi
+}
+function KillMatching() {
+  ps aux | grep $1 | grep -v grep | awk '{ print $2 } ' | xargs kill -9
 }
 
 # git tools
@@ -184,8 +190,10 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Prompt
 setopt prompt_subst
 autoload -U colors && colors
-local rvm_ruby=' %{$fg[red]%}[$(~/.rvm/bin/rvm-prompt i v g s)]%{$reset_color%}'
-local git_branch=' %{$fg[green]%}$(GitCurrentBranch)'
-PROMPT="%{$fg[blue]%}%M %{$reset_color%}> %n%{$reset_color%}: "
-RPROMPT="${rvm_ruby} ${git_branch} %{$fg[yellow]%}%~ %{$reset_color%}"
-
+local sigil='%{$fg[red]%}#%{$reset_color%}'
+local rvm_ruby='%{$fg[red]%}$(~/.rvm/bin/rvm-prompt i v g s)%{$reset_color%}'
+local host='%{$fg[blue]%}%m%{$reset_color%}'
+local git_branch='%{$fg[green]%}$(GitCurrentBranch)%{$reset_color%}'
+local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
+PROMPT="${host} %n ${sigil} "
+RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
