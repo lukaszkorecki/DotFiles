@@ -97,7 +97,6 @@ alias be='bundle exec '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
 alias ng="~/.nginx/sbin/nginx"
-alias grp='grep -nHr --color '
 
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
@@ -127,6 +126,11 @@ function grp() {
   grep -nHr --color ./**/*$1
 }
 
+
+function MailView() {
+ ruby -e ' pa = "/tmp/email-preview-#{Time.new.to_i}.html" ; File.open(pa, "w") { |f| f.write = ARGF.readlines.join("\n") }; `open #{pa}` '
+}
+
 # lolz
 function any() {
   emulate -L zsh
@@ -139,7 +143,7 @@ function any() {
   fi
 }
 function KillMatching() {
-  ps aux | grep $1 | grep -v grep | awk '{ print $2 } ' | xargs kill -9
+  ps aux | grep $1 | grep -v grep | grep -v tmux | awk '{ print $2 } ' | xargs kill -9
 }
 
 # git tools
@@ -153,7 +157,7 @@ alias gs='git status'
 alias gco='git commit'
 alias gc='git commit'
 alias git-pull-all='git pull --recurse-submodules '
-alias ggp='git --no-pager grep --color '
+alias ggp='git --no-pager grep --color -n '
 
 function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
