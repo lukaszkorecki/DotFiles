@@ -123,7 +123,7 @@ function EditHost() {
 
 function grp() {
   echo "searching everywhere! Add file ext to limit the scope"
-  grep -nHr --color ./**/*$1
+  grep -nHr --color $1 ./**/*$2
 }
 
 
