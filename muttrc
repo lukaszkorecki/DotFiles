@@ -18,5 +18,8 @@ macro index gi "<change-folder>=Inbox<enter>" "Go to inbox"
 macro index gs "<change-folder>=Sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
+# ghetto email search
+set query_command="name='%s' ~/.DotFiles/bins/search_mail.sh"
+
 # colors
 source ~/.DotFiles/muttrc-solarized.muttrc
