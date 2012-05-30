@@ -87,7 +87,7 @@ autocmd FileType text setlocal textwidth=78
 
 " colors -------------------------------------------------------------------
 let &t_Co=256
-set background=dark
+set background=light
   colorscheme  solarized
 
 " indent --------------------------------------------------------------------
