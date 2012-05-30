@@ -21,12 +21,12 @@ tabs:
   - Servers:
       layout: tiled
       panes:
-        - cd msp && ./bin/msp server --log-stdout | tee msp.log
-        - cd msp && ./bin/msp worker --log-stdout
+        - cd msp && bundle exec ./bin/msp server --log-stdout | tee msp.log
+        - cd msp && bundle exec ./bin/msp worker --log-stdout
 
   - Monitoring:
       layout: tiled
       panes:
-        - cd msp-ui && rake css:watch
-        - cd msp-sso && shotgun -p 9494
+        - cd msp-ui && bundle exec rake css:watch
+        - cd msp-sso && bundle exec shotgun -p 9494
         - ng -s reload && tail -f /var/log/nginx/error.log
