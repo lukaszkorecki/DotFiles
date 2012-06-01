@@ -81,6 +81,7 @@ setopt correct_all
 alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 alias ts=task
 alias tsw='task project:Work'
 
