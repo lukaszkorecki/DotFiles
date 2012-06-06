@@ -149,3 +149,4 @@
 [submodule "vim/bundle/NrrwRgn"]
 	path = vim/bundle/NrrwRgn
 	url = https://github.com/chrisbra/NrrwRgn.git
+  ignore = untracked
