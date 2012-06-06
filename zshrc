@@ -27,9 +27,6 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-
-# History
-
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
@@ -47,10 +44,22 @@ bindkey '\C-n' down-line-or-search
 # autocompletion
 autoload -U compinit
 compinit
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+zstyle ':completion:*:descriptions' format "- %d -"
+zstyle ':completion:*:corrections' format "- %d - (errors %e})"
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections true
 zstyle ':completion:*' menu select
+zstyle ':completion:*' verbose yes
 setopt completealiases
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
       'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:*:tmux:*:subcommands' mode 'commands'
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:kill:*:processes' command "ps x"
 
 # Edit command line in $EDITOR
 autoload -U edit-command-line
@@ -82,10 +91,7 @@ alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
-alias ts=task
-alias tsw='task project:Work'
 
-alias twitter='ttytter -ansi -verify'
 # work out which ls version we're dealing with
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 alias lsa='ls -lah'
@@ -107,7 +113,11 @@ fi
 export EDITOR=vim
 
 # make vim a pager
-alias vless='/usr/local/share/vim/vim73/macros/less.sh'
+function vless() {
+  local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  ) -name less.sh`
+  $less_path $*
+
+}
 
 # use vim as man viewer
 function viman() {
@@ -207,3 +217,5 @@ local git_branch='%{$fg[green]%}$(GitCurrentBranch)%{$reset_color%}'
 local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
 PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
+
+source ~/.DotFiles/syntax-color.zsh
