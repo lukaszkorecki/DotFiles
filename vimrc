@@ -136,6 +136,9 @@ map W w !sudo tee % >/dev/null
 inoremap jj <esc>
 cnoremap jj <c-c>
 
+" search for clipboard contents
+map <Leader>/ :let @/=@"<CR>"
+
 " tabs (not really optimal)
 map <leader>[ :tabprevious<CR>
 map <leader>] :tabnext<CR>
