@@ -85,6 +85,9 @@ endif
 autocmd FileType text setlocal textwidth=78
 
 
+autocmd FileType mail,gitcommit set spell
+
+
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=light
