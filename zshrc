@@ -218,4 +218,4 @@ local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
 PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
 
-source ~/.DotFiles/zsh/syntax-color.zsh
+source ~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh
