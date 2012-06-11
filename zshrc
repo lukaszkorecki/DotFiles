@@ -137,11 +137,6 @@ function grp() {
   grep -nHr --color $1 ./**/*$2
 }
 
-
-function MailView() {
- ruby -e ' pa = "/tmp/email-preview-#{Time.new.to_i}.html" ; File.open(pa, "w") { |f| f.write = ARGF.readlines.join("\n") }; `open #{pa}` '
-}
-
 # lolz
 function any() {
   emulate -L zsh
