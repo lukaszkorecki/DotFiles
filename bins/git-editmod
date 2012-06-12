@@ -1,0 +1,2 @@
+#!/bin/zsh
+vim -O $(git status --porcelain | awk '{ print $NF }' | tr "\n" ' ' )
