@@ -153,3 +153,6 @@
 [submodule "zsh/highlight"]
 	path = zsh/highlight
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/html5.vim"]
+	path = vim/bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git
