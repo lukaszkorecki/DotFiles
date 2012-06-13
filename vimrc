@@ -90,7 +90,7 @@ autocmd FileType mail,gitcommit set spell
 
 " colors -------------------------------------------------------------------
 let &t_Co=256
-set background=light
+set background=dark
   colorscheme  solarized
 
 " indent --------------------------------------------------------------------
