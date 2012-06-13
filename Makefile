@@ -9,7 +9,7 @@ private:
 	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private
 
 update:
-	git submodule update
+	git submodule update --init
 	git submodule foreach git checkout master
 	git pull --recurse-submodules
 
