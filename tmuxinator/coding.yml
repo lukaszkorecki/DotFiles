@@ -4,9 +4,6 @@
 project_name: Coding
 project_root: ~/Dev/Projects/
 tabs:
-  - Comms:
-      panes:
-        - earthquake
   - Vim:
       layout: main-vertical
       panes:
