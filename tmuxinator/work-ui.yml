@@ -9,7 +9,6 @@ tabs:
       panes:
         - Mcabber jabber_work.conf
         - Mutt msp
-        - rvm use ruby-1.9.2 && earthquake
   - VIM:
       panes:
         - vim

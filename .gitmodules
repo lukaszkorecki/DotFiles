@@ -156,3 +156,6 @@
 [submodule "vim/bundle/html5.vim"]
 	path = vim/bundle/html5.vim
 	url = https://github.com/othree/html5.vim.git
+[submodule "vim/bundle/vim-blockle"]
+	path = vim/bundle/vim-blockle
+	url = http://github.com/jgdavey/vim-blockle
