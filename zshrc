@@ -120,10 +120,6 @@ function vless() {
 }
 
 # edit modified files in vim
-function git-vim-modified() {
-  vim -O $(git status --porcelain | tr '/^M/' ' ' | tr "\n" ' ' )
-}
-
 # use vim as man viewer
 function viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
@@ -163,6 +159,11 @@ function git-yest(){
   echo "Showing commits since $_d"
   git --no-pager log --since $_d
 }
+
+function git-vim-modified() {
+  vim -O $(gs --porcelain | awk '{ print $2 }' | tr "\n", ' ' )
+}
+
 
 alias gs='git status'
 alias gco='git commit'
