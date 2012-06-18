@@ -119,6 +119,11 @@ function vless() {
 
 }
 
+# edit modified files in vim
+function git-vim-modified() {
+  vim -O $(git status --porcelain | tr '/^M/' ' ' | tr "\n" ' ' )
+}
+
 # use vim as man viewer
 function viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
@@ -196,8 +201,8 @@ export LESS="-RSM~gIsw"
 
 # GIT
 function GitCurrentBranch() {
-  BR=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3 }') # || { echo "$@" ; exit ; }
-  echo $BR
+  local br=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3 }') # || { echo "$@" ; exit ; }
+  echo $br
 }
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

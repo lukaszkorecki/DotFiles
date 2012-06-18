@@ -1,4 +1,4 @@
-LIST = vim vimrc zshrc irbrc pryrc tmux.conf rvmrc ackrc  tmuxinator
+LIST = vim vimrc zshrc zshenv irbrc pryrc tmux.conf rvmrc ackrc  tmuxinator
 link: $(LIST)
 	@for f in $(LIST) ; do ln -s ~/.DotFiles/$$f ~/.$$f; done
 
