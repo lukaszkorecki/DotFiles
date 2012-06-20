@@ -10,8 +10,10 @@ private:
 
 update:
 	git submodule update --init
+	git pull --recurse-submodules --rebase
+	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
-	git pull --recurse-submodules
+	git submodule foreach git pull --rebase
 
 setup : link update private
 
