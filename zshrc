@@ -188,6 +188,18 @@ function using_gcc() {
   env CC="/usr/bin/gcc-4.2" ARCHFLAGS="-arch x86_32" ARCHS="x86_32" $*
 }
 
+# cdd - descend x directories down
+# example
+#   $ pwd # => /lol/wut/bro/is/this/wut
+# then:
+#   $ cdd 3
+# and youre in:
+#   $ /lol/wut/bro/
+function cdd() {
+  local b="" ; for i in $(seq $1) ; do b+="../" ; done ;
+  cd $b
+}
+
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
 export ARCHFLAGS="-arch x86_64"
