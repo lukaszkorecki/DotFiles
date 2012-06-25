@@ -170,6 +170,8 @@ alias gco='git commit'
 alias gc='git commit'
 alias git-pull-all='git pull --recurse-submodules '
 alias ggp='git --no-pager grep --color -n '
+alias glo='git log --graph --oneline'
+alias gpr='git pull --rebase'
 
 function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
