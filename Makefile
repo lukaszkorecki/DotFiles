@@ -15,5 +15,13 @@ update:
 	git submodule foreach git checkout master
 	git submodule foreach git pull --rebase
 
-setup : link update private
+# weird things happened when I did
+# brew install <t1> <t2> <t3> so this needs to be broken down
+# into separate steps
+tools:
+	brew install git-extras
+	brew install homebrew/dupes/vim
+	brew install ctags --HEAD
+	brew install tmux
 
+setup : link update private tools
