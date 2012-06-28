@@ -178,7 +178,7 @@ function Mutt() {
 }
 
 function Mcabber() {
-  TERM=screen-256color mcabber -f ~/.private/$1
+  TERM=screen-256color mcabber -f ~/.private/jabber_$1.conf
 }
 
 function Agent(){

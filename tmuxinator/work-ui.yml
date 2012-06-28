@@ -7,7 +7,7 @@ tabs:
   - Commms:
       layout: tiled
       panes:
-        - Mcabber jabber_work.conf
+        - Mcabber work
         - Mutt msp
   - VIM:
       panes:
