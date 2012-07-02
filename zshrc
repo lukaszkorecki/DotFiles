@@ -133,9 +133,9 @@ function EditHost() {
   dscacheutil -flushcache
 }
 
-function grp() {
+function grep-files() {
   echo "searching everywhere! Add file ext to limit the scope"
-  grep -nHr --color $1 ./**/*$2
+  for f in ls ./*$2; do ; grep -nHr --color $1 $f; done
 }
 
 # lolz
