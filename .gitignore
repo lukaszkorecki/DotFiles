@@ -10,3 +10,6 @@ emacs.d/eshell/
 #*#
 emacs.d/url/
 vim/spell
+weechat/weechat_fifo_*
+weechat/*.log
+weechat/logs/
