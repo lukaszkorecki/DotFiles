@@ -7,8 +7,9 @@ tabs:
   - Commms:
       layout: tiled
       panes:
-        - Mcabber work
         - Mutt msp
+        - rvm use ruby-1.9.3 && earthquake
+        - bitlbee -D -c ./bitlbee/bitlbee.conf && weechat-ncurses
   - VIM:
       panes:
         - vim
