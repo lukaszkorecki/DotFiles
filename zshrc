@@ -135,7 +135,7 @@ function EditHost() {
 
 function grep-files() {
   echo "searching everywhere! Add file ext to limit the scope"
-  for f in ls ./*$2; do ; grep -nHr --color $1 $f; done
+  for f in ls ./*$2; do ; egrep -nHr --color $1 $f; done
 }
 
 # lolz
