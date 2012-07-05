@@ -14,6 +14,7 @@ update:
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
 	git submodule foreach git pull --rebase
+	git push
 
 # weird things happened when I did
 # brew install <t1> <t2> <t3> so this needs to be broken down
