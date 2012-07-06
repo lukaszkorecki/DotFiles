@@ -150,10 +150,10 @@ function any() {
   fi
 }
 function KillMatching() {
-  ps aux | grep $1 | grep -v grep | grep -v tmux | awk '{ print $2 } ' | xargs kill -9
+  ps aux | grep $1 | egrep -v "grep|tmux" | awk '{ print $2 } ' | xargs kill -9
 }
 
-# git tools
+# git tools -------------------------------------------------------------------
 function git-yest(){
    _d=`date -v -1d "+%Y-%m-%d"`
   echo "Showing commits since $_d"
@@ -162,6 +162,11 @@ function git-yest(){
 
 function git-vim-modified() {
   vim -O $(gs --porcelain | awk '{ print $2 }' | tr "\n", ' ' )
+}
+
+function git-grep-vim() {
+  vim -O $(git grep $1 | cut -s -d : -f 1 )
+
 }
 
 
