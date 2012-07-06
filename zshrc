@@ -165,7 +165,15 @@ function git-vim-modified() {
 }
 
 function git-grep-vim() {
-  vim -O $(git grep $1 | cut -s -d : -f 1 )
+  if [[ -z "$2" ]]; then
+    cond=tee
+    filter='[no filter]'
+  else
+    cond="grep $2"
+    filter="[$cond]"
+  fi
+  echo "Searching for '$1' with filter: $filter"
+  vim -O $(git grep $1 | eval $cond | cut -s -d : -f 1 | tr " ", "\\ " )
 
 }
 
