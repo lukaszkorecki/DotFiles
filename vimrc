@@ -100,9 +100,8 @@ set tabstop=2
 set expandtab
 
 " Key mappings -------------------------------------------------------------
-" borrowed from Emacs
-noremap <C-a> ^
-noremap <C-e> $
+noremap <leader>a ^
+noremap <leader>e $
 
 " make the command mode less annyoing
 cnoremap <c-a> <Home>
@@ -119,6 +118,7 @@ nmap <leader>D :e %:h<CR>
 nmap <leader>d :30vsp  %:h<cr>
 
 nmap <leader>c :copen<cr>
+nmap <leader>E :Errors<cr>
 nmap <leader>C :cclose<cr>
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
