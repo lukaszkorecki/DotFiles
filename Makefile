@@ -24,5 +24,6 @@ tools:
 	brew install homebrew/dupes/vim
 	brew install ctags --HEAD
 	brew install tmux
+	gem install earthquake camper_van tmuxinator
 
 setup : link update private tools
