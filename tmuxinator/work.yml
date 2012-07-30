@@ -1,0 +1,20 @@
+# ~/.tmuxinator/work.yml
+# you can make as many tabs as you wish...
+
+project_name: Work
+project_root: ~/Projects/
+tabs:
+  - Commms:
+      layout: tiled
+      panes:
+        - Mutt gecko
+        - rvm use ruby-1.9.3 && earthquake
+        - weechat-ncurses
+  - VIM:
+      panes:
+        - vim
+  - Terms:
+      layout: even-horizontal
+      panes:
+        - #zsh
+        - #zsh
