@@ -20,10 +20,12 @@ update:
 # brew install <t1> <t2> <t3> so this needs to be broken down
 # into separate steps
 tools:
+	brew install mutt
+	brew install reattach-to-user-namespace
 	brew install git-extras
+	brew tap homebrew/dupes
 	brew install homebrew/dupes/vim
 	brew install ctags --HEAD
 	brew install tmux
-	gem install earthquake camper_van tmuxinator
 
 setup : link update private tools

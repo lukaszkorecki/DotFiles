@@ -9,7 +9,7 @@ tabs:
       panes:
         - Mutt gecko
         - rvm use ruby-1.9.3 && earthquake
-        - weechat-ncurses
+        - (camper_van > /var/log/camper.log &) && weechat-curses
   - VIM:
       panes:
         - vim
@@ -18,3 +18,4 @@ tabs:
       panes:
         - #zsh
         - #zsh
+
