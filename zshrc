@@ -114,7 +114,8 @@ export EDITOR=vim
 
 # make vim a pager
 function vless() {
-  local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  ) -name less.sh`
+  local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  )/ -name less.sh`
+  echo $less_path
   $less_path $*
 
 }

@@ -8,8 +8,8 @@ tabs:
       layout: tiled
       panes:
         - Mutt gecko
-        - rvm use ruby-1.9.3 && earthquake
-        - (camper_van > /var/log/camper.log &) && weechat-curses
+        - rvm use ruby-1.9.2 && earthquake
+        # - (camper_van > /var/log/camper.log &) && weechat-curses
   - VIM:
       panes:
         - vim
@@ -19,3 +19,7 @@ tabs:
         - #zsh
         - #zsh
 
+  - Servers:
+      panes:
+        - memcached -p 11211 -d
+        - sudo apachectl  -k restart
