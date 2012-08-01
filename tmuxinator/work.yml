@@ -9,7 +9,7 @@ tabs:
       panes:
         - Mutt gecko
         - rvm use ruby-1.9.2 && earthquake
-        # - (camper_van > /var/log/camper.log &) && weechat-curses
+        - flamethrower -c ~/.private/campfire.yaml 2>&1 > /var/log/cf.log && weechat-curses
   - VIM:
       panes:
         - vim
