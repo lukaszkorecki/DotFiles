@@ -91,6 +91,9 @@ alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
+function psgr(){
+  ps aux | grep $1 | grep -v grep
+}
 
 # work out which ls version we're dealing with
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
