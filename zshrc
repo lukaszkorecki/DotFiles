@@ -158,6 +158,14 @@ function KillMatching() {
 }
 
 # git tools -------------------------------------------------------------------
+function github-clone() {
+echo "cloaning $1 via https by default, pass an extra arg for git protocol"
+prefix='git@github.com:'
+if [[ -z "$2" ]] ; then
+  prefix='https://github.com/'
+fi
+git clone $prefix$1.git
+}
 function git-yest(){
    _d=`date -v -1d "+%Y-%m-%d"`
   echo "Showing commits since $_d"

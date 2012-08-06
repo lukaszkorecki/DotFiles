@@ -91,7 +91,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-  colorscheme  solarized
+colorscheme  solarized
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -244,7 +244,7 @@ let g:gist_open_browser_after_post = 1
 " Tagbar
 noremap <leader>t :TagbarToggle<CR>
 
-set tags=./tags,tags,TAGS,ctags,./*.ctags
+set tags=./tags,tags,TAGS,ctags,./*.ctags,../tags
 
 " add a definition for Objective-C to tagbar
 " requires HEAD ctags installed

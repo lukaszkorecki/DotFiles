@@ -27,5 +27,7 @@ tools:
 	brew install homebrew/dupes/vim
 	brew install ctags --HEAD
 	brew install tmux
+	brew install colordiff
+	brew install weechat
 
 setup : link update private tools
