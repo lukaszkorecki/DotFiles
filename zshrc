@@ -87,6 +87,8 @@ setopt always_to_end
 setopt correct_all
 
 # Aliases
+
+alias r='rails' # sigh
 alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
@@ -159,7 +161,7 @@ function KillMatching() {
 
 # git tools -------------------------------------------------------------------
 function github-clone() {
-echo "cloaning $1 via https by default, pass an extra arg for git protocol"
+echo "cloning $1 via https by default, pass an extra arg for git protocol"
 prefix='git@github.com:'
 if [[ -z "$2" ]] ; then
   prefix='https://github.com/'
