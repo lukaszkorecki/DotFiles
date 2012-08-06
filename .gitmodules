@@ -165,3 +165,12 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache
+  ignore = untracked
+[submodule "vim/bundle/textobj-user"]
+	path = vim/bundle/textobj-user
+	url = git://github.com/kana/vim-textobj-user.git
+  ignore = untracked
+[submodule "vim/bundle/textobj-rubyblock"]
+	path = vim/bundle/textobj-rubyblock
+	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
+  ignore = untracked
