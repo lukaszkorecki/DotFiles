@@ -120,9 +120,11 @@ export EDITOR=vim
 # make vim a pager
 function vless() {
   local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  )/ -name less.sh`
-  echo $less_path
+  if [[ -z $less_path ]]; then
+    echo 'less.sh not found'
+    exit 1
+  fi
   $less_path $*
-
 }
 
 # edit modified files in vim
