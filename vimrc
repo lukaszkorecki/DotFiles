@@ -188,6 +188,10 @@ au BufNewFile,BufRead *.pp set expandtab
 " qml
 au BufNewFile,BufRead  *.qml set filetype=qml
 
+" yaml indent settings
+au BufNewFile,BufRead  *.yml,*.yaml set foldmethod=indent
+au BufNewFile,BufRead  *.yml,*.yaml set foldlevel=1
+
 " json as javascript
 au BufNewFile,BufRead  *.json set syntax=javascript
 au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
