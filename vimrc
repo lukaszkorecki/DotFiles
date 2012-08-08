@@ -192,6 +192,11 @@ au BufNewFile,BufRead  *.qml set filetype=qml
 au BufNewFile,BufRead  *.json set syntax=javascript
 au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
 
+" use conceal to hide 'function' keywoard and use cchar=λ as a replacement
+au BufNewFile,BufRead *.js syntax keyword javasScriptFunction function conceal cchar=λ
+au BufNewFile,BufRead *.js hi! link Conceal javasScriptFunction
+au BufNewFile,BufRead *.js setlocal conceallevel=2
+
 " mustache templates
 au BufNewFile,BufRead  *.mustache set filetype=mustache
 
@@ -310,10 +315,10 @@ autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
 " ERB
-autocmd Filetype eruby iabbr rtt <% woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
-autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
-autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
-autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
+autocmd Filetype eruby iabbr rtt <% woo  %><ESC>?woo<ESC>ciw
+autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>ciw
+autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>ciw
+autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>ciw
 
 " Rspec yeah
 autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
