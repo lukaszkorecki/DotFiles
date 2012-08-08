@@ -1,8 +1,11 @@
 # connection settings
-set mail_check        = 90
-set timeout           = 15
-set imap_keepalive    = 900
-set certificate_file  = ~/.mutt/certs
+set mail_check       = 90
+set timeout          = 15
+set imap_keepalive   = 900
+set certificate_file = ~/.mutt/certs
+
+set header_cache     = ~/.mutt/.hcache
+set message_cachedir = ~/.mutt/.bcache
 
 # editing
 set charset          = "utf-8"
