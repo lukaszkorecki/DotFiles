@@ -90,7 +90,7 @@ autocmd FileType mail,gitcommit set spell
 
 " colors -------------------------------------------------------------------
 let &t_Co=256
-set background=dark
+set background=light
 colorscheme  solarized
 
 " indent --------------------------------------------------------------------
@@ -293,7 +293,7 @@ let g:ctrlp_custom_ignore = {
 " 'cause snippets are overkill
 iabbr me_ Łukasz
 iabbr sig_ -- <CR>Łukasz
-iabbr sigw_ -- <CR>Łukasz<CR>http://mediasp.com
+iabbr sigw_ -- <CR>Łukasz<CR>http://geckoboard.com
 
 " pry abbrev, delimitmate handles inserting missing pairs
 iabbr pry_ require 'pry'; binding.pry
@@ -309,6 +309,12 @@ autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
+" ERB
+autocmd Filetype eruby iabbr rtt <% woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
+autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
+autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
+autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>/asdf<ESC>ciw
+
 " Rspec yeah
 autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
@@ -318,7 +324,8 @@ autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>xO
 autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<CR><ESC>xO
-autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>c
+autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>xc
+
 
 " Functions ----------------------------------------------------------------
 
