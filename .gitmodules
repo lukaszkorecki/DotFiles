@@ -174,3 +174,6 @@
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
   ignore = untracked
+[submodule "vim/bundle/zen-coding"]
+	path = vim/bundle/zen-coding
+	url = git://github.com/mattn/zencoding-vim.git

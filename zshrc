@@ -1,5 +1,6 @@
 export LANG=en_GB.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
