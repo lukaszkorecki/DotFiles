@@ -253,7 +253,7 @@ let g:gist_open_browser_after_post = 1
 " Tagbar
 noremap <leader>t :TagbarToggle<CR>
 
-set tags=./tags,tags,TAGS,ctags,./*.ctags,../tags
+set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags,../tags
 
 " add a definition for Objective-C to tagbar
 " requires HEAD ctags installed
