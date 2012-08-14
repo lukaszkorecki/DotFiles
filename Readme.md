@@ -32,10 +32,8 @@ Programming languages I use on daily basis:
 
 - mutt
 - ctags (latest svn)
-- mcabber
+- weechat
 - pry
-- tmuxinator
-- mcabber
 - coffeetags
 
 I also play with:

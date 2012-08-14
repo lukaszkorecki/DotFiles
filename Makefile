@@ -1,4 +1,4 @@
-LIST = vim vimrc zshrc zshenv irbrc pryrc tmux.conf rvmrc ackrc  tmuxinator weechat
+LIST = vim vimrc zshrc zshenv irbrc pryrc tmux.conf rvmrc ackrc  weechat
 link: $(LIST)
 	@for f in $(LIST) ; do ln -s ~/.DotFiles/$$f ~/.$$f; done
 
@@ -21,13 +21,13 @@ update:
 # into separate steps
 tools:
 	brew install mutt
-	brew install reattach-to-user-namespace
-	brew install git-extras
-	brew tap homebrew/dupes
-	brew install homebrew/dupes/vim
 	brew install ctags --HEAD
 	brew install tmux
 	brew install colordiff
 	brew install weechat
+	brew install ack
+	brew install reattach-to-user-namespace
+	brew tap homebrew/dupes
+	brew install homebrew/dupes/vim
 
 setup : link update private tools
