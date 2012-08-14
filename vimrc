@@ -197,8 +197,8 @@ au BufNewFile,BufRead  *.json set syntax=javascript
 au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
-au BufNewFile,BufRead *.js syntax keyword javasScriptFunction function conceal cchar=λ
-au BufNewFile,BufRead *.js hi! link Conceal javasScriptFunction
+au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
+au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
 au BufNewFile,BufRead *.js setlocal conceallevel=2
 
 " mustache templates
