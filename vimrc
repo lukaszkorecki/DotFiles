@@ -21,6 +21,7 @@ endif
 " visual clues for commands and navigation
 set showcmd
 set ruler
+set scrolloff=3
 
 " Wildmenu bro!
 set wildmenu
@@ -28,8 +29,9 @@ set wildmode=list:longest,full
 
 " search --------------------------------------------------------------------
 set incsearch
-set ignorecase
+set ignorecase smartcase
 set hlsearch
+:nnoremap <CR> :nohlsearch<cr>
 
 " No backups ----------------------------------------------------------------
 " Vim crashes so rarely I don't feel like I need these
@@ -90,7 +92,7 @@ autocmd FileType mail,gitcommit set spell
 
 " colors -------------------------------------------------------------------
 let &t_Co=256
-set background=light
+set background=dark
 colorscheme  solarized
 
 " indent --------------------------------------------------------------------
