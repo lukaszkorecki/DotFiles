@@ -6,6 +6,11 @@ export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
+# add racket bins to path if racket installation exists
+if [[ -d /Applications/Racket\ 5.3/bin/ ]]; then
+  export PATH=/Applications/Racket\ 5.3/bin:$PATH
+fi
+
 # export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
