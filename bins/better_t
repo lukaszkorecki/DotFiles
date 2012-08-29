@@ -9,9 +9,19 @@
 require 'csv'
 require 'colorize'
 
+username_r = /(@[a-zA-Z0-9_]+)/
+
 ARGF.each_line do |line|
+  begin
   id, time, user, status = CSV.parse(line).first
+  rescue
+    id, time, user, *status = line.split(',')
+    status = status.join(" ")
+  end
+
+  status.gsub!(username_r) { |s| s.colorize(:red) }
   status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
+  status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
 
   body = ""
   body << "\n"
