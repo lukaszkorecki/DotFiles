@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# Desc:  nicer output for t ( https://github.com/sferik/t )
+# Usage: pipe your timeline/replies/user stream with -c (CSV) option
+# Example:
+#   t stream timeline -c | ruby better_t
+#
+# Screenshot: http://cl.ly/image/1t122a2P1q3H
+# vi: ft=ruby
+require 'csv'
+require 'colorize'
+
+ARGF.each_line do |line|
+  id, time, user, status = CSV.parse(line).first
+  status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
+
+  body = ""
+  body << "\n"
+  body << status
+  body << "\n"
+  body << "@#{user}".colorize(:red)
+  body << " / "
+  body << "#{id.colorize(:yellow)} / #{time.colorize(:green)}"
+  puts body
+
+end
