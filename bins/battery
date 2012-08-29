@@ -3,8 +3,6 @@
 battt=$( ioreg -l | grep -i capacity | tr '\n' ' | ' | awk '{printf("%.2f%%", $10/$5 * 100)}')
 if [[ -z $battt ]]; then
   echo "got da powah"
-elif [[ $batt='100.00%' ]]; then
-  echo 'Fully charged'
 else
   echo $battt
 fi
