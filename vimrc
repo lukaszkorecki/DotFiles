@@ -41,7 +41,6 @@ set noswapfile
 
 " Folding ------------------------------------------------------------------
 set foldmethod=syntax
-set foldcolumn=1
 set foldlevel=2
 
 " status line --------------------------------------------------------------
@@ -141,13 +140,6 @@ map W w !sudo tee % >/dev/null
 inoremap jj <esc>
 cnoremap jj <c-c>
 
-" search for clipboard contents
-map <Leader>/ :let @/=@"<CR>"
-
-" tabs (not really optimal)
-map <leader>[ :tabprevious<CR>
-map <leader>] :tabnext<CR>
-
 " disable arrows
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
@@ -226,7 +218,7 @@ au BufNewFile,BufRead *tmux.conf set syntax=tmux
 " SCSS
 autocmd FileType scss setlocal iskeyword+=-,$,@
 
-" Scheme is a LISP
+" Scheme is a LISP, clojure as well
 au BufNewFile,BufRead *.scm,*.clj set lisp
 
 " Plugins settings ----------------------------------------------------------
@@ -299,7 +291,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|release$\|dojo$\|dijit$\|dojox$\|util$',
   \}
 
-
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill
 iabbr me_ Łukasz
@@ -307,11 +298,8 @@ iabbr sig_ -- <CR>Łukasz
 iabbr sigw_ -- <CR>Łukasz<CR>http://geckoboard.com
 
 " pry abbrev, delimitmate handles inserting missing pairs
-iabbr pry_ require 'pry'; binding.pry
-iabbr pry__ require 'pry';   binding.pry if ENV['WITH_PRY
-
-iabbr pry= require 'pry'; require 'pry-nav'; binding.pry
-iabbr pry== require 'pry'; require 'pry-nav';  binding.pry if ENV['WITH_PRY
+iabbr pry_  binding.pry
+iabbr pryr_ require 'pry'; binding.pry
 
 " Ruby
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
@@ -349,24 +337,17 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 fun! ToggleFolds()
-  echo &foldlevel
-  if &foldlevel == 2
-    set foldlevel=9999
-  elseif &foldlevel == 9999
-    set foldlevel=2
+  if &foldenable == 1
+    echo 'Disabling folds'
+    set nofoldenable
+  else
+    echo 'Enabling folds'
+    set foldenable
   endif
 endfun
 
 noremap <leader>f :call ToggleFolds()<CR>
 vnoremap <leader>f :call ToggleFolds()<CR>
-
-fun! PastedFromTmux()
-  s/\\015/\r/g
-endfun
-command!  -nargs=0 FromTmux call PastedFromTmux(<args>)
-
-" reload file from disk and discard changes
-command!  -nargs=0 R e! %
 
 " quickly switch between absolute and relative line numbers
 " "number" option was set at the beginning of the file
