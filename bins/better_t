@@ -13,24 +13,32 @@ username_r = /(@[a-zA-Z0-9_]+)/
 
 ARGF.each_line do |line|
   begin
-  id, time, user, status = CSV.parse(line).first
+  t_id, time, user, status = CSV.parse(line).first
   rescue
-    id, time, user, *status = line.split(',')
+    t_id, time, user, *status = line.split(',')
     status = status.join(" ")
   end
 
-  status.gsub!(username_r) { |s| s.colorize(:red) }
-  status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
-  status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
+  if t_id and time and user and status
 
-  if id and time and user and status
+    begin
+      time = DateTime.parse(time).strftime "%H:%M:%S %d/%b/%Y"
+    rescue
+      puts time
+      time
+    end
+
+    status.gsub!(username_r) { |s| s.colorize(:red) }
+    status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
+    status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
+
     body = ""
     body << "\n"
     body << status
     body << "\n"
-    body << "@#{user}".colorize(:red)
+    body << "@#{user}".colorize(:green)
     body << " / "
-    body << "#{id.colorize(:yellow)} / #{time.colorize(:green)}"
+    body << "#{t_id.colorize(:yellow)} / #{time.colorize(:white)}"
     puts body
   end
 
