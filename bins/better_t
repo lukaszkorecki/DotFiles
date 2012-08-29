@@ -23,13 +23,15 @@ ARGF.each_line do |line|
   status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
   status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
 
-  body = ""
-  body << "\n"
-  body << status
-  body << "\n"
-  body << "@#{user}".colorize(:red)
-  body << " / "
-  body << "#{id.colorize(:yellow)} / #{time.colorize(:green)}"
-  puts body
+  if id and time and user and status
+    body = ""
+    body << "\n"
+    body << status
+    body << "\n"
+    body << "@#{user}".colorize(:red)
+    body << " / "
+    body << "#{id.colorize(:yellow)} / #{time.colorize(:green)}"
+    puts body
+  end
 
 end
