@@ -20,26 +20,31 @@ ARGF.each_line do |line|
   end
 
   if t_id and time and user and status
+    ok = true
 
-    begin
-      time = DateTime.parse(time).strftime "%H:%M:%S %d/%b/%Y"
-    rescue
-      puts time
-      time
-    end
+    time = begin
+             DateTime.parse(time).strftime "%H:%M:%S %d/%b/%Y"
+           rescue
+             time
+           end
 
     status.gsub!(username_r) { |s| s.colorize(:red) }
     status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
     status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
 
-    body = ""
-    body << "\n"
-    body << status
-    body << "\n"
-    body << "@#{user}".colorize(:green)
+    body = "--\n"
+    body << "| @#{user}".colorize(:green)
     body << " / "
-    body << "#{t_id.colorize(:yellow)} / #{time.colorize(:white)}"
+    body << t_id.colorize(:yellow)
+    body << " / "
+    body <<  time.colorize(:white)
+    body << "\n"
+    body << "| "+status
+    body << "\n"
     puts body
+    body << "\n"
+  else
+    puts "| "+line
   end
 
 end
