@@ -31,7 +31,7 @@ set wildmode=list:longest,full
 set incsearch
 set ignorecase smartcase
 set hlsearch
-:nnoremap <CR> :nohlsearch<cr>
+:nnoremap <space> :nohlsearch<cr>
 
 " No backups ----------------------------------------------------------------
 " Vim crashes so rarely I don't feel like I need these
