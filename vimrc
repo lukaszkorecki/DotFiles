@@ -308,14 +308,15 @@ autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
-" ERB
-autocmd Filetype eruby iabbr rtt <% woo  %><ESC>?woo<ESC>ciw
-autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>ciw
-autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>ciw
-autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>ciw
 
-" Rspec yeah
-autocmd Filetype ruby iabbr desc_ describe  do<CR>end<ESC>?describe<ESC>wi
+" ERB
+autocmd Filetype eruby iabbr rtt <% woo %><ESC>?woo<ESC>"adiwa<backspace><backspace>
+autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
+autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
+autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
+
+" Rspec yea
+autocmd Filetype ruby iabbr dsc- describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr cont- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
