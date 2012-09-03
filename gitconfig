@@ -1,0 +1,22 @@
+[user]
+	email = lukasz@coffeesounds.com
+	name = Łukasz Korecki
+[github]
+	username = lukaszkorecki
+	user = lukaszkorecki
+[color]
+	ui = true
+	diff = true
+
+[push]
+  default = current
+
+[alias]
+  c = commit
+  co = commit -m
+  g = !git --no-pager grep --color -n
+  lo = log --graph --oneline
+  pr = pull --rebase
+  pull-all = pull --recurse-submodules
+  s = status
+  serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git

@@ -170,18 +170,15 @@ function KillMatching() {
 }
 
 # git tools -------------------------------------------------------------------
+alias g=git
+
 function github-clone() {
-echo "cloning $1 via https by default, pass an extra arg for git protocol"
-prefix='git@github.com:'
-if [[ -z "$2" ]] ; then
-  prefix='https://github.com/'
-fi
-git clone $prefix$1.git
-}
-function git-yest(){
-   _d=`date -v -1d "+%Y-%m-%d"`
-  echo "Showing commits since $_d"
-  git --no-pager log --since $_d
+  echo "cloning $1 via https by default, pass an extra arg for git protocol"
+  prefix='git@github.com:'
+  if [[ -z "$2" ]] ; then
+    prefix='https://github.com/'
+  fi
+  git clone $prefix$1.git
 }
 
 function git-vim-modified() {
@@ -202,13 +199,6 @@ function git-grep-vim() {
 }
 
 
-alias gs='git status'
-alias gco='git commit'
-alias gc='git commit'
-alias git-pull-all='git pull --recurse-submodules '
-alias ggp='git --no-pager grep --color -n '
-alias glo='git log --graph --oneline'
-alias gpr='git pull --rebase'
 
 function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
