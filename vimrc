@@ -320,6 +320,7 @@ autocmd Filetype ruby iabbr dsc- describe  do<CR>end<ESC>?describe<ESC>wi
 autocmd Filetype ruby iabbr it- it "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr cont- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
+autocmd Filetype ruby iabbr let- let : { }<ESC>?:<ESC>a
 
 " Javascript
 autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>xO
