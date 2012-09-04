@@ -13,10 +13,13 @@
 
 [alias]
   c = commit
-  co = commit -m
+  cm = commit -m
+  co = checkout
   g = !git --no-pager grep --color -n
+  l = log
   lo = log --graph --oneline
   pr = pull --rebase
   pull-all = pull --recurse-submodules
   s = status
+  d = diff
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
