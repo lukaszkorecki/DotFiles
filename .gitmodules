@@ -180,3 +180,6 @@
 [submodule "vim/bundle/vim-racket"]
 	path = vim/bundle/vim-racket
 	url = https://github.com/wlangstroth/vim-racket
+[submodule "vim/bundle/vim-css3"]
+	path = vim/bundle/vim-css3
+	url = https://github.com/lepture/vim-css.git
