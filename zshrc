@@ -97,7 +97,6 @@ setopt correct_all
 
 alias r='rails' # sigh
 alias rs='bundle exec rspec spec -f n -c'
-alias rake='noglob rake' # stop rake's params from being treated as ZSH patterns
 alias history='fc -l 1'
 
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
