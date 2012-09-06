@@ -100,6 +100,7 @@ alias rs='bundle exec rspec spec -f n -c'
 alias history='fc -l 1'
 
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
+
 function psgr(){
   ps aux | grep $1 | grep -v grep
 }
@@ -142,6 +143,17 @@ env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
   -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
   -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
+
+# clever zsh suffix aliasing ninja magic
+
+alias -s js=vim
+alias -s rb=vim
+alias -s py=vim
+alias -s txt=vim
+alias -s coffee=vim
+alias -s sh=vim
+alias -s zsh=vim
+
 
 function EditHost() {
   sudo vim /etc/hosts
