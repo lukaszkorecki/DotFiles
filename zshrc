@@ -135,6 +135,8 @@ function vless() {
   $less_path $*
 }
 
+alias vl=vless
+
 # edit modified files in vim
 # use vim as man viewer
 function viman() {
@@ -193,7 +195,7 @@ function github-clone() {
 }
 
 function git-vim-modified() {
-  vim -O $(gs --porcelain | awk '{ print $2 }' | tr "\n", ' ' )
+  vim -O $(git status --porcelain | awk '{ print $2 }' | tr "\n", ' ' )
 }
 
 function git-grep-vim() {
