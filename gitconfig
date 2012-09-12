@@ -17,7 +17,8 @@
   co = checkout
   g = !git --no-pager grep --color -n
   l = log
-  lo = log --graph --oneline
+  lo = log --graph --oneline --abbrev-commit
+  ll = log --graph --pretty='format:%h | %an | %s'
   pr = pull --rebase
   pull-all = pull --recurse-submodules
   s = status
