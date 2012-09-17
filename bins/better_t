@@ -16,7 +16,7 @@ ARGF.each_line do |line|
   t_id, time, user, status = CSV.parse(line).first
   rescue
     t_id, time, user, *status = line.split(',')
-    status = status.join(" ")
+    status = status.join(" ").sub(/^"/,'').sub(/"$/,'')
   end
 
   if t_id and time and user and status
