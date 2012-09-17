@@ -182,6 +182,15 @@ function KillMatching() {
   ps aux | grep $1 | egrep -v "grep|tmux" | awk '{ print $2 } ' | xargs kill -9
 }
 
+function run-every-5-sec() {
+while true
+do
+  $*
+  sleep 5
+done
+
+}
+
 # git tools -------------------------------------------------------------------
 alias g=git
 
