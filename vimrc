@@ -310,10 +310,10 @@ autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 
 
 " ERB
-autocmd Filetype eruby iabbr rtt <% woo %><ESC>?woo<ESC>"adiwa<backspace><backspace>
-autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
-autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
-autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>"adiwa<backspace><backspace>
+autocmd Filetype eruby iabbr rtt <% woo %><ESC>?woo<ESC>"_diwa<backspace><backspace>
+autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
+autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
+autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
 
 " Rspec yea
 autocmd Filetype ruby iabbr dsc- describe  do<CR>end<ESC>?describe<ESC>wi
@@ -323,9 +323,9 @@ autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr let- let : { }<ESC>?:<ESC>a
 
 " Javascript
-autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>xO
-autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<CR><ESC>xO
-autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>xc
+autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>"_xO
+autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<CR><ESC>"_xO
+autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>"_xc
 
 
 " Functions ----------------------------------------------------------------
