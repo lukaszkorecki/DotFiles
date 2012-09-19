@@ -194,34 +194,7 @@ done
 # git tools -------------------------------------------------------------------
 alias g=git
 
-function github-clone() {
-  echo "cloning $1 via https by default, pass an extra arg for git protocol"
-  prefix='git@github.com:'
-  if [[ -z "$2" ]] ; then
-    prefix='https://github.com/'
-  fi
-  git clone $prefix$1.git
-}
-
-function git-vim-modified() {
-  vim -O $(git status --porcelain | awk '{ print $2 }' | tr "\n", ' ' )
-}
-
-function git-grep-vim() {
-  if [[ -z "$2" ]]; then
-    cond=tee
-    filter='[no filter]'
-  else
-    cond="grep $2"
-    filter="[$cond]"
-  fi
-  echo "Searching for '$1' with filter: $filter"
-  vim -O $(git grep $1 | eval $cond | cut -s -d : -f 1 | tr " ", "\\ " )
-
-}
-
-
-
+# Convinient wrappers
 function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
@@ -263,11 +236,6 @@ export GREP_COLOR='1;32'
 # make less suck less
 export LESS="-RSM~gIsw"
 
-# GIT
-function GitCurrentBranch() {
-  local br=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3 }') # || { echo "$@" ; exit ; }
-  echo $br
-}
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -277,7 +245,8 @@ autoload -U colors && colors
 local sigil='%{$fg[red]%}#%{$reset_color%}'
 local rvm_ruby='%{$fg[red]%}$(~/.rvm/bin/rvm-prompt i v g s)%{$reset_color%}'
 local host='%{$fg[blue]%}%m%{$reset_color%}'
-local git_branch='%{$fg[green]%}$(GitCurrentBranch)%{$reset_color%}'
+# git cb is defined in .gitconfig!
+local git_branch='%{$fg[green]%}$(git cb)%{$reset_color%}'
 local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
 PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"

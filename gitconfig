@@ -1,3 +1,4 @@
+# vi: ft=gitconfig
 [user]
 	email = lukasz@coffeesounds.com
 	name = Łukasz Korecki
@@ -20,7 +21,9 @@
   lo = log --graph --oneline --abbrev-commit
   ll = log --graph --pretty='format:%h | %an | %s'
   pr = pull --rebase
-  pull-all = pull --recurse-submodules
+  pull-all = pull --recurse-submodules -r
   s = status
   d = diff
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+  cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
+  edit-modified = !vim -O $(git ls-files -m )
