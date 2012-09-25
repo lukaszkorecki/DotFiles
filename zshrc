@@ -95,6 +95,7 @@ setopt correct_all
 
 # Aliases
 
+alias b=bundle
 alias r='rails' # sigh
 alias rs='bundle exec rspec spec -f n -c'
 alias history='fc -l 1'
