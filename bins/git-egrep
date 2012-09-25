@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+for file in $(git ls-files) ; egrep -nHr "$1" $file
