@@ -1,13 +1,13 @@
 # vi: ft=gitconfig
 [user]
-	email = lukasz@coffeesounds.com
-	name = Łukasz Korecki
+  email = lukasz@coffeesounds.com
+  name = Łukasz Korecki
 [github]
-	username = lukaszkorecki
-	user = lukaszkorecki
+  username = lukaszkorecki
+  user = lukaszkorecki
 [color]
-	ui = true
-	diff = true
+  ui = true
+  diff = true
 
 [push]
   default = current
@@ -28,4 +28,4 @@
   cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
   edit-modified = !vim -O $(git ls-files -m )
 [branch]
-	autosetupmerge = true
+  autosetupmerge = true
