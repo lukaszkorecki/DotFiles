@@ -114,10 +114,10 @@ alias ll='ls -l'
 
 alias tm='tmux -2 -u'
 alias tm-join='tmux -2 -u new-session -t '
+alias workit='tmux source-file ~/.DotFiles/startdev.tmux.conf'
 alias be='bundle exec '
 alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
-alias ng="~/.nginx/sbin/nginx"
 
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
@@ -191,6 +191,8 @@ do
 done
 
 }
+
+
 
 # git tools -------------------------------------------------------------------
 alias g=git
