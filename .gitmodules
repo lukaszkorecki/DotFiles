@@ -30,9 +30,6 @@
 	path = vim/bundle/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script.git
   ignore = untracked
-[submodule "vim/bundle/githubdashboard"]
-	path = vim/bundle/githubdashboard
-	url = git@github.com:lukaszkorecki/vim-GitHubDashBoard.git
   ignore = untracked
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
@@ -81,10 +78,6 @@
 [submodule "vim/bundle/vim-monokai"]
 	path = vim/bundle/vim-monokai
 	url = https://github.com/sickill/vim-monokai.git
-  ignore = untracked
-[submodule "vim/bundle/vim-puppet"]
-	path = vim/bundle/vim-puppet
-	url = https://github.com/rodjek/vim-puppet.git
   ignore = untracked
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
@@ -161,10 +154,6 @@
 [submodule "vim/bundle/vim-blockle"]
 	path = vim/bundle/vim-blockle
 	url = http://github.com/jgdavey/vim-blockle
-  ignore = untracked
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache
   ignore = untracked
 [submodule "vim/bundle/textobj-user"]
 	path = vim/bundle/textobj-user
