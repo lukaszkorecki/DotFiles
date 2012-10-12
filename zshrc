@@ -154,7 +154,6 @@ alias -s rb=vim
 alias -s py=vim
 alias -s txt=vim
 alias -s coffee=vim
-alias -s sh=vim
 alias -s zsh=vim
 
 
