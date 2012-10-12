@@ -1,3 +1,6 @@
+# show only directories, ordered by modification date, latest at the bottom
+ls -ltrd */
+
 # print git dependencies  and prepend * before 'em
 grep ":git" Gemfile | cut -d '"'  -f 2  | xargs -I '#' echo '* ' \#
 
