@@ -254,3 +254,6 @@ PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
 
 source ~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh
+if [[ -f ~/zshrc.local ]]; then
+  source ~/zshrc.local
+fi
