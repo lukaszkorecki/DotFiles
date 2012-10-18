@@ -1,3 +1,10 @@
 #!/usr/bin/env zsh
-tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
-vim -c ":ScreenShell" .
+# run with `workit <tool for repl>`
+# it will:
+#
+#   run tests in guard
+#   start vim
+#   start a repl/shell linked with vim so you can send commands to it
+#
+tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard" -c `pwd`
+vim -c ":ScreenShell $1" .
