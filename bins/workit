@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
+vim -c ":ScreenShell" .
