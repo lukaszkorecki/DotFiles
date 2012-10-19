@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 # run with `workit <tool for repl>`
 # it will:
 #
@@ -6,5 +6,5 @@
 #   start vim
 #   start a repl/shell linked with vim so you can send commands to it
 #
-tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard" -c `pwd`
+tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
 vim -c ":ScreenShell $1" .
