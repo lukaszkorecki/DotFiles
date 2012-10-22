@@ -1,22 +1,22 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
-	url = http://github.com/scrooloose/syntastic.git
+	url = https://github.com/scrooloose/syntastic.git
   ignore = untracked
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
-	url = http://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
   ignore = untracked
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
   ignore = untracked
 [submodule "vim/bundle/haml"]
 	path = vim/bundle/haml
-	url = http://github.com/tpope/vim-haml.git
+	url = https://github.com/tpope/vim-haml.git
   ignore = untracked
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
-	url = http://github.com/Raimondi/delimitMate.git
+	url = https://github.com/Raimondi/delimitMate.git
   ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
@@ -153,7 +153,7 @@
   ignore = untracked
 [submodule "vim/bundle/vim-blockle"]
 	path = vim/bundle/vim-blockle
-	url = http://github.com/jgdavey/vim-blockle
+	url = https://github.com/jgdavey/vim-blockle
   ignore = untracked
 [submodule "vim/bundle/textobj-user"]
 	path = vim/bundle/textobj-user
