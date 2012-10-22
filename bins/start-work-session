@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Start weechat and
+tmux rename-window "Comms"
+tmux split-window -h -p 40 "mutt -e 'source ~/.private/mutt_$1'"
+weechat-curses
