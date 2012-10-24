@@ -7,4 +7,4 @@
 #   start a repl/shell linked with vim so you can send commands to it
 #
 tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
-vim -c ":ScreenShell $1" .
+vim -c ":ScreenShell $1" $2
