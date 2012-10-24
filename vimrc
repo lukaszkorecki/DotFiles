@@ -206,6 +206,9 @@ au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetyp
 
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?,@
+let g:ruby_operators = 1
+let g:ruby_space_errors = 1
+let g:rubycomplete_buffer_loading = 1
 
 
 " make rspec stuff part of ruby syntax
