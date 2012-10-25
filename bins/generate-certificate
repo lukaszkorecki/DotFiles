@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+name=$1
+if [[ -z $name ]]; then
+  echo NO NAME
+  exit 1
+fi
+openssl genrsa -des3 -out $name.key 2048
+openssl req -new -key $name.key -out $name.csr
+cp $name.key $name.key.org
+openssl rsa -in $name.key.org -out $name.key
+openssl x509 -req -days 365 -in $name.csr -signkey $name.key -out $name.crt
