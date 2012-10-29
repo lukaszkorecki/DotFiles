@@ -1,7 +1,13 @@
 export LANG=en_GB.UTF-8
+export ARCHFLAGS="-arch x86_64"
+
+# fix node binaries
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
+
+if [[ -d /usr/local/Cellar/android-sdk/r20.0.1 ]]; then
+  export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
+fi
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -11,16 +17,23 @@ if [[ -d /Applications/Racket\ 5.3/bin/ ]]; then
   export PATH=/Applications/Racket\ 5.3/bin:$PATH
 fi
 
-# export PATH=/home/lukasz/.gem/ruby/1.8/bin:$PATH
+# custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
+# hmmmmm
 export PATH=/usr/local/mysql/bin:$PATH
 export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
-if [[ -f ~/Dropbox/zaku_ip ]]; then
-  export ZAKUIP=`cat ~/Dropbox/zaku_ip || ''`
-fi
+# Aliases
+
+alias history='fc -l 1'
+alias g=git
+alias b=bundle
+alias be='bundle exec '
+alias r='rails' # sigh
+alias rs='bundle exec rspec spec -f n -c'
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
 
 setopt prompt_subst
@@ -93,36 +106,30 @@ setopt always_to_end
 # correction
 setopt correct_all
 
-# Aliases
-
-alias b=bundle
-alias r='rails' # sigh
-alias rs='bundle exec rspec spec -f n -c'
-alias history='fc -l 1'
-
-alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
-
-function psgr(){
+# handy ps wrapper
+function Psgr(){
   ps aux | grep $1 | grep -v grep
 }
 
 # work out which ls version we're dealing with
+# and export correct color settings
 ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
 alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 
+# tmux--------------------------------------------------------------------------
+
 alias tm='tmux -2 -u'
 alias tm-join='tmux -2 -u new-session -t '
-alias be='bundle exec '
-alias install_this_mysql_gem='ARCHFLAGS="-arch x86_64" gem install mysql -- --with-mysql-config=/usr/local/mysql/bin/mysql_config '
 
 
+# fix ack-grep binary on linux
 if  [[ -e /usr/bin/ack-grep ]]; then
   alias ack='ack-grep'
 fi
 
-# VIM stuff
+# VIM stuff---------------------------------------------------------------------
 export EDITOR=vim
 
 # make vim a pager
@@ -134,8 +141,9 @@ function vless() {
   fi
   $less_path $*
 }
-
 alias vl=vless
+alias v=vim
+
 
 # edit modified files in vim
 # use vim as man viewer
@@ -146,16 +154,8 @@ env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
   -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
 
-# clever zsh suffix aliasing ninja magic
 
-alias -s js=vim
-alias -s rb=vim
-alias -s py=vim
-alias -s txt=vim
-alias -s coffee=vim
-alias -s zsh=vim
-
-
+# utilities---------------------------------------------------------------------
 function EditHost() {
   sudo vim /etc/hosts
   dscacheutil -flushcache
@@ -190,18 +190,9 @@ done
 
 }
 
-
-
-# git tools -------------------------------------------------------------------
-alias g=git
-
-# Convinient wrappers
+# Convinient wrappers----------------------------------------------------------
 function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
-}
-
-function Mcabber() {
-  TERM=screen-256color mcabber -f ~/.private/jabber_$1.conf
 }
 
 function Agent(){
@@ -227,20 +218,20 @@ function cdd() {
 
 export GITHUB_TOKEN=`git config --global --get github.token`
 export GITHUB_USER=`git config --global --get github.user`
-export ARCHFLAGS="-arch x86_64"
-export GIT_SSL_NO_VERIFY=true # sigh, self-signed certs, inhouse git servers
 
-# GREP
+# GREP--------------------------------------------------------------------------
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-# make less suck less
+# make less suck less-----------------------------------------------------------
 export LESS="-RSM~gIsw"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
 
-# Prompt
+# Prompt settings---------------------------------------------------------------
 setopt prompt_subst
 autoload -U colors && colors
 local sigil='%{$fg[red]%}#%{$reset_color%}'
@@ -253,6 +244,8 @@ PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
 
 source ~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh
+
+# extra pre-machine settings
 if [[ -f ~/zshrc.local ]]; then
   source ~/zshrc.local
 fi
