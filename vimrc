@@ -310,6 +310,7 @@ autocmd Filetype ruby iabbr mod module<CR>end<ESC>?module<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
+autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
 
 
 " ERB
