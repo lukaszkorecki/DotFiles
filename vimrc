@@ -92,7 +92,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  default
+colorscheme  Monokai
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -311,6 +311,8 @@ autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
+autocmd Filetype ruby iabbr req- require ''<ESC>"_ci'
+
 
 
 " ERB
