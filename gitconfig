@@ -24,6 +24,7 @@
   pull-all = pull --recurse-submodules -r
   s = status
   d = diff
+  dc = diff --cached
   serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
   cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
   edit-modified = !vim -O $(git ls-files -m )
