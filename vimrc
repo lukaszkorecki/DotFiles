@@ -33,6 +33,7 @@ set ignorecase smartcase
 set hlsearch
 :nnoremap <space> :nohlsearch<cr>
 
+
 " No backups ----------------------------------------------------------------
 " Vim crashes so rarely I don't feel like I need these
 set nobackup
@@ -171,7 +172,9 @@ vnoremap <s-tab> <gv
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set noexpandtab
+au BufNewFile,BufRead *.py set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py set list
 
 " ... and so is puppet
 au BufNewFile,BufRead *.pp set tabstop=4
