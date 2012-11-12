@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 # Start weechat and
-if [[ -z $1 ]]; then
-  echo "No Session name!"
-  exit 1
-fi
-tmux rename-session "$1"
 tmux rename-window "Comms"
 
-open_in_panes 'weechat-curses' 'earthquake' 'mutt -e "source ~/.private/mutt_gecko"'
+open-in-panes 'weechat-curses' 'earthquake' 'mutt -e "source ~/.private/mutt_gecko"'
