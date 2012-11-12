@@ -6,5 +6,5 @@ if [[ -z $1 ]]; then
 fi
 tmux rename-session "$1"
 tmux rename-window "Comms"
-tmux split-window -h -p 40 "mutt -e 'source ~/.private/mutt_$1'"
-weechat-curses
+
+open_in_panes 'weechat-curses' 'earthquake' 'mutt -e "source ~/.private/mutt_gecko"'
