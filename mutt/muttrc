@@ -34,6 +34,7 @@ folder-hook =Sent set sort=date-sent
 # dont jump to next message when current one ends
 set pager_stop
 
+set pager_index_lines = 10
 # don't quit accidentaly
 set quit = ask-no
 
