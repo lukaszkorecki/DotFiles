@@ -93,7 +93,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  Monokai
+colorscheme  default
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
