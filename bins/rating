@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+s = "★"
+h = "☆"
+a = []
+len, cnt = ARGV
+puts "rating <how many> <how many filled>" if len.nil? and cnt.nil?
+len.to_i.times { a << s }
+puts a.fill(h, cnt.to_i).join ''
