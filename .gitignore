@@ -13,3 +13,4 @@ vim/spell
 weechat/weechat_fifo_*
 weechat/*.log
 weechat/logs/
+weechat/*.txt
