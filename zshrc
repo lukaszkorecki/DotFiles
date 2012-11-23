@@ -240,13 +240,12 @@ PATH=$PATH:$HOME/.rvm/bin
 setopt prompt_subst
 autoload -U colors && colors
 local sigil='%{$fg[red]%}#%{$reset_color%}'
-local rvm_ruby='%{$fg[red]%}$(~/.rvm/bin/rvm-prompt i v g s)%{$reset_color%}'
 local host='%{$fg[blue]%}%m%{$reset_color%}'
 # git cb is defined in .gitconfig!
 local git_branch='%{$fg[green]%}$(git cb)%{$reset_color%}'
 local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
 PROMPT="${host} %n ${sigil} "
-RPROMPT="${git_branch} ${c_path} ${rvm_ruby}"
+RPROMPT="${git_branch} ${c_path}"
 
 source ~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh
 
