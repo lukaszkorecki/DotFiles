@@ -3,10 +3,7 @@ export ARCHFLAGS="-arch x86_64"
 
 # fix node binaries
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-
-# C stuff
-export CFLAGS="-Wall -g"
+export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
 
 if [[ -d /usr/local/Cellar/android-sdk/r20.0.1 ]]; then
   export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
@@ -15,7 +12,7 @@ fi
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 # add npm "binaries"
-export PATH=/usr/local/share/npm/bin/:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 # add racket bins to path if racket installation exists
 if [[ -d /Applications/Racket\ 5.3/bin/ ]]; then
@@ -28,7 +25,6 @@ export PATH=~/Dropbox/Scripts:$PATH
 
 # hmmmmm
 export PATH=/usr/local/mysql/bin:$PATH
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 # Aliases
 
