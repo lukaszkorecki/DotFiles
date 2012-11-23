@@ -47,4 +47,4 @@ macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 set query_command="name='%s' ~/.DotFiles/bins/search_mail.sh"
 
 # colors
-source ~/.DotFiles/mutt/muttrc-solarized.muttrc
+source ~/.DotFiles/mutt/zenburn.mutt
