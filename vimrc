@@ -306,6 +306,7 @@ iabbr sigw_ -- <CR>Łukasz<CR>http://geckoboard.com
 " pry abbrev, delimitmate handles inserting missing pairs
 iabbr pry_  binding.pry
 iabbr pryr_ require 'pry'; binding.pry
+iabbr pryrr_ begin<CR>XXX<CR>rescue => e<CR>require 'pry'; binding.pry<CR>end<ESC>?XXX<CR>"_diw
 
 " Ruby
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
