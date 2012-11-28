@@ -10,3 +10,5 @@ function git-rm-submodule() { git rm --cached $1 && rm -rf $1 }
 # get all :git gems and publish them to gem server
 for d in $(grep :git ../dir/Gemfile | cut -f 2 -d " " | xargs echo | tr "," " " ) ; ./scripts/publish-gem ../$d -f
 
+# extract  23953453 from lol/wut-the-hell-23953453/stuff/x.yaml if x.yml contains xxx
+git grep xxx | grep "x.yaml" | cut -f 1 -d : | uniq | cut -d / -f 2 | rev | cut -d - -f1
