@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
@@ -55,9 +52,6 @@
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/scratch.vim"]
-	path = vim/bundle/scratch.vim
-	url = git://github.com/vim-scripts/scratch.vim.git
 [submodule "vim/bundle/vim-textobj-user"]
 	path = vim/bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user
@@ -110,9 +104,6 @@
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
 	url = git://github.com/mattn/zencoding-vim.git
-[submodule "vim/bundle/vim-racket"]
-	path = vim/bundle/vim-racket
-	url = git://github.com/wlangstroth/vim-racket
 [submodule "vim/bundle/vim-css3"]
 	path = vim/bundle/vim-css3
 	url = git://github.com/lepture/vim-css.git
