@@ -25,6 +25,9 @@ export PATH=~/Dropbox/Scripts:$PATH
 
 # hmmmmm
 export PATH=/usr/local/mysql/bin:$PATH
+# this is here for a reason! Mysql2 gem will
+# fail to initialize because binary lib is not being found
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 # Aliases
 
