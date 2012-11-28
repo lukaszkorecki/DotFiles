@@ -1,170 +1,114 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-  ignore = untracked
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-  ignore = untracked
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-  ignore = untracked
-[submodule "vim/bundle/haml"]
-	path = vim/bundle/haml
-	url = git://github.com/tpope/vim-haml.git
-  ignore = untracked
 [submodule "vim/bundle/delimitmate"]
 	path = vim/bundle/delimitmate
 	url = git://github.com/Raimondi/delimitMate.git
-  ignore = untracked
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = git://github.com/edsono/vim-matchit.git
-  ignore = untracked
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
 	url = git://github.com/vim-scripts/VimClojure.git
-  ignore = untracked
 [submodule "vim/bundle/coffeescript"]
 	path = vim/bundle/coffeescript
 	url = git://github.com/kchmck/vim-coffee-script.git
-  ignore = untracked
-  ignore = untracked
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-  ignore = untracked
 [submodule "vim/bundle/easymotion"]
 	path = vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-  ignore = untracked
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
-  ignore = untracked
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-  ignore = untracked
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-  ignore = untracked
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
-  ignore = untracked
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
-  ignore = untracked
 [submodule "vim/bundle/screen"]
 	path = vim/bundle/screen
 	url = git://github.com/ervandew/screen.git
-  ignore = untracked
 [submodule "vim/bundle/vim-statline"]
 	path = vim/bundle/vim-statline
 	url = git://github.com/millermedeiros/vim-statline.git
-  ignore = untracked
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
-  ignore = untracked
 [submodule "vim/bundle/snipmate.vim"]
 	path = vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-monokai"]
 	path = vim/bundle/vim-monokai
 	url = git://github.com/sickill/vim-monokai.git
-  ignore = untracked
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-  ignore = untracked
-[submodule "vim/bundle/gitignore"]
-	path = vim/bundle/gitignore
-	url = git://github.com/vim-scripts/gitignore.git
-  ignore = untracked
 [submodule "vim/bundle/scratch.vim"]
 	path = vim/bundle/scratch.vim
 	url = git://github.com/vim-scripts/scratch.vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-textobj-user"]
 	path = vim/bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user
-  ignore = untracked
 [submodule "vim/bundle/vim-textobj-rubyblock"]
 	path = vim/bundle/vim-textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock
-  ignore = untracked
 [submodule "vim/bundle/vim-javascript-syntax"]
 	path = vim/bundle/vim-javascript-syntax
 	url = git://github.com/jelera/vim-javascript-syntax
-  ignore = untracked
 [submodule "emacs.d/vendor/evil"]
 	path = emacs.d/vendor/evil
 	url = git://gitorious.org/evil/evil.git
-  ignore = untracked
 [submodule "emacs.d/vendor/full-ack"]
 	path = emacs.d/vendor/full-ack
 	url = git://github.com/nschum/full-ack.git
-  ignore = untracked
 [submodule "vim/bundle/IndexedSearch"]
 	path = vim/bundle/IndexedSearch
 	url = git://github.com/vim-scripts/IndexedSearch.git
-  ignore = untracked
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
-  ignore = untracked
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
 	url = git://github.com/kien/rainbow_parentheses.vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-  ignore = untracked
 [submodule "vim/bundle/gitv"]
 	path = vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
-  ignore = untracked
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-smartinput"]
 	path = vim/bundle/vim-smartinput
 	url = git://github.com/kana/vim-smartinput.git
-  ignore = untracked
-[submodule "vim/bundle/NrrwRgn"]
-	path = vim/bundle/NrrwRgn
-	url = git://github.com/chrisbra/NrrwRgn.git
-  ignore = untracked
 [submodule "zsh/highlight"]
 	path = zsh/highlight
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-  ignore = untracked
 [submodule "vim/bundle/html5.vim"]
 	path = vim/bundle/html5.vim
 	url = git://github.com/othree/html5.vim.git
-  ignore = untracked
 [submodule "vim/bundle/vim-blockle"]
 	path = vim/bundle/vim-blockle
 	url = git://github.com/jgdavey/vim-blockle
-  ignore = untracked
 [submodule "vim/bundle/textobj-user"]
 	path = vim/bundle/textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
-  ignore = untracked
 [submodule "vim/bundle/textobj-rubyblock"]
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-  ignore = untracked
-[submodule "vim/bundle/zen-coding"]
-	path = vim/bundle/zen-coding
 	url = git://github.com/mattn/zencoding-vim.git
 [submodule "vim/bundle/vim-racket"]
 	path = vim/bundle/vim-racket
