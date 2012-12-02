@@ -209,14 +209,9 @@ au BufNewFile,BufRead Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetyp
 
 " reject! and responds_to? are methods in ruby
 autocmd FileType ruby setlocal iskeyword+=!,?,@
-let g:ruby_operators = 1
-let g:ruby_space_errors = 1
-let g:rubycomplete_buffer_loading = 1
-
 
 " make rspec stuff part of ruby syntax
 autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
-highlight def link rubyRspec Function
 
 " tmux
 au BufNewFile,BufRead *tmux.conf set syntax=tmux
@@ -253,7 +248,7 @@ let g:gist_open_browser_after_post = 1
 " Tagbar
 noremap <leader>t :TagbarToggle<CR>
 
-set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags,../tags
+set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags
 
 " add a definition for Objective-C to tagbar
 " requires HEAD ctags installed
