@@ -6,5 +6,10 @@
 #   start vim
 #   start a repl/shell linked with vim so you can send commands to it
 #
+if [[ $1 == '-h' ]]; then
+  echo "Launches vim, opens a tmux pane linked with vim and opens a split with guard"
+  echo "workit <screen schell command, for example pry> <file/location to edit in vim>"
+  exit 0
+fi
 tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
 vim -c ":ScreenShell $1" $2
