@@ -112,7 +112,7 @@ setopt correct_all
 
 # handy ps wrapper
 function Psgr(){
-  ps aux | grep $1 | grep -v grep
+  ps aux | egrep $1 | grep -v grep
 }
 
 # work out which ls version we're dealing with
@@ -182,7 +182,7 @@ function any() {
   fi
 }
 function KillMatching() {
-  ps aux | grep $1 | egrep -v "grep|tmux" | awk '{ print $2 } ' | xargs kill -9
+  ps aux | egrep $1 | egrep -v "grep|tmux" | awk '{ print $2 } ' | xargs kill -9
 }
 
 function run-every-5-sec() {
