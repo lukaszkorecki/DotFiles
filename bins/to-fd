@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# sends an email-notification to flowdock
+# ~/.fdaddr needs to have a valid flow address,
+# like: <flow_name>@<domain>.flowdock.com
+fd_address=$(cat ~/.fdaddr)
+if [ -z "$fd_address" ]; then
+  echo "No address in ~/.fdaddr"
+  exit 1
+fi
+
+if [ -z "$1$2" ]; then
+  echo "usage: fd-addr 'topic' 'message'"
+  exit 1
+fi
+
+echo "$1" | mail -s "$2" -F $fd_address
