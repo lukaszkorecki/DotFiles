@@ -122,11 +122,6 @@ alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 
-# tmux--------------------------------------------------------------------------
-
-alias tm='tmux -2 -u'
-alias tm-join='tmux -2 -u new-session -t '
-
 
 # fix ack-grep binary on linux
 if  [[ -e /usr/bin/ack-grep ]]; then
