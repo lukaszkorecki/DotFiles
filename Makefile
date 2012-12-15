@@ -6,7 +6,7 @@ unlink: $(LIST)
 	@for f in $(LIST) ; do rm ~/.$$f; done
 
 private:
-	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private
+	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private || true
 
 update:
 	git submodule update --init
