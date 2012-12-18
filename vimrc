@@ -166,8 +166,10 @@ noremap <s-tab> v<
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-" Programming language support and improvements -------------------------------
+" NETRW setttings ----------------------------------------------------------
+let g:netrw_banner=0
 
+" Programming language support and improvements -------------------------------
 " Ruby  -----------------------------------------------------------------------
 " non ruby files which are ruby
 au BufNewFile,BufRead Capfile,Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
