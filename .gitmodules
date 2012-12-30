@@ -4,12 +4,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/delimitmate"]
-	path = vim/bundle/delimitmate
-	url = git://github.com/Raimondi/delimitMate.git
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = git://github.com/edsono/vim-matchit.git
 [submodule "vim/bundle/vimclojure"]
 	path = vim/bundle/vimclojure
 	url = git://github.com/vim-scripts/VimClojure.git
@@ -19,51 +13,18 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/easymotion"]
-	path = vim/bundle/easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/ack.vim"]
-	path = vim/bundle/ack.vim
-	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
 [submodule "vim/bundle/screen"]
 	path = vim/bundle/screen
 	url = git://github.com/ervandew/screen.git
-[submodule "vim/bundle/vim-statline"]
-	path = vim/bundle/vim-statline
-	url = git://github.com/millermedeiros/vim-statline.git
-[submodule "vim/bundle/snipmate.vim"]
-	path = vim/bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "vim/bundle/vim-monokai"]
 	path = vim/bundle/vim-monokai
 	url = git://github.com/sickill/vim-monokai.git
-[submodule "vim/bundle/vim-addon-mw-utils"]
-	path = vim/bundle/vim-addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "vim/bundle/vim-textobj-user"]
-	path = vim/bundle/vim-textobj-user
-	url = git://github.com/kana/vim-textobj-user
-[submodule "vim/bundle/vim-textobj-rubyblock"]
-	path = vim/bundle/vim-textobj-rubyblock
-	url = git://github.com/nelstrom/vim-textobj-rubyblock
-[submodule "vim/bundle/vim-javascript-syntax"]
-	path = vim/bundle/vim-javascript-syntax
-	url = git://github.com/jelera/vim-javascript-syntax
-[submodule "emacs.d/vendor/evil"]
-	path = emacs.d/vendor/evil
-	url = git://gitorious.org/evil/evil.git
-[submodule "emacs.d/vendor/full-ack"]
-	path = emacs.d/vendor/full-ack
-	url = git://github.com/nschum/full-ack.git
-[submodule "vim/bundle/IndexedSearch"]
-	path = vim/bundle/IndexedSearch
-	url = git://github.com/vim-scripts/IndexedSearch.git
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
