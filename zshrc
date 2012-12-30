@@ -121,7 +121,8 @@ ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G
 alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
-
+# show only directories, ordered by modification date, latest at the bottom
+alias lo='ls -ltrd */'
 
 # fix ack-grep binary on linux
 if  [[ -e /usr/bin/ack-grep ]]; then
