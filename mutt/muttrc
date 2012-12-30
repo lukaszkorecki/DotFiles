@@ -48,3 +48,28 @@ set query_command="name='%s' ~/.DotFiles/bins/search_mail.sh"
 
 # colors
 source ~/.DotFiles/mutt/zenburn.mutt
+
+# Gmail settings for receiving email, smtp settings are in separate private configs
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+set move = no  #Stop asking to "move read messages to mbox"!
+set imap_keepalive = 900
+
+# sidebar settings
+set sidebar_width=30
+set sidebar_visible=yes
+set sidebar_delim='|'
+set sidebar_sort=yes
+
+# which mailboxes to list in the sidebar
+mailboxes =INBOX ="[Gmail]/All Mail" ="[Gmail]/Important" ="[Gmail]/Sent Mail" ="[Gmail]/Drafts"
+
+# sidebar navigation
+bind index sn sidebar-next
+bind index sp sidebar-prev
+bind index so sidebar-open
+bind pager sn sidebar-next
+bind pager sp sidebar-prev
+bind pager so sidebar-open
+
