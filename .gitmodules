@@ -1,9 +1,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -40,9 +37,6 @@
 [submodule "vim/bundle/vim-statline"]
 	path = vim/bundle/vim-statline
 	url = git://github.com/millermedeiros/vim-statline.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/snipmate.vim"]
 	path = vim/bundle/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
@@ -73,9 +67,6 @@
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
-[submodule "vim/bundle/rainbow_parentheses.vim"]
-	path = vim/bundle/rainbow_parentheses.vim
-	url = git://github.com/kien/rainbow_parentheses.vim.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
@@ -85,9 +76,6 @@
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
-[submodule "vim/bundle/vim-smartinput"]
-	path = vim/bundle/vim-smartinput
-	url = git://github.com/kana/vim-smartinput.git
 [submodule "zsh/highlight"]
 	path = zsh/highlight
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
