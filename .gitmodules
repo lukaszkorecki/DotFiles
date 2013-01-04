@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-css3"]
 	path = vim/bundle/vim-css3
 	url = git://github.com/lepture/vim-css.git
+[submodule "vim/bundle/drawit"]
+	path = vim/bundle/drawit
+	url = git://github.com/vim-scripts/DrawIt.git
