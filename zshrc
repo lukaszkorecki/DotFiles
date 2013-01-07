@@ -166,17 +166,6 @@ function grep-files() {
   for f in ls ./*$2; do ; egrep -nHr --color $1 $f; done
 }
 
-# lolz
-function any() {
-  emulate -L zsh
-  unsetopt KSH_ARRAYS
-  if [[ -z "$1" ]] ; then
-    echo "any - grep for process(es) by keyword" >&2
-    echo "Usage: any " >&2 ; return 1
-  else
-    ps xauwww | grep -i --color=auto "[${1[1]}]${1[2,-1]}"
-  fi
-}
 function KillMatching() {
   ps aux | egrep $1 | egrep -v "grep|tmux" | awk '{ print $2 } ' | xargs kill -9
 }
@@ -215,6 +204,8 @@ function cdd() {
   local b="" ; for i in $(seq $1) ; do b+="../" ; done ;
   cd $b
 }
+
+# re-run a command if it fails
 function with_backoff {
   local max_attempts=${ATTEMPTS-5}
   local timeout=${TIMEOUT-1}
