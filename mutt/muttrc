@@ -6,6 +6,7 @@ set certificate_file = ~/.mutt/certs
 
 set header_cache     = ~/.mutt/.hcache
 set message_cachedir = ~/.mutt/.bcache
+set record           = ~/.mutt/sent
 
 # editing
 set charset          = "utf-8"

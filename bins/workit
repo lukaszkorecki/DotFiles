@@ -8,8 +8,8 @@
 #
 if [[ $1 == '-h' ]]; then
   echo "Launches vim, opens a tmux pane linked with vim and opens a split with guard"
-  echo "workit <screen schell command, for example pry> <file/location to edit in vim>"
+  echo "workit <file/location to edit in vim> <screen schell command, for example pry> "
   exit 0
 fi
 tmux split-window -h -p 30 "source ~/.zshrc && bundle exec guard"
-vim -c ":ScreenShell $1" $2
+vim -c ":ScreenShell $2" $1
