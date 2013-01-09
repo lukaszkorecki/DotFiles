@@ -1,11 +1,5 @@
 #!/usr/bin/ruby
 require 'rubygems'
-begin
-  require 'awesome_print'
-rescue => e
-  puts e
-end
-require 'yaml'
 
 
 if defined? IRB
@@ -28,13 +22,8 @@ module H_
   end
 
 
-  def self.defined_methods object
-    object.methods - Object.new.methods
-  end
-
-
-  def apf o
-    ap o
-    false
+  def self.saveyaml(filename, obj)
+    require 'yaml'
+    File.open(filename, 'w') { |f| f.write obj.to_yaml }
   end
 end
