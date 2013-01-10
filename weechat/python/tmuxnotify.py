@@ -1,14 +1,14 @@
-# Author: tobypadilla <tobypadilla AT gmail DOT com>
-# Homepage: http://github.com/tobypadilla/gnotify
-# Version: 0.2
+# Author: Łukasz Korecki <lukasz at coffeesounds dot com
+# Homepage: https://github.com/lukaszkorecki/DotFiles/blob/master/weechat/python/tmuxnotify.py
+
+# Version: 0.1
 #
-# gnotify requires Growl Python Bindings
-# See here: http://growl.info/documentation/developer/python-support.php
-# Requires Weechat 0.3.0
+# Requires Weechat 0.3
 # Released under GNU GPL v2
 #
 # Copy weechaticn.png to /usr/local/share/pixmaps/ or change the path below
 #
+# Based (roughly) on http://github.com/tobypadilla/gnotify
 # gnotify is derived from notify http://www.weechat.org/files/scripts/notify.py
 # Original author: lavaramano <lavaramano AT gmail DOT com>
 
