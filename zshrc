@@ -32,7 +32,6 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 # Aliases
 
 alias history='fc -l 1'
-alias g=git
 alias b=bundle
 alias be='bundle exec '
 alias r='rails' # sigh
