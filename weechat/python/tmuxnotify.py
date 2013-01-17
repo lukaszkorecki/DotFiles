@@ -46,4 +46,4 @@ def notify_show_priv( data, signal, message ):
 	return weechat.WEECHAT_RC_OK
 
 def show_notification(message):
-	os.popen("tmux set display-time {0} && tmux display-message '{1}'".format(5 * 1000, message ))
+	os.popen("tmux set display-time {0} && tmux display-message '{1}' &".format(5 * 1000, message ))
