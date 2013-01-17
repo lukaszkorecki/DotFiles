@@ -182,6 +182,7 @@ autocmd Filetype ruby iabbr pry_  binding.pry
 autocmd Filetype ruby iabbr pryr_ require 'pry'; binding.pry
 
 " Ruby
+autocmd Filetype ruby iabbr init- def initialize<CR>end<ESC>?initialize<ESC>$a
 autocmd Filetype ruby iabbr cls class<CR>end<ESC>?class<ESC>$a
 autocmd Filetype ruby iabbr mod module<CR>end<ESC>?module<ESC>$a
 autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
