@@ -58,3 +58,6 @@
 [submodule "vim/bundle/drawit"]
 	path = vim/bundle/drawit
 	url = git://github.com/vim-scripts/DrawIt.git
+[submodule "vim/bundle/vim-yardoc"]
+	path = vim/bundle/vim-yardoc
+	url = git://github.com/noprompt/vim-yardoc.git
