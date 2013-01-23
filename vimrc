@@ -271,6 +271,7 @@ let g:gist_open_browser_after_post = 1
 " Tagbar and ctags
 noremap <leader>t :TagbarToggle<CR>
 set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags,../project.tags
+" /usr/local/bin/ctags
 
 
 " Abbreviations  ------------------------------------------------------------
@@ -302,3 +303,11 @@ endf
 
 nmap <silent> <leader>l :call NumSwap()<cr>
 vmap <silent> <leader>l :call NumSwap()<cr>gv
+
+" wrap  a ruby block (identified by ruby-block in a begin-rescue-end
+" and add pry to rescue block
+" definitely it's not rock solid, since it's just a dump from a macro
+function! WrapInPry()
+  normal dirObeginorescue => erequire 'pry' ; binding.pryend?beginpNV%=
+endf
+nnoremap <leader>wr  :call WrapInPry()<CR>
