@@ -1,4 +1,5 @@
-# Author: Łukasz Korecki <lukasz at coffeesounds dot com
+# encoding: utf-8
+# Author: Lukasz Korecki <lukasz at coffeesounds dot com
 # Homepage: https://github.com/lukaszkorecki/DotFiles/blob/master/weechat/python/tmuxnotify.py
 
 # Version: 0.1
