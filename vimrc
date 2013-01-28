@@ -308,6 +308,7 @@ vmap <silent> <leader>l :call NumSwap()<cr>gv
 " and add pry to rescue block
 " definitely it's not rock solid, since it's just a dump from a macro
 function! WrapInPry()
-  normal dirObeginorescue => erequire 'pry' ; binding.pryend?beginpNV%=
+  let @z="dObeginporescue => erequire 'pry' ; binding.pryend"
+    :'<,'>normal @z
 endf
-nnoremap <leader>wr  :call WrapInPry()<CR>
+vmap <leader>wr  :call WrapInPry()<CR>
