@@ -61,3 +61,6 @@
 [submodule "vim/bundle/vim-yardoc"]
 	path = vim/bundle/vim-yardoc
 	url = git://github.com/noprompt/vim-yardoc.git
+[submodule "vim/bundle/json.vim"]
+	path = vim/bundle/json.vim
+	url = git://github.com/vim-scripts/JSON.vim.git

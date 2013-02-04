@@ -98,7 +98,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  molokai
+colorscheme  default
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -189,7 +189,7 @@ autocmd Filetype ruby iabbr d= def<CR>end<ESC>?def<ESC>$a
 autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
-autocmd Filetype ruby iabbr rq- require ''<ESC>"_ci'
+autocmd Filetype ruby iabbr rq- require ''<ESC>i
 
 " ERB
 autocmd Filetype eruby iabbr rt+ <% woo %><ESC>?woo<ESC>"_ciw<backspace><backspace>
@@ -209,8 +209,8 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe context it specif
 
 
 " Javascript ----------------------------------------------------------------
-" json as javascript
-au BufNewFile,BufRead  *.json set syntax=javascript
+" json & javascript
+au BufNewFile,BufRead  *.json set ft=json
 au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
@@ -218,9 +218,9 @@ au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cc
 au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
 au BufNewFile,BufRead *.js setlocal conceallevel=2
 
-autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>?:<CR><ESC>"_xO
-autocmd Filetype javascript iabbr f- function(){:}<ESC>?:<CR><ESC>"_xO
-autocmd Filetype javascript iabbr cl- console.log(':')<ESC>?:<CR><ESC>"_xc
+autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>F:<CR><ESC>"_xO
+autocmd Filetype javascript iabbr f- function(){:}<ESC>F:<CR><ESC>"_xO
+autocmd Filetype javascript iabbr cl- console.log(':')<ESC>F:"_xi
 
 " other languages and such --------------------------------------------------
 
