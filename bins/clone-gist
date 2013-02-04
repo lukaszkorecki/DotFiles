@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# convert https gist links into git links
+url=$1
+name=$2
+git_url=$(echo $1|  sed sXhttps://Xgit@X | sed sX/X:X  )
+echo Cloning from $git_url
+git clone $git_url $name
+
