@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git shortlog | egrep "^\w" | sed "s/[(:)]//g" | ruby -e 'ARGF.readlines.each {|l| l=l.split(" "); puts "#{l.pop} #{l.join(" ")}"}' | sort -nr
