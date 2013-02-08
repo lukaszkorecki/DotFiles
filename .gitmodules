@@ -63,3 +63,6 @@
 [submodule "vim/bundle/json.vim"]
 	path = vim/bundle/json.vim
 	url = git://github.com/vim-scripts/JSON.vim.git
+[submodule "vim/bundle/bubblegum-colors"]
+	path = vim/bundle/bubblegum-colors
+	url = git://github.com/baskerville/bubblegum.git

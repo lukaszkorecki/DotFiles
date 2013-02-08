@@ -98,7 +98,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  default
+colorscheme  bubblegum
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -124,7 +124,7 @@ nmap <leader>D :e %:h<CR>
 nmap <leader>d :30vsp  %:h<cr>
 
 nmap <leader>c :copen<cr>
-nmap <leader>E :Errors<cr>
+nmap <leader>e :Errors<cr>
 nmap <leader>C :cclose<cr>
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
@@ -142,15 +142,16 @@ noremap <leader>Z zc
 map W w !sudo tee % >/dev/null
 
 " disable arrows
-inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
 inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
+inoremap  <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+noremap   <Up>     <NOP>
 
+noremap <Left> %
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
@@ -218,9 +219,8 @@ au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cc
 au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
 au BufNewFile,BufRead *.js setlocal conceallevel=2
 
-autocmd Filetype javascript iabbr f_ function(){<CR>:}<ESC>F:<CR><ESC>"_xO
-autocmd Filetype javascript iabbr f- function(){:}<ESC>F:<CR><ESC>"_xO
-autocmd Filetype javascript iabbr cl- console.log(':')<ESC>F:"_xi
+autocmd Filetype javascript iabbr f- function(){}<ESC>F{a
+autocmd Filetype javascript iabbr cl- console.log('');<ESC>F'i
 
 " other languages and such --------------------------------------------------
 
