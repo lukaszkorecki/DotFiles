@@ -13,6 +13,8 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 # add npm "binaries"
 export PATH=/usr/local/share/npm/bin:$PATH
+# add python binaries
+export PATH=/usr/local/share/python:$PATH
 
 # add racket bins to path if racket installation exists
 if [[ -d /Applications/Racket\ 5.3/bin/ ]]; then
