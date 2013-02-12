@@ -98,7 +98,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  bubblegum
+colorscheme  Tomorrow-Night
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
