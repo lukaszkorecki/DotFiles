@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-# run with `workit <tool for repl>`
-# it will:
-#
-#   run tests in guard
-#   start vim
-#   start a repl/shell linked with vim so you can send commands to it
-#
 if [[ $1 == '-h' ]]; then
   echo "Launches vim, opens a tmux pane and opens a split with guard"
   echo "workit <file/location to edit in vim>"
