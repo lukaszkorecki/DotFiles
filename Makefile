@@ -14,4 +14,9 @@ update:
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
 	- git submodule foreach git pull --rebase
+
+safe-update:
+	git stash
+	make update
+	git stash pop
 setup : link update private
