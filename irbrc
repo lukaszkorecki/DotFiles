@@ -60,4 +60,8 @@ module H_
     STDERR << "couldnt edit becasue #{ex}"
     nil
   end
+
+  def self.die!
+    `kill -9 #{Process.pid}`
+  end
 end
