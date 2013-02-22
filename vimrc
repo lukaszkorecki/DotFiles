@@ -262,21 +262,21 @@ noremap <leader>s :ScreenSend<CR>
 
 " fugitive
 function! GitBrowseIt(mode)
+  let file = expand('%')
   if a:mode == 'l'
-  let lineno = line('.')
-  let lastline = ""
+    let lineno = line('.')
+    exec ":Git browse ".file." ".lineno
 
   elseif a:mode == 'v'
     let lineno = line("'<")
     let lastline = line("'>")
+    exec ":Git browse ".file." ".lineno." ".lastline
   endif
 
-  let file = expand('%')
-  exec ":Git browse ".file." ".lineno." ".lastline
 endf
 
-noremap <leader>b :call GitBrowseIt()<CR>
-vnoremap <leader>b :call GitBrowseIt("v")<CR>
+noremap <leader>B :call GitBrowseIt('o')<CR>
+vnoremap <leader>B :call GitBrowseIt("v")<CR>
 
 " syntastic
 let g:syntastic_auto_loc_lis=1
