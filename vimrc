@@ -98,7 +98,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  Tomorrow-Night
+colorscheme  smyck "Tomorrow-Night
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -260,6 +260,24 @@ noremap <leader>S :ScreenShell
 vnoremap <leader>s :ScreenSend<CR>
 noremap <leader>s :ScreenSend<CR>
 
+" fugitive
+function! GitBrowseIt(mode)
+  if a:mode == 'l'
+  let lineno = line('.')
+  let lastline = ""
+
+  elseif a:mode == 'v'
+    let lineno = line("'<")
+    let lastline = line("'>")
+  endif
+
+  let file = expand('%')
+  exec ":Git browse ".file." ".lineno." ".lastline
+endf
+
+noremap <leader>b :call GitBrowseIt()<CR>
+vnoremap <leader>b :call GitBrowseIt("v")<CR>
+
 " syntastic
 let g:syntastic_auto_loc_lis=1
 let g:syntastic_enable_signs=1
@@ -267,6 +285,7 @@ let g:syntastic_enable_signs=1
 " gist vim
 let g:gist_show_privates=1
 let g:gist_open_browser_after_post = 1
+let g:gist_get_multiplefile = 1
 
 " Tagbar and ctags
 noremap <leader>t :TagbarToggle<CR>
