@@ -34,7 +34,7 @@ function repoUrl() {
 
 if [[ "$1" == "-c" && "$2" != "" ]] ; then
 
-  url=$(repoUrl | sed "s/tree/commit/")/$2
+  url=$(repoUrl | sed "s/\/$(currentBranch)//" | sed "s/tree/commit/")/$2
 
 else
   if [[ "$2" != "" ]] ; then
@@ -53,3 +53,4 @@ fi
 echo $url
 (  uname | grep "Darwin" >/dev/null ) && open "$url"
 (  uname | grep 'Linux' >/dev/null ) && xdg-open "$url"
+exit 0
