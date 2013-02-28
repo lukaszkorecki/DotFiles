@@ -45,6 +45,9 @@ set foldmethod=syntax
 set foldlevel=2
 noremap <leader>f :set foldenable!<CR>
 vnoremap <leader>f :set foldenable!<CR>
+" easy fold management
+noremap <leader>z zO
+noremap <leader>Z zc
 
 " status line --------------------------------------------------------------
 set statusline=
@@ -134,9 +137,6 @@ noremap <leader>- :sp<CR><C-w>j
 "split vertically and switch to new split
 noremap <leader>\| :vsp<CR><C-w>l
 
-" easy fold management
-noremap <leader>z zO
-noremap <leader>Z zc
 
 " sudo write
 map W w !sudo tee % >/dev/null
@@ -234,7 +234,7 @@ au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set noexpandtab
+au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set listchars=tab:▸\ ,eol:~
 au BufNewFile,BufRead *.py set list
 
@@ -277,6 +277,8 @@ endf
 
 noremap <leader>B :call GitBrowseIt('o')<CR>
 vnoremap <leader>B :call GitBrowseIt("v")<CR>
+
+noremap <leader>g :Ggrep <cword><CR>
 
 " syntastic
 let g:syntastic_auto_loc_lis=1

@@ -5,6 +5,10 @@ export ARCHFLAGS="-arch x86_64"
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
 
+# GOLANG
+export GOPATH=/usr/local/go/bin
+
+
 if [[ -d /usr/local/Cellar/android-sdk/r20.0.1 ]]; then
   export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r20.0.1
 fi
