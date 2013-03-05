@@ -66,3 +66,6 @@
 [submodule "vim/bundle/bubblegum-colors"]
 	path = vim/bundle/bubblegum-colors
 	url = git://github.com/baskerville/bubblegum.git
+[submodule "vim/bundle/ShowMarks"]
+	path = vim/bundle/ShowMarks
+	url = git://github.com/vim-scripts/ShowMarks.git
