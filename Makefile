@@ -16,7 +16,5 @@ update:
 	- git submodule foreach git pull --rebase
 
 safe-update:
-	git stash
-	make update
-	git stash pop
+	git stash || make update || git stash pop
 setup : link update private
