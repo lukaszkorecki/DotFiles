@@ -29,6 +29,7 @@
   cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
   edit-modified = !vim -p $(git ls-files -m )
   push-and-track= !git push -u origin $(git cb)
+  safe-pull = !git stash && git pull -r origin $(git cb) && git stash pop
 
   # imported
   hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
