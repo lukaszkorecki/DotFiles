@@ -45,6 +45,7 @@ set foldmethod=syntax
 set foldlevel=2
 noremap <leader>f :set foldenable!<CR>
 vnoremap <leader>f :set foldenable!<CR>
+set nofoldenable
 " easy fold management
 noremap <leader>z zO
 noremap <leader>Z zc
@@ -101,7 +102,13 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme  smyck "Tomorrow-Night
+colorscheme  grb256 "Tomorrow-Night
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
 " indent --------------------------------------------------------------------
 set softtabstop=2
@@ -193,10 +200,10 @@ autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
 autocmd Filetype ruby iabbr rq- require ''<ESC>i
 
 " ERB
-autocmd Filetype eruby iabbr rt+ <% woo %><ESC>?woo<ESC>"_ciw<backspace><backspace>
-autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
-autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
-autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>?woo<ESC>"_diwa<backspace><backspace>
+autocmd Filetype eruby iabbr rt+ <% woo %><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rt- <%- woo  %><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rt= <%= woo  %><ESC>Fw<ESC>"_ciw
+autocmd Filetype eruby iabbr rtc <%# woo  %><ESC>Fw<ESC>"_ciw
 
 " Rspec yea
 autocmd Filetype ruby iabbr dsc- describe  do<CR>end<ESC>?describe<ESC>wi
