@@ -4,7 +4,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-	url = git://github.com/vim-scripts/VimClojure.git
 [submodule "vim/bundle/coffeescript"]
 	path = vim/bundle/coffeescript
 	url = git://github.com/kchmck/vim-coffee-script.git
@@ -20,18 +19,12 @@
 [submodule "vim/bundle/screen"]
 	path = vim/bundle/screen
 	url = git://github.com/ervandew/screen.git
-[submodule "vim/bundle/vim-monokai"]
-	path = vim/bundle/vim-monokai
-	url = git://github.com/sickill/vim-monokai.git
 [submodule "vim/bundle/workflowish"]
 	path = vim/bundle/workflowish
 	url = git@github.com:lukaszkorecki/workflowish.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
-	url = git://github.com/gregsexton/gitv.git
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
@@ -51,9 +44,6 @@
 [submodule "vim/bundle/textobj-rubyblock"]
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "vim/bundle/vim-css3"]
-	path = vim/bundle/vim-css3
-	url = git://github.com/lepture/vim-css.git
 [submodule "vim/bundle/drawit"]
 	path = vim/bundle/drawit
 	url = git://github.com/vim-scripts/DrawIt.git
@@ -63,9 +53,3 @@
 [submodule "vim/bundle/json.vim"]
 	path = vim/bundle/json.vim
 	url = git://github.com/vim-scripts/JSON.vim.git
-[submodule "vim/bundle/bubblegum-colors"]
-	path = vim/bundle/bubblegum-colors
-	url = git://github.com/baskerville/bubblegum.git
-[submodule "vim/bundle/ShowMarks"]
-	path = vim/bundle/ShowMarks
-	url = git://github.com/vim-scripts/ShowMarks.git
