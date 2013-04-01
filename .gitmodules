@@ -4,24 +4,12 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/coffeescript"]
-	path = vim/bundle/coffeescript
-	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
-[submodule "vim/bundle/screen"]
-	path = vim/bundle/screen
-	url = git://github.com/ervandew/screen.git
-[submodule "vim/bundle/workflowish"]
-	path = vim/bundle/workflowish
-	url = git@github.com:lukaszkorecki/workflowish.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
@@ -31,9 +19,6 @@
 [submodule "zsh/highlight"]
 	path = zsh/highlight
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/bundle/html5.vim"]
-	path = vim/bundle/html5.vim
-	url = git://github.com/othree/html5.vim.git
 [submodule "vim/bundle/vim-blockle"]
 	path = vim/bundle/vim-blockle
 	url = git://github.com/jgdavey/vim-blockle
@@ -44,12 +29,15 @@
 [submodule "vim/bundle/textobj-rubyblock"]
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "vim/bundle/drawit"]
-	path = vim/bundle/drawit
-	url = git://github.com/vim-scripts/DrawIt.git
 [submodule "vim/bundle/vim-yardoc"]
 	path = vim/bundle/vim-yardoc
 	url = git://github.com/noprompt/vim-yardoc.git
 [submodule "vim/bundle/json.vim"]
 	path = vim/bundle/json.vim
 	url = git://github.com/vim-scripts/JSON.vim.git
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "vim/bundle/vim-tmuxify"]
+	path = vim/bundle/vim-tmuxify
+	url = git://github.com/mhinz/vim-tmuxify.git
