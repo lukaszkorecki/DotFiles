@@ -1,1 +1,0 @@
-../confversion.py
