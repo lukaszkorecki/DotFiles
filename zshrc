@@ -259,7 +259,8 @@ PATH=$PATH:$HOME/.rvm/bin
 # Prompt settings---------------------------------------------------------------
 setopt prompt_subst
 autoload -U colors && colors
-local sigil='%{$fg[red]%}∞%{$reset_color%}'
+
+local sigil='%{$fg[red]%}➜%{$reset_color%}'
 local host='%{$fg[blue]%}%m%{$reset_color%}'
 # git cb is defined in .gitconfig!
 local git_branch='%{$fg[green]%}$(git cb)%{$reset_color%}'
