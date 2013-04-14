@@ -113,7 +113,7 @@ setopt always_to_end
 
 
 # correction
-setopt correct_all
+setopt correct
 
 # handy ps wrapper
 function Psgr(){
