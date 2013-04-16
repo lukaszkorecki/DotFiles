@@ -40,16 +40,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Folding ------------------------------------------------------------------
-set foldmethod=syntax
-set foldlevel=2
-noremap <leader>f :set foldenable!<CR>
-vnoremap <leader>f :set foldenable!<CR>
-set nofoldenable
-" easy fold management
-noremap <leader>z zO
-noremap <leader>Z zc
-
 " status line --------------------------------------------------------------
 set statusline=
 " file name
@@ -117,8 +107,9 @@ set tabstop=2
 set expandtab
 
 " Key mappings -------------------------------------------------------------
-noremap <leader>a ^
-noremap <leader>e $
+" map C-h to ESC
+noremap <C-h> <ESC>
+inoremap <C-h> <ESC>
 
 " make the command mode less annyoing
 cnoremap <c-a> <Home>
@@ -129,9 +120,8 @@ cnoremap <c-b> <Left>
 cnoremap <c-f> <Right>
 cnoremap <c-d> <Del>
 
-" open a new split with a netrw buffer pointing to current files' dir
-nmap <leader>D :e %:h<CR>
-nmap <leader>d :30vsp  %:h<cr>
+" open current file's location
+nmap <leader>d :e %:h<CR>
 
 nmap <leader>c :copen<cr>
 nmap <leader>e :Errors<cr>
@@ -148,17 +138,16 @@ noremap <leader>\| :vsp<CR><C-w>l
 " sudo write
 map W w !sudo tee % >/dev/null
 
-" disable arrows
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-inoremap  <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-noremap   <Up>     <NOP>
+" disable arrows, commented out because I learned not to use them
+" inoremap  <Down>   <NOP>
+" inoremap  <Left>   <NOP>
+" inoremap  <Right>  <NOP>
+" inoremap  <Up>     <NOP>
+" noremap   <Down>   <NOP>
+" noremap   <Left>   <NOP>
+" noremap   <Right>  <NOP>
+" noremap   <Up>     <NOP>
 
-noremap <Left> %
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
@@ -198,7 +187,7 @@ autocmd Filetype ruby iabbr d_ do<CR>end<ESC>O
 autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 autocmd Filetype ruby iabbr {- { \|A\| }<ESC>FA"_xi
 autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
-autocmd Filetype ruby iabbr rq- require ''<ESC>i
+autocmd Filetype ruby iabbr rq- require ""<ESC>i
 
 " ERB
 autocmd Filetype eruby iabbr rt+ <% woo %><ESC>Fw<ESC>"_ciw
