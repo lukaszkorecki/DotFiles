@@ -199,7 +199,6 @@ autocmd Filetype ruby iabbr d- do \|\|<CR>end<ESC>k$i
 autocmd Filetype ruby iabbr {- { \|A\| }<ESC>FA"_xi
 autocmd Filetype ruby iabbr #- #{}<ESC>"_ci{
 autocmd Filetype ruby iabbr rq- require ''<ESC>i
-autocmd Filetype ruby iabbr { { \|A\| }<ESC>FA"_xi
 
 " ERB
 autocmd Filetype eruby iabbr rt+ <% woo %><ESC>Fw<ESC>"_ciw
