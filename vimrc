@@ -202,8 +202,22 @@ autocmd Filetype ruby iabbr cnt- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 
+noremap <leader>R :! bundle exec rspec % -l
+
 " make rspec stuff part of ruby syntax
-autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
+      \ context
+      \ it
+      \ specify
+      \ it_should_behave_like
+      \ before
+      \ after
+      \ setup
+      \ subject
+      \ its
+      \ shared_examples_for
+      \ shared_context
+      \ let
 
 
 " Javascript ----------------------------------------------------------------
