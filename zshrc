@@ -41,6 +41,7 @@ alias history='fc -l 1'
 alias b=bundle
 alias be='bundle exec '
 alias r='rails' # sigh
+alias s='bundle exec rspec -f n'
 alias rs='bundle exec rspec spec -f n -c'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
