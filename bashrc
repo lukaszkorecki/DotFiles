@@ -20,13 +20,9 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
 shopt -s globstar
+shopt -s autocd
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -93,17 +89,4 @@ function Mutt() {
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# stip out home dir from pwd
-function nicePwd() {
-  h=$(echo ~)
-  c=$(pwd)
-  e="sX"$h"XXg"
-  s=$(echo $c | sed $e)
-  if [[ -z "$s" ]] ; then
-    echo "~"
-  else
-    echo $s
-  fi
-}
-PS1='$(nicePwd) $(git cb): '
+PS1='\W \e[0,32m$(git cb)\e[m: '
