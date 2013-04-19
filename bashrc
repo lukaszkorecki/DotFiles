@@ -24,29 +24,12 @@ shopt -s checkwinsize
 shopt -s globstar
 shopt -s autocd
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias history='fc -l 1'
 alias b=bundle
 alias be='bundle exec '
@@ -83,10 +66,22 @@ function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-PS1='\W \e[0,32m$(git cb)\e[m: '
+# print given color, need reset after that!
+function Color() {
+  echo "\[$(tput setaf $1)\]"
+}
+function ResetColor() {
+  echo "\[$(tput sgr0)\]"
+}
+
+function thePrompt() {
+local reset=$(ResetColor)
+
+  local currentDir="$(Color 5)\W$reset"
+  local currentBranch="$(Color 4)$(git cb)$reset"
+  local sigil="$(Color 1)➜$reset"
+  echo "$currentDir $currentBranch $sigil "
+ }
+ # prompt command gets called before any other command
+ # so this refreshes the git branch and other dynamic stuff
+ PROMPT_COMMAND='PS1="$(thePrompt)"'
