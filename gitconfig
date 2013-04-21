@@ -8,6 +8,8 @@
 [color]
   ui = true
   diff = true
+[core]
+  pager = less -F -X
 
 [push]
   default = current
