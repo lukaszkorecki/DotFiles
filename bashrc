@@ -37,6 +37,8 @@ alias r='rails' # sigh
 alias s='bundle exec rspec -f n'
 alias rs='bundle exec rspec spec -f n -c'
 
+alias rightsplit='tmux splitw -h -p 33'
+
 export EDITOR=vim
 
 # make vim a pager
