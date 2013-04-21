@@ -6,6 +6,5 @@ require 'pp'
 
 
 while ! (f = ARGF.read).empty?
-  puts "# vim: ft=ruby"
   pp JSON.parse f unless f.empty?
 end
