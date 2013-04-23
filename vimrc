@@ -175,8 +175,7 @@ au BufNewFile,BufRead Capfile,Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set
 autocmd FileType ruby setlocal iskeyword+=!,?,@
 
 " Abbreviations aka snippets
-autocmd Filetype ruby iabbr pry_  binding.pry
-autocmd Filetype ruby iabbr pryr_ require 'pry'; binding.pry
+autocmd Filetype ruby iabbr pry_ require 'pry'; binding.pry
 
 " Ruby
 autocmd Filetype ruby iabbr init- def initialize<CR>end<ESC>?initialize<ESC>$a
