@@ -1,5 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+if [[ -r ~/.private/env.sh ]] ; then
+  source ~/.private/env.sh
+fi
 
 export LANG=en_GB.UTF-8
 # custom scripts and tools
