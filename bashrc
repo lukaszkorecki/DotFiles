@@ -30,9 +30,9 @@ shopt -s autocd
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls --color -alF'
+alias la='ls --color -A'
+alias l='ls --color -CF'
 alias history='fc -l 1'
 alias b=bundle
 alias be='bundle exec '
@@ -40,7 +40,7 @@ alias r='rails' # sigh
 alias s='bundle exec rspec -f n'
 alias rs='bundle exec rspec spec -f n -c'
 alias ffs='bundle exec rspec -f n 2>/dev/null'
-alias rightsplit='tmux splitw -h -p -c $(pwd) '
+alias rightsplit='tmux splitw -h -p 33 -c $(pwd) '
 
 export EDITOR=vim
 
