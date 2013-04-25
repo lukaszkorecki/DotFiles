@@ -64,4 +64,15 @@ module H_
   def self.die!
     `kill -9 #{Process.pid}`
   end
+
+  def self.grab_exception
+    e = nil
+    begin
+      yield
+    rescue => error
+      e = error
+    end
+    e
+
+  end
 end
