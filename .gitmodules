@@ -41,3 +41,6 @@
 [submodule "vim/bundle/vim-tmuxify"]
 	path = vim/bundle/vim-tmuxify
 	url = git://github.com/mhinz/vim-tmuxify.git
+[submodule "vim/bundle/vim-handlebars"]
+	path = vim/bundle/vim-handlebars
+	url = git://github.com/nono/vim-handlebars.git

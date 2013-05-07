@@ -248,6 +248,9 @@ au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set listchars=tab:▸\ ,eol:~
 au BufNewFile,BufRead *.py set list
 
+" handlebars templates
+au BufNewFile,BufRead *.hb set ft=handlebars
+
 " yaml indent settings
 au BufNewFile,BufRead  *.yml,*.yaml set foldmethod=indent
 au BufNewFile,BufRead  *.yml,*.yaml set foldlevel=1
