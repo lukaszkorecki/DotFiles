@@ -1,4 +1,4 @@
-#/usr/bin/env zsh
+#/usr/bin/env bash
 # vi: set ft=sh :
 # Example usage:
 # open_in_panes 'cd ~/proj1 && rackup'  'cd ~/proj2 && lein run'
@@ -6,6 +6,6 @@ tmux select-pane -t 0
 [[ $? != 0 ]] && tmux select-pane -t 1
 echo $1
 for cmd in "$@"; do
-  tmux splitw -h -p 50 "source ~/.zshrc && $cmd "
+  tmux splitw -h -p 50 "source ~/.bashrc && $cmd "
 done
 tmux select-layout main-vertical

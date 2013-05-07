@@ -1,4 +1,4 @@
-LIST = vim vimrc zshrc zshenv irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc
+LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc
 link: $(LIST)
 	for f in $(LIST) ; do ln -s ~/.DotFiles/$$f ~/.$$f; done
 

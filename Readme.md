@@ -12,13 +12,12 @@ Here's a list of tools I can't work without:
 
 - vim 7.3 (>7.1  is probably fine)
 - tmux (latest)
-- zsh (latest)
+- Bash
 
 Programming languages I use on daily basis:
 
 - Ruby
-- Javascript / CoffeeScript
-- Shell (bash/zsh)
+- Shell
 
 
 ### How to setup (once you got the stuff above)
@@ -34,10 +33,10 @@ Programming languages I use on daily basis:
 - ctags (latest svn)
 - weechat
 - pry
-- coffeetags
 
 I also play with:
 
+- Go
 - Chicken Scheme
 - Clojure
 - Python
