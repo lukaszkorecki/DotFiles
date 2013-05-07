@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+curl  http://whatthecommit.com/ 2>/dev/null | grep "<p>" | sed "s/<p>//"
