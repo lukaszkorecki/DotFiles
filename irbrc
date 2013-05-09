@@ -75,4 +75,12 @@ module H_
     e
 
   end
+
+  def self.ar_log_on
+    ActiveRecord::Base.logger = Logger.new STDOUT
+  end
+
+  def self.ar_log_off
+    ActiveRecord::Base.logger = Logger.new nil
+  end
 end
