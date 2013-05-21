@@ -2,6 +2,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+call gitbrowse#AddMaps()
+
 runtime macros/matchit.vim
 
 "" Global settings ----------------------------------------------------------
