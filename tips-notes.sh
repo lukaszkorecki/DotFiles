@@ -19,3 +19,13 @@ for pa in $(grep "path =" .gitmodules | cut -d = -f 2 ); do echo $(test -d $pa &
 name="module-nam"
 git rm --cached 'path to module'
 grep -v $name .gitmodules > .gitmodules.2 && mv .gitmodules.2 .gitmodules
+
+# checkout all projects
+for prj in $(find . -name .git -type d | grep -v "vendor" | sed "s/.git$//") ;  do
+  echo $prj
+  cd $prj
+  git reset --hard
+  git checkout master
+  git pull -r
+  cd -
+done
