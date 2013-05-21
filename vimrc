@@ -274,23 +274,6 @@ vnoremap <leader>s :ScreenSend<CR>
 noremap <leader>s :ScreenSend<CR>
 
 " fugitive
-function! GitBrowseIt(mode)
-  let file = expand('%')
-  if a:mode == 'l'
-    let lineno = line('.')
-    exec ":Git browse ".file." ".lineno
-
-  elseif a:mode == 'v'
-    let lineno = line("'<")
-    let lastline = line("'>")
-    exec ":Git browse ".file." ".lineno." ".lastline
-  endif
-
-endf
-
-noremap <leader>B :call GitBrowseIt('o')<CR>
-vnoremap <leader>B :call GitBrowseIt("v")<CR>
-
 noremap <leader>g :Ggrep <cword><CR>
 
 " syntastic
