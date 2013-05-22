@@ -224,7 +224,7 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
 " Javascript ----------------------------------------------------------------
 " json & javascript
 au BufNewFile,BufRead  *.json set ft=json
-au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
+au FileType json setlocal equalprg=python\ -m\ json.tool
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
