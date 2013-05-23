@@ -140,16 +140,6 @@ noremap <leader>\| :vsp<CR><C-w>l
 " sudo write
 map W w !sudo tee % >/dev/null
 
-" disable arrows, commented out because I learned not to use them
-" inoremap  <Down>   <NOP>
-" inoremap  <Left>   <NOP>
-" inoremap  <Right>  <NOP>
-" inoremap  <Up>     <NOP>
-" noremap   <Down>   <NOP>
-" noremap   <Left>   <NOP>
-" noremap   <Right>  <NOP>
-" noremap   <Up>     <NOP>
-
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
@@ -203,7 +193,13 @@ autocmd Filetype ruby iabbr cnt- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 
-noremap <leader>R :! bundle exec rspec % -l
+function! RunSpecForCurrentLine()
+  let _ln = line('v')
+  echom _ln
+  exec ":! bundle exec rspec % -l " . _ln
+endfunction
+
+noremap <leader>R :call  RunSpecForCurrentLine()<CR>
 
 " make rspec stuff part of ruby syntax
 autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
@@ -225,7 +221,7 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
 " json & javascript
 au BufNewFile,BufRead  *.json set ft=json
 au FileType json setlocal equalprg=python\ -m\ json.tool
-let g:syntastic_javascript_jshint_conf = "laxcomma:true"
+" let g:syntastic_javascript_jshint_conf = "laxcomma:true"
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
