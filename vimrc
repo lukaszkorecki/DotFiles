@@ -221,7 +221,7 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
 " json & javascript
 au BufNewFile,BufRead  *.json set ft=json
 au FileType json setlocal equalprg=python\ -m\ json.tool
-" let g:syntastic_javascript_jshint_conf = "laxcomma:true"
+let g:syntastic_javascript_jshint_conf = expand("~/.jshint.json")
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
