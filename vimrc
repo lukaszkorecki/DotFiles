@@ -239,13 +239,16 @@ au BufNewFile,BufRead  *.mustache set filetype=mustache
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
-" python is weird
-au BufNewFile,BufRead *.py set tabstop=4
-au BufNewFile,BufRead *.py set softtabstop=4
-au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set expandtab
-au BufNewFile,BufRead *.py set listchars=tab:▸\ ,eol:~
-au BufNewFile,BufRead *.py set list
+" python and go is weird
+au BufNewFile,BufRead *.py,*.go set tabstop=4
+au BufNewFile,BufRead *.py,*.go set softtabstop=4
+au BufNewFile,BufRead *.py,*.go set shiftwidth=4
+au BufNewFile,BufRead *.py,*.go set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py,*.go set list
+
+" go specific
+au BufNewFile,BufRead *.go set ft=go
+au BufNewFile,BufRead *.go set noexpandtab
 
 " handlebars templates
 au BufNewFile,BufRead *.hb set ft=handlebars
