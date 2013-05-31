@@ -40,7 +40,7 @@ alias r='rails' # sigh
 alias s='bundle exec rspec -f n'
 alias rs='bundle exec rspec spec -f n -c'
 alias ffs='bundle exec rspec -f n 2>/dev/null'
-alias rightsplit='tmux splitw -h -p -c $(pwd) '
+alias rightsplit='tmux splitw -h -p 33  '
 
 export EDITOR=vim
 
