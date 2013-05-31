@@ -19,21 +19,36 @@ HISTCONTROL=ignoreboth
 export WORDCHARS=''
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# sync history between different sessions, a bit hacky, wish it worked like
+# in ZSH
+HISTSIZE=9000
+HISTFILESIZE=$HISTSIZE
+HISTCONTROL=ignorespace:ignoredups
 
+function history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+# "callback" for use after running a command
+function _bash_history_sync() {
+  builtin history -a
+  HISTFILESIZE=$HISTSIZE
+  builtin history -c
+  builtin history -r
+}
+
+# nice things
 shopt -s checkwinsize
 shopt -s globstar
-shopt -s autocd
+shopt -s autocd # type 'dir' instead 'cd dir'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias history='fc -l 1'
+alias ll='ls --color -alF'
+alias la='ls --color -A'
+alias l='ls --color -CF'
 alias b=bundle
 alias be='bundle exec '
 alias r='rails' # sigh
@@ -82,11 +97,15 @@ function ResetColor() {
 function thePrompt() {
 local reset=$(ResetColor)
 
-  local currentDir="$(Color 5)\W$reset"
-  local currentBranch="$(Color 4)$(git cb)$reset"
-  local sigil="$(Color 1)➜$reset"
-  echo "$currentDir $currentBranch $sigil "
- }
- # prompt command gets called before any other command
- # so this refreshes the git branch and other dynamic stuff
- PROMPT_COMMAND='PS1="$(thePrompt)"'
+local currentDir="$(Color 5)\W$reset"
+local currentBranch="$(Color 4)$(git cb)$reset"
+local sigil="$(Color 1)➜$reset"
+echo "$currentDir $currentBranch $sigil "
+}
+
+# prompt command gets called before any other command
+# so this refreshes the git branch and other dynamic stuff
+PROMPT_COMMAND='PS1="$(thePrompt)"'
+
+# plug-in the history hack
+PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "

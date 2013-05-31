@@ -33,6 +33,9 @@
   push-and-track= !git push -u origin $(git cb)
   safe-pull = !git stash && git pull -r origin $(git cb) && git stash pop
 
+  recent-branches = !git for-each-ref --sort=-committerdate refs/heads/ | sed 's/commit.*refs.heads.//'
+
+
   # imported
   hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
   histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status

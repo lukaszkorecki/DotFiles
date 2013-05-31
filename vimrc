@@ -2,6 +2,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+call gitbrowse#AddMaps()
+
 runtime macros/matchit.vim
 
 "" Global settings ----------------------------------------------------------
@@ -138,16 +140,6 @@ noremap <leader>\| :vsp<CR><C-w>l
 " sudo write
 map W w !sudo tee % >/dev/null
 
-" disable arrows, commented out because I learned not to use them
-" inoremap  <Down>   <NOP>
-" inoremap  <Left>   <NOP>
-" inoremap  <Right>  <NOP>
-" inoremap  <Up>     <NOP>
-" noremap   <Down>   <NOP>
-" noremap   <Left>   <NOP>
-" noremap   <Right>  <NOP>
-" noremap   <Up>     <NOP>
-
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
@@ -201,7 +193,13 @@ autocmd Filetype ruby iabbr cnt- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 
-noremap <leader>R :! bundle exec rspec % -l
+function! RunSpecForCurrentLine()
+  let _ln = line('v')
+  echom _ln
+  exec ":! bundle exec rspec % -l " . _ln
+endfunction
+
+noremap <leader>R :call  RunSpecForCurrentLine()<CR>
 
 " make rspec stuff part of ruby syntax
 autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
@@ -222,7 +220,8 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
 " Javascript ----------------------------------------------------------------
 " json & javascript
 au BufNewFile,BufRead  *.json set ft=json
-au BufNewFile,BufRead  *.js   set foldmethod=indent " Vim's JS support sux
+au FileType json setlocal equalprg=python\ -m\ json.tool
+let g:syntastic_javascript_jshint_conf = expand("~/.jshint.json")
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
@@ -240,13 +239,19 @@ au BufNewFile,BufRead  *.mustache set filetype=mustache
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
-" python is weird
-au BufNewFile,BufRead *.py set tabstop=4
-au BufNewFile,BufRead *.py set softtabstop=4
-au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set expandtab
-au BufNewFile,BufRead *.py set listchars=tab:▸\ ,eol:~
-au BufNewFile,BufRead *.py set list
+" python and go is weird
+au BufNewFile,BufRead *.py,*.go set tabstop=4
+au BufNewFile,BufRead *.py,*.go set softtabstop=4
+au BufNewFile,BufRead *.py,*.go set shiftwidth=4
+au BufNewFile,BufRead *.py,*.go set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py,*.go set list
+
+" go specific
+au BufNewFile,BufRead *.go set ft=go
+au BufNewFile,BufRead *.go set noexpandtab
+
+" handlebars templates
+au BufNewFile,BufRead *.hb set ft=handlebars
 
 " yaml indent settings
 au BufNewFile,BufRead  *.yml,*.yaml set foldmethod=indent
@@ -271,23 +276,6 @@ vnoremap <leader>s :ScreenSend<CR>
 noremap <leader>s :ScreenSend<CR>
 
 " fugitive
-function! GitBrowseIt(mode)
-  let file = expand('%')
-  if a:mode == 'l'
-    let lineno = line('.')
-    exec ":Git browse ".file." ".lineno
-
-  elseif a:mode == 'v'
-    let lineno = line("'<")
-    let lastline = line("'>")
-    exec ":Git browse ".file." ".lineno." ".lastline
-  endif
-
-endf
-
-noremap <leader>B :call GitBrowseIt('o')<CR>
-vnoremap <leader>B :call GitBrowseIt("v")<CR>
-
 noremap <leader>g :Ggrep <cword><CR>
 
 " syntastic

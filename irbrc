@@ -64,4 +64,23 @@ module H_
   def self.die!
     `kill -9 #{Process.pid}`
   end
+
+  def self.grab_exception
+    e = nil
+    begin
+      yield
+    rescue => error
+      e = error
+    end
+    e
+
+  end
+
+  def self.ar_log_on
+    ActiveRecord::Base.logger = Logger.new STDOUT
+  end
+
+  def self.ar_log_off
+    ActiveRecord::Base.logger = Logger.new nil
+  end
 end

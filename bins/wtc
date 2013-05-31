@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# example
+# git commit -am $(wtc) && git push -f
+curl  http://whatthecommit.com/ 2>/dev/null | grep "<p>" | sed "s/<p>//"

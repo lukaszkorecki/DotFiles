@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 # Open an html attachement in your browser of choice
 # OSX only, but y'know... can be tweaked
 # (s/open/xdg-open)
