@@ -10,6 +10,9 @@
   diff = true
 [core]
   pager = less -F -X
+[grep]
+  linenumber = true
+  extendedRegexp = true
 
 [push]
   default = current
