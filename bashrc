@@ -86,6 +86,26 @@ function Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
 
+
+# useful as guard replacement (ish)
+# Usage:
+#    Loop grunt test:all
+# or
+#    DELAY=10 Loop grunt test:browser
+function Loop() {
+  if [[ -z "$DELAY" ]] ; then
+    DELAY=7
+  fi
+
+  echo "Loop time $DELAY sec"
+
+  while true
+  do
+    $*
+    sleep $DELAY
+  done
+}
+
 # print given color, need reset after that!
 function Color() {
   echo "\[$(tput setaf $1)\]"
@@ -95,12 +115,12 @@ function ResetColor() {
 }
 
 function thePrompt() {
-local reset=$(ResetColor)
+  local reset=$(ResetColor)
 
-local currentDir="$(Color 5)\W$reset"
-local currentBranch="$(Color 4)$(git cb)$reset"
-local sigil="$(Color 1)➜$reset"
-echo "$currentDir $currentBranch $sigil "
+  local currentDir="$(Color 5)\W$reset"
+  local currentBranch="$(Color 4)$(git cb)$reset"
+  local sigil="$(Color 1)➜$reset"
+  echo "$currentDir $currentBranch $sigil "
 }
 
 # prompt command gets called before any other command
