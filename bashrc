@@ -7,6 +7,7 @@ fi
 export LANG=en_GB.UTF-8
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
+export PATH=/usr/lib/go/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
 # go setup
