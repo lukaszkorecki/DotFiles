@@ -1,4 +1,7 @@
 LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json
+
+default: update
+
 link: $(LIST)
 	for f in $(LIST) ; do ln -s ~/.DotFiles/$$f ~/.$$f; done
 
@@ -18,3 +21,7 @@ update:
 safe-update:
 	git stash || make update || git stash pop
 setup : link update private
+
+tools:
+	sudo apt-get install ctags tmux vim weechat
+	sudo go get -u github.com/jstemmer/gotags
