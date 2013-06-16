@@ -113,6 +113,7 @@ set expandtab
 noremap <C-h> <ESC>
 inoremap <C-h> <ESC>
 
+noremap jk <ESC>
 " make the command mode less annyoing
 cnoremap <c-a> <Home>
 cnoremap <c-e> <End>
