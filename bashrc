@@ -134,3 +134,6 @@ PROMPT_COMMAND='PS1="$(thePrompt)"'
 
 # plug-in the history hack
 PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
+
+# disable stupid C-s / C-q stuff
+stty -ixon
