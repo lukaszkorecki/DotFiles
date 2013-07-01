@@ -225,6 +225,7 @@ let g:syntastic_javascript_jshint_conf = expand("~/.jshint.json")
 
 " use conceal to hide 'function' keywoard and use cchar=λ as a replacement
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
+au BufNewFile,BufRead *.js syntax keyword Function function conceal cchar=λ
 au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
 au BufNewFile,BufRead *.js setlocal conceallevel=2
 
