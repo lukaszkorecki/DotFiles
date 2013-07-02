@@ -1,5 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+# disable stupid C-s / C-q stuff
+stty -ixon
+
 if [[ -r ~/.private/env.sh ]] ; then
   source ~/.private/env.sh
 fi
@@ -134,6 +138,3 @@ PROMPT_COMMAND='PS1="$(thePrompt)"'
 
 # plug-in the history hack
 PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
-
-# disable stupid C-s / C-q stuff
-stty -ixon
