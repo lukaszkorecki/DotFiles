@@ -24,6 +24,7 @@ endif
 set showcmd
 set ruler
 set scrolloff=3
+set nofoldenable
 
 " Wildmenu bro!
 set wildmenu
@@ -253,10 +254,6 @@ au BufNewFile,BufRead *.go set noexpandtab
 
 " handlebars templates
 au BufNewFile,BufRead *.hb set ft=handlebars
-
-" yaml indent settings
-au BufNewFile,BufRead  *.yml,*.yaml set foldmethod=indent
-au BufNewFile,BufRead  *.yml,*.yaml set foldlevel=1
 
 " tmux
 au BufNewFile,BufRead *tmux.conf set syntax=tmux
