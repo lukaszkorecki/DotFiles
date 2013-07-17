@@ -124,11 +124,11 @@ cnoremap <c-f> <Right>
 cnoremap <c-d> <Del>
 
 " open current file's location
-nmap <leader>d :e %:h<CR>
+nnoremap <Leader>d :e <C-R>=expand('%:p:h') . '/'<CR>
 
-nmap <leader>c :copen<cr>
-nmap <leader>e :Errors<cr>
-nmap <leader>C :cclose<cr>
+nnoremap <leader>c :copen<cr>
+nnoremap <leader>e :Errors<cr>
+nnoremap <leader>C :cclose<cr>
 " Better split management, kept in sync with tmux' mappings
 " (<prefix>| and <prefix>-)
 
