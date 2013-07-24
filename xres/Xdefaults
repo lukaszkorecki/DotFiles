@@ -1,4 +1,4 @@
-*background: #ffffff
+# include "/home/lukasz/.DotFiles/xres/solarized"
 URxvt.perl-ext-common:  default,matcher
 URxvt.url-launcher:      /usr/bin/firefox
 URxvt.matcher.button:   1
@@ -7,13 +7,12 @@ URxvt.perl-ext:      default,url-select
 URxvt.keysym.C-o:    perl:url-select:select_next
 URxvt.url-select.launcher:   /usr/bin/firefox
 URxvt.url-select.underline: true
-URxvt*background: S_base03
 URxvt.depth: 32
 URxvt*saveLines: 12000
-URxvt*font: xft:Mensch:pixelsize=12:antialias=false:hinting=true
-URxvt*boldFont: xft:Mensch:pixelsize=12:antialias=false:hinting=true
+URxvt*font:                  xft:terminus:pixelsize=14
+URxvt*boldFont:                  xft:terminus:pixelsize=14
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
-URXvt*scrollColor: S_base02
 URxvt*scrollstyle: plain
 URxvt*letterSpace: -1
+URxvt*background: #002B36
