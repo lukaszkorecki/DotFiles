@@ -124,12 +124,20 @@ function ResetColor() {
 }
 
 function thePrompt() {
+  local last_status=$?
   local reset=$(ResetColor)
 
-  local currentDir="$(Color 5)\W$reset"
+  if [[ "$last_status" != "0" ]]; then
+    last_status="$(Color 5)☹$reset"
+  else
+    last_status="$(Color 2)☻$reset"
+  fi
+
+
+  local currentDir="$(Color 5)\w$reset"
   local currentBranch="$(Color 4)$(git cb)$reset"
   local sigil="$(Color 1)➜$reset"
-  echo "$currentDir $currentBranch $sigil "
+  echo "$last_status $currentDir $currentBranch $sigil "
 }
 
 # prompt command gets called before any other command
