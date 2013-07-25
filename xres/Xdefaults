@@ -9,8 +9,8 @@ URxvt.url-select.launcher:   /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.depth: 32
 URxvt*saveLines: 12000
-URxvt*font:                  xft:terminus:pixelsize=14
-URxvt*boldFont:                  xft:terminus:pixelsize=14
+URxvt*font:                  xft:terminus:pixelsize=14:antialias=false
+URxvt*boldFont:                  xft:terminus:pixelsize=14:antialias=false
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
