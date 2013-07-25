@@ -128,15 +128,16 @@ function thePrompt() {
   local reset=$(ResetColor)
 
   if [[ "$last_status" != "0" ]]; then
-    last_status="$(Color 5)☹$reset"
+    last_status="$(Color 5)✘$reset"
   else
     last_status="$(Color 2)☻$reset"
   fi
 
 
-  local currentDir="$(Color 5)\w$reset"
+  local currentDir="$(Color 6)\w$reset"
   local currentBranch="$(Color 4)$(git cb)$reset"
-  local sigil="$(Color 1)➜$reset"
+  # local sigil="$(Color 1)➜$reset"
+  local sigil="$(Color 1)⌐╦╦═─$reset"
   echo "$last_status $currentDir $currentBranch $sigil "
 }
 
