@@ -9,6 +9,12 @@ if [[ -r ~/.private/env.sh ]] ; then
 fi
 
 export LC_LANG=$LANG
+
+# load RVM if it's present (for old machines only!)
+if [[ -r  ~/.rvm/scripts/rvm ]] ; then
+  source  ~/.rvm/scripts/rvm
+fi
+
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/usr/lib/go/bin:$PATH
