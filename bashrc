@@ -58,6 +58,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls --color -alF'
 alias la='ls --color -A'
 alias l='ls --color -CF'
+alias ls-l=ll
 alias b=bundle
 alias be='bundle exec '
 alias r='rails' # sigh
