@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+sub=$1
+file=$2
+out_file=$3
+
+if [[ $sub == "enc" ]] ; then
+  echo Encrypting $file to $out_file
+  openssl aes-256-cbc -a -salt -in $file -out $out_file
+  exit $?
+fi
+
+if [[ $sub == "dec" ]] ; then
+  echo Decrypting $file to $out_file
+  openssl aes-256-cbc -d -a -in $file -out $out_file
+  exit $?
+fi
+
+echo "Usage \
+$(basename $0) enc <path to file> <path to encrypted file>
+  - encrypts a file with openssl \
+
+$(basename $0) dec <path to encrypted file> <output file>
+  - decrpyts a file with openssl \
+"
+exit 0
