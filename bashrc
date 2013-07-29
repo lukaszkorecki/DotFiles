@@ -130,7 +130,7 @@ function thePrompt() {
   if [[ "$last_status" != "0" ]]; then
     last_status="$(Color 5)✘$reset"
   else
-    last_status="$(Color 2)☻$reset"
+    last_status="$(Color 2)✔$reset"
   fi
 
 
