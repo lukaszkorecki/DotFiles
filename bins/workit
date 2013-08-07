@@ -4,5 +4,6 @@ if [[ $1 == '-h' ]]; then
   echo "workit <file/location to edit in vim>"
   exit 0
 fi
-tmux split-window -h -p 30 "source ~/.bashrc && bundle exec guard"
+tmux split-window -h -p 30 "cd $(pwd) ;  bundle exec guard || sleep 10" &
+tmux select-pane -t 1
 vim $1
