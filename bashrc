@@ -138,7 +138,7 @@ function thePrompt() {
   local currentDir="$(Color 6)\w$reset"
   local currentBranch="$(Color 4)$(git cb)$reset"
   # local sigil="$(Color 1)➜$reset"
-  local sigil="$(Color 1)->$reset"
+  local sigil="$(Color 1):$reset"
   echo "$last_status $currentDir $currentBranch $sigil "
 }
 
