@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # ./remove-submodule name path-to-sm
+if [[ $1 == "-h" ]] ; then
+  echo "$(basename $0) <submodule name> <path to submodule>"
+  exit 0
+fi
+
 echo Removing submodule: $1 from $2
 
 echo Removed entries from .git configs
