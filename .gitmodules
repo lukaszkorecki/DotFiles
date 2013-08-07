@@ -26,18 +26,9 @@
 [submodule "vim/bundle/textobj-rubyblock"]
 	path = vim/bundle/textobj-rubyblock
 	url = git://github.com/nelstrom/vim-textobj-rubyblock.git
-[submodule "vim/bundle/vim-yardoc"]
-	path = vim/bundle/vim-yardoc
-	url = git://github.com/noprompt/vim-yardoc.git
 [submodule "vim/bundle/json.vim"]
 	path = vim/bundle/json.vim
 	url = git://github.com/vim-scripts/JSON.vim.git
-[submodule "vim/bundle/vim-scala"]
-	path = vim/bundle/vim-scala
-	url = git://github.com/derekwyatt/vim-scala.git
-[submodule "vim/bundle/vim-tmuxify"]
-	path = vim/bundle/vim-tmuxify
-	url = git://github.com/mhinz/vim-tmuxify.git
 [submodule "vim/bundle/vim-handlebars"]
 	path = vim/bundle/vim-handlebars
 	url = git://github.com/nono/vim-handlebars.git
