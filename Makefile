@@ -22,10 +22,9 @@ private:
 
 update:
 	git submodule update --init
-	- git pull --recurse-submodules --rebase
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
-	- git submodule foreach git pull --rebase
+	git submodule foreach git pull --rebase
 
 safe-update:
 	git stash || make update || git stash pop
