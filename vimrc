@@ -96,7 +96,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme   default
+colorscheme desert
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes
   " work properly when Vim is used inside tmux and GNU screen.
