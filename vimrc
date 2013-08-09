@@ -29,6 +29,7 @@ set nofoldenable
 " Wildmenu bro!
 set wildmenu
 set wildmode=list:longest,full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " search --------------------------------------------------------------------
 set incsearch
