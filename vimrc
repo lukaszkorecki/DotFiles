@@ -233,6 +233,7 @@ au BufNewFile,BufRead *.js setlocal conceallevel=2
 autocmd Filetype javascript iabbr f- function(){}<ESC>F{a
 autocmd Filetype javascript iabbr fn- function(){}<ESC>F(i
 autocmd Filetype javascript iabbr cl- console.log('');<ESC>F'i
+autocmd Filetype javascript iabbr ci- console.info('');<ESC>F'i
 
 " other languages and such --------------------------------------------------
 
