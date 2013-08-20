@@ -28,9 +28,14 @@
   pr = pull --rebase
   pull-all = pull --recurse-submodules -r
   s = status
+
   d = diff
   dc = diff --cached
+  wd = diff --color-words
+  wdc = diff --color-words --cached
+
   serve = daemon --reuseaddr --verbose  --port=4000 --base-path=. --export-all ./.git
+
   cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
   edit-modified = !vim -p $(git ls-files -m )
   push-and-track= !git push -u origin $(git cb)
@@ -38,10 +43,6 @@
 
   recent-branches = !git for-each-ref --sort=-committerdate refs/heads/ | sed 's/commit.*refs.heads.//'
 
-
-  # imported
-  hist = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s' --graph
-  histfull = log --pretty=format:'%Cred%h%Creset %C(bold blue)<%an>%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset%n%w(80,8,8)%s%n' --graph --name-status
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
 [branch]
