@@ -30,7 +30,7 @@ shopt -s histappend
 
 # sync history between different sessions, a bit hacky, wish it worked like
 # in ZSH
-HISTSIZE=9000
+HISTSIZE=90000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
