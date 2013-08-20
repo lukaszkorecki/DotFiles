@@ -96,7 +96,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme desert
+colorscheme zenburn
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes
   " work properly when Vim is used inside tmux and GNU screen.
@@ -140,7 +140,7 @@ noremap <leader>\| :vsp<CR><C-w>l
 
 
 " sudo write
-map W w !sudo tee % >/dev/null
+noremap W w !sudo tee % >/dev/null
 
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
@@ -169,7 +169,7 @@ au BufNewFile,BufRead Capfile,Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set
 autocmd FileType ruby setlocal iskeyword+=!,?,@
 
 " Abbreviations aka snippets
-autocmd Filetype ruby iabbr pry_ require 'pry'; binding.pry
+autocmd Filetype ruby iabbr deb_ require 'pry'; binding.pry
 
 " Ruby
 autocmd Filetype ruby iabbr init- def initialize<CR>end<ESC>?initialize<ESC>$a
@@ -234,6 +234,7 @@ autocmd Filetype javascript iabbr f- function(){}<ESC>F{a
 autocmd Filetype javascript iabbr fn- function(){}<ESC>F(i
 autocmd Filetype javascript iabbr cl- console.log('');<ESC>F'i
 autocmd Filetype javascript iabbr ci- console.info('');<ESC>F'i
+autocmd Filetype javascript iabbr deb_ debugger;
 
 " other languages and such --------------------------------------------------
 
