@@ -52,14 +52,13 @@ set statusline+=%f\ %2*%m\ %1*%h
 set statusline+=%#warningmsg#
 " Syntastic status
 set statusline+=%{SyntasticStatuslineFlag()}
-
 " FuGITive status
 set statusline+=%{fugitive#statusline()}
 " span
-"
 set statusline+=%*
-" [ encoding CR-type filetype]
-set statusline+=%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}]
+
+" [ encoding filetype]
+set statusline+=%r%=[%{&encoding}\ %{strlen(&ft)?&ft:'none'}]
 
 " current column line and total number of lines
 set statusline+=\ %12.(%c:%l/%L%)
@@ -67,14 +66,12 @@ set statusline+=\ %12.(%c:%l/%L%)
 " always show status line
 set laststatus=2
 
-
 " backspace mode -----------------------------------------------------------
 set bs=2
 
 " lines and margins --------------------------------------------------------
 " highlight current line and add line numbers
 set cursorline
-
 set number
 
 " nice colors for error messages
@@ -111,11 +108,8 @@ set tabstop=2
 set expandtab
 
 " Key mappings -------------------------------------------------------------
-" map C-h to ESC
-noremap <C-h> <ESC>
-inoremap <C-h> <ESC>
 
-" make the command mode less annyoing
+" make the command mode less annoying
 cnoremap <c-a> <Home>
 cnoremap <c-e> <End>
 cnoremap <c-p> <Up>
@@ -138,10 +132,6 @@ noremap <leader>- :sp<CR><C-w>j
 "split vertically and switch to new split
 noremap <leader>\| :vsp<CR><C-w>l
 
-
-" sudo write
-noremap W w !sudo tee % >/dev/null
-
 " Borrowed from vimcasts, super useful----------------------------------------
 " Bubble single lines
 nmap <C-k> ddkP
@@ -157,11 +147,12 @@ noremap <s-tab> v<
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-" NETRW setttings ----------------------------------------------------------
+" NETRW setttings ------------------------------------------------------------
 let g:netrw_banner=0
 
-" Programming language support and improvements -------------------------------
-" Ruby  -----------------------------------------------------------------------
+" Programming language support and improvements ------------------------------
+
+" Ruby -----------------------------------------------------------------------
 " non ruby files which are ruby
 au BufNewFile,BufRead Capfile,Gemfile,Gemfile.lock,Guardfile,Rakefile,*.rake set filetype=ruby
 
@@ -195,14 +186,6 @@ autocmd Filetype ruby iabbr cnt- context "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr sub- subject "" do<CR>end<ESC>?""<ESC>a
 autocmd Filetype ruby iabbr lt- let : { }<ESC>?:<ESC>a
 
-function! RunSpecForCurrentLine()
-  let _ln = line('v')
-  echom _ln
-  exec ":! bundle exec rspec % -l " . _ln
-endfunction
-
-noremap <leader>R :call  RunSpecForCurrentLine()<CR>
-
 " make rspec stuff part of ruby syntax
 autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
       \ context
@@ -228,6 +211,7 @@ let g:syntastic_javascript_jshint_conf = expand("~/.jshint.json")
 au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
 au BufNewFile,BufRead *.js syntax keyword Function function conceal cchar=λ
 au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
+au BufNewFile,BufRead *.js hi! link Function Conceal
 au BufNewFile,BufRead *.js setlocal conceallevel=2
 
 autocmd Filetype javascript iabbr f- function(){}<ESC>F{a
@@ -237,9 +221,6 @@ autocmd Filetype javascript iabbr ci- console.info('');<ESC>F'i
 autocmd Filetype javascript iabbr deb_ debugger;
 
 " other languages and such --------------------------------------------------
-
-" mustache templates
-au BufNewFile,BufRead  *.mustache set filetype=mustache
 
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
@@ -270,12 +251,6 @@ au BufNewFile,BufRead *.scm,*.clj set lisp
 " Plugins settings ----------------------------------------------------------
 " This work only if pathogen exists
 
-" screen.vim
-let g:ScreenImpl='Tmux'
-noremap <leader>S :ScreenShell
-vnoremap <leader>s :ScreenSend<CR>
-noremap <leader>s :ScreenSend<CR>
-
 " fugitive
 noremap <leader>g :Ggrep <cword><CR>
 
@@ -291,8 +266,7 @@ let g:gist_get_multiplefile = 1
 " Tagbar and ctags
 noremap <leader>t :TagbarToggle<CR>
 set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags,../project.tags
-" /usr/local/bin/ctags
-
+let g:tagbar_type_go  = { 'ctagsbin' : 'gotags' }
 
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill
@@ -323,15 +297,6 @@ endf
 
 nmap <silent> <leader>l :call NumSwap()<cr>
 vmap <silent> <leader>l :call NumSwap()<cr>gv
-
-" wrap  a ruby block (identified by ruby-block in a begin-rescue-end
-" and add pry to rescue block
-" definitely it's not rock solid, since it's just a dump from a macro
-function! WrapInPry()
-  let @z="dObeginporescue => erequire 'pry' ; binding.pryend"
-    :'<,'>normal @z
-endf
-vmap <leader>wr  :call WrapInPry()<CR>
 
 function! ConvertHash()
   let @z="xf Pf=df "
