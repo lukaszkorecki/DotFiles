@@ -1,12 +1,22 @@
-# include "/home/lukasz/.DotFiles/xres/solarized"
-URxvt.perl-ext-common:  default,matcher
-URxvt.url-launcher:      /usr/bin/firefox
-URxvt.matcher.button:   1
+# include "/home/lukasz/.DotFiles/xres/zenburn"
 URxvt.perl-lib: ~/.DotFiles/xres/urxvt-perls/
-URxvt.perl-ext:      default,url-select
+
+URxvt.perl-ext-common:  default,matcher,clipboard,keyboard-select,url-select
+
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.Super-c:   perl:clipboard:copy
+URxvt.keysym.Super-v:   perl:clipboard:paste
+
 URxvt.keysym.C-o:    perl:url-select:select_next
+URxvt.url-launcher:      /usr/bin/firefox
 URxvt.url-select.launcher:   /usr/bin/firefox
 URxvt.url-select.underline: true
+URxvt.matcher.button:   1
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
 URxvt.depth: 32
 URxvt*saveLines: 12000
 URxvt*font:                  xft:terminus:pixelsize=14:antialias=false

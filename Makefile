@@ -1,5 +1,5 @@
 LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json
-XRESOURCES = xsession Xdefaults
+XRESOURCES = xsession Xresources
 
 default: update
 
@@ -12,6 +12,7 @@ unlink: $(LIST)
 
 link_xresources:
 	for x in $(XRESOURCES) ; do ln -s ~/.DotFiles/xres/$$x ~/.$$x; done
+	xrdb -merge ~/.Xresources
 
 unlink_xresources:
 	for x in $(XRESOURCES) ; do rm ~/.$$x; done
