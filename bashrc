@@ -8,7 +8,7 @@ if [[ -r ~/.private/env.sh ]] ; then
   source ~/.private/env.sh
 fi
 
-export LANG=en_GB.utf8
+export LC_LANG=$LANG
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=/usr/lib/go/bin:$PATH
