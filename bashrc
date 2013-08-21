@@ -21,8 +21,9 @@ export PATH=/usr/lib/go/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
 # go setup
-export GOPATH=~/proj/:$GOPATH
-export PATH=$GOPATH/bin:$PATH
+export GOPATH=~/proj
+export GOBIN=~/proj/bin
+export PATH=$PATH:$GOBIN
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -64,7 +65,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls --color -alF'
 alias la='ls --color -A'
 alias l='ls --color -CF'
-alias ls-l=ll
+alias ls-lah=ll
 alias b=bundle
 alias be='bundle exec '
 alias r='rails' # sigh
