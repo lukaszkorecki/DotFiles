@@ -1,4 +1,4 @@
-LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json
+LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags
 XRESOURCES = xsession Xresources
 
 default: update

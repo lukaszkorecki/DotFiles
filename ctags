@@ -1,0 +1,5 @@
+--exclude=*.js
+--exclude=*.git*
+--exclude=vendor/*
+--links=no
+--recurse=yes
