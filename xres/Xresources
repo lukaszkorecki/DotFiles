@@ -1,4 +1,3 @@
-# include "/home/lukasz/.DotFiles/xres/zenburn"
 URxvt.perl-lib: ~/.DotFiles/xres/urxvt-perls/
 
 URxvt.perl-ext-common:  default,matcher,clipboard,keyboard-select,url-select
@@ -19,10 +18,9 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.depth: 32
 URxvt*saveLines: 12000
-URxvt*font:                  xft:terminus:pixelsize=14:antialias=false
-URxvt*boldFont:                  xft:terminus:pixelsize=14:antialias=false
+URxvt*font:                  xft:terminus:pixelsize=16:antialias=false
+URxvt*boldFont:                  xft:terminus:pixelsize=16:antialias=false
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
 URxvt*letterSpace: -1
-URxvt*background: #002B36

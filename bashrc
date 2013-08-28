@@ -8,6 +8,14 @@ if [[ -r ~/.private/env.sh ]] ; then
   source ~/.private/env.sh
 fi
 
+# we're probably in X
+if [[ "$XAUTHORITY" != "" ]] ; then
+  # turn off capslock when starting first terminal session
+   setxkbmap -option ctrl:nocaps
+   xrdb -merge ~/.Xresources
+   xrdb -merge ~/.DotFiles/xres/zenburn
+fi
+
 export LC_LANG=$LANG
 
 # load RVM if it's present (for old machines only!)
