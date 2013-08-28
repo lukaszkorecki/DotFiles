@@ -1,5 +1,5 @@
 LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags
-XRESOURCES = xsession Xresources
+XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
 
@@ -13,6 +13,7 @@ unlink: $(LIST)
 link_xresources:
 	for x in $(XRESOURCES) ; do ln -s ~/.DotFiles/xres/$$x ~/.$$x; done
 	xrdb -merge ~/.Xresources
+	xmodmap ~/.Xmodmap
 
 unlink_xresources:
 	for x in $(XRESOURCES) ; do rm ~/.$$x; done
@@ -22,6 +23,7 @@ private:
 	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private || true
 
 update:
+	git pull -r
 	git submodule update --init
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
