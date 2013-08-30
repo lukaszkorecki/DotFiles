@@ -49,13 +49,13 @@ HISTSIZE=90000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
-function history() {
+history() {
   _bash_history_sync
   builtin history "$@"
 }
 
 # "callback" for use after running a command
-function _bash_history_sync() {
+_bash_history_sync() {
   builtin history -a
   HISTFILESIZE=$HISTSIZE
   builtin history -c
@@ -85,7 +85,7 @@ alias rightsplit='tmux splitw -h -p 33  '
 export EDITOR=vim
 
 # make vim a pager
-function vless() {
+vless() {
   local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  )/ -name less.sh`
   if [[ -z $less_path ]]; then
     echo 'less.sh not found'
@@ -99,7 +99,7 @@ alias v=vim
 
 # edit modified files in vim
 # use vim as man viewer
-function viman() {
+viman() {
 env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
   vim -R -c 'set ft=man nomod nolist nonumber' -c 'map q :q<CR>' \
   -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
@@ -107,7 +107,7 @@ env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
 }
 
 
-function Mutt() {
+Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
 
@@ -117,7 +117,7 @@ function Mutt() {
 #    Loop grunt test:all
 # or
 #    DELAY=10 Loop grunt test:browser
-function Loop() {
+Loop() {
   if [[ -z "$DELAY" ]] ; then
     DELAY=7
   fi
@@ -132,34 +132,37 @@ function Loop() {
 }
 
 # print given color, need reset after that!
-function Color() {
+Color() {
   echo "\[$(tput setaf $1)\]"
 }
-function ResetColor() {
+ResetColor() {
   echo "\[$(tput sgr0)\]"
 }
 
-function thePrompt() {
-  local last_status=$?
+Prompt() {
+  local lastStatus=$?
   local reset=$(ResetColor)
 
   if [[ "$last_status" != "0" ]]; then
-    last_status="$(Color 5)✘$reset"
+    lastStatus="$(Color 5)✘$reset"
   else
-    last_status="$(Color 2)✔$reset"
+    lastStatus="$(Color 2)✔$reset"
   fi
 
 
   local currentDir="$(Color 6)\w$reset"
-  local currentBranch="$(Color 4)$(git cb)$reset"
-  # local sigil="$(Color 1)➜$reset"
+  local branch=$(git cb)
+  if [[  $branch != "" ]];  then
+    branch="$(Color 4)$branch$reset"
+  fi
   local sigil="$(Color 1):$reset"
-  echo "$last_status $currentDir $currentBranch $sigil "
+  local c=$(Color 3)
+  echo "$lastStatus $c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
 # so this refreshes the git branch and other dynamic stuff
-PROMPT_COMMAND='PS1="$(thePrompt)"'
+PROMPT_COMMAND='PS1="$(Prompt)"'
 
 # plug-in the history hack
 PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
