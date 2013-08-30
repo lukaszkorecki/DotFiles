@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
 ssh-add ~/.ssh/id_rsa
+#!/usr/bin/env bash
 cd proj/dev-machine
-vagrant resume || vagrant ssh
+vagrant resume
+vagrant ssh
