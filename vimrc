@@ -109,6 +109,11 @@ set expandtab
 
 " Key mappings -------------------------------------------------------------
 
+" map C-h to esc
+inoremap <c-h> <ESC>
+" ...and disable esc
+inoremap <ESC> <nop>
+
 " make the command mode less annoying
 cnoremap <c-a> <Home>
 cnoremap <c-e> <End>
@@ -260,8 +265,8 @@ let g:syntastic_enable_signs=1
 
 " gist vim
 let g:gist_show_privates=1
-let g:gist_open_browser_after_post = 1
 let g:gist_get_multiplefile = 1
+let g:gist_post_private = 1
 
 " Tagbar and ctags
 noremap <leader>t :TagbarToggle<CR>
