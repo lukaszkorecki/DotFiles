@@ -140,24 +140,16 @@ ResetColor() {
 }
 
 Prompt() {
-  local lastStatus=$?
   local reset=$(ResetColor)
-
-  if [[ "$last_status" != "0" ]]; then
-    lastStatus="$(Color 5)✘$reset"
-  else
-    lastStatus="$(Color 2)✔$reset"
-  fi
-
 
   local currentDir="$(Color 6)\w$reset"
   local branch=$(git cb)
-  if [[  $branch != "" ]];  then
+  if [[ -n "$branch" ]];  then
     branch="$(Color 4)$branch$reset"
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
-  echo "$lastStatus $c\\H$reset $currentDir $branch$sigil "
+  echo "$c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
