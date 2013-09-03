@@ -109,11 +109,6 @@ set expandtab
 
 " Key mappings -------------------------------------------------------------
 
-" map C-h to esc
-inoremap <c-h> <ESC>
-" ...and disable esc
-inoremap <ESC> <nop>
-
 " make the command mode less annoying
 cnoremap <c-a> <Home>
 cnoremap <c-e> <End>
