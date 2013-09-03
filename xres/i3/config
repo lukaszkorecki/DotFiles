@@ -131,3 +131,5 @@ bar {
 
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id xrdb -merge ~/.DotFiles/xres/zenburn
