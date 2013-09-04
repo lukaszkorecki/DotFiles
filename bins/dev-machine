@@ -1,5 +1,12 @@
-ssh-add ~/.ssh/id_rsa
 #!/usr/bin/env bash
+
+if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
+  ssh-add ~/.ssh/id_rsa
+fi
+
 cd ~/proj/dev-machine
-vagrant resume
+
+if [[ -z "$(vagrant status | grep running)" ]]  ; then
+  vagrant resume
+fi
 vagrant ssh
