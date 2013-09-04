@@ -129,7 +129,15 @@ bar {
         status_command i3status
 }
 
+# goodies
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
+
+# rxvt/uxterm stuff
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xrdb -merge ~/.DotFiles/xres/zenburn
+
+# use 2nd monitor
+exec --no-startup-id xrandr --output DP-1 --auto --right-of LVDS-2
+# ...and rotate it
+exec --no-startup-id xrandr --output DP-1 --rotate left
