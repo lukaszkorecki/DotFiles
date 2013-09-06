@@ -138,6 +138,4 @@ exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xrdb -merge ~/.DotFiles/xres/zenburn
 
 # use 2nd monitor
-exec --no-startup-id xrandr --output DP-1 --auto --right-of LVDS-2
-# ...and rotate it
-exec --no-startup-id xrandr --output DP-1 --rotate left
+exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
