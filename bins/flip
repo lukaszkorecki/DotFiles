@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ -z "$(which flippy)" ]] ; then
+  echo you need flippy gem installed
+  exit 1
+fi
+flipped=$(flippy "$*")
+
+echo "(╯°□°）╯︵ $flipped"
