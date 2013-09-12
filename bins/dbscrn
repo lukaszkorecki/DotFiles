@@ -1,0 +1,17 @@
+name=$1
+#!/usr/bin/env bash
+if [[ -z "$name" ]] ; then
+  echo Needs a file name!
+  exit 1
+fi
+
+if [[ -z "$(echo $name | grep -E ".png$")" ]] ; then
+  name="$name.png"
+fi
+
+file=~/Dropbox/Public/screens/$name
+
+echo "Saving $file and uploading to dropbox" > /dev/stderr
+
+gnome-screenshot -f $file -a
+dropbox puburl $file

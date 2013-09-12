@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 DEVICE=/sys/class/leds/smc::kbd_backlight/brightness
-BACKLIGHT=$(cat $DEVICE)
+BACKLIGHT="$(cat $DEVICE)"
 INCREMENT=15
 
 if [ $UID -ne 0 ]; then
   echo "Please run this program as superuser"
-  exit 1
+  sudo $0 $*
+exit 0
 fi
 
 SET_VALUE=0

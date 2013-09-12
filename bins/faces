@@ -1,9 +1,9 @@
-#!/bin/zsh
 faces=('ಠ_ಠ' 'ಠ_ರೃ' '﴾͡๏̯͡๏﴿' '๏_๏' 'ಠ▃ಠ' '(•‿•)' 'Ծ_Ծ' '¯\(°_o)/¯' '(✌ﾟ∀ﾟ)☞' '╚(•⌂•)╝' 't(-_-t)t' '(ツ)_/¯' '◔_◔' '◎⃝ _◎⃝' ';ლ(ಠ_ಠლ)' '(╯°□°）╯︵ ┻━┻' 'ᶘ ᵒᴥᵒᶅ')
+#!/usr/bin/env bash
 
 if [[ -z $1 ]]; then
   echo 'Choose a face and | it to pbcopy'
-  i=1
+  i=0
   for f in ${faces[@]}
   do
     echo $i $f
