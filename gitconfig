@@ -36,7 +36,7 @@
 
   serve = daemon --reuseaddr --verbose  --port=4000 --base-path=. --export-all ./.git
 
-  cb = !git symbolic-ref HEAD 2>/dev/null | awk -F/ '{ print $3}'
+  cb = !git symbolic-ref HEAD 2>/dev/null |  sed "s/refs.heads.//"
   edit-modified = !vim -p $(git ls-files -m )
   push-and-track= !git push -u origin $(git cb)
   safe-pull = !git stash && git pull -r origin $(git cb) && git stash pop
