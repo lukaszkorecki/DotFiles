@@ -33,6 +33,11 @@ export GOPATH=~/proj
 export GOBIN=~/proj/bin
 export PATH=$PATH:$GOBIN
 
+# android
+export ANDROID_HOME=~/proj/sdk
+export PATH=~/proj/sdk/tools:$PATH
+export PATH=~/proj/sdk/platform-tools:$PATH
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 export LESS="-RSM~gIsw"

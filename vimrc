@@ -225,12 +225,12 @@ autocmd Filetype javascript iabbr deb_ debugger;
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
-" python and go is weird
-au BufNewFile,BufRead *.py,*.go set tabstop=4
-au BufNewFile,BufRead *.py,*.go set softtabstop=4
-au BufNewFile,BufRead *.py,*.go set shiftwidth=4
-au BufNewFile,BufRead *.py,*.go set listchars=tab:▸\ ,eol:~
-au BufNewFile,BufRead *.py,*.go set list
+" java, python and go is weird
+au BufNewFile,BufRead *.py,*.go,*.java set tabstop=4
+au BufNewFile,BufRead *.py,*.go,*.java set softtabstop=4
+au BufNewFile,BufRead *.py,*.go,*.java set shiftwidth=4
+au BufNewFile,BufRead *.py,*.go,*.java set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py,*.go,*.java set list
 
 " go specific
 au BufNewFile,BufRead *.go set ft=go
