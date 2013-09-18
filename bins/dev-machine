@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 
+vagrant_command() {
+  echo "> Vagrant $1"
+  vagrant $1
+}
+
 if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
   ssh-add ~/.ssh/id_rsa
 fi
 
 cd ~/proj/dev-machine
 
-if [[ -z "$(vagrant status | grep running)" ]]  ; then
-  vagrant resume
+if [[ -n "$(vagrant status | grep "default.*suspended")" ]]  ; then
+  vagrant_command "resume"
+elif [[ -n "$(vagrant status | grep -E "default.*(aborted|halted)" | head -1 )" ]] ; then
+  vagrant_command "up"
 fi
-vagrant ssh
+
+vagrant_command "ssh"
