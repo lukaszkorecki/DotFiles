@@ -26,6 +26,10 @@ bindsym $mod+Shift+Q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# lock the screen
+
+bindsym $mod+Shift+P exec i3lock -c 000000
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
