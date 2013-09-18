@@ -38,6 +38,3 @@
 [submodule "xres/urxvt-perls"]
 	path = xres/urxvt-perls
 	url = git@github.com:muennich/urxvt-perls.git
-[submodule "vim/bundle/todo.txt-vim"]
-	path = vim/bundle/todo.txt-vim
-	url = git@github.com:davidoc/todo.txt-vim.git
