@@ -80,11 +80,12 @@ alias la='ls --color -A'
 alias l='ls --color -CF'
 alias ls-lah=ll
 alias b=bundle
-alias be='bundle exec '
+alias be='b exec '
 alias r='rails' # sigh
-alias s='bundle exec rspec -f n'
-alias rs='bundle exec rspec spec -f n -c'
-alias ffs='bundle exec rspec -f n 2>/dev/null'
+alias s='be rspec -f p'
+alias sl='be rspec -f n'
+alias rs='be rspec spec -f p -c'
+alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 
 export EDITOR=vim
