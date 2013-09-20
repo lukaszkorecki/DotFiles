@@ -2,7 +2,7 @@
 
 vagrant_command() {
   echo "> Vagrant $1"
-  vagrant $1
+  TERM=screen-256color vagrant $1
 }
 
 cd ~/proj/dev-machine
