@@ -1,23 +1,26 @@
-URxvt.perl-lib: ~/.DotFiles/xres/urxvt-perls/
+URxvt*perl-lib: ~/.DotFiles/xres/URxvt.perls/
+URxvt*perl-ext-common:  default,clipboard,url-select
 
-URxvt.perl-ext-common:  default,matcher,clipboard,keyboard-select,url-select
+URxvt*iso14755: False
 
-URxvt.keysym.M-c:   perl:clipboard:copy
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.keysym.Super-c:   perl:clipboard:copy
-URxvt.keysym.Super-v:   perl:clipboard:paste
+URxvt*keysym.M-c: perl:clipboard:copy
+URxvt*keysym.M-v: perl:clipboard:paste
+URxvt*clipboard.copycmd: xsel -ib
+URxvt*clipboard.pastecmd: xsel -ob
 
-URxvt.keysym.C-o:    perl:url-select:select_next
-URxvt.url-launcher:      /usr/bin/firefox
-URxvt.url-select.launcher:   /usr/bin/firefox
-URxvt.url-select.underline: true
-URxvt.matcher.button:   1
 
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt*keysym.C-o:    perl:url-select:select_next
+URxvt*url-launcher:      /usr/bin/firefox
+URxvt*url-select.launcher:   /usr/bin/firefox
+URxvt*url-select.underline: true
 
-URxvt.depth: 32
-URxvt*saveLines: 12000
+URxvt*matcher.button:   1
+
+URxvt*keysym.M-Escape: perl:keyboard-select:activate
+URxvt*keysym.M-s: perl:keyboard-select:search
+
+URxvt*depth: 32
+URxvt*saveLines: 120000
 URxvt*font:                  xft:terminus:pixelsize=16:antialias=false
 URxvt*boldFont:                  xft:terminus:pixelsize=16:antialias=false
 URxvt*scrollBar: true
