@@ -11,9 +11,9 @@ fi
 
 cd ~/proj/dev-machine
 
-if [[ -n "$(vagrant status | grep "default.*suspended")" ]]  ; then
+if [[ $(vagrant status | grep -E "default.*(suspended|saved)" | head -1) ]]  ; then
   vagrant_command "resume"
-elif [[ -n "$(vagrant status | grep -E "default.*(aborted|halted)" | head -1 )" ]] ; then
+elif [[ $( vagrant status | grep -E "default.*(aborted|halted)" | head -1)  ]] ; then
   vagrant_command "up"
 fi
 
