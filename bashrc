@@ -8,6 +8,12 @@ if [[ -r ~/.private/env.sh ]] ; then
   source ~/.private/env.sh
 fi
 
+# if main ssh key is not loaded - load it
+if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
+  ssh-add ~/.ssh/id_rsa
+fi
+
+
 # we're probably in X
 if [[ "$XAUTHORITY" != "" ]] ; then
   # turn off capslock when starting first terminal session

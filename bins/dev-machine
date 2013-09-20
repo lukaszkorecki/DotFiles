@@ -5,10 +5,6 @@ vagrant_command() {
   vagrant $1
 }
 
-if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
-  ssh-add ~/.ssh/id_rsa
-fi
-
 cd ~/proj/dev-machine
 
 if [[ $(vagrant status | grep -E "default.*(suspended|saved)" | head -1) ]]  ; then
