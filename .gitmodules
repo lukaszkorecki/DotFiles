@@ -41,3 +41,12 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-android"]
+	path = vim/bundle/vim-android
+	url = git@github.com:hsanson/vim-android.git
+[submodule "vim/bundle/javacomplete"]
+	path = vim/bundle/javacomplete
+	url = git@github.com:vim-scripts/javacomplete.git
+[submodule "vim/bundle/android-javacomplete"]
+	path = vim/bundle/android-javacomplete
+	url = git@github.com:anddam/android-javacomplete.git
