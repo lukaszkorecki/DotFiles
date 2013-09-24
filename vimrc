@@ -210,13 +210,6 @@ autocmd BufNewFile,BufRead *_spec.rb syn keyword ruby describe
 au BufNewFile,BufRead  *.json set ft=json
 let g:syntastic_javascript_jshint_conf = expand("~/.jshint.json")
 
-" use conceal to hide 'function' keywoard and use cchar=λ as a replacement
-au BufNewFile,BufRead *.js syntax keyword javaScriptFunction function conceal cchar=λ
-au BufNewFile,BufRead *.js syntax keyword Function function conceal cchar=λ
-au BufNewFile,BufRead *.js hi! link javaScriptFunction Conceal
-au BufNewFile,BufRead *.js hi! link Function Conceal
-au BufNewFile,BufRead *.js setlocal conceallevel=2
-
 autocmd Filetype javascript iabbr f- function(){}<ESC>F{a
 autocmd Filetype javascript iabbr fn- function(){}<ESC>F(i
 autocmd Filetype javascript iabbr cl- console.log('');<ESC>F'i
@@ -228,12 +221,12 @@ autocmd Filetype javascript iabbr deb_ debugger;
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
-" java, python and go is weird
-au BufNewFile,BufRead *.py,*.go,*.java set tabstop=4
-au BufNewFile,BufRead *.py,*.go,*.java set softtabstop=4
-au BufNewFile,BufRead *.py,*.go,*.java set shiftwidth=4
-au BufNewFile,BufRead *.py,*.go,*.java set listchars=tab:▸\ ,eol:~
-au BufNewFile,BufRead *.py,*.go,*.java set list
+" python and go is weird
+au BufNewFile,BufRead *.py,*.go set tabstop=4
+au BufNewFile,BufRead *.py,*.go set softtabstop=4
+au BufNewFile,BufRead *.py,*.go set shiftwidth=4
+au BufNewFile,BufRead *.py,*.go set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py,*.go set list
 
 " go specific
 au BufNewFile,BufRead *.go set ft=go
