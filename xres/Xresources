@@ -1,4 +1,5 @@
-URxvt.perl-lib: ~/.DotFiles/xres/urxvt-perls/
+Xft.antialias:  false
+URxvt.perl-lib: /home/lukasz/.DotFiles/xres/urxvt-perls/
 
 URxvt.perl-ext-common:  default,matcher,clipboard,keyboard-select,url-select
 
@@ -18,8 +19,8 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.depth: 32
 URxvt*saveLines: 12000
-URxvt*font:                  xft:terminus:pixelsize=16:antialias=false
-URxvt*boldFont:                  xft:terminus:pixelsize=16:antialias=false
+URxvt*font:                  xft:terminus:pixelsize=16
+URxvt*boldFont:                  xft:terminus:pixelsize=16
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
