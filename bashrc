@@ -13,21 +13,22 @@ if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
   ssh-add ~/.ssh/id_rsa
 fi
 
+# bash completion
+compl_path=/usr/share/bash-completion/bash_completion
+[[ -r $compl_path ]] && . $compl_path
 
 # we're probably in X
 if [[ "$XAUTHORITY" != "" ]] ; then
   # turn off capslock when starting first terminal session
    setxkbmap -option ctrl:nocaps
-   xrdb -merge ~/.Xresources
    xrdb -merge ~/.DotFiles/xres/zenburn
+   xrdb -merge ~/.Xresources
 fi
 
 export LC_LANG=$LANG
 
 # load RVM if it's present (for old machines only!)
-if [[ -r  ~/.rvm/scripts/rvm ]] ; then
-  source  ~/.rvm/scripts/rvm
-fi
+[[ -r  ~/.rvm/scripts/rvm ]] && source  ~/.rvm/scripts/rvm
 
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
@@ -96,18 +97,7 @@ alias rightsplit='tmux splitw -h -p 33  '
 
 export EDITOR=vim
 
-# make vim a pager
-vless() {
-  local less_path=`find $(vim --version | awk ' /fall-back/ { gsub(/\"/,"",$NF); print $NF }'  )/ -name less.sh`
-  if [[ -z $less_path ]]; then
-    echo 'less.sh not found'
-    exit 1
-  fi
-  $less_path $*
-}
-alias vl=vless
-alias v=vim
-
+# vless was removed - use view
 
 # edit modified files in vim
 # use vim as man viewer

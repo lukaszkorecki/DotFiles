@@ -127,8 +127,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 
 # rxvt/uxterm stuff
-exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id xrdb -merge ~/.DotFiles/xres/zenburn
+exec --no-startup-id xrdb -merge ~/.Xresources
 
 # use 2nd monitor
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
