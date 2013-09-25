@@ -1,5 +1,5 @@
-# vi: ft=gitconfig
 [user]
+# vi: ft=gitconfig
   email = lukasz@coffeesounds.com
   name = Łukasz Korecki
 [github]
@@ -28,6 +28,7 @@
   pr = pull --rebase
   pull-all = pull --recurse-submodules -r
   s = status
+  m = merge --no-ff
 
   d = diff
   dc = diff --cached

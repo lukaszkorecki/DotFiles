@@ -216,6 +216,11 @@ autocmd Filetype javascript iabbr cl- console.log('');<ESC>F'i
 autocmd Filetype javascript iabbr ci- console.info('');<ESC>F'i
 autocmd Filetype javascript iabbr deb_ debugger;
 
+" java ---------------------------------------------------------------------
+autocmd Filetype java set omnifunc=javacomplete#Complete
+autocmd Filetype java set completefunc=javacomplete#CompleteParamsInfo
+
+
 " other languages and such --------------------------------------------------
 
 " markdown
