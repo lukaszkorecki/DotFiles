@@ -267,7 +267,6 @@ let g:gist_post_private = 1
 " Tagbar and ctags
 noremap <leader>t :TagbarToggle<CR>
 set tags=./tags,tags,TAGS,ctags,./js.tags,./rb.tags,../project.tags
-let g:tagbar_type_go  = { 'ctagsbin' : 'gotags' }
 
 " Abbreviations  ------------------------------------------------------------
 " 'cause snippets are overkill
