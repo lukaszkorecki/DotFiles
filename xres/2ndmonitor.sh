@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-if [[ -z "$(xrandr | grep 'DP-1 disconn')" ]] ; then
-  # use 2nd monitor
-  xrandr --output DP-1 --auto --right-of LVDS-2
-  # ...and rotate it
-  #  xrandr --output DP-1 --rotate left
-fi
+screen="DP2"
+main="LVDS-2"
 
+if [[ -z "$(xrandr | grep "$screen disconn")" ]] ; then
+  # use 2nd monitor
+  xrandr --output $screen --auto --right-of LVDS-2
+  # ...and rotate it
+  xrandr --output $screen --rotate left
+fi

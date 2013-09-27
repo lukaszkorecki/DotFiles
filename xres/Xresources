@@ -8,7 +8,7 @@ URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.Super-c:   perl:clipboard:copy
 URxvt.keysym.Super-v:   perl:clipboard:paste
 
-URxvt.keysym.C-o:    perl:url-select:select_next
+URxvt.keysym.C-u:    perl:url-select:select_next
 URxvt.url-launcher:      /usr/bin/firefox
 URxvt.url-select.launcher:   /usr/bin/firefox
 URxvt.url-select.underline: true
