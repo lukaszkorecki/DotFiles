@@ -50,3 +50,6 @@
 [submodule "vim/bundle/android-javacomplete"]
 	path = vim/bundle/android-javacomplete
 	url = git@github.com:anddam/android-javacomplete.git
+[submodule "bins/vendor/pidcat"]
+	path = bins/vendor/pidcat
+	url = git@github.com:JakeWharton/pidcat.git
