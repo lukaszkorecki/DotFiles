@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 
+
 vagrant_command() {
   echo "> Vagrant $1"
   TERM=screen-256color vagrant $1
 }
 
 cd ~/proj/dev-machine
+
+if [[ "$1" = "suspend" ]] ; then
+  vagrant_command "suspend"
+  exit $?
+fi
+
 
 if [[ $(vagrant status | grep -E "default.*(suspended|saved)" | head -1) ]]  ; then
   vagrant_command "resume"
