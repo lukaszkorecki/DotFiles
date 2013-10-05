@@ -136,4 +136,4 @@ exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
 
 # wallapaper
-exec --no-startup-id feh --bg-scale ~/Dropbox/Photos/SCIENCE.jpg
+exec --no-startup-id feh --bg-scale --bg-center /home/lukasz/Dropbox/Photos/Wallpapers/japan/koi.jpg
