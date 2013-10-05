@@ -8,22 +8,22 @@ if [[ -r ~/.private/env.sh ]] ; then
   source ~/.private/env.sh
 fi
 
-# if main ssh key is not loaded - load it
-if [[ -z "$(ssh-add -L | grep id_rsa)" ]] ; then
-  ssh-add ~/.ssh/id_rsa
+# Tiny wrappers around tput, used in prompt and messages
+Color() {
+  echo "$(tput setaf $1)"
+}
+ResetColor() {
+  echo "$(tput sgr0)"
+}
+
+# if main ssh key is not loaded - warn about it!
+if [[ -z  "$(ssh-add -L | grep id_rsa)" ]] ; then
+  echo "$(Color 1)Main private key is not loaded!$(ResetColor)" >&2
 fi
 
 # bash completion
 compl_path=/usr/share/bash-completion/bash_completion
 [[ -r $compl_path ]] && . $compl_path
-
-# we're probably in X
-if [[ "$XAUTHORITY" != "" ]] ; then
-  # turn off capslock when starting first terminal session
-   setxkbmap -option ctrl:nocaps
-   xrdb -merge ~/.DotFiles/xres/zenburn
-   xrdb -merge ~/.Xresources
-fi
 
 export LC_LANG=$LANG
 
@@ -133,13 +133,6 @@ Loop() {
   done
 }
 
-# print given color, need reset after that!
-Color() {
-  echo "\[$(tput setaf $1)\]"
-}
-ResetColor() {
-  echo "\[$(tput sgr0)\]"
-}
 
 Prompt() {
   local reset=$(ResetColor)

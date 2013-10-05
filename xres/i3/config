@@ -120,6 +120,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status -c ~/.DotFiles/xres/i3status_$HOSTNAME.conf
+        position top
 }
 
 # goodies
@@ -129,6 +130,10 @@ exec --no-startup-id dropbox start
 # rxvt/uxterm stuff
 exec --no-startup-id xrdb -merge ~/.DotFiles/xres/zenburn
 exec --no-startup-id xrdb -merge ~/.Xresources
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 # use 2nd monitor
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
+
+# wallapaper
+exec --no-startup-id feh --bg-scale ~/Dropbox/Photos/SCIENCE.jpg
