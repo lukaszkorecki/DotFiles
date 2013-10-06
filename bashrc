@@ -21,10 +21,10 @@ export LC_LANG=$LANG
 
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
-export PATH=/usr/lib/go/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
 # go setup
+export PATH=/usr/lib/go/bin:/usr/local/go:$PATH
 export GOPATH=~/proj
 export GOBIN=~/proj/bin
 export PATH=$PATH:$GOBIN
