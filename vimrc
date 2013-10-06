@@ -1,6 +1,6 @@
 "" Pathogen -----------------------------------------------------------------
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#helptags()
 
 call gitbrowse#AddMaps()
 
@@ -230,7 +230,7 @@ au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 au BufNewFile,BufRead *.py,*.go set tabstop=4
 au BufNewFile,BufRead *.py,*.go set softtabstop=4
 au BufNewFile,BufRead *.py,*.go set shiftwidth=4
-au BufNewFile,BufRead *.py,*.go set listchars=tab:▸\ ,eol:~
+au BufNewFile,BufRead *.py,*.go set listchars=tab:\|\ ,eol:~
 au BufNewFile,BufRead *.py,*.go set list
 
 " go specific

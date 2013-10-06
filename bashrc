@@ -6,10 +6,10 @@ stty -ixon
 
 # Tiny wrappers around tput, used in prompt and messages
 Color() {
-  echo "$(tput setaf $1)"
+  echo "\[$(tput setaf $1)\]"
 }
 ResetColor() {
-  echo "$(tput sgr0)"
+  echo "\[$(tput sgr0)\]"
 }
 
 # if main ssh key is not loaded - warn about it!
@@ -24,7 +24,7 @@ export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
 # go setup
-export PATH=/usr/lib/go/bin:/usr/local/go:$PATH
+export PATH=/usr/lib/go/bin:/usr/local/go/bin:$PATH
 export GOPATH=~/proj
 export GOBIN=~/proj/bin
 export PATH=$PATH:$GOBIN
@@ -134,14 +134,14 @@ Loop() {
 Prompt() {
   local reset=$(ResetColor)
 
-  local currentDir="$(Color 6)\w$reset"
+  local currentDir="$(Color 6)$(basename $(pwd))$reset"
   local branch=$(git cb)
   if [[ -n "$branch" ]];  then
     branch="$(Color 4)$branch$reset"
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
-  echo "$c\\H$reset $currentDir $branch\n$sigil "
+  echo "$c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command

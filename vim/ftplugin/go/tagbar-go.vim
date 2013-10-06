@@ -1,6 +1,5 @@
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
-    \ 'ctagsbin' : 'gotags',
     \ 'kinds'     : [
         \ 'p:package',
         \ 'i:imports:1',
