@@ -4,10 +4,6 @@
 # disable stupid C-s / C-q stuff
 stty -ixon
 
-if [[ -r ~/.private/env.sh ]] ; then
-  source ~/.private/env.sh
-fi
-
 # Tiny wrappers around tput, used in prompt and messages
 Color() {
   echo "$(tput setaf $1)"
@@ -21,14 +17,7 @@ if [[ -z  "$(ssh-add -L | grep id_rsa)" ]] ; then
   echo "$(Color 1)Main private key is not loaded!$(ResetColor)" >&2
 fi
 
-# bash completion
-compl_path=/usr/share/bash-completion/bash_completion
-[[ -r $compl_path ]] && . $compl_path
-
 export LC_LANG=$LANG
-
-# load RVM if it's present (for old machines only!)
-[[ -r  ~/.rvm/scripts/rvm ]] && source  ~/.rvm/scripts/rvm
 
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
@@ -61,6 +50,16 @@ HISTSIZE=90000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
+extra_files="~/.private/env.sh
+~/.rvm/scripts/rvm
+~/.DotFiles/xres/init.sh
+/usr/share/bash-completion/bash_completion"
+
+for extra in $extra_files ; do
+  [[ -r $extra ]] && source $extra
+done
+
+
 history() {
   _bash_history_sync
   builtin history "$@"
@@ -75,22 +74,23 @@ _bash_history_sync() {
 }
 
 # nice things
-shopt -s checkwinsize
-shopt -s globstar
-shopt -s autocd # type 'dir' instead 'cd dir'
+shopt -s checkwinsize # track terminal window resize
+shopt -s globstar     # enable **
+shopt -s extglob      # extended globbing capabilities
+shopt -s dirspell     # correct typos when tab-completing names
+shopt -s autocd       # type 'dir' instead 'cd dir'
+shopt -s cdspell      # fix minor typos when cd'ing
+shopt -s cmdhist      # preserve new lines in history
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls --color -alF'
-alias la='ls --color -A'
+alias la='ls --color -Ah'
 alias l='ls --color -CF'
-alias ls-lah=ll
 alias b=bundle
 alias be='b exec '
-alias r='rails' # sigh
-alias s='be rspec -f p'
-alias sl='be rspec -f n'
+
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
@@ -109,6 +109,7 @@ env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
 }
 
 
+# mutt doesn't like urxvt-* and tmux-* TERMs
 Mutt() {
   TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
 }
@@ -120,14 +121,10 @@ Mutt() {
 # or
 #    DELAY=10 Loop grunt test:browser
 Loop() {
-  if [[ -z "$DELAY" ]] ; then
-    DELAY=7
-  fi
-
+  [[ -z "$DELAY" ]] && DELAY=7
   echo "Loop time $DELAY sec"
 
-  while true
-  do
+  while true ; do
     $*
     sleep $DELAY
   done
@@ -144,7 +141,7 @@ Prompt() {
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
-  echo "$c\\H$reset $currentDir $branch$sigil "
+  echo "$c\\H$reset $currentDir $branch\n$sigil "
 }
 
 # prompt command gets called before any other command
