@@ -13,5 +13,5 @@ file=~/Dropbox/Public/screens/$name
 
 echo "Saving $file and uploading to dropbox" > /dev/stderr
 
-gnome-screenshot -f $file -a
+gnome-screenshot -f $file -a 2>&1 > /var/log/scrn-$(perl -e "print time").log
 dropbox puburl $file
