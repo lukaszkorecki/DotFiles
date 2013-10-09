@@ -50,10 +50,10 @@ HISTSIZE=90000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
-extra_files="~/.private/env.sh
-~/.rvm/scripts/rvm
-~/.DotFiles/xres/init.sh
-/usr/share/bash-completion/bash_completion"
+extra_files="$HOME/.private/env.sh
+             $HOME/.rvm/scripts/rvm
+             $HOME/.DotFiles/xres/init.sh
+             /usr/share/bash-completion/bash_completion"
 
 for extra in $extra_files ; do
   [[ -r $extra ]] && source $extra
