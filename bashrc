@@ -141,7 +141,8 @@ Prompt() {
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
-  echo "$c\\H$reset $currentDir $branch$sigil "
+  local jobCount=$(jobs | wc -l)
+  echo "$jobCount $c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
