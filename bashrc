@@ -141,7 +141,7 @@ Prompt() {
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
-  local jobCount=$(jobs | wc -l)
+  local jobCount="$(Color 1)$(jobs | wc -l)$reset"
   echo "$jobCount $c\\H$reset $currentDir $branch$sigil "
 }
 
