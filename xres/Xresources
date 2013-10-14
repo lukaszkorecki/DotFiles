@@ -17,11 +17,30 @@ URxvt.matcher.button:   1
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-URxvt.depth: 32
-URxvt*saveLines: 12000
-URxvt*font: terminus-14
+
+! Fix font space
+! Pointer
 URxvt*boldFont: terminus-bold-14
+URxvt*font: terminus-14
+URxvt*letterSpace: -1
+URxvt*letterSpace: -1
+URxvt*saveLines: 12000
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
-URxvt*letterSpace: -1
+URxvt.depth: 32
+URxvt.fading: 0
+URxvt.geometry: 90x30
+URxvt.internalBorder: 1
+URxvt.lineSpace: 0
+URxvt.loginShell: true
+URxvt.pointerBlank: true
+URxvt.transparent: false
+
+! Xft settings
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
