@@ -1,6 +1,4 @@
 URxvt.perl-lib: /home/lukasz/.DotFiles/xres/urxvt-perls/
-Xft.antialias:  false
-
 URxvt.perl-ext-common:  default,matcher,clipboard,keyboard-select,url-select
 
 URxvt.keysym.M-c:   perl:clipboard:copy
@@ -17,12 +15,9 @@ URxvt.matcher.button:   1
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-
-! Fix font space
-! Pointer
+! Fix font space and pointer
 URxvt*boldFont: terminus-bold-14
 URxvt*font: terminus-14
-URxvt*letterSpace: -1
 URxvt*letterSpace: -1
 URxvt*saveLines: 12000
 URxvt*scrollBar: true
@@ -31,7 +26,7 @@ URxvt*scrollstyle: plain
 URxvt.depth: 32
 URxvt.fading: 0
 URxvt.geometry: 90x30
-URxvt.internalBorder: 1
+URxvt.internalBorder: 0
 URxvt.lineSpace: 0
 URxvt.loginShell: true
 URxvt.pointerBlank: true
