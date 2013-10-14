@@ -1,5 +1,5 @@
-"" Pathogen -----------------------------------------------------------------
 call pathogen#runtime_append_all_bundles()
+"" Pathogen -----------------------------------------------------------------
 " call pathogen#helptags()
 
 call gitbrowse#AddMaps()
@@ -93,7 +93,7 @@ autocmd FileType mail,gitcommit set spell
 " colors -------------------------------------------------------------------
 let &t_Co=256
 set background=dark
-colorscheme zenburn
+colorscheme solarized
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes
   " work properly when Vim is used inside tmux and GNU screen.
@@ -125,6 +125,7 @@ cnoremap <c-d> <Del>
 nnoremap <Leader>d :e <C-R>=expand('%:p:h') . '/'<CR>
 
 nnoremap <leader>c :copen<cr>
+nnoremap <leader>l :lopen<cr>
 nnoremap <leader>e :Errors<cr>
 nnoremap <leader>C :cclose<cr>
 " Better split management, kept in sync with tmux' mappings
@@ -295,8 +296,8 @@ function! NumSwap()
   endif
 endf
 
-nmap <silent> <leader>l :call NumSwap()<cr>
-vmap <silent> <leader>l :call NumSwap()<cr>gv
+nmap <silent> <leader>r :call NumSwap()<cr>
+vmap <silent> <leader>r :call NumSwap()<cr>gv
 
 function! ConvertHash()
   let @z="xf Pf=df "
