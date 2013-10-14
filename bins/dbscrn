@@ -1,5 +1,7 @@
-name=$1
 #!/usr/bin/env bash
+name=$1
+ts=$(perl -e "print time")
+
 if [[ -z "$name" ]] ; then
   echo Needs a file name!
   exit 1
@@ -8,10 +10,11 @@ fi
 if [[ -z "$(echo $name | grep -E ".png$")" ]] ; then
   name="$name.png"
 fi
+name="$ts-$name"
 
 file=~/Dropbox/Public/screens/$name
 
 echo "Saving $file and uploading to dropbox" > /dev/stderr
 
-gnome-screenshot -f $file -a 2>&1 > /var/log/scrn-$(perl -e "print time").log
+gnome-screenshot -f $file -a 2>/dev/null &1 > /tmp/.scrn-$ts.log
 dropbox puburl $file
