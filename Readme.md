@@ -43,3 +43,5 @@ I also play with:
 - Node.js
 
 so you'll probably find some things related to them.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lukaszkorecki/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
