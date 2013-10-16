@@ -19,10 +19,12 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt*boldFont: terminus-bold-14
 URxvt*font: terminus-14
 URxvt*letterSpace: -1
-URxvt*saveLines: 12000
+URxvt*saveLines: 100000
+! scrolling and such
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
+URxvt*scrolltTtyOutput: false
 URxvt.depth: 32
 URxvt.fading: 0
 URxvt.geometry: 90x30
