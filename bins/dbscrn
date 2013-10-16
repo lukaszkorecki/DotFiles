@@ -16,5 +16,5 @@ file=~/Dropbox/Public/screens/$name
 
 echo "Saving $file and uploading to dropbox" > /dev/stderr
 
-gnome-screenshot -f $file -a 2>/dev/null &1 > /tmp/.scrn-$ts.log
+gnome-screenshot -f $file -a
 dropbox puburl $file
