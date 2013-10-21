@@ -12,14 +12,8 @@ function! gitbrowse#GitBrowseFile()
 endf
 
 " open a range of lines on github using git-browse
-function! gitbrowse#RangeGitBrowseFile() range
+function! gitbrowse#GitBrowseFileRange() range
   let _file = expand('%')
   let _range="-r".a:firstline.",".a:lastline
   exec "Git browse " . _range . " " . _file
-endf
-
-
-function! gitbrowse#AddMaps()
-  nnoremap <leader>B :call gitbrowse#GitBrowseFile()<CR>
-  vnoremap <leader>B :call gitbrowse#RangeGitBrowseFile()<CR>
 endf

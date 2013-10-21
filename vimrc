@@ -2,8 +2,6 @@ call pathogen#runtime_append_all_bundles()
 "" Pathogen -----------------------------------------------------------------
 " call pathogen#helptags()
 
-call gitbrowse#AddMaps()
-
 runtime macros/matchit.vim
 
 "" Global settings ----------------------------------------------------------
@@ -251,6 +249,10 @@ autocmd FileType scss setlocal iskeyword+=-,$,@
 au BufNewFile,BufRead *.scm,*.clj set lisp
 
 " Plugins settings ----------------------------------------------------------
+" git-browse mappings
+nnoremap <leader>B :call gitbrowse#GitBrowseFile()<CR>
+vnoremap <leader>B :call gitbrowse#GitBrowseFileRange()<CR>
+
 " This work only if pathogen exists
 
 " fugitive
