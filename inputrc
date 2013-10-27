@@ -1,0 +1,12 @@
+# http://cnswww.cns.cwru.edu/php/chet/readline/readline.html#SEC9
+$include /etc/inputrc
+"\C-j": menu-complete
+"\C-k": menu-complete-backward
+"\C-o": history-search-backward
+"\t": menu-complete
+
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+set completion-ignore-case on
+set completion-prefix-display-length 2
+set history-size 0

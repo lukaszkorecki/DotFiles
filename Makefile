@@ -1,4 +1,4 @@
-LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags
+LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc
 XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
