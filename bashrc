@@ -17,6 +17,10 @@ if [[ -z  "$(ssh-add -L | grep id_rsa)" ]] ; then
   echo "$(Color 1)Main private key is not loaded!$(ResetColor)" >&2
 fi
 
+LoadSshKeys() {
+  ssh-add ~/.ssh/id_rsa
+}
+
 export LC_LANG=$LANG
 
 # custom scripts and tools
@@ -34,8 +38,7 @@ export ANDROID_HOME=~/proj/sdk
 export PATH=~/proj/sdk/tools:$PATH
 export PATH=~/proj/sdk/platform-tools:$PATH
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
+# colors in less and ls
 export LESS="-RSM~gIsw"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
@@ -50,6 +53,7 @@ HISTSIZE=90000000
 HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
+# load extra shell env files only if they are readable
 extra_files="$HOME/.private/env.sh
              $HOME/.rvm/scripts/rvm
              $HOME/.DotFiles/xres/init.sh
@@ -94,6 +98,8 @@ alias be='b exec '
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
+
+alias emacs="emacs24 -nw"
 
 export EDITOR=vim
 
