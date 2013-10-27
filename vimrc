@@ -250,8 +250,8 @@ au BufNewFile,BufRead *.scm,*.clj set lisp
 
 " Plugins settings ----------------------------------------------------------
 " git-browse mappings
-nnoremap <leader>B :call gitbrowse#GitBrowseFile()<CR>
-vnoremap <leader>B :call gitbrowse#GitBrowseFileRange()<CR>
+nnoremap <leader>B :call gitsurf#File()<CR>
+vnoremap <leader>B :call gitsurf#FileRange()<CR>
 
 " This work only if pathogen exists
 
