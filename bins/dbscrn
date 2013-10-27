@@ -17,4 +17,6 @@ file=~/Dropbox/Public/screens/$name
 echo "Saving $file and uploading to dropbox" > /dev/stderr
 
 gnome-screenshot -f $file -a
-dropbox puburl $file
+url=$(dropbox puburl $file 2>&1)
+echo "URL: $url"
+echo $url | xsel -ib
