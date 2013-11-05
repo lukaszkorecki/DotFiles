@@ -16,8 +16,8 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! Fix font space and pointer
-URxvt*boldFont: terminus-bold-14
 URxvt*font: terminus-14
+URxvt*boldFont: terminus-14
 URxvt*letterSpace: -1
 URxvt*saveLines: 100000
 ! scrolling and such
