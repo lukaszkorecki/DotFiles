@@ -138,7 +138,10 @@ Loop() {
 
 
 Prompt() {
+  local stat=$?
   local reset=$(ResetColor)
+
+  local lastStat="$(Color 10)$stat$reset"
 
   local currentDir="$(Color 6)$(basename $(pwd))$reset"
   local branch=$(git cb)
@@ -148,7 +151,7 @@ Prompt() {
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
   local jobCount="$(Color 1)$(jobs | wc -l)$reset"
-  echo "$jobCount $c\\H$reset $currentDir $branch$sigil "
+  echo "$lastStat $jobCount $c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
