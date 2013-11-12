@@ -247,7 +247,13 @@ au BufNewFile,BufRead *.scm,*.clj set lisp
 nnoremap <leader>B :call gitsurf#File()<CR>
 vnoremap <leader>B :call gitsurf#FileRange()<CR>
 
-" This work only if pathogen exists
+" ctrl-p
+let g:ctrlp_extensions = ['tag' ]
+nnoremap <leader>T :call CtrlPTag()<CR>
+  let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(vendor)', }
+
+
 
 " fugitive
 noremap <leader>g :Ggrep <cword><CR>
