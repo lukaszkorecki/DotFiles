@@ -30,17 +30,13 @@ set wildmode=list:longest,full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " search --------------------------------------------------------------------
-set incsearch
-set ignorecase smartcase
-set hlsearch
+set incsearch ignorecase smartcase hlsearch
 :nnoremap <space> :nohlsearch<cr>
 
 
 " No backups ----------------------------------------------------------------
 " Vim crashes so rarely I don't feel like I need these
-set nobackup
-set nowritebackup
-set noswapfile
+set nobackup nowritebackup noswapfile
 
 " status line --------------------------------------------------------------
 set statusline=
@@ -69,8 +65,7 @@ set bs=2
 
 " lines and margins --------------------------------------------------------
 " highlight current line and add line numbers
-set cursorline
-set number
+set cursorline number
 
 " nice colors for error messages
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -100,10 +95,7 @@ if &term =~ '256color'
 endif
 
 " indent --------------------------------------------------------------------
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
-set expandtab
+set softtabstop=2 shiftwidth=2 tabstop=2 expandtab
 
 " Key mappings -------------------------------------------------------------
 
@@ -118,6 +110,8 @@ cnoremap <c-n> <Down>
 cnoremap <c-b> <Left>
 cnoremap <c-f> <Right>
 cnoremap <c-d> <Del>
+" use %/ as current directory
+cmap %/ %:p:h/
 
 " open current file's location
 nnoremap <Leader>d :e <C-R>=expand('%:p:h') . '/'<CR>
