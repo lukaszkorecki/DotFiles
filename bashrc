@@ -1,3 +1,6 @@
+export LANG=en_US.UTF-8
+export LC_LANG=$LANG
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -20,8 +23,6 @@ fi
 LoadSshKeys() {
   ssh-add ~/.ssh/id_rsa
 }
-
-export LC_LANG=$LANG
 
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH

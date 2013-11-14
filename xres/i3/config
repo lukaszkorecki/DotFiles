@@ -134,4 +134,4 @@ exec --no-startup-id ~/.DotFiles/xres/init.sh
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
 
 # wallapaper
-exec --no-startup-id feh  --bg-fill ~/Dropbox/Photos/Wallpapers/1308994420520.jpg
+exec --no-startup-id feh  --bg-fill ~/Dropbox/WALL.png
