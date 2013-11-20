@@ -1,5 +1,5 @@
 export LANG=en_US.UTF-8
-export LC_LANG=$LANG
+unset LC_ALL ; unset LC_LANG
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -103,6 +103,10 @@ alias rightsplit='tmux splitw -h -p 33  '
 alias emacs="emacs24 -nw"
 
 export EDITOR=vim
+
+# copy/paste stuff
+alias cpy='xsel -ib'
+alias pst='xsel -ob'
 
 # vless was removed - use view
 
