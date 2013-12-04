@@ -125,6 +125,7 @@ bar {
 
 # goodies
 exec --no-startup-id nm-applet
+exec --no-startup-id volti
 exec --no-startup-id dropbox start
 
 # rxvt/uxterm stuff

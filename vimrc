@@ -219,12 +219,12 @@ autocmd Filetype java set completefunc=javacomplete#CompleteParamsInfo
 " markdown
 au BufNewFile,BufRead  *.md,*.mkd,*.markdown set filetype=markdown
 
+" clojure
+au BufNewFile,BufRead  *.clj set filetype=clojure
+
 " python and go is weird
-au BufNewFile,BufRead *.py,*.go set tabstop=4
-au BufNewFile,BufRead *.py,*.go set softtabstop=4
-au BufNewFile,BufRead *.py,*.go set shiftwidth=4
-au BufNewFile,BufRead *.py,*.go set listchars=tab:\|\ ,eol:~
-au BufNewFile,BufRead *.py,*.go set list
+au BufNewFile,BufRead *.py,*.go set tabstop=4 softtabstop=4 shiftwidth=4
+au BufNewFile,BufRead *.py,*.go set list listchars=tab:\|\ ,eol:~
 
 " go specific
 au BufNewFile,BufRead *.go set ft=go
@@ -274,10 +274,11 @@ iabbr sigw_ -- <CR>Łukasz<CR>http://geckoboard.com
 " Functions ----------------------------------------------------------------
 
 fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+
+  call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 

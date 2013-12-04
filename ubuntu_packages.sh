@@ -9,6 +9,8 @@ sudo apt-get install tmux \
                     build-essential \
                     virtualbox \
                     ruby-full \
+                    nm-applet \
+                    volti \
                     feh \
                     curl \
                     excuberant-ctags
