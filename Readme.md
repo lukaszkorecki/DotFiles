@@ -27,21 +27,9 @@ Programming languages I use on daily basis:
     cd .DotFiles
     make setup
 
-### Optional stuff but really cool to have (and use)
+### Optional stuff
 
-- mutt
-- ctags (latest svn)
-- weechat
-- pry
+There is a `ubuntu_packages` script which installs other (essential) software such as Vim or i3
 
-I also play with:
-
-- Go
-- Chicken Scheme
-- Clojure
-- Python
-- Node.js
-
-so you'll probably find some things related to them.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lukaszkorecki/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
