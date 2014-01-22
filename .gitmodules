@@ -65,3 +65,6 @@
 [submodule "vim/bundle/vim-clojure-static"]
 	path = vim/bundle/vim-clojure-static
 	url = git@github.com:guns/vim-clojure-static.git
+[submodule "bins/vendor/git-gang"]
+	path = bins/vendor/git-gang
+	url = git@github.com:geckoboard/gang.git
