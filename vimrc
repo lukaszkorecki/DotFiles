@@ -23,6 +23,7 @@ set showcmd
 set ruler
 set scrolloff=3
 set nofoldenable
+set lazyredraw
 
 " Wildmenu bro!
 set wildmenu
