@@ -10,6 +10,7 @@
   diff = true
 [core]
   pager = less -F -X
+	excludesfile = /home/vagrant/.gitignore_global
 [grep]
   linenumber = true
   extendedRegexp = true
