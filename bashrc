@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+# vi: set ft=sh :
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 
@@ -100,7 +102,7 @@ alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 
-alias emacs="emacs24 -nw"
+alias emacs="TERM=xterm-256color emacs24 -nw"
 
 export EDITOR=vim
 
