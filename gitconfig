@@ -19,6 +19,7 @@
   default = current
 
 [alias]
+  last-commit = log -n1 --format=%H
   c = commit
   cm = commit -m
   co = checkout
