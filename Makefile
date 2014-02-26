@@ -36,3 +36,7 @@ setup : link update private
 tools:
 	sudo apt-get install ctags tmux vim weechat
 	sudo go get -u github.com/jstemmer/gotags
+
+emacs:
+	git clone git@github.com:lukaszkorecki/cult-leader.git ~/.emacs.d
+	cd ~/.emacs.d && make
