@@ -72,6 +72,10 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 
+# move workspace to a screen on the left/right
+bindsym $mod+comma move workspace to output left
+bindsym $mod+dot move workspace to output right
+
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace 1
 bindsym $mod+Shift+at move container to workspace 2
@@ -138,4 +142,4 @@ exec --no-startup-id ~/.DotFiles/xres/init.sh
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
 
 # wallapaper
-exec --no-startup-id feh  --bg-fill ~/Dropbox/BG.jpx
+exec --no-startup-id feh  --bg-fill ~/Dropbox/BG.jpg
