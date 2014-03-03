@@ -31,6 +31,7 @@
   pull-all = pull --recurse-submodules -r
   s = status
   m = merge --no-ff
+	zip-current-branch = !git archive --format zip --output ./$(pwd | rev | cut -d/ -f1 | rev).zip $(git cb)
 
   d = diff
   dc = diff --cached
