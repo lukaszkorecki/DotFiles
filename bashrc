@@ -58,9 +58,9 @@ HISTCONTROL=ignorespace:ignoredups
 
 # load extra shell env files only if they are readable
 extra_files="$HOME/.private/env.sh
-             $HOME/.rvm/scripts/rvm
-             $HOME/.DotFiles/xres/init.sh
-             /usr/share/bash-completion/bash_completion"
+$HOME/.rvm/scripts/rvm
+$HOME/.DotFiles/xres/init.sh
+/usr/share/bash-completion/bash_completion"
 
 for extra in $extra_files ; do
   [[ -r $extra ]] && source $extra
@@ -97,13 +97,16 @@ alias la='ls --color -Ah'
 alias l='ls --color -CF'
 alias b=bundle
 alias be='b exec '
+alias psg="ps aux | grep -E "
+alias psgv="ps aux | grep -Ev "
 
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 
-alias emacs="TERM=xterm-256color emacs24 -nw"
+alias emacs="emacsclient -c -n -e"
 
+# mhmmmmmm
 export EDITOR=vim
 
 # copy/paste stuff
@@ -115,10 +118,10 @@ alias pst='xsel -ob'
 # edit modified files in vim
 # use vim as man viewer
 viman() {
-env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-  vim -R -c 'set ft=man nomod nolist nonumber' -c 'map q :q<CR>' \
-  -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-  -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
+  env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
+    vim -R -c 'set ft=man nomod nolist nonumber' -c 'map q :q<CR>' \
+    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
+    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
 }
 
 
