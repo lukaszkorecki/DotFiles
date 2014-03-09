@@ -47,6 +47,7 @@
 [submodule "vim/bundle/javacomplete"]
 	path = vim/bundle/javacomplete
 	url = git@github.com:vim-scripts/javacomplete.git
+	ignore = untracked
 [submodule "vim/bundle/android-javacomplete"]
 	path = vim/bundle/android-javacomplete
 	url = git@github.com:anddam/android-javacomplete.git
