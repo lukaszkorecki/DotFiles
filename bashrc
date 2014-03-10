@@ -103,8 +103,7 @@ alias psgv="ps aux | grep -Ev "
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
-
-alias emacs="emacsclient -c -n -e"
+alias v=vagrant
 
 # mhmmmmmm
 export EDITOR=vim
