@@ -262,7 +262,12 @@ local c_path='%{$fg[yellow]%}%~%{$reset_color%}'
 PROMPT="${host} %n ${sigil} "
 RPROMPT="${git_branch} ${c_path}"
 
-source ~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh
+synHL="~/.DotFiles/zsh/highlight/zsh-syntax-highlighting.zsh"
+if [[ -f $synHL ]] ; then
+  source $snyHL
+fi
+
+unset synHL
 
 # extra pre-machine settings
 if [[ -f ~/zshrc.local ]]; then
