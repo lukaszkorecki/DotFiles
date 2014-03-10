@@ -9,4 +9,3 @@ set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set completion-ignore-case on
 set completion-prefix-display-length 2
-set history-size 0
