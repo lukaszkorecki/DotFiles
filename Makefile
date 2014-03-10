@@ -1,10 +1,10 @@
-LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global
+LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv
 XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
 
 link: $(LIST)
-	for f in $(LIST) ; do ln -s ~/.DotFiles/$$f ~/.$$f; done
+	for f in $(LIST) ; do ln -fvs ~/.DotFiles/$$f ~/.$$f; done
 
 unlink: $(LIST)
 	@for f in $(LIST) ; do rm ~/.$$f; done
