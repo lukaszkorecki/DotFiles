@@ -105,6 +105,10 @@ alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 alias v=vagrant
 
+em() {
+  emacs24 $* & 2>&1 > /var/log/em.log
+}
+
 # mhmmmmmm
 export EDITOR=vim
 
