@@ -21,8 +21,8 @@ Here's a list of tools I can't work without:
 
 I constantly switch between:
 
-Emacs24 + evil-mode - conigs are [in cult-leader repo](https://github.com/lukaszkorecki/cult-leader)
-Vim - configs are in [DotVim repo](https://github.com/lukaszkorecki/DotVim)
+- Emacs24 + evil-mode - conigs are [in cult-leader repo](https://github.com/lukaszkorecki/cult-leader)
+- Vim - configs are in [DotVim repo](https://github.com/lukaszkorecki/DotVim)
 
 
 #### Programming languages I use
