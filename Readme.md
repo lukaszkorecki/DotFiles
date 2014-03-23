@@ -8,16 +8,30 @@ If you want to use them though....
 - git
 - make
 
+#### Tools
+
 Here's a list of tools I can't work without:
 
-- vim 7.3 (>7.1  is probably fine)
 - tmux (latest)
 - Bash
+- weechat
+- i3
 
-Programming languages I use on daily basis:
+#### Editors
+
+I constantly switch between:
+
+Emacs24 + evil-mode - conigs are [in cult-leader repo](https://github.com/lukaszkorecki/cult-leader)
+Vim - configs are in [DotVim repo](https://github.com/lukaszkorecki/DotVim)
+
+
+#### Programming languages I use
 
 - Ruby
 - Shell
+- Go
+- Scheme
+
 
 
 ### How to setup (once you got the stuff above)
