@@ -112,6 +112,8 @@ em() {
 # mhmmmmmm
 export EDITOR=vim
 
+export NO_SHARED_DEV=1
+
 # copy/paste stuff
 alias cpy='xsel -ib'
 alias pst='xsel -ob'
