@@ -43,3 +43,4 @@ emacs:
 
 vim:
 	git clone git@github.com:lukaszkorecki/DotVim ~/.vim
+	cd ~/.vim && make
