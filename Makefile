@@ -1,4 +1,4 @@
-LIST = vim vimrc irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv
+LIST = irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv
 XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
@@ -40,3 +40,6 @@ tools:
 emacs:
 	git clone git@github.com:lukaszkorecki/cult-leader.git ~/.emacs.d
 	cd ~/.emacs.d && make
+
+vim:
+	git clone git@github.com:lukaszkorecki/DotVim ~/.vim
