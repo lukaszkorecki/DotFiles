@@ -1,5 +1,5 @@
-screen="HDMI1"
 #!/usr/bin/env bash
+screen="HDMI1"
 main="LVDS1"
 
 if [[ -z "$(xrandr | grep "$screen disconn")" ]] ; then
