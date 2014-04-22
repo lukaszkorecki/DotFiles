@@ -132,6 +132,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 15 -time 0.01
 bar {
         status_command i3status -c ~/.DotFiles/xres/i3status_$HOSTNAME.conf
         position top
+        tray_output primary
 }
 
 # goodies
