@@ -23,11 +23,11 @@ private:
 	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private || true
 
 update:
-	git pull -r
+	git pull -r -u origin master
 	git submodule update --init
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
-	git submodule foreach git pull --rebase
+	git submodule foreach git pull -r -u origin master
 
 safe-update:
 	git stash || make update || git stash pop
