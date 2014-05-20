@@ -32,7 +32,7 @@
   s = status
   ss = status -sb
   m = merge --no-ff
-	zip-current-branch = !git archive --format zip --output ./$(pwd | rev | cut -d/ -f1 | rev).zip $(git cb)
+  zip-current-branch = !git archive --format zip --output ./$(pwd | rev | cut -d/ -f1 | rev).zip $(git cb)
   last = log -n1 --pretty="%H"
 
   d = diff
