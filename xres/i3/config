@@ -141,10 +141,13 @@ exec --no-startup-id volti
 exec --no-startup-id dropbox start
 
 # rxvt/uxterm stuff
-exec --no-startup-id ~/.DotFiles/xres/init.sh
+# exec --no-startup-id ~/.DotFiles/xres/init.sh
 
 # use 2nd monitor
 exec --no-startup-id bash ~/.DotFiles/xres/2ndmonitor.sh
 
 # wallapaper
 exec --no-startup-id feh  --bg-fill ~/Dropbox/BG.jpg
+
+# autostart apps
+exec --no-startup-id bash ~/.DotFiles/xres/start.sh
