@@ -5,7 +5,7 @@ if [[ -z $name ]]; then
   exit 1
 fi
 openssl genrsa -des3 -out $name.key 2048
-openssl req -new -key $name.key -out $name.csr
+openssl req -new -key $name.key -out $name.csr -days 1095
 cp $name.key $name.key.org
 openssl rsa -in $name.key.org -out $name.key
-openssl x509 -req -days 365 -in $name.csr -signkey $name.key -out $name.crt
+openssl x509 -req -days 1095 -in $name.csr -signkey $name.key -out $name.crt
