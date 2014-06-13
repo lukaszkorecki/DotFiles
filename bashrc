@@ -23,6 +23,12 @@ if [[ -z  "$(ssh-add -L | grep id_rsa)" ]] ; then
 fi
 
 LoadSshKeys() {
+  if ssh-add -l 2>&1 | grep 'Could not open a conn' ; then
+    echo "> Reactivating ssh-agent"
+    eval `ssh-agent`
+  fi
+
+  echo "> Adding id_rsa key"
   ssh-add ~/.ssh/id_rsa
 }
 

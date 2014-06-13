@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# shim used for turses - I just need the url to be displayed
+
+echo "YO URL ==================================="
+echo $*
+echo "END    ==================================="
