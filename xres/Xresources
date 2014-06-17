@@ -7,8 +7,8 @@ URxvt.keysym.Super-c:   perl:clipboard:copy
 URxvt.keysym.Super-v:   perl:clipboard:paste
 
 URxvt.keysym.C-u:    perl:url-select:select_next
-URxvt.url-launcher:      /usr/bin/firefox
-URxvt.url-select.launcher:   /usr/bin/firefox
+URxvt.url-launcher:      /usr/bin/google-chrome-beta
+URxvt.url-select.launcher:   /usr/bin/google-chrome-beta
 URxvt.url-select.underline: true
 URxvt.matcher.button:   1
 
