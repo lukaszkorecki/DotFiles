@@ -28,6 +28,8 @@
   lo = log --graph --oneline --abbrev-commit
   ll = log --graph --pretty='format:%h | %an | %s'
   pr = pull --rebase
+  re-continue = rebase --continue
+  re-skip = rebase --skip
   pull-all = pull --recurse-submodules -r
   s = status
   ss = status -sb
