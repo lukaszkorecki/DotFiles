@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+set +x
 name=$1
 ts=$(perl -e "print time")
 
 if [[ -z "$name" ]] ; then
-  echo Needs a file name!
-  exit 1
+  echo Using aut0 name
+  name="auto"
 fi
 
 if [[ -z "$(echo $name | grep -E ".png$")" ]] ; then
