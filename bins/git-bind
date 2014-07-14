@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+import subprocess
+import argparse
+import os
+
+parser = argparse.ArgumentParser(description="Bind multiple repos and perform same operations")
+parser.add_argument('-c', metavar='command', nargs=1)
+parser.add_argument('-r', metavar='repo', nargs='+')
+
+args = parser.parse_args()
+
+command = args.c[0]
+repos = args.r
+
+def run_git_command(root, cmd):
+  repo_root = os.path.abspath(root)
+  cmd_args = [
+      "git",
+      "--git-dir",
+      repo_root + '/.git',
+      ]
+  cmd_args += cmd.split(' ')
+  print(cmd_args)
+  print subprocess.Popen(cmd_args)
+
+for repo in repos:
+  run_git_command(repo, command)
