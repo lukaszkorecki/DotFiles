@@ -97,8 +97,8 @@ alias la='ls --color -Ah'
 alias l='ls --color -CF'
 alias b=bundle
 alias be='b exec '
-alias psg="ps aux | grep -E "
-alias psgv="ps aux | grep -Ev "
+alias psg="ps aux | grep -v grep | grep -E "
+alias psgv="ps aux | grep -v grep | grep -Ev "
 
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
