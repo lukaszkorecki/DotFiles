@@ -67,6 +67,8 @@ for extra in $extra_files ; do
 done
 
 
+source $HOME/.DotFiles/vagrant-completion.sh
+
 history() {
   _bash_history_sync
   builtin history "$@"
