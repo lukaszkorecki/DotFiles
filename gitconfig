@@ -49,8 +49,6 @@
   push-and-track= !git push -u origin $(git cb)
   safe-pull = !git stash && git pull -r origin $(git cb) && git stash pop
 
-  recent-branches = !git for-each-ref --sort=-committerdate refs/heads/ | sed 's/commit.*refs.heads.//'
-
   llog = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=iso
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
 [branch]
