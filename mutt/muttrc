@@ -7,6 +7,7 @@ set certificate_file = ~/.mutt/certs
 set header_cache     = ~/.mutt/.hcache
 set message_cachedir = ~/.mutt/.bcache
 set record           = ~/.mutt/sent
+set alias_file       = ~/.private/mutt_aliases
 
 # editing
 set charset          = "utf-8"
@@ -45,7 +46,7 @@ macro index gs "<change-folder>=Sent<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
 # ghetto email search
-set query_command="name='%s' ~/.DotFiles/bins/search_mail.sh"
+set query_command="name='%s' ~/.DotFiles/bins/search_mail"
 
 # colors
 source ~/.DotFiles/mutt/muttrc-solarized.muttrc
