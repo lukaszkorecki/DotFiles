@@ -63,8 +63,16 @@ set sidebar_visible=yes
 set sidebar_delim='|'
 set sidebar_sort=yes
 
-# which mailboxes to list in the sidebar
-mailboxes =INBOX ="[Gmail]/All Mail" ="[Gmail]/Important" ="[Gmail]/Sent Mail" ="[Gmail]/Drafts"
+Allow Mutt to open new imap connection automatically.
+unset imap_passive
+
+# Keep IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# How often to check for new mail (time in seconds).
+set mail_check = 120
+# show all directories in sidebar
+set imap_check_subscribed
 
 # sidebar navigation
 bind index sn sidebar-next
