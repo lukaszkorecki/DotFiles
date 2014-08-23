@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
 # ./remove-submodule name path-to-sm
+#!/usr/bin/env bash
 if [[ $1 == "-h" ]] ; then
   echo "$(basename $0) <submodule name> <path to submodule>"
+  exit 0
+fi
+
+if [[ -z "$1$2"  ]] ; then
+  $(basename $0) -h
   exit 0
 fi
 
