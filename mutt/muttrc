@@ -64,7 +64,7 @@ set sidebar_visible=yes
 set sidebar_delim='|'
 set sidebar_sort=yes
 
-Allow Mutt to open new imap connection automatically.
+# Allow Mutt to open new imap connection automatically.
 unset imap_passive
 
 # Keep IMAP connection alive by polling intermittently (time in seconds).
