@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+http_remote=$(git remote -v | head -1 | awk '{ print $2 }')
+tmp=${http_remote/https:\/\//git@}
+new_remote=${tmp/com\//com:}
+logger -s -t "SWITCH"  Switching remote from $http_remote to $new_remote
+git remote rm origin
+git remote add origin $new_remote
+
+git remote -v

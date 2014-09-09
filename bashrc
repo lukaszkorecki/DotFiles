@@ -42,7 +42,7 @@ export PATH=~/proj/sdk/tools:$PATH
 export PATH=~/proj/sdk/platform-tools:$PATH
 export PATH=~/.DotFiles/bins/vendor/git-recent-branches:$PATH
 # colors in less and ls
-export LESS="-RSM~gIsw"
+export LESS="-rRSM~gIsw"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # append to the history file, don't overwrite it
