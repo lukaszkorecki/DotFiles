@@ -1,5 +1,5 @@
-[user]
 # vi: ft=gitconfig
+[user]
   email = lukasz@coffeesounds.com
   name = Łukasz Korecki
 [github]
@@ -10,7 +10,7 @@
   diff = true
 [core]
   pager = less -F -X
-	excludesfile = /home/vagrant/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [grep]
   linenumber = true
   extendedRegexp = true
@@ -19,7 +19,6 @@
   default = current
 
 [alias]
-  last-commit = log -n1 --format=%H
   c = commit
   cm = commit -m
   co = checkout
@@ -31,11 +30,11 @@
   re-continue = rebase --continue
   re-skip = rebase --skip
   pull-all = pull --recurse-submodules -r
-  s = status
-  ss = status -sb
+  ss = status
+  s = status -sb
   m = merge --no-ff
   zip-current-branch = !git archive --format zip --output ./$(pwd | rev | cut -d/ -f1 | rev).zip $(git cb)
-  last = log -n1 --pretty="%H"
+  last = rev-parse HEAD
 
   d = diff
   dc = diff --cached
