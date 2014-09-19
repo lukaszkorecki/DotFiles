@@ -97,6 +97,8 @@ alias la='ls --color -Ah'
 alias l='ls --color -CF'
 alias b=bundle
 alias be='b exec '
+alias bef='b exec foreman'
+alias fr='bef run '
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
 
