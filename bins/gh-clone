@@ -1,3 +1,15 @@
 #!/usr/bin/env bash
-echo Cloning $1
-git clone git@github.com:$1.git
+
+# test/repo.git -> test/repo
+repoPath="${1/.git/}"
+# test/repo.git -> test
+repoRoot=${1/\/*/}
+
+logger -s -t GHCLONE -- "Creating repository root if it doesn't exist"
+mkdir -p $repoRoot
+
+gitHubSource="git@github.com:$repoPath.git"
+
+logger -s -t GHCLONE --  "Cloning $gitHubSource to $repoPath"
+
+git clone $gitHubSource  $repoPath
