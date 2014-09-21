@@ -35,6 +35,7 @@
   m = merge --no-ff
   zip-current-branch = !git archive --format zip --output ./$(pwd | rev | cut -d/ -f1 | rev).zip $(git cb)
   last = rev-parse HEAD
+  root = rev-parse --show-toplevel
 
   d = diff
   dc = diff --cached
