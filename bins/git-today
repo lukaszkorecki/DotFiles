@@ -1,9 +1,11 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 # git-today
 # Written by: Gianni Chiappetta <gianni@runlevel6.org>
 # Requires: git 1.7.5+, zsh 4.3.11+
 
-function get_user { git config user.email }
+get_user() {
+  git config user.email
+}
 
 # Command normalisation
 cmd="go"
@@ -29,7 +31,7 @@ do
 done
 
 # Help
-read -d '' help_text <<"EOS"
+help_text="$(cat <<EOS
 Git Today - Show one big diff of the work you have done in the past day.
 Written by: Gianni Chiappetta <gianni@runlevel6.org>
 
@@ -49,19 +51,20 @@ Usage:
   Examples:
     git today
 
-    git today -s "14 days ago"
+    git today -s '14 days ago'
 
     git today -u some@email.tld
 
-    git today -s "7 days ago" -u person@email.tld
+    git today -s '7 days ago' -u person@email.tld
 EOS
+)"
 
 # Meat... mmm
 if [[ $cmd = 'help' ]]; then
   echo $help_text
   return
 elif [[ $cmd = 'go' ]]; then
-  eval $'commits=( ${(s.\n.)"$(git log --pretty="%H %ae" --since="$since" | grep $user | grep -oE \'^[a-f0-9]+\')"} )'
+  commits=$(git log --pretty="%H %ae" --since="$since" | grep $user | cut -d' ' -f1)
 
   if [ ${#commits} -eq 1 ]; then
     if [ -z $commits ]; then
@@ -70,8 +73,8 @@ elif [[ $cmd = 'go' ]]; then
       git show $commits
     fi
   else
-    git diff $commits[-1]..$commits[0]
+    first=$(echo $commits | tr ' ' "\n" | head -1)
+    last=$(echo $commits | tr ' ' "\n" | tail -1)
+    git diff $last..$first
   fi
 fi
-
-# vim: set filetype=zsh :
