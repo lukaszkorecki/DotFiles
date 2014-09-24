@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# super naive way of adding stuff to gitigrnoe
+
+echo "$*" | tr ' ' "\n" >> .gitignore
