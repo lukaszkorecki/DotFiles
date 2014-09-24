@@ -80,6 +80,7 @@ _bash_history_sync() {
   builtin history -r
 }
 
+
 # nice things
 shopt -s checkwinsize # track terminal window resize
 shopt -s globstar     # enable **
@@ -89,6 +90,7 @@ shopt -s autocd       # type 'dir' instead 'cd dir'
 shopt -s cdspell      # fix minor typos when cd'ing
 shopt -s cmdhist      # preserve new lines in history
 
+alias :e=vim
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
