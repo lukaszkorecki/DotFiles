@@ -33,8 +33,10 @@ module H_
 
   def self.timeit
     t = Time.now
-    yield
-    puts Time.now - t
+    ret = yield
+    STDERR << "t: #{Time.now - t}\n"
+
+    ret
   end
 
   def self.ar_log_on
