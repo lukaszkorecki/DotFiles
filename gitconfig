@@ -53,3 +53,8 @@
   changelog = log --pretty=format:'%Cgreen%d %Creset%s' --date=iso
 [branch]
   autosetupmerge = true
+
+[url "github.com:"]
+  insteadOf = gh:
+[url "bitbucket.org:"]
+  insteadOf = bb:
