@@ -1,6 +1,6 @@
 --exclude=*.js
 --exclude=*.git*
---exclude=vendor/*
+# --exclude=vendor/*
 --links=no
 --recurse=yes
 
