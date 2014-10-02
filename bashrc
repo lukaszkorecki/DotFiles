@@ -36,11 +36,10 @@ LoadSshKeys() {
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
-# android
-export ANDROID_HOME=~/proj/sdk
-export PATH=~/proj/sdk/tools:$PATH
-export PATH=~/proj/sdk/platform-tools:$PATH
-export PATH=~/.DotFiles/bins/vendor/git-recent-branches:$PATH
+for dir in ~/.DotFiles/bins/vendor/* ; do
+  export PATH=$dir:$PATH
+done
+
 # colors in less and ls
 export LESS="-rRSM~gIsw"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -165,12 +164,12 @@ Prompt() {
   local currentDir="$(Color 6)$(basename $(pwd))$reset"
   local branch=$(git cb)
   if [[ -n "$branch" ]];  then
-    branch="🍴 $(Color 4)$branch$reset"
+    branch="$(Color 4)$branch$reset"
   fi
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
   local jobCount="$(Color 1)$(jobs | wc -l)$reset"
-  echo "🍭 $lastStat 👷 $jobCount 💻 $c\\H$reset 📂 $currentDir $branch$sigil "
+  echo "🍭  $lastStat $c\\H$reset $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
