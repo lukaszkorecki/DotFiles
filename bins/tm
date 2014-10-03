@@ -10,5 +10,5 @@ else
   if [ -z "$session" ] ; then
     session=$(echo $list | head -1 | cut -d : -f 1)
   fi
-  tmux -2 -u new-session -t $session
+  tmux -2 -u att -t $session
 fi
