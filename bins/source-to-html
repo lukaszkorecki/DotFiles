@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+vim -E  \
+  -c "let g:html_no_progress=1" \
+  -c "let g:html_number_lines=0" \
+  -c ":TOhtml" \
+  -cwqa $*

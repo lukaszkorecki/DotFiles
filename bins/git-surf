@@ -1,0 +1,256 @@
+#!/usr/bin/env bash
+set -e
+# utility / setup functions
+logerr() { echo "$@" 1>&2; }
+
+VERSION=0.3.2
+RELEASED="Sat Oct 26 20:35:54 BST 2013"
+NAME=$(basename $0)
+
+# detect open-url command
+(uname | grep Darwin >/dev/null) && (which open > /dev/null 2>&1 ) &&  open_command='open'
+(uname | grep Linux >/dev/null ) && (which xdg-open > /dev/null 2>&1 ) && open_command='xdg-open'
+
+if [[ -z "$open_command" ]] ; then
+  logerr 'No command to open the url in the browser!'
+fi
+
+showHelp() {
+  cat <<-HELP_MSG
+Usage:
+  $NAME [OPTION] [FILE or COMMIT SHA1]
+  Quick and tiny tool for browsing files, commits and pull requests on GitHub
+
+Example:
+  git surf -r10,30 git-surf
+
+  Will open default web browser pointing to the git-surf file on GitHub with
+  lines 10 to 30 highlighted. If a tool like open (OSX) or xdg-open (Linux) is
+  not available, the following url will be printed to STDOUT
+
+https://github.com/lukaszkorecki/git-surf/tree/master/git-surf#L10-L30
+
+Options:
+
+-r - range of lines to highlight can be single line, or a range of lines, comma
+		separated (10,30) - works only if opening a file
+-c - opens specified commit
+-R - sets different remote than origin
+-p - opens a pull requests for current branch
+-C - opens a compare branch view on github, needs a branch name as an argument
+     defaults to master
+-v - prints version and release date
+-h - this
+
+Version:
+  $(printVersion)
+
+Website:
+
+  https://gituhb.com/lukaszkorecki/git-surf
+
+HELP_MSG
+}
+
+printVersion() {
+  echo "$NAME v$VERSION released $RELEASED"
+}
+
+# get current branch for given repo
+currentBranch() {
+  git rev-parse --abbrev-ref HEAD
+}
+
+# urlencode function taken from http://stackoverflow.com/a/17989856/130896
+urlSafeCurrentBranch() {
+  currentBranch | urlEncode
+}
+
+# yay sed!
+urlEncode() {
+  sed -e 's| |%20|g'  -e 's|!|%21|g'  -e 's|#|%23|g' \
+ -e 's|\$|%24|g' -e 's|%|%25|g' -e 's|&|%26|g' \
+  -e "s|'|%27|g" -e 's|(|%28|g' -e 's|)|%29|g'  -e 's|*|%2A|g' \
+  -e 's|+|%2B|g' -e 's|,|%2C|g' -e 's|/|%2F|g' \
+  -e 's|:|%3A|g' -e 's|;|%3B|g' -e 's|=|%3D|g' \
+  -e 's|?|%3F|g' -e 's|@|%40|g' -e 's|\[|%5B|g' \
+  -e 's|]|%5D|g'
+}
+
+# parse out a path to a file and/or repo
+# first arg is the path to the file, falls back to repo root
+getRepoRoot() {
+  # git rev-parse --show-toplevel
+  if [[ -z "$1" || "$1" == "." ]] ; then
+    echo ""
+  else
+    git ls-tree "$(currentBranch)" --full-name "$1" | awk '{ print $4 }'
+  fi
+}
+
+
+# FIXME needs to handle more git hosts, github is the only supported option
+
+# Arguments
+# - remote name, falls back to 'origin'
+# - the url "part" can be tree, pull, commit etc
+# - branch name, defaults to current branch
+# Example:
+#   git@github.com:lukaszkorecki/git-surf.git (fetch)
+#   ->
+#   lukaszkorecki/git-surf/$part/$branch
+browseUrl() {
+  local remote=$1
+
+  local part=$2
+  [[ -z "$part" ]] && part="tree"
+
+  local branch=$3
+  [[ -z "$branch" ]] && branch=$(currentBranch)
+
+  local remote_url=$(git remote -v | grep -m1 "$remote" |  awk '{ print $2 }'  )
+  # 1st sed removes git@github.com/, https://github.com/ and
+  # git@github.com:
+  local user_and_repo_name=$(echo "$remote_url" | sed -e 's/.*github.com.//' -e 's/.git$//' )
+  if [[ -z $user_and_repo_name ]] ; then
+    logerr "Remote '$remote' was not found!"
+    exit 1
+  fi
+
+  echo "https://github.com/$user_and_repo_name/$part/$branch"
+}
+
+# Arguments
+# - commit sha
+# Returns  https://github.com/a/b/commit/SHA
+getCommitUrl() {
+  local commit=$1
+  if [[ -z "$commit" ]] ; then
+    logerr 'No commit SHA1!'
+    exit 1
+  fi
+ echo "$(browseUrl $REMOTE "commit" "$commit")"
+}
+
+# Returns url for comparing current branch with one specified by user
+# Note: branch names need to be urlencoded
+# Arguments
+# - base branch name
+getCompareURL() {
+  local baseBranch="$1"
+  if [[ -z "$baseBranch" ]] ; then
+    logerr "No branch to compare!"
+    exit 1
+  fi
+  local urlEncBaseBranch=$(echo -n "$baseBranch" | urlEncode)
+  echo "$(browseUrl $REMOTE  "compare" "$urlEncBaseBranch")...$(urlSafeCurrentBranch)"
+
+}
+
+# Returns pull request url,
+# Note: branch name needs to be url-encoded.
+# Nice thing is that if a pull request doesn't exist, github's website
+# will show a dialog to create one, based on branch name
+# If a PR exists already github will redirect to pull request view
+# No API calls necessary
+getPullReqUrl() {
+  echo "$(browseUrl  $REMOTE "pull"  "$(urlSafeCurrentBranch)")"
+}
+
+# turns 20,30 into #L20-L30
+parseRange() {
+  local range="$1"
+  if [[ -z "$1" ]] ; then
+    echo ""
+  else
+    # Replace , to -L
+    echo "#L${range/,/-L}"
+  fi
+}
+
+# Start actuall prog
+REMOTE=origin
+SHOWHELP=n
+SHOWCOMMIT=n
+SHOWCOMPARE=n
+COMPAREBRANCH=master
+RANGE=""
+SHOWPULLREQUEST=n
+SHOWVERSION=n
+
+while getopts "vhC:c:R:r:pn" OPTIONS; do
+  case "$OPTIONS" in
+    h)
+      SHOWHELP=y
+      ;;
+
+    v)
+      SHOWVERSION=y
+      ;;
+
+    c)
+      SHOWCOMMIT=y
+      COMMIT="$OPTARG"
+      ;;
+
+    C)
+      SHOWCOMPARE=y
+      COMPAREBRANCH="$OPTARG"
+      ;;
+
+    R)
+      REMOTE="$OPTARG"
+      ;;
+
+    r)
+      RANGE="$OPTARG"
+      ;;
+    p)
+      SHOWPULLREQUEST=y
+      ;;
+    n)
+      NOOPEN=y
+      ;;
+  esac
+done
+
+# last unparsed arg becomes the file
+FILE=$(echo "$*" | awk '{ print $NF }')
+
+if [[ $SHOWHELP == 'y' ]] ; then
+	showHelp
+  exit 0
+fi
+
+if [[ $SHOWVERSION == 'y' ]] ;then
+  printVersion
+  exit 0
+fi
+# commit mode
+if [[ $SHOWCOMMIT == 'y' ]] ; then
+  url=$(getCommitUrl $COMMIT)
+elif [[ $SHOWCOMPARE == 'y' ]] ; then
+  url=$(getCompareURL $COMPAREBRANCH)
+elif [[ $SHOWPULLREQUEST == 'y' ]] ; then
+  url=$(getPullReqUrl)
+else
+  range=$(parseRange $RANGE)
+  path=$(getRepoRoot "$FILE")
+  url="$(browseUrl $REMOTE)/$path$range"
+
+fi
+
+if [[ "$NOOPEN" = "y" ]] ;then
+  echo "$url"
+else
+  if [[ -z $DEBUG ]] ; then
+    if [[ -z "$open_command" ]] ; then
+      echo "$url"
+    else
+      eval "$open_command '$url'"
+    fi
+  else
+    logerr "Open command: $open_command"
+    logerr "Url: $url"
+  fi
+fi
