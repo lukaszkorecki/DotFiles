@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+file="$*"
 vim -E  \
   -c "let g:html_no_progress=1" \
   -c "let g:html_number_lines=0" \
   -c ":TOhtml" \
-  -cwqa $*
+  -cwqa $file
+
+sed -i -e "s/monospace;/Monaco; font-size: 36pt;/g" "$file"".html"
