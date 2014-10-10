@@ -2,6 +2,7 @@
 # vi: set ft=sh :
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
+unset command_not_found_handle
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -34,6 +35,7 @@ LoadSshKeys() {
 
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
+export PATH=$HOME/.private/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
 for dir in ~/.DotFiles/bins/vendor/* ; do
@@ -108,14 +110,8 @@ alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 alias v=vagrant
 
-em() {
-  emacs24 $* & 2>&1 > /var/log/em.log
-}
-
 # mhmmmmmm
 export EDITOR=vim
-
-export NO_SHARED_DEV=1
 
 # copy/paste stuff
 alias cpy='xsel -ib'
@@ -169,7 +165,14 @@ Prompt() {
   local sigil="$(Color 1):$reset"
   local c=$(Color 3)
   local jobCount="$(Color 1)$(jobs | wc -l)$reset"
-  echo "🍭  $lastStat $c\\H$reset $currentDir $branch$sigil "
+
+  if [[ $(uname | grep Linux) ]] ; then
+    os=🐧" "
+  else
+    os="🍏 "
+  fi
+
+  echo "🍭  $lastStat $os $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command

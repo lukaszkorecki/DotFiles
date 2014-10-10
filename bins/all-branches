@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+find -type d -name .git -not -path "**/vendor/**" \
+  -exec printf $(tput setaf 2){}" "$(tput sgr0)  \;  \
+  -exec  git --git-dir={} cb  \;
