@@ -7,4 +7,4 @@ vim -E  \
   -c ":TOhtml" \
   -cwqa $file
 
-sed -i -e "s/monospace;/Monaco; font-size: 36pt;/g" "$file"".html"
+sed -i -e "s/monospace;/Monaco; font-size: 28pt;/g" "$file"".html"
