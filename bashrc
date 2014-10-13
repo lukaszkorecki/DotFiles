@@ -84,12 +84,17 @@ _bash_history_sync() {
 
 # nice things
 shopt -s checkwinsize # track terminal window resize
-shopt -s globstar     # enable **
 shopt -s extglob      # extended globbing capabilities
-shopt -s dirspell     # correct typos when tab-completing names
-shopt -s autocd       # type 'dir' instead 'cd dir'
 shopt -s cdspell      # fix minor typos when cd'ing
 shopt -s cmdhist      # preserve new lines in history
+
+# these options are only availabe in Bash4, which is
+# not available in OSX
+if [[ $BASH_VERSION == 4* ]] ; then
+  shopt -s autocd       # type 'dir' instead 'cd dir'
+  shopt -s dirspell     # correct typos when tab-completing names
+  shopt -s globstar     # enable **
+fi
 
 alias :e=vim
 alias grep='grep --color=auto'
