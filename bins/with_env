@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 ENV_STR=$(cat ${ENV_FILE:-.env} | grep -v "^#" | tr "\n" " ")
-echo $ENV_STR
 env $ENV_STR bundle exec  $*
