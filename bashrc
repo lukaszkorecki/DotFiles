@@ -155,7 +155,7 @@ Prompt() {
   local stat=$?
   local reset=$(ResetColor)
 
-  local lastStat="$(Color 10)$stat$reset"
+  local lastStat="$(Color 2)$stat$reset"
 
   local currentDir="$(Color 6)$(basename $(pwd))$reset"
   local branch=$(git cb)
