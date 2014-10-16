@@ -3,11 +3,23 @@ XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
 
-link: $(LIST)
+link: link_dotfiles link_special_dotfiles
+unlink: unlink_dotfiles unlink_special_dotfiles
+
+link_dotfiles: $(LIST)
 	for f in $(LIST) ; do ln -fvs ~/.DotFiles/$$f ~/.$$f; done
 
-unlink: $(LIST)
+unlink_dotfiles: $(LIST)
 	@for f in $(LIST) ; do rm ~/.$$f; done
+
+
+# Stuff which doesn't link directly to ~/.FILENAME
+link_special_dotfiles:
+	mkdir -p ~/.ssh/
+	ln -fvs ~/.DotFiles/ssh/config ~/.ssh/config
+
+unlink_special_dotfiles:
+	rm ~/.ssh/config
 
 
 link_xresources:
@@ -32,10 +44,6 @@ update:
 safe-update:
 	git stash || make update || git stash pop
 setup : link update private
-
-tools:
-	sudo apt-get install ctags tmux vim weechat
-	sudo go get -u github.com/jstemmer/gotags
 
 emacs:
 	git clone git@github.com:lukaszkorecki/cult-leader.git ~/.emacs.d
