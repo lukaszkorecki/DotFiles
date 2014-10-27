@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
+if [ "$*" = "" ] ; then
+  echo "Override env file with ENV_FILE var" >&2
+  exit 1
+fi
 ENV_STR=$(cat ${ENV_FILE:-.env} | grep -v "^#" | sed "s/\s/_/g" | tr "\n" " ")
 env $ENV_STR bundle exec  $*
