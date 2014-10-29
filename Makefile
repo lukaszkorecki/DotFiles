@@ -1,4 +1,4 @@
-LIST = irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv
+LIST = irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv puppet-lint.rc
 XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
 
 default: update
