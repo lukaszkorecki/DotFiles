@@ -1,5 +1,5 @@
-# -*- mode: sh -*-
 # vi: set ft=sh :
+# -*- mode: sh -*-
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 unset command_not_found_handle
@@ -155,6 +155,12 @@ Loop() {
   done
 }
 
+if [[ $(uname | grep Linux) ]] ; then
+  __os=🐧" "
+else
+  __os="🍏 "
+fi
+
 
 Prompt() {
   local stat=$?
@@ -171,13 +177,7 @@ Prompt() {
   local c=$(Color 3)
   local jobCount="$(Color 1)$(jobs | wc -l)$reset"
 
-  if [[ $(uname | grep Linux) ]] ; then
-    os=🐧" "
-  else
-    os="🍏 "
-  fi
-
-  echo "🍭  $lastStat $os $currentDir $branch$sigil "
+  echo "$USER 🍭  $lastStat $__os $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
