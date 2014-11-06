@@ -16,7 +16,7 @@ unlink_dotfiles: $(LIST)
 # Stuff which doesn't link directly to ~/.FILENAME
 link_special_dotfiles:
 	mkdir -p ~/.ssh/
-	ln -fvs ~/.DotFiles/ssh/config ~/.ssh/config
+	ln -fvs ~/.private/ssh/config ~/.ssh/config
 
 unlink_special_dotfiles:
 	rm ~/.ssh/config
