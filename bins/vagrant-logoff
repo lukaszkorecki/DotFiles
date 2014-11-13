@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "Logging off  DEV VM"
+
+cd ~/Dev/dev-machine
+vagrant suspend
