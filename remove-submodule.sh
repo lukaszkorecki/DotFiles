@@ -6,7 +6,7 @@ if [[ $1 == "-h" ]] ; then
 fi
 
 if [[ -z "$1$2"  ]] ; then
-  $(basename $0) -h
+  ./$(basename $0) -h
   exit 0
 fi
 

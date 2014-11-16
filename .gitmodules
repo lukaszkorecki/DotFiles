@@ -1,9 +1,9 @@
-[submodule "xres/urxvt-perls"]
-	path = xres/urxvt-perls
-	url = git@github.com:muennich/urxvt-perls.git
 [submodule "bins/vendor/git-recent-branches"]
 	path = bins/vendor/git-recent-branches
 	url = git@github.com:lukaszkorecki/git-recent-branches.git
 [submodule "bins/vendor/selecta"]
 	path = bins/vendor/selecta
 	url = git@github.com:garybernhardt/selecta.git
+[submodule "bins/vendor/spark"]
+	path = bins/vendor/spark
+	url = git@github.com:holman/spark.git
