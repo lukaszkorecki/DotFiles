@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-sudo su -c 'echo locking'
-i3lock -c 000000 && sudo pm-suspend

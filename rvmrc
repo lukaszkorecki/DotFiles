@@ -1,4 +1,0 @@
-export rvm_path="${HOME}/.rvm"
-export rvm_gem_options="--no-rdoc --no-ri"
-export rvm_project_rvmrc=1
-export rvm_ignore_gemsets_flag=1

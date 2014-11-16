@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-grep -h -d recurse "^From:.*@" /home/$USER/.mutt/ | sed 's/^From: //g' | sort | uniq

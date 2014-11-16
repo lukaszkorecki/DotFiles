@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Start weechat and
-open-in-panes 'weechat-curses'  'mutt -e "source ~/.private/mutt_gecko"'
-tmux rename-window "Comms"
-exit

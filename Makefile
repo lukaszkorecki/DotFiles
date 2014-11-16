@@ -1,5 +1,4 @@
-LIST = irbrc pryrc tmux.conf rvmrc ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global zshrc zshenv puppet-lint.rc
-XRESOURCES = xsession Xresources Xmodmap i3 i3status.conf
+LIST = irbrc pryrc tmux.conf ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global puppet-lint.rc
 
 default: update
 
@@ -14,22 +13,12 @@ unlink_dotfiles: $(LIST)
 
 
 # Stuff which doesn't link directly to ~/.FILENAME
-link_special_dotfiles:
+link_special_dotfiles: private
 	mkdir -p ~/.ssh/
 	ln -fvs ~/.private/ssh/config ~/.ssh/config
 
 unlink_special_dotfiles:
 	rm ~/.ssh/config
-
-
-link_xresources:
-	for x in $(XRESOURCES) ; do ln -s ~/.DotFiles/xres/$$x ~/.$$x; done
-	xrdb -merge ~/.Xresources
-	xmodmap ~/.Xmodmap
-
-unlink_xresources:
-	for x in $(XRESOURCES) ; do rm ~/.$$x; done
-
 
 private:
 	git clone git@bitbucket.org:lukaszkorecki/private-configs.git ~/.private || true
