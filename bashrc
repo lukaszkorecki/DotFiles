@@ -96,6 +96,7 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
+
 alias :e=vim
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -117,6 +118,10 @@ alias v=vagrant
 
 # mhmmmmmm
 export EDITOR=vim
+
+nvim() {
+  vim $(find . -type f | selecta)
+}
 
 # copy/paste stuff
 alias cpy='xsel -ib'
