@@ -1,3 +1,12 @@
+#!/usr/bin/env bash
+if [ "$*" = "-h" ] ; then
+  echo "I will!: - checkout master clean
+  - pull
+  - checkout stable
+  - merge master and push"
+
+  exit 1
+fi
 git reset --hard
 git checkout master
 git reset --hard
