@@ -19,6 +19,7 @@
   default = current
 
 [alias]
+  sc = !git branch | cut -b3- | selecta | xargs git checkout
   c = commit
   cm = commit -m
   co = checkout
