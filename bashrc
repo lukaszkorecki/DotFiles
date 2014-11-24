@@ -120,7 +120,7 @@ alias v=vagrant
 export EDITOR=vim
 
 nvim() {
-  vim $(find . -type f | selecta)
+  vim $(find . -type f -and -not -path '**/.git/**' | selecta)
 }
 
 # copy/paste stuff
