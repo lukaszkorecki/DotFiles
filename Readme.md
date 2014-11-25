@@ -55,10 +55,4 @@ I constantly switch between:
 - Python
 
 
-### Optional stuff
-
-There is a `ubuntu_packages` script which installs other (essential)
-software such as Vim or i3 if you're using Linux
-
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lukaszkorecki/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
