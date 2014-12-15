@@ -1,5 +1,5 @@
-# vi: set ft=sh :
 # -*- mode: sh -*-
+# vi: set ft=sh :
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 unset command_not_found_handle
@@ -37,6 +37,9 @@ LoadSshKeys() {
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=$HOME/.private/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
+
+export GOPATH=~/golang
+export PATH=$PATH:$GOPATH/bin
 
 for dir in ~/.DotFiles/bins/vendor/* ; do
   export PATH=$dir:$PATH
