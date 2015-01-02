@@ -1,6 +1,6 @@
 # vi: ft=gitconfig
 [user]
-  email = lukasz@coffeesounds.com
+  email = lukasz@korecki.me
   name = Łukasz Korecki
 [github]
   username = lukaszkorecki
