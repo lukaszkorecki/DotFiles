@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+# Strip certain things:
 # test/repo.git -> test/repo
+# git@github.com:test/repo.git -> test/repo
 repoPath="${1/.git/}"
-# test/repo.git -> test
-repoRoot=${1/\/*/}
+repoPath="${repoPath/*github.com:/}"
+
+# extract username or repo root
+# test/repo -> test
+repoRoot=${repoPath/\/*/}
 
 logger -s -t GHCLONE -- "Creating repository root if it doesn't exist"
 mkdir -p $repoRoot
