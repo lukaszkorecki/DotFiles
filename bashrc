@@ -157,9 +157,9 @@ Loop() {
   [[ -z "$DELAY" ]] && DELAY=7
   echo "Loop time $DELAY sec"
 
-  while true ; do
+  $*
+  while sleep $DELAY; do
     $*
-    sleep $DELAY
   done
 }
 
