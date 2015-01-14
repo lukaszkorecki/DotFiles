@@ -176,16 +176,17 @@ Prompt() {
 
   local lastStat="$(Color 2)$stat$reset"
 
-  local currentDir="$(Color 6)$(basename $(pwd))$reset"
+  local currentDir="$(Color 6)\W$reset"
   local branch=$(git cb)
-  if [[ -n "$branch" ]];  then
-    branch="$(Color 4)$branch$reset"
-  fi
-  local sigil="$(Color 1):$reset"
-  local c=$(Color 3)
-  local jobCount="$(Color 1)$(jobs | wc -l)$reset"
+  [[ -n "$branch" ]] && branch="$(Color 4)$branch$reset"
 
-  echo "$USER 🍭  $lastStat $__os $currentDir $branch$sigil "
+  local sigil="$(Color 1):$reset"
+  local jobCount="$(Color 1) \l$reset"
+
+  local time="$(Color 5)\t$reset"
+  local user="\u"
+
+  echo "$lastStat $time $user $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
