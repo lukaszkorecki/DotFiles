@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'io/console'
+
+chars = ARGV.shift.split(',').map(&:to_i)
+pass = STDIN.noecho(&:gets).chomp.strip
+
+ary = pass.split('')
+
+puts chars
+  .map
+  .with_index { |i, z| "#{z + 1} (#{i}) #{ary[i - 1]}" }
+  .join("\n")
