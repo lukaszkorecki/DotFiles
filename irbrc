@@ -39,11 +39,19 @@ module H_
     ret
   end
 
-  def self.ar_log_on
-    ActiveRecord::Base.logger = Logger.new STDOUT
+  def self.ar_log(dev=nil)
+    ActiveRecord::Base.logger = Logger.new dev
   end
 
-  def self.ar_log_off
-    ActiveRecord::Base.logger = Logger.new nil
+  def self.exc
+    err = nil
+    begin
+      yield
+    rescue => e
+      err = e
+    end
+
+    err
   end
+
 end
