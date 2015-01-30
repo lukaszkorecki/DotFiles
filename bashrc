@@ -99,7 +99,7 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
-
+alias mssh=mosh
 alias :e=vim
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
