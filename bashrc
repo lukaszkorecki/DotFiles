@@ -122,7 +122,7 @@ alias v=vagrant
 # mhmmmmmm
 export EDITOR=vim
 
-nvim() {
+svim() {
   vim $(find . -type f -and -not -path '**/.git/**' | selecta)
 }
 
