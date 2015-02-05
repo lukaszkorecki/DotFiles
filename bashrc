@@ -1,5 +1,5 @@
-# -*- mode: sh -*-
 # vi: set ft=sh :
+# -*- mode: sh -*-
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 unset command_not_found_handle
@@ -99,6 +99,10 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
+if which nvim ; then
+  alias vim=nvim
+fi
+
 alias mssh=mosh
 alias :e=vim
 alias grep='grep --color=auto'
@@ -110,7 +114,7 @@ alias l='ls --color -CF'
 alias b=bundle
 alias be='b exec '
 alias bef='bundle_exec_with_env'
-alias fr='bef run '
+alias frm='bundle exec foreman'
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
 
