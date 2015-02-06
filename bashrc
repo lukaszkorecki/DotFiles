@@ -103,9 +103,7 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
-if which nvim ; then
-  alias vim=nvim
-fi
+which nvim 2>&1  && alias vim=nvim
 
 alias mssh=mosh
 alias :e=vim
