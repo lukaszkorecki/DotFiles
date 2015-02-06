@@ -103,7 +103,8 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
-which nvim 2>&1  && alias vim=nvim
+# if neovim is installed - use that
+which nvim 2>&1 > /dev/null  && alias vim=nvim
 
 alias mssh=mosh
 alias :e=vim
@@ -169,13 +170,6 @@ Loop() {
   done
 }
 
-if [[ $(uname | grep Linux) ]] ; then
-  __os=🐧" "
-else
-  __os="🍏 "
-fi
-
-
 Prompt() {
   local stat=$?
   local reset=$(ResetColor)
@@ -183,8 +177,7 @@ Prompt() {
   local lastStat="$(Color 2)$stat$reset"
 
   local currentDir="$(Color 6)\W$reset"
-  local branch=$(git cb)
-  [[ -n "$branch" ]] && branch="$(Color 4)$branch$reset"
+  test -e .git && local branch="[$(Color 4)$(git cb)$reset]"
 
   local sigil="$(Color 1):$reset"
   local jobCount="$(Color 1) \l$reset"
