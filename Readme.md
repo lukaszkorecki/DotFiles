@@ -1,7 +1,16 @@
-# Intro Hi, it's cool that you're taking a look at my configs and such.
-It's not a framework or anything and I've been stripping down the
-dependencies
- so that the configs stay as small as possible.
+# Intro Thanks for taking a look at my dot files!
+
+## Back in the day
+
+I've started initially with a lot of borrowed stuff from OOPbashrc.
+
+Then I switched to oh-my-zsh. Then I removed it. Then I switched
+back to bash.
+
+This repo is not a framework or anything.  I've been stripping down
+the dependencies so that the configs stay as small as possible.
+
+Here's what you'll find here:
 
 # `bins/`
 
@@ -10,11 +19,30 @@ day-to-day tasks. Some are quite useful (`git-` extensions), some
 are somewhat-useful (`fcrypt`) and some are just ridiculous (`faces`,
 `imgcat`)
 
-# Supported OS
+# `etc`
 
-I use these on both Linux and OSX so I make sure they work everywhere.
-My terminal emulator of choice is iTerm2 (nightlies) with Tomorrow-Night
-theme.
+I've started creating boilerplate code templates interpolated with `m4`. There's not much stuff there, but there might be more soon.
+
+# `mutt`
+
+Global configuration for mutt. Account specific configs are of course not in this repo.
+
+## The rest
+
+The rest are of course configs for various pieces of software I use every day.
+
+# Vim? Emacs?
+
+My Vim configuration can be found at [lukaszkorecki/dotvim](https://github.com/lukaszkorecki/dotvim)
+
+My Emacs configuration can be found at [lukaszkorecki/cult-leader](https://github.com/lukaszkorecki/cult-leader)
+
+
+# Supported OSs
+
+85% of my time I'm working in a Linux VM (powered by [lukaszkorecki/dev-machine](https://github.com/lukaszkorecki/dev-machine) so it's guaranteed that these configs will work in Linux.
+
+The other 15% is spent in OSX so I make sure stuff works there too.
 
 # The Setup
 
@@ -38,14 +66,7 @@ Here's a list of tools I can't work without:
 - tmux (latest)
 - Bash (4.1+)
 - git
-
-#### Editors
-
-I constantly switch between:
-
-- Emacs24 + evil-mode - configs are [in cult-leader repo](https://github.com/lukaszkorecki/cult-leader)
-- Vim - configs are in [DotVim repo](https://github.com/lukaszkorecki/DotVim)
-
+- vim
 
 #### Programming languages I use
 

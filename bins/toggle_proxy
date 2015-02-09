@@ -1,0 +1,22 @@
+#!/usr/bin/env osascript -l JavaScript
+// vi: set ft=javascript
+
+var $app = Application.currentApplication();
+$app.includeStandardAdditions = true;
+
+function notify(title, body, subtitle) {
+  var conf = { };
+  title && (conf.withTitle = title);
+  subtitle && (conf.subtitle = subtitle);
+  $app.displayNotification(body, conf);
+}
+
+function run(argv) {
+  p = Application("com.apple.systempreferences");
+  p.activate();
+  s = Application("System Events");
+  s.processes.byName("System Preferences");
+  proc = s.processes.byName("System Preferences");
+  viewMenu = proc.menuBars[0].menuBarItems.byName("View");
+  viewMenu.menus[0].menuItems.byName('Network').click();
+}
