@@ -4,6 +4,3 @@
 [submodule "bins/vendor/selecta"]
 	path = bins/vendor/selecta
 	url = git@github.com:garybernhardt/selecta.git
-[submodule "bins/vendor/spark"]
-	path = bins/vendor/spark
-	url = git@github.com:holman/spark.git
