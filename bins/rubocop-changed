@@ -1,1 +1,1 @@
-git diff HEAD..master --stat | grep \.rb | awk '{ print  }' | xargs rubocop -a
+git diff HEAD..master --stat | grep \.rb | awk '{ print $1  }' | xargs rubocop -a
