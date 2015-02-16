@@ -125,6 +125,7 @@ alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
 alias v=vagrant
+alias gcd='cd $(git root)'
 
 # mhmmmmmm
 export EDITOR=vim
