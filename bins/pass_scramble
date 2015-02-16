@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'io/console'
+if ARGV.empty?
+  puts "Usage: pass_scramble <indicies of password>"
+  exit 1
+end
 
 chars = ARGV.shift.split(',').map(&:to_i)
 pass = STDIN.noecho(&:gets).chomp.strip
