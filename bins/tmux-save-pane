@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 if ARGV.empty?
   puts <<-HHH
-tmux-save-pane window_id pane_id file='~/{session_name}.{window_id}.{pane_id}.txt'
+tmux-save-pane <window_id> <pane_id> <?file='~/{session_name}.{window_id}.{pane_id}.txt' > <?debug>
 
 window_id - if of the window (check with 'tmux list-windows')
 pane_id - if of the window (check with 'tmux list-panes')

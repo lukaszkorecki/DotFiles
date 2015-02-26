@@ -104,7 +104,7 @@ if [[ $BASH_VERSION == 4* ]] ; then
 fi
 
 # if neovim is installed - use that
-which nvim 2>&1 > /dev/null  && alias vim=nvim
+# which nvim 2>&1 > /dev/null  && alias vim=nvim
 
 alias mssh=mosh
 alias :e=vim
@@ -120,6 +120,7 @@ alias bef='bundle_exec_with_env'
 alias frm='bundle exec foreman'
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
+alias gcd='cd $(git root)'
 
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'

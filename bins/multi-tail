@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+buf=""
+
+for var in "$@" ; do
+  host="${var/:*/}"
+  file="${var/*:/}"
+  buf="$buf <(ssh  $host -t 'tail -f $file')"
+
+done
+
+echo tail -f $buf
