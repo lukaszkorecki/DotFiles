@@ -8,3 +8,9 @@ readonly PWD=$(pwd)
 log() {
   logger -s -t $SCRIPT_NAME -- $*
 }
+
+usage() {
+  echo <<-EOF
+    USAGE
+  EOF
+}

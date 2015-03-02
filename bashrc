@@ -186,7 +186,7 @@ Prompt() {
   local time="$(Color 5)\t$reset"
   local user="\u"
 
-  echo "$lastStat $time $user $currentDir $branch$sigil "
+  echo "\h $lastStat $time $user $currentDir $branch$sigil "
 }
 
 # prompt command gets called before any other command
