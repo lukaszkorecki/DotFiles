@@ -1,1 +1,2 @@
-git diff HEAD..master --stat | grep \.rb | awk '{ print $1  }' | xargs rubocop -a
+#!/usr/bin/env sh
+git diff HEAD..master --stat |  awk '/(\.rb|Rakefile|Gemfile)/ { print $1  }' | xargs rubocop -a
