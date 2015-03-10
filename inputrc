@@ -3,6 +3,7 @@ $include /etc/inputrc
 "\C-j": menu-complete
 "\C-k": menu-complete-backward
 "\C-o": history-search-backward
+"\C-n": history-search-backward
 "\t": menu-complete
 "\e[A": history-search-backward
 "\e[B": history-search-forward
