@@ -48,7 +48,13 @@ macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 # ghetto email search
 set query_command="name='%s' ~/.DotFiles/bins/search_mail"
 
+# colors
+source ~/.DotFiles/mutt/muttrc-solarized.muttrc
+
+# Gmail settings for receiving email, smtp settings are in separate private configs
+set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
 set move = no  #Stop asking to "move read messages to mbox"!
 set imap_keepalive = 900
 
