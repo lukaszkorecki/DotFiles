@@ -2,49 +2,74 @@
 # Desc:  nicer output for t ( https://github.com/sferik/t )
 # Usage: pipe your timeline/replies/user stream with -c (CSV) option
 # Example:
-#   t stream timeline -c | ruby better_t
+#   t stream timeline -c | better_t
 #
-# Screenshot: http://cl.ly/image/1t122a2P1q3H
 # vi: ft=ruby
 require 'csv'
-require 'colorize'
 
-username_r = /(@[a-zA-Z0-9_]+)/
+module Color
+  MAP = {
+    black:   '30',
+    red:     '31',
+    green:   '32',
+    yellow:  '33',
+    blue:    '34',
+    purple:  '35',
+    cyan:    '36',
+    white:   '37'
+  }
+
+  COLOR_PATTERN = "\e[%{code}m%{string}\e[0m"
+
+  class << self
+    def method_missing(name, *args)
+      COLOR_PATTERN % { code: MAP[name], string: args[0] }
+    end
+  end
+end
+
+Tweet = Struct.new(:id, :username, :time, :status) do
+  TEMPLATE = <<-EOF
+⎡  @%{username}
+ %{status}
+⎣_ %{id} - %{date}
+  EOF
+
+  def valid?
+    id && time && username && status
+  end
+
+  def nice_time
+    DateTime.parse(time).strftime '%H:%M:%S %d/%b/%Y'
+  rescue
+    time
+  end
+
+  def render
+    TEMPLATE % template_context
+  end
+
+  def template_context
+    {
+      username: Color.yellow(username),
+      status: status,
+      id: Color.red(id),
+      date: Color.green(nice_time)
+    }
+  end
+end
 
 ARGF.each_line do |line|
   begin
-  t_id, time, user, status = CSV.parse(line).first
+    t_id, time, user, status = CSV.parse(line).first
   rescue
     t_id, time, user, *status = line.split(',')
-    status = status.join(" ").sub(/^"/,'').sub(/"$/,'')
+    status = status.join(' ').sub(/^"/, '').sub(/"$/, '')
   end
 
-  if t_id and time and user and status
-    ok = true
-
-    time = begin
-             DateTime.parse(time).strftime "%H:%M:%S %d/%b/%Y"
-           rescue
-             time
-           end
-
-    status.gsub!(username_r) { |s| s.colorize(:red) }
-    status.sub!('RT', 'RT'.colorize(:blue))   if status.start_with? 'RT'
-    status = "#{'r'.colorize(:green)} #{status}" if status.start_with? '@'
-
-    body = "--\n"
-    body << "| @#{user}".colorize(:green)
-    body << " / "
-    body << t_id.colorize(:yellow)
-    body << " / "
-    body <<  time.colorize(:white)
-    body << "\n"
-    body << "| "+status
-    body << "\n"
-    puts body
-    body << "\n"
-  else
-    puts "| "+line
+  tweet = Tweet.new(t_id, user, time, status)
+  if tweet.valid?
+    puts tweet.render
+    puts
   end
-
 end
