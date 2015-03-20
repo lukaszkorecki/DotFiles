@@ -20,14 +20,21 @@
 
 [alias]
   sc = !git branch | cut -b3- | selecta | xargs git checkout
+
   c = commit
   cm = commit -m
+  ca = commit --amend
+
   co = checkout
   g = !git --no-pager grep --color -n
   l = log
   lo = log --graph --oneline --abbrev-commit
   ll = log --graph --pretty='format:%h | %an | %s'
   pr = pull --rebase
+  pl = !git pull -r -u origin $(git cb)
+
+  pfff = !git push --force origin $(git cb)
+
   re-continue = rebase --continue
   re-skip = rebase --skip
   pull-all = pull --recurse-submodules -r
