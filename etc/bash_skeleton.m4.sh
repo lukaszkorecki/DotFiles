@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 readonly SCRIPT_NAME=$(basename $0)
 readonly PWD=$(pwd)
