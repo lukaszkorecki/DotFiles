@@ -41,22 +41,10 @@ set pager_stop
 set quit = ask-no
 
 # Macros
-macro index gi "<change-folder>=Inbox<enter>" "Go to inbox"
-macro index gs "<change-folder>=Sent<enter>" "Go to Sent Mail"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=Sent\ Items<enter>" "Go to Sent"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
-# ghetto email search
-set query_command="name='%s' ~/.DotFiles/bins/search_mail"
-
-# colors
-source ~/.DotFiles/mutt/muttrc-solarized.muttrc
-
-# Gmail settings for receiving email, smtp settings are in separate private configs
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-set postponed ="+[Gmail]/Drafts"
-set move = no  #Stop asking to "move read messages to mbox"!
-set imap_keepalive = 900
 
 # sidebar settings
 set sidebar_width=30
@@ -83,3 +71,5 @@ bind pager sn sidebar-next
 bind pager sp sidebar-prev
 bind pager so sidebar-open
 
+
+source ~/.DotFiles/mutt/calmar.muttrc
