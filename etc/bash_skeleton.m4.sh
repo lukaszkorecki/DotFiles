@@ -12,5 +12,5 @@ log() {
 usage() {
   echo <<-EOF
     USAGE
-  EOF
+EOF
 }

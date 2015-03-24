@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'net/http'
+require 'uri'
+
+api_key = 'dc6zaTOxFJmzC'
+url = 'http://api.giphy.com/v1/gifs/search?api_key=%s&q=%s'
+
+args = ARGV.join(' ')
+final_url = sprintf(url, api_key, URI.encode(args))
+
+JSON.parse(Net::HTTP.get_response(URI(final_url)).body)['data'].map do |item|
+  puts item['images']['original']['url']
+end
