@@ -65,14 +65,8 @@ HISTFILESIZE=$HISTSIZE
 HISTCONTROL=ignorespace:ignoredups
 
 # load extra shell env files only if they are readable
-extra_files="$HOME/.private/env.sh
-$HOME/.rvm/scripts/rvm
-$HOME/.DotFiles/xres/init.sh
-/usr/share/bash-completion/bash_completion"
-
-for extra in $extra_files ; do
-  [[ -r $extra ]] && source $extra
-done
+bashCompletion="/usr/share/bash-completion/bash_completion"
+[[ -r $bashCompletion ]] && source $bashCompletion
 
 
 history() {
