@@ -38,9 +38,6 @@ export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=$HOME/.private/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 
-export GOPATH=~/golang
-export PATH=$PATH:$GOPATH/bin
-
 for dir in ~/.DotFiles/bins/vendor/* ; do
   export PATH=$dir:$PATH
 done
