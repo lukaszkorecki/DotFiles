@@ -119,8 +119,9 @@ alias rightsplit='tmux splitw -h -p 33  '
 alias v=vagrant
 alias gcd='cd $(git root)'
 
-
 alias rails-server='bef rails s -b 0.0.0.0'
+alias rails-console='bef rails c'
+alias rails-test='ENV_FILE=.env.test bef rake test'
 alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
 
 # mhmmmmmm
