@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 if [ "$*" = "" ] ; then
-  echo "Override env file with ENV_FILE var" >&2
+  echo "Override env file with ENV_FILE var" > /dev/stderr
   exit 1
 fi
-envFile=${ENV_FILE:-.env}
-echo "Using $envFile" >/dev/stderr
-ENV_STR=$(cat $envFile | grep -v "^#" | sed "s/\s/_/g" | tr "\n" " ")
-env $ENV_STR bundle exec  $*
+
+readonly envFile=${ENV_FILE:-.env}
+
+echo "Using $envFile" > /dev/stderr
+
+readonly envStr=$(grep -v "^#" $envFile | sed "s/\s/_/g" | tr "\n" " ")
+env $envStr bundle exec  $*
