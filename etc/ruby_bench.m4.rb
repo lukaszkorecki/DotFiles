@@ -1,18 +1,21 @@
 # vi: ft=ruby
 require 'benchmark'
+require 'benchmark/ips'
 
-TIMES = NUMBER
+TIMES = ITERATIONS
 
-Benchmark.bmbm do |x|
-  x.report(REPORT) do
-    n.times do
+Benchmark.ips do |x|
+  x.report('REPORT') do
+    TIMES.times do
       # ...
     end
   end
 
-  x.report(REPORT2) do
-    n.times do
+  x.report('REPORT2') do
+    TIMES.times do
       # ...
     end
   end
+
+  x.compare!
 end
