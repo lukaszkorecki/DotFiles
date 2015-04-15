@@ -108,6 +108,7 @@ alias l='ls --color -CF'
 alias b=bundle
 alias be='b exec '
 alias bef='bundle_exec_with_env'
+alias tbef='ENV_FILE=.env.test bundle_exec_with_env'
 alias frm='bundle exec foreman'
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
@@ -122,6 +123,8 @@ alias gcd='cd $(git root)'
 alias rails-server='bef rails s -b 0.0.0.0'
 alias rails-console='bef rails c'
 alias rails-test='ENV_FILE=.env.test bef rake test'
+alias rails-test-js='ENV_FILE=.env.test bef rake teaspoon'
+alias rails-test-all='rails-test && rails-test-js'
 alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
 
 # mhmmmmmm
