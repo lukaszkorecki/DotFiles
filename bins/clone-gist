@@ -5,12 +5,20 @@
 
 if [[ -z "$1$2" ]] || [[ $1 = "-h" ]] ; then
   echo 'usage "clone-gist <from> <to>"'
+  echo 'clone-gist select <to> - opens gist selector'
   exit 0
 fi
 
-url=$1
-name=$2
-git_url=$( ruby -e "'$1'.sub('https://','').split('/').tap { |s| GURL='git@'+s.first+':'+s.last+'.git' } ; puts GURL.sub('.git.git','.git') " )
+if [[ "$1" = 'select' ]] ; then
+  echo "Picka a gist:"
+  url=$(gist -l | selecta | awk '{ print $1 }')
+  name=$2
+else
+  url=$1
+  name=$2
+fi
+
+git_url=$( ruby -e "'$url'.sub('https://','').split('/').tap { |s| GURL='git@'+s.first+':'+s.last+'.git' } ; puts GURL.sub('.git.git','.git') " )
 echo Cloning from $git_url
 git clone $git_url $name
 
