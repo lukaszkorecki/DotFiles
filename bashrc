@@ -126,6 +126,7 @@ alias rails-test='ENV_FILE=.env.test bef rake test'
 alias rails-test-js='ENV_FILE=.env.test bef rake teaspoon'
 alias rails-test-all='rails-test && rails-test-js'
 alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
+alias rails-rollback='bef rake db:rollback && ENV_FILE=.env.test bef rake db:rollback'
 
 # mhmmmmmm
 export EDITOR=vim
