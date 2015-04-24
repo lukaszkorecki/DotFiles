@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -eoui pipefail
+
+search=''
+sedExpression=''
+
+while getopts "s:e:" OPTIONS; do
+  case "$OPTIONS" in
+    s)
+      search="$OPTARG"
+      ;;
+    e)
+      sedExpression="$OPTARG"
+      ;;
+  esac
+done
+
+if [[ "$search$sedExpression" = '' ]] ; then
+  echo "Search and replace in git project
+
+Usage:
+
+  $(basename $0) -s 'foo' -e 's/fooBar/wuTang/g'
+
+"
+  exit 1
+fi
+
+
+git grep "$search" | cut -d: -f1 | uniq | xargs sed -i -e "$sedExpression"
