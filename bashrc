@@ -97,6 +97,7 @@ fi
 # if neovim is installed - use that
 # which nvim 2>&1 > /dev/null  && alias vim=nvim
 
+alias irb=pry
 alias mssh=mosh
 alias :e=vim
 alias grep='grep --color=auto'
