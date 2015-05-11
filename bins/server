@@ -1,1 +1,1 @@
-ruby -run -ehttpd . -p8000
+ruby -run -ehttpd . -p${1:-8000}
