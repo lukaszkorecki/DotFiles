@@ -1,1 +1,1 @@
-{ "laxcomma" : true , "supernew" : true }
+{ "laxcomma" : true , "supernew" : true , "expr": true}
