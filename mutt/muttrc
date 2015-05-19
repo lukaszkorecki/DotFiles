@@ -72,4 +72,4 @@ bind pager sp sidebar-prev
 bind pager so sidebar-open
 
 
-source ~/.DotFiles/mutt/calmar.muttrc
+source ~/.DotFiles/mutt/wombat.mutt
