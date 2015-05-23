@@ -110,6 +110,7 @@ alias b=bundle
 alias be='b exec '
 alias bef='bundle_exec_with_env'
 alias tbef='ENV_FILE=.env.test bundle_exec_with_env'
+alias m='tbef m'
 alias frm='bundle exec foreman'
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
