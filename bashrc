@@ -65,6 +65,7 @@ HISTCONTROL=ignorespace:ignoredups
 bashCompletion="/usr/share/bash-completion/bash_completion"
 [[ -r $bashCompletion ]] && source $bashCompletion
 
+[[ -r ~/.private/env.sh ]] && source ~/.private/env.sh
 
 history() {
   _bash_history_sync
