@@ -40,11 +40,18 @@ set pager_stop
 # don't quit accidentaly
 set quit = ask-no
 
-# Macros
+# Macros for Gmail
+bind editor <space> noop
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+
+# quick navigation
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=Sent\ Items<enter>" "Go to Sent"
 macro index gd "<change-folder>=Drafts<enter>" "Go to drafts"
 
+# move current message to archive (IMAP)
+macro index,pager A "<save-message>=Archive<enter><enter>" "Archive Message"
 
 # sidebar settings
 set sidebar_width=30
