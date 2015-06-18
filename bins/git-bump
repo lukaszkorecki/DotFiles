@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+git add VERSION
+git commit -m "Bump to $(cat VERSION)"
+git tag "v$(cat VERSION)"
+
+echo "Ready to push & push --tags"

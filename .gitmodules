@@ -7,3 +7,6 @@
 [submodule "bins/vendor/idone"]
 	path = bins/vendor/idone
 	url = git@github.com:lukaszkorecki/idone.git
+[submodule "bins/vendor/spark"]
+	path = bins/vendor/spark
+	url = git@github.com:holman/spark.git
