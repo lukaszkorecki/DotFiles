@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+
+whichBranch=${1:-master}
+
+mergedLocally=$(git branch --merged $whichBranch)
