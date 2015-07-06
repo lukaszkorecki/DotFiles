@@ -131,6 +131,8 @@ alias rails-test-all='rails-test && rails-test-js'
 alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
 alias rails-rollback='bef rake db:rollback && ENV_FILE=.env.test bef rake db:rollback'
 
+alias go-pj='cd ~/go-src/src/github.com'
+
 # mhmmmmmm
 export EDITOR=vim
 
