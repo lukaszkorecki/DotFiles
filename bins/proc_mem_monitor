@@ -1,0 +1,1 @@
+htop -p $( pgrep -f "$1" | tr "\n" ","| sed 's/,$//')
