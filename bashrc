@@ -201,3 +201,6 @@ PROMPT_COMMAND='PS1="$(Prompt)"'
 
 # plug-in the history hack
 PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
+
+# load default virtualenv
+[[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
