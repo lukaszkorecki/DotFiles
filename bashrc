@@ -183,16 +183,16 @@ Prompt() {
 
   local lastStat="$(Color 2)$stat$reset"
 
-  local currentDir="$(Color 6)\W$reset"
+  local currentDir="$(Color 6)\w$reset"
   test -e .git && local branch="$(Color 4)$(git cb)$reset"
 
   local sigil="$(Color 1)→$reset"
   local jobCount="$(Color 1) \l$reset"
 
-  local host="$(Color 5)\h$reset"
+  local host="$(Color 5)\H$reset"
   local user="\u"
 
-  echo "$host $lastStat $user $currentDir $branch$sigil "
+  echo "$host $user $currentDir\n$lastStat $branch $sigil "
 }
 
 # prompt command gets called before any other command
