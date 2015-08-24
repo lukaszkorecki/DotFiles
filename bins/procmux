@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+"""
+Create new split panes in tmux window based on procfile
+"""
+
+import subprocess
+import os
+
+tmux_cmd =  "tmux split-window -h '{}'"
+
+def parse_and_launch(line):
+    name, command = line.replace('export ','').split(':', 1)
+
+    print "Launching: {} -> {}".format(name, command)
+    subprocess.call(tmux_cmd.format(command))
+
+
+with open('./Procfile') as f:
+    lines = f.readlines()
+
+for line in lines:
+    parse_and_launch(line)
+
+print "Done"
