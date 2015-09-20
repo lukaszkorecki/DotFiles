@@ -96,7 +96,7 @@ if [[ $BASH_VERSION == 4* ]] ; then
 fi
 
 # if neovim is installed - use that
-# which nvim 2>&1 > /dev/null  && alias vim=nvim
+which nvim 2>&1 > /dev/null  && alias vim=nvim
 
 alias irb=pry
 alias mssh=mosh
@@ -187,7 +187,7 @@ Prompt() {
 
   local user="\u"
   local host="$(Color 5)\h$reset"
-  local currentDir="$(Color 6)\w$reset"
+  local currentDir="$(Color 6)\W$reset"
   local lastStat="$(Color 2)$stat$reset"
   test -e .git && local branch="$(Color 4)$(git cb)$reset"
   local sigil="$(Color 1)→$reset"
