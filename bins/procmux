@@ -1,25 +1,39 @@
-#!/usr/bin/env python
+#!/usr/bin/env bash
 
-"""
-Create new split panes in tmux window based on procfile
-"""
+# set -e
 
-import subprocess
-import os
+# Create new split panes in tmux window based on procfile
+tmux_cmd() {
+    local name="$1"
+    local cmd="$2"
 
-tmux_cmd =  "tmux split-window -h '{}'"
+    echo "Launching $name with $cmd"
+    if [[ "$cmd" != "" ]]; then
+        echo tmux split-window -c . -h "'$cmd || bash'"
+        tmux split-window "'$cmd || bash'"
+    fi
+}
 
-def parse_and_launch(line):
-    name, command = line.replace('export ','').split(':', 1)
 
-    print "Launching: {} -> {}".format(name, command)
-    subprocess.call(tmux_cmd.format(command))
+parse_procfile_line() {
+    local line="$1"
+    local name="$(echo $line | cut -d: -f1 )"
+    local cmd="$(echo $line | cut -d: -f2- )"
+
+    tmux_cmd "$name" "$cmd"
+}
+
+read_proc_file() {
+    local file="$1"
+    while IFS='' read -r line || [[ -n "$line" ]] ; do
+        parse_procfile_line "$line"
+    done < "$file"
+}
+
+main() {
+    local file="$1"
+    read_proc_file $file
+}
 
 
-with open('./Procfile') as f:
-    lines = f.readlines()
-
-for line in lines:
-    parse_and_launch(line)
-
-print "Done"
+main ${1:-./Procfile}

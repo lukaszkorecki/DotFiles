@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-buf=""
+buf="cat "
 
 for var in "$@" ; do
   host="${var/:*/}"
@@ -9,4 +9,4 @@ for var in "$@" ; do
 
 done
 
-echo tail -f $buf
+$buf
