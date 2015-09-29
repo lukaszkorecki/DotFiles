@@ -4,7 +4,7 @@
 # somewhere on your $PATH, like ~/bin. The rest of Leiningen will be
 # installed upon first run into the ~/.lein/self-installs directory.
 
-export LEIN_VERSION="2.5.0"
+export LEIN_VERSION="2.5.3"
 
 case $LEIN_VERSION in
     *SNAPSHOT) SNAPSHOT="YES" ;;
@@ -22,6 +22,11 @@ if [[ "$OSTYPE" == "cygwin" ]]; then
 else
   cygwin=false
 fi
+
+function command_not_found {
+    >&2 echo "Leiningen coundn't find $1 in your \$PATH ($PATH), which is required."
+    exit 1
+}
 
 function make_native_path {
     # ensure we have native paths
@@ -65,7 +70,7 @@ function self_install {
   fi
   echo "Downloading Leiningen to $LEIN_JAR now..."
   mkdir -p "$(dirname "$LEIN_JAR")"
-  LEIN_URL="https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.jar"
+  LEIN_URL="https://github.com/technomancy/leiningen/releases/download/$LEIN_VERSION/leiningen-$LEIN_VERSION-standalone.zip"
   $HTTP_CLIENT "$LEIN_JAR.pending" "$LEIN_URL"
   local exit_code=$?
   if [ $exit_code == 0 ]; then
@@ -78,7 +83,19 @@ function self_install {
   fi
 }
 
-if [ `id -u` -eq 0 ] && [ "$LEIN_ROOT" = "" ]; then
+function check_root {
+  local -i user_id
+  # Thank you for the complexity, Solaris
+  if [ `uname` = "SunOS" -a -x /usr/xpg4/bin/id ]; then
+    user_id=$(/usr/xpg4/bin/id -u 2>/dev/null || echo 0)
+  else
+    user_id=$(id -u 2>/dev/null || echo 0)
+  fi
+  [ $user_id -eq 0 -a "$LEIN_ROOT" = "" ] && return 0
+  return 1
+}
+
+if check_root; then
     echo "WARNING: You're currently running as root; probably by accident."
     echo "Press control-C to abort or Enter to continue as root."
     echo "Set LEIN_ROOT to disable this warning."
@@ -98,29 +115,32 @@ done
 
 export LEIN_HOME="${LEIN_HOME:-"$HOME/.lein"}"
 
-for f in "$LEIN_HOME/leinrc" ".leinrc"; do
+for f in "/etc/leinrc" "$LEIN_HOME/leinrc" ".leinrc"; do
   if [ -e "$f" ]; then
     source "$f"
   fi
 done
 
 if $cygwin; then
-    export LEIN_HOME=`cygpath -w "$LEIN_HOME"`
+    export LEIN_HOME=$(cygpath -w "$LEIN_HOME")
 fi
 
 LEIN_JAR="$LEIN_HOME/self-installs/leiningen-$LEIN_VERSION-standalone.jar"
 
 # normalize $0 on certain BSDs
 if [ "$(dirname "$0")" = "." ]; then
-    SCRIPT="$(which $(basename "$0"))"
+    SCRIPT="$(which "$(basename "$0")")"
+    if [ -z "$SCRIPT" ]; then
+        SCRIPT="$0"
+    fi
 else
     SCRIPT="$0"
 fi
 
 # resolve symlinks to the script itself portably
 while [ -h "$SCRIPT" ] ; do
-    ls=`ls -ld "$SCRIPT"`
-    link=`expr "$ls" : '.*-> \(.*\)$'`
+    ls=$(ls -ld "$SCRIPT")
+    link=$(expr "$ls" : '.*-> \(.*\)$')
     if expr "$link" : '/.*' > /dev/null; then
         SCRIPT="$link"
     else
@@ -245,7 +265,7 @@ elif [ "$1" = "upgrade" ] || [ "$1" = "downgrade" ]; then
     fi
     if [ $SNAPSHOT = "YES" ]; then
         echo "The upgrade task is only meant for stable releases."
-        echo "See the \"Hacking\" section of the README."
+        echo "See the \"Bootstrapping\" section of CONTRIBUTING.md."
         exit 1
     fi
     if [ ! -w "$SCRIPT" ]; then
@@ -262,7 +282,7 @@ elif [ "$1" = "upgrade" ] || [ "$1" = "downgrade" ]; then
                 echo "Upgrading..."
                 TARGET="/tmp/lein-$$-upgrade"
                 if $cygwin; then
-                    TARGET=`cygpath -w $TARGET`
+                    TARGET=$(cygpath -w "$TARGET")
                 fi
                 LEIN_SCRIPT_URL="https://github.com/technomancy/leiningen/raw/$TARGET_VERSION/bin/lein"
                 $HTTP_CLIENT "$TARGET" "$LEIN_SCRIPT_URL"
@@ -284,7 +304,7 @@ elif [ "$1" = "upgrade" ] || [ "$1" = "downgrade" ]; then
 else
     if $cygwin; then
         # When running on Cygwin, use Windows-style paths for java
-        ORIGINAL_PWD=`cygpath -w "$ORIGINAL_PWD"`
+        ORIGINAL_PWD=$(cygpath -w "$ORIGINAL_PWD")
     fi
 
     # apply context specific CLASSPATH entries
@@ -292,7 +312,7 @@ else
         add_path CLASSPATH "$(cat .lein-classpath)"
     fi
 
-    if [ $DEBUG ]; then
+    if [ -n "$DEBUG" ]; then
         echo "Leiningen's classpath: $CLASSPATH"
     fi
 
@@ -301,8 +321,17 @@ else
     fi
 
     if [ "$LEIN_FAST_TRAMPOLINE" != "" ] && [ -r project.clj ]; then
-        INPUTS="$@ $(cat project.clj) $LEIN_VERSION $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj")"
-        export INPUT_CHECKSUM=$(echo $INPUTS | shasum - | cut -f 1 -d " ")
+        INPUTS="$* $(cat project.clj) $LEIN_VERSION $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj")"
+
+        if command -v shasum >/dev/null 2>&1; then
+            SUM="shasum"
+        elif command -v sha1sum >/dev/null 2>&1; then
+            SUM="sha1sum"
+        else
+            command_not_found "sha1sum or shasum"
+        fi
+
+        export INPUT_CHECKSUM=$(echo "$INPUTS" | $SUM | cut -f 1 -d " ")
         # Just don't change :target-path in project.clj, mkay?
         TRAMPOLINE_FILE="target/trampolines/$INPUT_CHECKSUM"
     else
@@ -316,14 +345,14 @@ else
     fi
 
     if $cygwin; then
-        TRAMPOLINE_FILE=`cygpath -w $TRAMPOLINE_FILE`
+        TRAMPOLINE_FILE=$(cygpath -w "$TRAMPOLINE_FILE")
     fi
 
     if [ "$INPUT_CHECKSUM" != "" ] && [ -r "$TRAMPOLINE_FILE" ]; then
-        if [ $DEBUG ]; then
+        if [ -n "$DEBUG" ]; then
             echo "Fast trampoline with $TRAMPOLINE_FILE."
         fi
-        exec sh -c "exec $(cat $TRAMPOLINE_FILE)"
+        exec sh -c "exec $(cat "$TRAMPOLINE_FILE")"
     else
         export TRAMPOLINE_FILE
         "$LEIN_JAVA_CMD" \
@@ -346,9 +375,9 @@ else
         ## TODO: [ -r "$TRAMPOLINE_FILE" ] may be redundant? A trampoline file
         ## is always generated these days.
         if [ -r "$TRAMPOLINE_FILE" ] && [ "$LEIN_TRAMPOLINE_WARMUP" = "" ]; then
-            TRAMPOLINE="$(cat $TRAMPOLINE_FILE)"
+            TRAMPOLINE="$(cat "$TRAMPOLINE_FILE")"
             if [ "$INPUT_CHECKSUM" = "" ]; then
-                rm $TRAMPOLINE_FILE
+                rm "$TRAMPOLINE_FILE"
             fi
             if [ "$TRAMPOLINE" = "" ]; then
                 exit $EXIT_CODE
