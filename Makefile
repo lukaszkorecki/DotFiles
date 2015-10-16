@@ -22,9 +22,13 @@ unlink_dotfiles:
 link_special_dotfiles: private
 	mkdir -p ~/.ssh/
 	ln -fvs ~/.private/ssh/config ~/.ssh/config
+	mkdir -p ~/.lein
+	ln -fvs ~/.DotFiles/profiles.clj ~/.lein/profiles.clj
 
 unlink_special_dotfiles:
 	rm ~/.ssh/config
+	rm ~/.lein/profiles.clj
+
 
 private:
 	git clone $(PRIVATE_REPO) ~/.private || true
