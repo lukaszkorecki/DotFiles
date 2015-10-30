@@ -117,6 +117,7 @@ alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
 alias gcd='cd $(git root)'
 
+alias g=git
 alias rs='be rspec spec -f p -c'
 alias ffs='be rspec -f p 2>/dev/null'
 alias rightsplit='tmux splitw -h -p 33  '
