@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'json'
+
+# pass a JSON array of arrays, it will CSV it
+puts JSON.parse(ARGF.read).map { |*a| a.join ',' }.join "\n"
