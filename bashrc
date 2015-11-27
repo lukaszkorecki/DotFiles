@@ -186,18 +186,17 @@ Prompt() {
 
   local jobCount="$(Color 1) \l$reset"
 
-  local user="\u"
   local host="$(Color 5)\h$reset"
   local currentDir="$(Color 6)\W$reset"
   local lastStat="$(Color 2)$stat$reset"
   test -e .git && local branch="$(Color 4)$(git cb)$reset"
-  local sigil="$(Color 1)→$reset"
+  local sigil="$(Color 1)->$reset"
 
-  echo "$lastStat $user@$host: $currentDir $branch $sigil "
+  echo "$lastStat $host: $currentDir $branch $sigil "
 }
 
 # prompt command gets called before any other command
-# so this refreshes the git branch and other dynamic stuff
+# so this refreshes the git branch and other dynamic
 PROMPT_COMMAND='PS1="$(Prompt)"'
 
 # plug-in the history hack
