@@ -1,5 +1,4 @@
-# vi: set ft=sh :
-# -*- mode: sh -*-
+# -*- mode: bash -*-
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 unset command_not_found_handle
@@ -179,11 +178,11 @@ Loop() {
 }
 
 Prompt() {
-  local stat=$?
-  local reset=$(ResetColor)
-
-
-
+  if [[ "$TERM" = "eterm-color" ]] ; then
+    echo ": "
+  else
+    local stat=$?
+    local reset=$(ResetColor)
   local jobCount="$(Color 1) \l$reset"
 
   local host="$(Color 5)\h$reset"
@@ -193,6 +192,7 @@ Prompt() {
   local sigil="$(Color 1)->$reset"
 
   echo "$lastStat $host: $currentDir $branch $sigil "
+  fi
 }
 
 # prompt command gets called before any other command

@@ -1,0 +1,25 @@
+# top-most EditorConfig file
+root = true
+
+# Everything is:
+# - 2 spaces
+# - unix
+# - utf-8
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_size = 2
+indent_size = space
+charset = utf-8
+max_line_length = 78
+trim_trailing_whitespace = true
+
+# tab exceptions
+[*.py]
+indent_style = tab
+
+[*.go]
+indent_style = tab
+
+[Mmakefile]
+indent_style = tab

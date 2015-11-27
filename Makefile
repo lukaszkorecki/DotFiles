@@ -1,4 +1,4 @@
-LIST = irbrc pryrc tmux.conf ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global puppet-lint.rc
+LIST = irbrc pryrc tmux.conf ackrc  gitconfig bashrc jshint.json ctags inputrc gitignore_global puppet-lint.rc editorconfig
 
 ROOT := ~/.DotFiles
 PRIVATE_REPO := git@bitbucket.org:lukaszkorecki/private-configs.git
