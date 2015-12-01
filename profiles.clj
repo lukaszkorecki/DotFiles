@@ -1,4 +1,6 @@
-{:user {:plugins [[lein-pprint "1.1.1"]
+{:repl {:plugins [[org.clojure/tools.nrepl "0.2.12"]
+                  [cider/cider-nrepl "0.9.1"] ]}}
+ :user {:plugins [[lein-pprint "1.1.1"]
                   [lein-kibit "0.1.2"]
                   [debug-repl "0.3.2"]
                   [venantius/ultra "0.3.4"]
