@@ -1,4 +1,4 @@
-# -*- mode: bash -*-
+# -*- mode: sh -*-
 export LANG=en_US.UTF-8
 unset LC_ALL ; unset LC_LANG
 unset command_not_found_handle
@@ -178,21 +178,9 @@ Loop() {
 }
 
 Prompt() {
-  if [[ "$TERM" = "eterm-color" ]] ; then
-    echo ": "
-  else
-    local stat=$?
-    local reset=$(ResetColor)
-  local jobCount="$(Color 1) \l$reset"
+  test -e .git && local branch="| $(git cb)"
+  echo "\W ${branch:-|} : "
 
-  local host="$(Color 5)\h$reset"
-  local currentDir="$(Color 6)\W$reset"
-  local lastStat="$(Color 2)$stat$reset"
-  test -e .git && local branch="$(Color 4)$(git cb)$reset"
-  local sigil="$(Color 1)->$reset"
-
-  echo "$lastStat $host: $currentDir $branch $sigil "
-  fi
 }
 
 # prompt command gets called before any other command
