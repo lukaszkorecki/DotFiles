@@ -177,9 +177,12 @@ Loop() {
   done
 }
 
+readonly ____sigil="$(Color 1)λ$(ResetColor)"
+
 Prompt() {
   test -e .git && local branch="| $(git cb)"
-  echo "\W ${branch:-|} : "
+
+  echo "$____sigil \W ${branch:-|} : "
 
 }
 
