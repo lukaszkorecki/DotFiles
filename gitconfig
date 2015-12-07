@@ -2,9 +2,8 @@
 [user]
   email = lukasz@korecki.me
   name = Łukasz Korecki
-[github]
-  username = lukaszkorecki
-  user = lukaszkorecki
+[include]
+  path = ~/.private/gitconfig.include
 [color]
   ui = true
   diff = true
