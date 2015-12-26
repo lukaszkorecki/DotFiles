@@ -10,3 +10,6 @@
 [submodule "bins/vendor/spark"]
 	path = bins/vendor/spark
 	url = git@github.com:holman/spark.git
+[submodule "bins/vendor/Dropbox-Uploader"]
+	path = bins/vendor/Dropbox-Uploader
+	url = git@github.com:andreafabrizi/Dropbox-Uploader.git
