@@ -34,11 +34,11 @@ private:
 	git clone $(PRIVATE_REPO) ~/.private || true
 
 update:
-	git pull -r -u origin master
+	git pull -r origin master
 	git submodule update --init
 	git submodule foreach git reset --hard
 	git submodule foreach git checkout master
-	git submodule foreach git pull -r -u origin master
+	git submodule foreach git pull -r origin master
 
 setup: link update private vim
 
