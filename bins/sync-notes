@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+b="dropbox_uploader.sh"
+c=$1
+
+if [[ "$c" = "d" ]] ; then
+    $b download OrgNotes ~/
+fi
+
+if [[ "$c" = "u" ]] ; then
+    $b upload ~/OrgNotes/*.org OrgNotes
+fi
+
+if [[ "$c" = "" ]] ; then
+    echo "$(basename $0) d - download | u - upload"
+fi

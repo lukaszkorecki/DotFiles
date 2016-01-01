@@ -131,6 +131,9 @@ alias rails-test-all='rails-test && rails-test-js'
 alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
 alias rails-rollback='bef rake db:rollback && ENV_FILE=.env.test bef rake db:rollback'
 
+alias lr='lein run'
+alias lt='lein test'
+
 alias go-pj='cd ~/go-src/src/github.com'
 
 # mhmmmmmm
@@ -186,12 +189,18 @@ Prompt() {
 
 }
 
-# prompt command gets called before any other command
-# so this refreshes the git branch and other dynamic
-PROMPT_COMMAND='PS1="$(Prompt)"'
+# workaround tramp
+if [[ "$TERM" == "dumb" ]] ; then
+    PROMPT_COMMAND='PS1="> "'
+else
 
-# plug-in the history hack
-PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
+    # prompt command gets called before any other command
+    # so this refreshes the git branch and other dynamic
+    PROMPT_COMMAND='PS1="$(Prompt)"'
+
+    # plug-in the history hack
+    PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
+fi
 
 # load default virtualenv
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
