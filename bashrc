@@ -6,6 +6,10 @@ unset command_not_found_handle
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+if [[ "$TERM" = "dumb" ]] ; then
+    PS1="> "
+    return
+fi
 # disable stupid C-s / C-q stuff
 stty -ixon
 
@@ -181,26 +185,22 @@ Loop() {
 }
 
 readonly ____sigil="$(Color 1)λ$(ResetColor)"
-
+readonly ____sep="$(Color 3)|$(ResetColor)"
+readonly ____c="$(Color 6):$(ResetColor)"
 Prompt() {
-  test -e .git && local branch="| $(git cb)"
+  test -e .git && local branch="$____sep $(git cb)"
 
-  echo "$____sigil \W ${branch:-|} : "
+  echo "$____sigil \W ${branch:-$____sep} $____c "
 
 }
 
-# workaround tramp
-if [[ "$TERM" == "dumb" ]] ; then
-    PROMPT_COMMAND='PS1="> "'
-else
 
-    # prompt command gets called before any other command
-    # so this refreshes the git branch and other dynamic
-    PROMPT_COMMAND='PS1="$(Prompt)"'
+# prompt command gets called before any other command
+# so this refreshes the git branch and other dynamic
+PROMPT_COMMAND='PS1="$(Prompt)"'
 
-    # plug-in the history hack
-    PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
-fi
+# plug-in the history hack
+PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
 
 # load default virtualenv
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
