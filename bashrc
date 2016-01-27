@@ -141,7 +141,7 @@ alias lt='lein test'
 alias go-pj='cd ~/go-src/src/github.com'
 
 # mhmmmmmm
-export EDITOR=vim
+export EDITOR=zile
 
 svim() {
   vim $(find . -type f -and -not -path '**/.git/**' | selecta)
