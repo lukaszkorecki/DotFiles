@@ -2,6 +2,7 @@
 require 'rubygems'
 
 Pry.config.correct_indent = false if ENV["INSIDE_EMACS"]
+IRB.conf[:USE_READLINE] = false if ENV["INSIDE_EMACS"]
 
 if defined? IRB
   require 'fileutils'

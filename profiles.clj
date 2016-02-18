@@ -7,5 +7,6 @@
                   [venantius/ultra "0.3.4"]
                   [lein-bikeshed "0.2.0"]
                   [jonase/eastwood "0.2.1"]
-                  [lein-cljfmt "0.3.0"]]
+                  [lein-cljfmt "0.3.0"]
+                  [lein-cloverage "1.0.6"]]
         :ultra {:color-scheme :solarized_dark}}}
