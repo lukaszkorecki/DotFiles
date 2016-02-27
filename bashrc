@@ -184,13 +184,12 @@ Loop() {
   done
 }
 
-readonly ____sigil="$(Color 1)λ$(ResetColor)"
-readonly ____sep="$(Color 3)|$(ResetColor)"
-readonly ____c="$(Color 6):$(ResetColor)"
+readonly ____sigil="λ"
+readonly ____sep=">"
 Prompt() {
-  test -e .git && local branch="$____sep $(git cb)"
+  test -e .git && local branch="$____sep :$(git cb)"
 
-  echo "$____sigil \W ${branch:-$____sep} $____c "
+  echo "($____sigil \W ${branch:-$____sep}) "
 
 }
 
