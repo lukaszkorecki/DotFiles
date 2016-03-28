@@ -50,7 +50,7 @@ every day.
 
 # Vim? Emacs?
 
-- My Vim configuration can be found at [lukaszkorecki/dotvim](https://github.com/lukaszkorecki/dotvim)
+- My Vim configuration can be found at [lukaszkorecki/dotvim](https://github.com/lukaszkorecki/dotvim) - it's for the most part not maintained anymore
 
 - My Emacs configuration can be found at [lukaszkorecki/cult-leader](https://github.com/lukaszkorecki/cult-leader)
 
@@ -87,7 +87,8 @@ Here's a list of tools I can't work without:
 - tmux (latest)
 - Bash (4.1+)
 - git
-- vim
+- Emacs 24.5
+- mosh
 
 #### Programming languages I use
 
