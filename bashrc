@@ -23,7 +23,7 @@ ResetColor() {
 
 # if main ssh key is not loaded - warn about it!
 if [[ -z  "$(ssh-add -L | grep id_rsa)" ]] ; then
-  echo "$(Color 1)Main private key is not loaded!$(ResetColor)" >&2
+  echo "!! Main private key is not loaded! !!" >&2
 fi
 
 LoadSshKeys() {
@@ -98,18 +98,15 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
-# if neovim is installed - use that
-which nvim 2>&1 > /dev/null  && alias vim=nvim
-
 alias irb=pry
-alias mssh=mosh
-alias :e=vim
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls --color -alF'
 alias la='ls --color -Ah'
 alias l='ls --color -CF'
+
 alias b=bundle
 alias be='b exec '
 alias bef='bundle_exec_with_env'
@@ -121,11 +118,8 @@ alias psgv="ps aux | grep -v grep | grep -Ev "
 alias gcd='cd $(git root)'
 
 alias g=git
-alias rs='be rspec spec -f p -c'
-alias ffs='be rspec -f p 2>/dev/null'
-alias rightsplit='tmux splitw -h -p 33  '
+
 alias v=vagrant
-alias gcd='cd $(git root)'
 
 alias rails-server='bef rails s -b 0.0.0.0'
 alias rails-console='bef rails c'
@@ -142,47 +136,6 @@ alias go-pj='cd ~/go-src/src/github.com'
 
 # mhmmmmmm
 export EDITOR=zile
-
-svim() {
-  vim $(find . -type f -and -not -path '**/.git/**' | selecta)
-}
-
-# copy/paste stuff
-alias cpy='xsel -ib'
-alias pst='xsel -ob'
-
-# vless was removed - use view
-
-# edit modified files in vim
-# use vim as man viewer
-viman() {
-  env PAGER="/bin/sh -c \"unset PAGER;col -b -x | \
-    vim -R -c 'set ft=man nomod nolist nonumber' -c 'map q :q<CR>' \
-    -c 'map <SPACE> <C-D>' -c 'map b <C-U>' \
-    -c 'nmap K :Man <C-R>=expand(\\\"<cword>\\\")<CR><CR>' -\"" man $*
-}
-
-
-# mutt doesn't like urxvt-* and tmux-* TERMs
-Mutt() {
-  TERM=screen-256color mutt -e "source ~/.private/mutt_$1"
-}
-
-
-# useful as guard replacement (ish)
-# Usage:
-#    Loop grunt test:all
-# or
-#    DELAY=10 Loop grunt test:browser
-Loop() {
-  [[ -z "$DELAY" ]] && DELAY=7
-  echo "Loop time $DELAY sec"
-
-  $*
-  while sleep $DELAY; do
-    $*
-  done
-}
 
 readonly ____sigil="λ"
 readonly ____sep=">"
