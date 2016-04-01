@@ -54,15 +54,15 @@ export GOPATH=~/go-src
 export PATH=$PATH:$GOPATH/bin
 
 # append to the history file, don't overwrite it
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
 export WORDCHARS=''
 shopt -s histappend
 
 # sync history between different sessions, a bit hacky, wish it worked like
 # in ZSH
-HISTSIZE=90000000
-HISTFILESIZE=$HISTSIZE
-HISTCONTROL=ignorespace:ignoredups
+export HISTSIZE=90000000
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignorespace:ignoredups
 
 # load extra shell env files only if they are readable
 bashCompletion="/usr/share/bash-completion/bash_completion"
@@ -83,6 +83,11 @@ _bash_history_sync() {
   builtin history -r
 }
 
+# Vagrant VM settings
+export VM_DEFAULT_MEM=3
+export VM_DEFAULT_CPUS=4
+export VM_STORAGE_MEM=3
+export VM_STORAGE_CPUS=4
 
 # nice things
 shopt -s checkwinsize # track terminal window resize
