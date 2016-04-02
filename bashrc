@@ -147,7 +147,7 @@ readonly ____sep=">"
 Prompt() {
   test -e .git && local branch="$____sep :$(git cb)"
 
-  echo "($____sigil \W ${branch:-$____sep}) "
+  echo "\H ($____sigil \W ${branch:-$____sep}) "
 
 }
 
