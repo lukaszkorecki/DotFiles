@@ -84,7 +84,7 @@ _bash_history_sync() {
 }
 
 # Vagrant VM settings
-export VM_DEFAULT_MEM=5
+export VM_DEFAULT_MEM=6
 export VM_DEFAULT_CPUS=4
 export VM_STORAGE_MEM=3
 export VM_STORAGE_CPUS=4
