@@ -114,9 +114,7 @@ alias l='ls --color -CF'
 
 alias b=bundle
 alias be='b exec '
-alias bef='bundle_exec_with_env'
-alias tbef='ENV_FILE=.env.test bundle_exec_with_env'
-alias m='tbef m'
+alias m='bundle exec dotenv -f .env.test m'
 alias frm='bundle exec foreman'
 alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
@@ -126,13 +124,13 @@ alias g=git
 
 alias v=vagrant
 
-alias rails-server='bef rails s -b 0.0.0.0'
-alias rails-console='bef rails c'
-alias rails-test='ENV_FILE=.env.test bef rake test'
-alias rails-test-js='ENV_FILE=.env.test bef rake teaspoon'
+alias rails-server='be dotenv rails s -b 0.0.0.0'
+alias rails-console='be dotenv rails c'
+alias rails-test='be dotenv -f .env.test rake test'
+alias rails-test-js='be dotenv -f .env.test  rake teaspoon'
 alias rails-test-all='rails-test && rails-test-js'
-alias rails-migrate='bef rake db:migrate && ENV_FILE=.env.test bef rake db:migrate'
-alias rails-rollback='bef rake db:rollback && ENV_FILE=.env.test bef rake db:rollback'
+alias rails-migrate='be dotenv rake db:migrate && be dotenv -f .env.test rake db:migrate'
+alias rails-rollback='be dotenv rake db:rollback && be dotenv -f .env.test  rake db:rollback'
 
 alias lr='lein run'
 alias lt='lein test'
