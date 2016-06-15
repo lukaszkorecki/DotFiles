@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+mode=$1
+
+name=docker-tmp-graphite
+
+if [[ "$mode" = "start" ]] ; then
+  sudo docker run \
+       --name $name \
+       --detach \
+       --publish=3003:80 \
+       --publish=3004:81 \
+       --publish=8125:8125/udp \
+       --publish=8126:8126 \
+       kamon/grafana_graphite
+  exit 0
+fi
+
+if [[ "$mode" = "resume" ]] ; then
+  sudo docker start $name
+fi
+
+if [[ "$mode" = "stop" ]] ; then
+  sudo docker stop $name
+  exit 0
+fi
+
+
+echo "commands: start / resume / stop"
