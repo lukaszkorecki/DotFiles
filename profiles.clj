@@ -2,7 +2,7 @@
 {:repl {:plugins [[org.clojure/tools.nrepl "0.2.12"]
                   [cider/cider-nrepl "0.12.0-SNAPSHOT"]]
         ;; make it accessible from vagrant
-        :repl-options { :host "0.0.0.0" :port 4001 :timeout (* 120 1000) }}
+        :repl-options { :host "0.0.0.0" :port 4001 :timeout 120000 }}
  :user {:plugins [
                   ;; lint them things
                   [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
