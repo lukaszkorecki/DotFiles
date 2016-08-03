@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
-for file in $(git diff HEAD..master --stat |  awk '/(\.rb|Rakefile|Gemfile)/ { print $1  }' ) ; do
+for file in $(git diff HEAD..master --stat |  awk '/(\.rb|Rakefile|Gemfile|schema.rb)/ { print $1  }' ) ; do
   test -e $file && rubocop -a $file
 done
