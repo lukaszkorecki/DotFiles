@@ -16,5 +16,4 @@
                   [lein-cloverage "1.0.6" :exclusions [org.clojure/clojure]]
 
                   ;; find outdataed
-                  [lein-ancient "0.6.10", :exclusions [org.clojure/clojure]]]
-        :ultra {:color-scheme :solarized_dark}}}
+                  [lein-ancient "0.6.10", :exclusions [org.clojure/clojure]]]}}
