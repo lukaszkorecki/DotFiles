@@ -1,10 +1,15 @@
 #!/usr/bin/ruby
 require 'rubygems'
 
-Pry.config.correct_indent = false if ENV["INSIDE_EMACS"]
-IRB.conf[:USE_READLINE] = false if ENV["INSIDE_EMACS"]
+if defined? Pry
+  Pry.config.correct_indent = false if ENV["INSIDE_EMACS"]
+  Pry.config.promp
+end
+
+
 
 if defined? IRB
+  IRB.conf[:USE_READLINE] = false if ENV["INSIDE_EMACS"]
   require 'fileutils'
   include FileUtils
   require 'irb/completion'
@@ -13,7 +18,6 @@ if defined? IRB
   IRB.conf[:SAVE_HISTORY] = 1000
   IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 
-  IRB.conf[:PROMPT_MODE] = :SIMPLE
 end
 
 module H_
