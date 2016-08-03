@@ -13,16 +13,17 @@ if [[ "$mode" = "start" ]] ; then
        --publish=8125:8125/udp \
        --publish=8126:8126 \
        kamon/grafana_graphite
-  exit 0
+  exit $?
 fi
 
 if [[ "$mode" = "resume" ]] ; then
   sudo docker start $name
+  exit $?
 fi
 
 if [[ "$mode" = "stop" ]] ; then
   sudo docker stop $name
-  exit 0
+  exit $?
 fi
 
 
