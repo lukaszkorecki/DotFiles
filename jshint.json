@@ -3,7 +3,7 @@
   "supernew": true,
   "expr": true,
   "camelcase": false,
-  "curly": true,
+  "curly": false,
   "eqeqeq": true,
   "freeze": true,
   "indent": 2,
