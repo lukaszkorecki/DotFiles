@@ -71,6 +71,13 @@ bashCompletion="/usr/share/bash-completion/bash_completion"
 
 [[ -r ~/.private/env.sh ]] && source ~/.private/env.sh
 
+# bash completion on OSX (needs brew install bash-completion)
+if [[ $(uname) = "Darwin" ]] ; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+fi
+
 history() {
   _bash_history_sync
   builtin history "$@"
