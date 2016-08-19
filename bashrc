@@ -41,6 +41,7 @@ export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=$HOME/.private/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=./node_modules/.bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 for dir in ~/.DotFiles/bins/vendor/* ; do
   export PATH=$dir:$PATH
