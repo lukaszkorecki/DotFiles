@@ -149,12 +149,11 @@ alias go-pj='cd ~/go-src/src/github.com'
 # mhmmmmmm
 export EDITOR=zile
 
-readonly ____sigil="λ"
 readonly ____sep=">"
 Prompt() {
-  test -e .git && local branch="$____sep :$(git cb)"
+  test -e .git && local branch="$(git cb)"
 
-  echo "\H ($____sigil \W ${branch:-$____sep}) "
+  echo "- \H - \W - ${branch:-x}: "
 
 }
 
