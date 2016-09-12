@@ -6,10 +6,11 @@ unset command_not_found_handle
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-if [[ "$TERM" = "dumb" ]] ; then
+if [[ "$TERM" = "dumb" || "$TERM" = "eterm-color" ]] ; then
     PS1="> "
     return
 fi
+
 # disable stupid C-s / C-q stuff
 stty -ixon
 
