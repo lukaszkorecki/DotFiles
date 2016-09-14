@@ -6,8 +6,8 @@ unset command_not_found_handle
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-if [[ "$TERM" = "dumb" || "$TERM" = "eterm-color" ]] ; then
-    PS1="> "
+if [[ "$TERM" = "dumb" ]] ; then
+    PS1="$ "
     return
 fi
 
