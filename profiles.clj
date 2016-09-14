@@ -7,7 +7,6 @@
                   ;; lint them things
                   [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
                   [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
-                  [lein-ancient "0.6.10"]
                   ;; more linting
                   [lein-bikeshed "0.2.0" :exclusions [org.clojure/clojure]]
                   ;; can't live without it
@@ -15,5 +14,5 @@
                   ;; this!
                   [lein-cloverage "1.0.6" :exclusions [org.clojure/clojure]]
 
-                  ;; find outdataed
+                  ;; find outdated
                   [lein-ancient "0.6.10", :exclusions [org.clojure/clojure]]]}}
