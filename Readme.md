@@ -25,32 +25,15 @@ day-to-day tasks. Some are quite useful (`git-` extensions), some
 are somewhat-useful (`fcrypt`) and some are just ridiculous (`faces`,
 `imgcat`)
 
-# `etc`
-
-I've started creating boilerplate code templates interpolated with `m4`.
- There's not much stuff there, but there might be more soon.
-
-### Usage
-
-You can use tham like so:
-
-```bash
-USAGE='new cool tool' m4 ~/.DotFiles/etc/bash_skeleton.m4.sh
-```
-
-# `mutt`
-
-Global configuration for mutt. Account specific configs are of
-course not in this repo.
 
 ## The rest
 
 The rest are of course configs for various pieces of software I use
 every day.
 
-# Vim? Emacs?
+# Emacs 
 
-- My Vim configuration can be found at [lukaszkorecki/dotvim](https://github.com/lukaszkorecki/dotvim) - it's for the most part not maintained anymore
+(where most of the stuff happens anyway)
 
 - My Emacs configuration can be found at [lukaszkorecki/cult-leader](https://github.com/lukaszkorecki/cult-leader)
 
@@ -84,19 +67,13 @@ The other 15% is spent in OSX so I make sure stuff works there too.
 
 Here's a list of tools I can't work without:
 
-- tmux (latest)
 - Bash (4.1+)
 - git
 - Emacs 24.5
-- mosh
 
 #### Programming languages I use
 
+- Clojure
 - Ruby
 - Shell
 - Javascript
-- Go
-- Python
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/lukaszkorecki/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
