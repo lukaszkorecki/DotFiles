@@ -6,7 +6,6 @@ unset command_not_found_handle
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-env >> /tmp/conn.log
 if [[ "$TERM" = "dumb" ]] ; then
     PS1="$ "
     return
