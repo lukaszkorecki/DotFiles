@@ -6,8 +6,9 @@ unset command_not_found_handle
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-if [[ "$TERM" = "dumb" || "$TERM" = "eterm-color" ]] ; then
-    PS1="> "
+env >> /tmp/conn.log
+if [[ "$TERM" = "dumb" ]] ; then
+    PS1="$ "
     return
 fi
 
@@ -148,7 +149,7 @@ alias lt='lein test'
 alias go-pj='cd ~/go-src/src/github.com'
 
 # mhmmmmmm
-export EDITOR=zile
+export EDITOR=emacsclient
 
 readonly ____sep=">"
 Prompt() {
