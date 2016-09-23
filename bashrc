@@ -168,3 +168,5 @@ PROMPT_COMMAND="_bash_history_sync "
 # load default virtualenv and disable PS1 inejction
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
+
+export PS1='\h:\W \u\$ '
