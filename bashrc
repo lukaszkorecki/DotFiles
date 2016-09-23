@@ -16,10 +16,10 @@ stty -ixon
 
 # Tiny wrappers around tput, used in prompt and messages
 Color() {
-  echo "\[$(tput setaf $1)\]"
+  echo "$(tput setaf $1)"
 }
 ResetColor() {
-  echo "\[$(tput sgr0)\]"
+  echo "$(tput sgr0)"
 }
 
 # if main ssh key is not loaded - warn about it!
@@ -130,8 +130,6 @@ alias psg="ps aux | grep -v grep | grep -E "
 alias psgv="ps aux | grep -v grep | grep -Ev "
 alias gcd='cd $(git root)'
 
-alias g=git
-
 alias v=vagrant
 
 alias rails-server='be dotenv rails s -b 0.0.0.0'
@@ -150,21 +148,23 @@ alias go-pj='cd ~/go-src/src/github.com'
 # mhmmmmmm
 export EDITOR=emacsclient
 
-readonly ____sep=">"
-Prompt() {
-  test -e .git && local branch="$(git cb)"
-
-  echo "- \H - \W - ${branch:-x}: "
-
+# general git info
+function g() {
+  if test -e .git ; then
+    filesChanged=$(git s | grep -v '#' | wc -l)
+    echo "You're in $(Color 3)$(pwd)$(ResetColor)"
+    echo "The branch is: $(Color 5)$(git cb)$(ResetColor)"
+    echo "There are $(Color 2)$filesChanged$(ResetColor) changed files"
+    git s
+  else
+    echo "$(Color 5)not in git repo$(ResetColor)"
+  fi
 }
 
 
-# prompt command gets called before any other command
-# so this refreshes the git branch and other dynamic
-PROMPT_COMMAND='PS1="$(Prompt)"'
-
 # plug-in the history hack
-PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
+PROMPT_COMMAND="_bash_history_sync "
 
-# load default virtualenv
+# load default virtualenv and disable PS1 inejction
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
