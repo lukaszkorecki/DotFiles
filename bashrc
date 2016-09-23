@@ -169,4 +169,4 @@ PROMPT_COMMAND="_bash_history_sync "
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
 
-export PS1='\h:\W \u\$ '
+PS1="[\u@\h \w]$ "
