@@ -5,7 +5,7 @@ mode=$1
 name=docker-tmp-graphite
 
 if [[ "$mode" = "start" ]] ; then
-  sudo docker run \
+  docker run \
        --name $name \
        --detach \
        --publish=3003:80 \
@@ -17,12 +17,12 @@ if [[ "$mode" = "start" ]] ; then
 fi
 
 if [[ "$mode" = "resume" ]] ; then
-  sudo docker start $name
+  docker start $name
   exit $?
 fi
 
 if [[ "$mode" = "stop" ]] ; then
-  sudo docker stop $name
+  docker stop $name
   exit $?
 fi
 
