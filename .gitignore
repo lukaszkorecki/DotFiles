@@ -16,3 +16,4 @@ weechat/logs/
 weechat/*.txt
 weechat/script/plugins.xml.gz
 tags
+bins/ngrok
