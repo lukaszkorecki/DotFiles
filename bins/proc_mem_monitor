@@ -1,1 +1,3 @@
+#!/usr/bin/env bash
+# -*- mode: sh -*-
 htop -p $( pgrep -f "$1" | tr "\n" ","| sed 's/,$//')

@@ -61,6 +61,8 @@ export HISTCONTROL=ignoreboth
 export WORDCHARS=''
 shopt -s histappend
 
+shopt -s cdspell
+
 # sync history between different sessions, a bit hacky, wish it worked like
 # in ZSH
 export HISTSIZE=90000000
