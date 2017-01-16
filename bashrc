@@ -148,7 +148,7 @@ alias lt='lein test'
 alias go-pj='cd ~/go-src/src/github.com'
 
 # mhmmmmmm
-export EDITOR=emacsclient
+export EDITOR='emacs -nw'
 
 # general git info
 function g() {

@@ -24,6 +24,8 @@
   cm = commit -m
   ca = commit --amend
 
+  remove-merged-branches = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+
   co = checkout
   g = !git --no-pager grep --color -n
   l = log
