@@ -26,5 +26,5 @@ g() {
 if [[ "$*" = "" ]] ; then
   g
 else
-  EDITOR=zile git $*
+  EDITOR=zile git "$@"
 fi
