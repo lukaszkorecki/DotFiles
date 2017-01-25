@@ -150,8 +150,8 @@ alias go-pj='cd ~/go-src/src/github.com'
 # mhmmmmmm
 export EDITOR='emacs -nw'
 
-# general git info
-
+# force g!
+alias git='echo use g!'
 
 # plug-in the history hack
 PROMPT_COMMAND="_bash_history_sync "
