@@ -151,17 +151,6 @@ alias go-pj='cd ~/go-src/src/github.com'
 export EDITOR='emacs -nw'
 
 # general git info
-function g() {
-  if test -e .git ; then
-    filesChanged=$(git s | grep -v '#' | wc -l)
-    echo "You're in $(Color 3)$(pwd)$(ResetColor)"
-    echo "The branch is: $(Color 5)$(git cb)$(ResetColor)"
-    echo "There are $(Color 2)$filesChanged$(ResetColor) changed files"
-    git s
-  else
-    echo "$(Color 5)not in git repo$(ResetColor)"
-  fi
-}
 
 
 # plug-in the history hack

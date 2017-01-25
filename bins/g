@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+
+# Tiny wrappers around tput, used in prompt and messages
+Color() {
+  echo "$(tput setaf $1)"
+}
+ResetColor() {
+  echo "$(tput sgr0)"
+}
+
+
+g() {
+  if test -e .git ; then
+    filesChanged=$(git s | grep -v '#' | wc -l)
+    echo "You're in $(Color 3)$(pwd)$(ResetColor)"
+    echo "The branch is: $(Color 5)$(git cb)$(ResetColor)"
+    echo "There are $(Color 2)$filesChanged$(ResetColor) changed files"
+    git s
+  else
+    echo "$(Color 5)not in git repo$(ResetColor)"
+  fi
+}
+
+
+if [[ "$*" = "" ]] ; then
+  g
+else
+  EDITOR=zile git $*
+fi
