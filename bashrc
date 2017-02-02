@@ -40,6 +40,7 @@ LoadSshKeys() {
 # custom scripts and tools
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=$HOME/.private/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -151,7 +152,6 @@ alias go-pj='cd ~/go-src/src/github.com'
 export EDITOR='emacs -nw'
 
 # force g!
-alias git='echo use g!'
 
 # plug-in the history hack
 PROMPT_COMMAND="_bash_history_sync "

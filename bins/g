@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Tiny wrappers around tput, used in prompt and messages
 Color() {
   echo "$(tput setaf $1)"

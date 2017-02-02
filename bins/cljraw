@@ -1,0 +1,2 @@
+CLJ_VERSION="1.8.0"
+java -cp ~/.m2/repository/org/clojure/clojure/$CLJ_VERSION/clojure-$CLJ_VERSION.jar:. -server clojure.main
