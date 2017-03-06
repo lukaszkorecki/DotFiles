@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+title="$1"
+what="$2"
+
+osascript -e "display notification \"$what\" with title \"$title\""

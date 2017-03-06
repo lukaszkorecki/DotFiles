@@ -1,0 +1,2 @@
+rm -rf target/
+LEIN_FAST_TRAMPOLINE=y dotenv lein trampoline repl
