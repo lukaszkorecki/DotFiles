@@ -1,0 +1,28 @@
+#!/bin/bash
+# launch a clojure plain repl but with options and classpath matching project.clj
+# Except when project.clj changes (and on first launch), lein is not called.
+
+CODE='
+(let [p  (leiningen.core.project/read)
+      args (@(var leiningen.core.eval/get-jvm-args) p)
+      cp (with-out-str (leiningen.classpath/classpath p))]
+  (print "ARGS=\"")
+  (apply print args)
+  (println "\"")
+  (print "CP=\"")
+  (print cp)
+  (println "\""))
+'
+
+if [ ! -f "project.clj" ]; then
+  echo "No project.clj"
+  exit 1
+fi
+
+if [ ! -f ".kein" ] || [ "project.clj" -nt ".kein" ] || [ $0 -nt ".kein" ]; then
+  lein update-in : assoc :eval-in :leiningen -- run -m clojure.main -e "$CODE" > .kein
+fi
+
+source .kein
+
+java $ARGS -cp $CP clojure.main "$@"
