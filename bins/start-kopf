@@ -4,6 +4,7 @@ port=${2:-9200}
 es_node="$addr:$port"
 
 docker run -p 8889:80 \
+           --net host \
            -e KOPF_ES_SERVERS=$es_node \
            -e KOPF_SERVER_NAME=kopf.dev \
            --name kopf-dev \
