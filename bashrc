@@ -54,7 +54,7 @@ export LESS="-rRSM~gIsw"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # go
-export GOPATH=~/go-src
+export GOPATH=/Volumes/Work/go-src
 export PATH=$PATH:$GOPATH/bin
 
 # append to the history file, don't overwrite it
