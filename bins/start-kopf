@@ -1,1 +1,10 @@
-docker run -p 8889:80 -e KOPF_ES_SERVERS=172.17.0.1:9200 -e KOPF_SERVER_NAME=kopf.dev --name kopf-dev lmenezes/elasticsearch-kopf
+addr=${1:-172.17.0.1}
+port=${2:-9200}
+
+es_node="$addr:$port"
+
+docker run -p 8889:80 \
+           -e KOPF_ES_SERVERS=$es_node \
+           -e KOPF_SERVER_NAME=kopf.dev \
+           --name kopf-dev \
+           lmenezes/elasticsearch-kopf
