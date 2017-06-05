@@ -5,12 +5,7 @@
         :repl-options {:host "0.0.0.0"
                        :timeout 120000 }}
  :user {:plugins [
-                  ;; lint them things
-                  [jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
-                  [lein-kibit "0.1.2" :exclusions [org.clojure/clojure]]
-                  ;; more linting
-                  [lein-bikeshed "0.2.0" :exclusions [org.clojure/clojure]]
-                  ;; can't live without it
+                  [lein-checkall "0.1.1" :exclusions [org.clojure/clojure]]
                   [lein-cljfmt "0.4.1" :exclusions [org.clojure/clojure]]
                   ;; this!
                   [lein-cloverage "1.0.6" :exclusions [org.clojure/clojure]]
