@@ -5,7 +5,8 @@
         :repl-options {:host "0.0.0.0"
                        :timeout 120000 }}
  :user {:plugins [
-                  [lein-checkall "0.1.1" :exclusions [org.clojure/clojure]]
+                  [lein-checkall "0.1.1" :exclusions [org.clojure/clojure
+                                                      org.clojure/tools.namespace]]
                   [lein-cljfmt "0.4.1" :exclusions [org.clojure/clojure]]
                   ;; this!
                   [lein-cloverage "1.0.6" :exclusions [org.clojure/clojure]]
