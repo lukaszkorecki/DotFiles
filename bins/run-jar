@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+HEAP_SIZE=${HEAP_SIZE:-512M}
+
+java -server -XX:+UseConcMarkSweepGC \
+     -XX:+UseParNewGC \
+     -XX:+CMSParallelRemarkEnabled \
+     -XX:+AggressiveOpts \
+     -XX:+UseFastAccessorMethods \
+     -XX:+UseCompressedOops \
+     -XX:+CMSClassUnloadingEnabled \
+     -Xmx$HEAP_SIZE \
+     -Dfile.encoding=UTF-8 \
+     -jar $1 2>&1
