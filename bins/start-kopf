@@ -1,11 +1,13 @@
-addr=${1:-172.17.0.1}
+addr=${1:-127.0.0.1}
 port=${2:-9200}
 
 es_node="$addr:$port"
+
+echo connecting to $es_node
+echo listening on http://localhost:8889
 
 docker run -p 8889:80 \
            --net host \
            -e KOPF_ES_SERVERS=$es_node \
            -e KOPF_SERVER_NAME=kopf.dev \
-           --name kopf-dev \
            lmenezes/elasticsearch-kopf
