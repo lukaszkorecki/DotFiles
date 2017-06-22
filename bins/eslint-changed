@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+for file in $(git diff HEAD..master --stat |  awk '/\.js/ { print $1  }' );   do
+  test -e $file && eslint --fix $file
+done
