@@ -161,3 +161,5 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
 
 PS1="[\u@\h \w]$ "
+
+HOMEBREW_NO_AUTO_UPDATE=1
