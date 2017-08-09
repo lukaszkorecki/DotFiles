@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -oe pipefail
+
+if [[ "$1" = "-h" ]] ;then
+  echo "Usage: sudo $0 user@hostname"
+  echo "It will: change your Wifi interface to use a socks proxy tunnel on port 8080"
+  echo "Open the tunnel and keep it going"
+  echo "C-c C-c to close the tunnel and revert the proxy settings"
+  exit 0
+fi
+
+if [[ "$(id -u)" != "0" ]] ;then
+  echo "please run as root"
+  exit 1
+fi
+
+where="$1"
+
+if [[ "$where" == "" ]] ; then
+  echo "Missing proxy location!"
+  exit 1
+fi
+
+
+interface="Wi-Fi" # find with networksetup -listnetworkserviceorder
+proxyPort=8080
+
+log() {
+  logger -t SOX -s "$*"
+  osascript -e "display notification \"$*\" with title \"SOX\""
+}
+
+log "Connecting to a proxy on $where:$proxyPort and attaching to interface $interface"
+
+networksetup -setsocksfirewallproxy "$interface" localhost $proxyPort
+
+ssh -D $proxyPort -p 22  $where -t 'while true ; do date;echo Proxying;sleep 30; done'
+log "We done, cleaning up"
+networksetup -setsocksfirewallproxystate "$interface" off
