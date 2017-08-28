@@ -151,15 +151,18 @@ alias go-pj='cd ~/go-src/src/github.com'
 # mhmmmmmm
 export EDITOR='emacs -nw'
 
-# force g!
+# get branch
 
+prompt() {
+  local __branc=$(git cb)
+  echo "[$__branc : \w]$ "
+}
+PROMPT_COMMAND='PS1=$(prompt)'
 # plug-in the history hack
-PROMPT_COMMAND="_bash_history_sync "
+PROMPT_COMMAND="$PROMPT_COMMAND ; _bash_history_sync "
 
 # load default virtualenv and disable PS1 inejction
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
-
-PS1="[\u@\h \w]$ "
 
 HOMEBREW_NO_AUTO_UPDATE=1
