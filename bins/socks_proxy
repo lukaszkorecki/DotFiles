@@ -35,6 +35,8 @@ log "Connecting to a proxy on $where:$proxyPort and attaching to interface $inte
 
 networksetup -setsocksfirewallproxy "$interface" localhost $proxyPort
 
-ssh -D $proxyPort -p 22  $where -t 'while true ; do date;echo Proxying;sleep 30; done'
+set +e
+ssh -D $proxyPort -p 22  $where
+
 log "We done, cleaning up"
 networksetup -setsocksfirewallproxystate "$interface" off
