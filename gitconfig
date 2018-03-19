@@ -20,6 +20,7 @@
 [alias]
   sc = !git branch | cut -b3- | selecta | xargs git checkout
 
+  update = !git fetch -a -p && git pull -r && git remove-merged-branches
   c = commit
   cm = commit -m
   ca = commit --amend

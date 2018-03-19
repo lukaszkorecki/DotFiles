@@ -41,6 +41,7 @@ LoadSshKeys() {
 export PATH=$HOME/.DotFiles/bins:$PATH
 export PATH=$HOME/.private/bin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin/google-cloud-sdk/bin:$PATH
 export PATH=~/Dropbox/Scripts:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -154,8 +155,9 @@ export EDITOR='emacs -nw'
 # get branch
 
 prompt() {
-  local __branc=$(git cb)
-  echo "[$__branc : \w]$ "
+  local __branc=$(git cb || echo '*')
+  local __here=$(basename $(pwd))
+  echo "$__branc - $__here : "
 }
 PROMPT_COMMAND='PS1=$(prompt)'
 # plug-in the history hack
@@ -166,3 +168,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -r ~/.python/bin/activate ]] && source ~/.python/bin/activate
 
 HOMEBREW_NO_AUTO_UPDATE=1
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lukasz/bin/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lukasz/bin/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lukasz/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukasz/bin/google-cloud-sdk/completion.bash.inc'; fi
