@@ -1,12 +1,12 @@
 ;; make this work with latest cider
 {:repl {:plugins [[org.clojure/tools.nrepl "0.2.12"]
-                  [refactor-nrepl "2.2.0"]
-                  [cider/cider-nrepl "0.14.0"]]
+                  [refactor-nrepl "2.4.0-SNAPSHOT"]
+                  [cider/cider-nrepl "0.14.0-SNAPSHOT"]]
         :repl-options {:host "0.0.0.0"
-                       :timeout 120000 }}
- :user {:plugins [
-                  [lein-checkall "0.1.1" :exclusions [org.clojure/clojure
+                       :timeout 120000}}
+ :user {:plugins [[lein-checkall "0.1.1" :exclusions [org.clojure/clojure
                                                       org.clojure/tools.namespace]]
+                  [clj-http "3.6.1"]
                   [lein-cljfmt "0.4.1" :exclusions [org.clojure/clojure]]
                   ;; this!
                   [lein-cloverage "1.0.6" :exclusions [org.clojure/clojure]]
