@@ -1,0 +1,2 @@
+here=$(git cb)
+git branch --set-upstream-to=origin/$here $here
