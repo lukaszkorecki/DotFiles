@@ -18,3 +18,4 @@ weechat/script/plugins.xml.gz
 tags
 bins/ngrok
 /.DS_Store
+/bins/circleci
