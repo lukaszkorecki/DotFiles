@@ -117,8 +117,6 @@ if [[ $BASH_VERSION == 4* ]] ; then
   shopt -s globstar     # enable **
 fi
 
-alias irb=pry
-
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -170,7 +168,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 HOMEBREW_NO_AUTO_UPDATE=1
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/lukasz/bin/google-cloud-sdk/path.bash.inc' ]; then source '/Users/lukasz/bin/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '~/bin/google-cloud-sdk/path.bash.inc' ]; then source '~/bin/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/lukasz/bin/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/lukasz/bin/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '~/bin/google-cloud-sdk/completion.bash.inc' ]; then source '~/bin/google-cloud-sdk/completion.bash.inc'; fi
