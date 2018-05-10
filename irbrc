@@ -3,21 +3,23 @@ require 'rubygems'
 
 if defined? Pry
   Pry.config.correct_indent = false if ENV["INSIDE_EMACS"]
-  Pry.config.promp
 end
 
 
 
 if defined? IRB
-  IRB.conf[:USE_READLINE] = false if ENV["INSIDE_EMACS"]
-  require 'fileutils'
-  include FileUtils
-  require 'irb/completion'
-  require 'irb/ext/save-history'
+  if ENV["INSIDE_EMACS"]
+    IRB.conf[:USE_READLINE] = false
+    IRB.conf[:PROMPT_MODE] = :INF_RUBY
+  else
+    require 'fileutils'
+    include FileUtils
+    require 'irb/completion'
+    require 'irb/ext/save-history'
 
-  IRB.conf[:SAVE_HISTORY] = 1000
-  IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
-
+    IRB.conf[:SAVE_HISTORY] = 1000
+    IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+  end
 end
 
 module H_
