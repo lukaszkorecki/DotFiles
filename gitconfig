@@ -2,6 +2,7 @@
 [user]
   email = lukasz@korecki.me
   name = Łukasz Korecki
+	signkey = 0A46786C9281B170
 [include]
   path = ~/.private/gitconfig.include
 [color]
@@ -70,3 +71,5 @@
   insteadOf = bb:
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
