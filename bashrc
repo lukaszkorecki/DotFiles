@@ -147,6 +147,8 @@ alias lt='lein test'
 
 alias go-pj='cd ~/go-src/src/github.com'
 
+alias emacs-cli='/Applications/Emacs\ 2.app/Contents/MacOS/Emacs -nw'
+
 # mhmmmmmm
 export EDITOR='emacs -nw'
 

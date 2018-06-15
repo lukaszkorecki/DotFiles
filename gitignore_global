@@ -11,3 +11,5 @@ coll.tst
 node_modules/
 deps.log
 .kein
+**/*clj-scratch*
+**/.DS_Store
