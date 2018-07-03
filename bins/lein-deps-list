@@ -1,0 +1,1 @@
+LEIN_NO_USER_PROFILE=1 lein trampoline deps :tree 2>&1 | tee deps.txt
