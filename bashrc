@@ -155,7 +155,13 @@ export EDITOR='emacs -nw'
 # get branch
 
 prompt() {
-  local __branc=$(git cb || echo '*')
+  local __branc=$(git cb)
+  if [ "$__branc" = '' ] ; then
+    __branc='🚯'
+  elif [ "$__branc" != "${__branc:0:16}" ] ; then
+    __branc="${__branc:0:16}…"
+  fi
+
   local __here=$(basename $(pwd))
   echo "$__branc - $__here : "
 }
