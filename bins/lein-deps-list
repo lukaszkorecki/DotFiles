@@ -1,1 +1,2 @@
+echo "Saving to $PWD/deps.txt"
 LEIN_NO_USER_PROFILES=1 lein trampoline deps :tree 2>&1 | tee deps.txt
