@@ -1,3 +1,9 @@
+# DEPRECATED
+
+Everything lives in my Emacs config now. Go there :point_down:
+
+[lukaszkorecki/cult-leader](https://github.com/lukaszkorecki/cult-leader)
+
 ### Thanks for checking out my dotfiles
 
 > There's no place like ~/.DotFiles
@@ -31,7 +37,7 @@ are somewhat-useful (`fcrypt`) and some are just ridiculous (`faces`,
 The rest are of course configs for various pieces of software I use
 every day.
 
-# Emacs 
+# Emacs
 
 (where most of the stuff happens anyway)
 

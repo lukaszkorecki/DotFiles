@@ -3,6 +3,7 @@
   email = lukasz@korecki.me
   name = Łukasz Korecki
 	signkey = 0A46786C9281B170
+	signingkey = 9745E464
 [include]
   path = ~/.private/gitconfig.include
 [color]
